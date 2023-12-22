@@ -1,27 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './components/client/home/Home';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+
+
+const stripePromise = loadStripe("pk_test_51OQ6tgHJ7Lg8p1yn8ItZcWpblIjGUeZdeWDUdVAaFIezfSvSwj9dZQGW2QhkcpO9Uw9MPddzVsJHy7p0ZUADKSxt0056k3Kv9H");
 
 function App() {
-  const [data, setData] = useState({});
-  
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch('http://localhost:5000/');
-      const json = await response.json();
-      setData(json);
-    } catch(error) {
-      console.log(error);
-    }
-  }
-
   return (
-    <div className={`bg-red-800`}>
-      hello
-      {data.members}
-    </div>
+    <BrowserRouter>
+      <Elements stripe={stripePromise}>
+        <Routes>
+
+            <Route path="/" element={<Home />} />
+
+        </Routes>    
+      </Elements>
+    </BrowserRouter>
   );
 }
 
