@@ -4,7 +4,7 @@ import {CardElement} from '@stripe/react-stripe-js';
 export default function CardInput() {
   return (
     <div>
-      <CardElement  />
+      {/* <CardElement  /> */}
     </div>
   );
 }

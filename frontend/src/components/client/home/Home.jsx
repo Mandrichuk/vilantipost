@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import Payment from "../pay/Pay";
+import Payment from "../payment/Payment";
 
 function HomePage() {
-
   return (
     <div>
+    sdfsdfdf
       <Payment />
     </div>
   );
