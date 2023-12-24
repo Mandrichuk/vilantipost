@@ -37,7 +37,7 @@ const ChoiseInput = (props) => {
     <div>
       <div className={`customInputContainer`} onBlur={handleInputBlur}>
         <input
-          className={`customInput`}
+          className={`customInput ${isActive ? "active" : ""}`}
           placeholder={language === "en" ? "Choose" : "Выберите"}
           value={input}
           onClick={handleInputChange}
@@ -72,7 +72,7 @@ const ListUL = (props) => {
           ))}
         </ul>
       ) : (
-        <ul className={`customUL bg-red-600`}>
+        <ul className={`customUL`}>
           {arr.map((item, index) => (
             <li
               key={`input-li-${index}`}

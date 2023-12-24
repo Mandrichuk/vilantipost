@@ -4,9 +4,11 @@ import RadioButtons from "../../common/RadioButtons";
 import ChoiseInput from "../../common/ChoiseInput";
 import { countries } from "../../../constants/index";
 import { useSelector } from "react-redux";
+import SolidButton from "../../common/SolidButton";
+import InfoContainer from "../../common/BoxContainer";
 
 const HomePage = () => {
-
+  const language = useSelector((state) => state.language.language);
   const radioOptions = [
     { label: "5 kg", value: 5 },
     { label: "10 kg", value: 10 },
@@ -16,22 +18,30 @@ const HomePage = () => {
     { label: "30 kg", value: 30 },
   ];
 
+  const label = "Pay";
 
 
   return (
-    <>
-      <div className={`titleText`}>ddd</div>
+    <div className={`wrapper`}>
 
-      <div className={`labelText`}>aaa</div>
+        <div className={`titleText`}>ddd</div>
 
-      <div className={`articleText`}>ttt</div>
+        <div className={`labelText`}>aaa</div>
 
-      <div className={`linkText`}>ttt</div>
+        <div className={`articleText`}>ttt</div>
 
-      {<RadioButtons arr={radioOptions} />}
+        <div className={`linkText`}>ttt</div>
 
-      {<ChoiseInput arr={countries} />}
-    </>
+        <SolidButton label={label} />
+
+        <RadioButtons arr={radioOptions} />
+
+        <ChoiseInput arr={countries} />
+
+        <InfoContainer title="title" img="img" height="100px" width="100px" bgColor="red" shadow={true} />
+
+
+    </div>
   );
 };
 
