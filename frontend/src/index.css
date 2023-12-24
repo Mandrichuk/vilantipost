@@ -108,6 +108,7 @@ body {
 
 .customUL {
   background-color: rgba(37, 191, 180, 0.7);
+  border: 1px solid var(--extra-color);
   color: white;
   max-height: 235px;
   overflow-y: auto;
