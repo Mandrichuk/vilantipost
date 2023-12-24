@@ -8,8 +8,9 @@
   --article-color: #3E3B3B;
   --link-color: blue;
   --background-color: white;
-  --input-width: 200px;
+  --input-width: 340px;
   --btn-width: 260px;
+  --input-radius: 3px;
 }
 
 body {
@@ -49,6 +50,10 @@ body {
 
 .linkText:hover {
   color: var(--text-color);
+}
+
+.tinyText {
+  font-size: 0.8rem;
 }
 
 .selectedText {
@@ -95,6 +100,52 @@ body {
   border: 2px solid white; 
 }
 
+.customInputContainer,
+.customUL {
+  width: var(--input-width);
+  cursor: pointer;
+}
+
+.customUL {
+  background-color: rgba(37, 191, 180, 0.7);
+  color: white;
+  max-height: 235px;
+  overflow-y: auto;
+}
+
+.customUL li {
+  cursor: pointer;
+  padding: 3px;
+}
+
+.customUL li:hover {
+  background-color: rgb(37, 191, 180);
+}
+
+.customInputContainer {
+  position: relative;
+  
+}
+
+.customInput {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+  border: 1px solid var(--extra-color);
+  padding: 6px 10px;
+  border-radius: var(--input-radius);
+  font-size: 16px;
+  outline: none;
+}
+
+.inputIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
 
 
 @media (min-width: 800px) {
@@ -111,25 +162,3 @@ body {
     font-size: 1.1rem;
   }
 }
-
-
-
-
-
-.customInput {
-  min-width: 100px;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-color: #fff;
-  border: 1px solid var(--extra-color);
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-  outline: none;
-}
-
-/* .custom-select:focus {
-  border-color: #007bff;
-} */
