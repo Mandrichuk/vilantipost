@@ -1,10 +1,8 @@
 import React from 'react';
-import {CardElement} from '@stripe/react-stripe-js';
 
-export default function CardInput() {
+export default function Payment() {
   return (
     <div>
-      {/* <CardElement  /> */}
     </div>
   );
 }

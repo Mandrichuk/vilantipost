@@ -2,29 +2,134 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --text-color: black;
+  --extra-color: rgb(37, 191, 180);
+  --article-color: #3E3B3B;
+  --link-color: blue;
+  --background-color: white;
+  --input-width: 200px;
+  --btn-width: 260px;
+}
 
-.StripeElement {
-    height: 40px;
-    padding: 10px 12px;
-    width: 100%;
-    color: #32325d;
-    background-color: white;
-    border: 1px solid transparent;
-    border-radius: 4px;
-  
-    box-shadow: 0 1px 3px 0 #e6ebf1;
-    -webkit-transition: box-shadow 150ms ease;
-    transition: box-shadow 150ms ease;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen';
+}
+
+.titleText,
+.labelText {
+  font-weight: bold;
+}
+
+.titleText {
+  font-size: 1.5rem;
+}
+
+.labelText {
+  font-size: 1rem;
+}
+
+.articleText,
+.linkText {
+  font-size: 0.9rem;
+}
+
+.articleText {
+  color: var(--article-color);
+}
+
+.linkText {
+  color: var(--link-color);
+  font-weight: bold;
+  text-decoration: underline;
+  transition: color 300ms;
+}
+
+.linkText:hover {
+  color: var(--text-color);
+}
+
+.selectedText {
+  color: var(--text-color);
+}
+
+.customRadio {
+  display: none;
+}
+
+.radioContainer {
+  width: 100px;
+  position: relative;
+  padding: 20px 15px 5px 15px;
+  cursor: pointer;
+  margin-right: 5px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  transition: background-color 100ms ease-in-out, color 100ms ease-in-out, box-shadow 100ms ease-in-out;
+}
+
+.radioContainer.selected {
+  background-color: var(--extra-color);
+  color: white;
+  box-shadow: 0 0 40px rgba(37, 191, 180, 0.8);
+  font-weight: bold;
+}
+
+.radioContainer::before {
+  content: '';
+  position: absolute;
+  left: 40%;
+  top: 0px;
+  margin-top: 5px;
+  width: 10px; 
+  height: 10px;
+  border: 2px solid var(--extra-color); 
+  background-color: white;
+  border-radius: 50%;
+}
+
+.radioContainer.selected::before {
+  background-color: white;
+  border: 2px solid white; 
+}
+
+
+
+@media (min-width: 800px) {
+  .titleText {
+    font-size: 2.8rem;
   }
-  
-  .StripeElement--focus {
-    box-shadow: 0 1px 3px 0 #cfd7df;
+
+  .labelText {
+    font-size: 1.5rem;
   }
-  
-  .StripeElement--invalid {
-    border-color: #fa755a;
+
+  .articleText,
+  .linkText {
+    font-size: 1.1rem;
   }
-  
-  .StripeElement--webkit-autofill {
-    background-color: #fefde5 !important;
-  }
+}
+
+
+
+
+
+.customInput {
+  min-width: 100px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+  border: 1px solid var(--extra-color);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+}
+
+/* .custom-select:focus {
+  border-color: #007bff;
+} */
