@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { FaCaretDown } from "react-icons/fa";
 
-
 const ChoiseInput = (props) => {
   const [input, setInput] = useState("");
   const [isActive, setIsActive] = useState(false);
-  const itemsUL = props.arr;
+  const [itemsUL, setItemsUL] = useState(props.arr);
 
   function handleInputChange(e) {
-    console.log(e.target.value);
-    setInput(e.target.value);
+    const value = e.target.value;
+    const capitalizedValue = value.charAt(0).toUpperCase() + value.slice(1);
+    setInput(capitalizedValue);
     setIsActive(true);
   }
 
@@ -24,23 +24,30 @@ const ChoiseInput = (props) => {
     }, 100);
   }
 
+  useEffect(() => {
+    const searchName = input.toLowerCase();
+    const filteredItems = props.arr.filter((item) =>
+      item.name.toLowerCase().includes(searchName)
+    );
+    setItemsUL(filteredItems);
+  }, [input, props.arr]);
+
   return (
     <div>
-      <div className={`customInputContainer`}
-          onBlur={handleInputBlur}
-          onClick={handleInputChange}
+      <div
+        className={`customInputContainer`}
+        onBlur={handleInputBlur}
       >
         <input
           className={`customInput`}
           placeholder="Choose"
           value={input}
+          onClick={handleInputChange}
           onChange={handleInputChange}
         />
-        <FaCaretDown className={`inputIcon`}/>
+        <FaCaretDown className={`inputIcon`} />
       </div>
-      {isActive && (
-        <ListUL itemsUL={itemsUL} handleInputChoose={handleInputChoose} />
-      )}
+      {isActive && <ListUL itemsUL={itemsUL} handleInputChoose={handleInputChoose} />}
     </div>
   );
 };
@@ -49,9 +56,9 @@ const ListUL = (props) => {
   const arr = props.itemsUL;
   return (
     <ul className={`customUL bg-red-600`}>
-      {arr.map((item) => (
+      {arr.map((item, index) => (
         <li
-          key={item.value}
+          key={`input-li-${index}`}
           value={item.name}
           className={`tinyText`}
           onClick={() => props.handleInputChoose(item.name)}
