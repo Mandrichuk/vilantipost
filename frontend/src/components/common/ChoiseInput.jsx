@@ -22,7 +22,7 @@ const ChoiseInput = (props) => {
   function handleInputBlur() {
     setTimeout(() => {
       setIsActive(false);
-    }, 100);
+    }, 150);
   }
 
   useEffect(() => {
