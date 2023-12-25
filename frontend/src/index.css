@@ -199,7 +199,7 @@ body {
   color: var(--text-color);
 }
 
-.infoContainer {
+/* .infoContainer {
   padding: 15px;
   overflow: hidden;
   transition: transform var(--transition-time) ease-in-out;
@@ -207,7 +207,9 @@ body {
 
 .infoContainer:hover {
   transform: scale(1.05);
-}
+} */
+
+
 
 @media (min-width: 800px) {
   .wrapper {
@@ -225,5 +227,11 @@ body {
   .articleText,
   .linkText {
     font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    width: 86%;  
   }
 }

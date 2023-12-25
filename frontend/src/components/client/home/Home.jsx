@@ -5,7 +5,7 @@ import ChoiseInput from "../../common/ChoiseInput";
 import { countries } from "../../../constants/index";
 import { useSelector } from "react-redux";
 import SolidButton from "../../common/SolidButton";
-import InfoContainer from "../../common/BoxContainer";
+import BoxContainer from "../../common/BoxContainer";
 
 const HomePage = () => {
   const language = useSelector((state) => state.language.language);
@@ -38,7 +38,7 @@ const HomePage = () => {
 
         <ChoiseInput arr={countries} />
 
-        <InfoContainer title="title" img="img" height="100px" width="100px" bgColor="red" shadow={true} />
+        <BoxContainer title="title" img="img" height="[100px]" width="[500px]" bgColor="red-300" shadow={true} />
 
 
     </div>
