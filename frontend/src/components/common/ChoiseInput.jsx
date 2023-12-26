@@ -77,7 +77,6 @@ const ListUL = (props) => {
   const language = useSelector((state) => state.language.language);
   const arr = props.itemsUL;
 
-
   return language === "en" ? (
     <ul className={`customUL`}>
       {arr.map((item, index) => (

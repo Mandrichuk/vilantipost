@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { FaCaretDown } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { countries } from "../../constants/index";
+import numericInput from "../../utils/numericInput";
 
 function PhoneInput(props) {
   const language = useSelector((state) => state.language.language);
@@ -12,28 +13,12 @@ function PhoneInput(props) {
   const [numberInput, setNumberInput] = useState("");
   const [chosenNumber, setChosenNumber] = useState(countries[0].exampleNumber);
 
-  // console.log(chosenNumber);
-
   useEffect(() => {
     const foundItem = countries.find((item) => item.number === input);
     if (foundItem) {
       setChosenNumber(foundItem.exampleNumber);
-      console.log(chosenNumber)
     }
   }, [input, countries]);
-
-  useEffect(() => {
-    const searchName = input.toLowerCase();
-
-    const filteredItems = props.arr.filter(
-      (item) =>
-        item.en.name.toLowerCase().includes(searchName) ||
-        item.ru.name.toLowerCase().includes(searchName) ||
-        item.code.toLowerCase().includes(searchName) ||
-        item.number.toLowerCase().includes(searchName)
-    );
-    setCountries(filteredItems);
-  }, [input, props.arr]);
 
   useEffect(() => {
     if (customInputContainerRef.current) {
@@ -65,14 +50,18 @@ function PhoneInput(props) {
 
   function handleNumberInputChange(e) {
     let inputValue = e.target.value;
-    setNumberInput(inputValue);
+    const fixedInputValue = numericInput(inputValue);
+
+    if (inputValue.length <= 15) {
+      setNumberInput(fixedInputValue);
+    }
   }
 
   return (
     <div className={`flex flex-row`}>
       <div>
         <div
-          className={`customInputContainer w-[100px]`}
+          className={`customInputContainer w-[90px]`}
           onBlur={handleInputBlur}
           ref={customInputContainerRef}
         >
@@ -83,7 +72,6 @@ function PhoneInput(props) {
             placeholder={language === "en" ? "Choose" : "Выберите"}
             value={input}
             onClick={handleInputChange}
-            onChange={handleInputChange}
           />
           <FaCaretDown className={`inputIcon`} />
         </div>
