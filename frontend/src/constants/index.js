@@ -1,929 +1,989 @@
 export const countries = [
   {
-    "ru": {
-      "name": "Афганистан"
+    ru: {
+      name: "Россия",
     },
-    "en": {
-      "name": "Afghanistan"
+    en: {
+      name: "Russia",
     },
-    "code": "AF"
+    code: "RU",
+    number: "+7",
+    flag: "🇷🇺",
+    exampleNumber: "xx yyyyyyyy",
   },
   {
-    "ru": {
-      "name": "Албания"
+    ru: {
+      name: "Польша",
     },
-    "en": {
-      "name": "Albania"
+    en: {
+      name: "Poland",
     },
-    "code": "AL"
+    code: "PL",
+    number: "+48",
+    flag: "🇵🇱",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Алжир"
+    ru: {
+      name: "Словацкая Республика",
     },
-    "en": {
-      "name": "Algeria"
+    en: {
+      name: "Slovakia",
     },
-    "code": "DZ"
+    code: "SK",
+    number: "+421",
+    flag: "🇸🇰",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Американское Самоа"
+    ru: {
+      name: "Австралия",
     },
-    "en": {
-      "name": "American Samoa"
+    en: {
+      name: "Australia",
     },
-    "code": "AS"
+    code: "AU",
+    number: "+61",
+    flag: "🇦🇺",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Андорра"
+    ru: {
+      name: "Австрия",
     },
-    "en": {
-      "name": "Andorra"
+    en: {
+      name: "Austria",
     },
-    "code": "AD"
+    code: "AT",
+    number: "+43",
+    flag: "🇦🇹",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Ангола"
+    ru: {
+      name: "Азербайджан",
     },
-    "en": {
-      "name": "Angola"
+    en: {
+      name: "Azerbaijan",
     },
-    "code": "AO"
+    code: "AZ",
+    number: "+994",
+    flag: "🇦🇿",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Ангилья"
+    ru: {
+      name: "Азорские острова",
     },
-    "en": {
-      "name": "Anguilla"
+    en: {
+      name: "Azores",
     },
-    "code": "AI"
+    code: "PT",
+    number: "+351",
+    flag: "🇵🇹",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Антигуа и Барбуда"
+    ru: {
+      name: "Албания",
     },
-    "en": {
-      "name": "Antigua and Barbuda"
+    en: {
+      name: "Albania",
     },
-    "code": "AG"
+    code: "AL",
+    number: "+355",
+    flag: "🇦🇱",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Аргентина"
+    ru: {
+      name: "Алжир",
     },
-    "en": {
-      "name": "Argentina"
+    en: {
+      name: "Algeria",
     },
-    "code": "AR"
+    code: "DZ",
+    number: "+213",
+    flag: "🇩🇿",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Армения"
+    ru: {
+      name: "Американские острова Самоа",
     },
-    "en": {
-      "name": "Armenia"
+    en: {
+      name: "American Samoa",
     },
-    "code": "AM"
+    code: "AS",
+    number: "+1",
+    flag: "🇦🇸",
+    exampleNumber: "xxx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Аруба"
+    ru: {
+      name: "Ангилья",
     },
-    "en": {
-      "name": "Aruba"
+    en: {
+      name: "Anguilla",
     },
-    "code": "AW"
+    code: "AI",
+    number: "+1",
+    flag: "🇦🇮",
+    exampleNumber: "xxx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Австралия"
+    ru: {
+      name: "Ангола",
     },
-    "en": {
-      "name": "Australia"
+    en: {
+      name: "Angola",
     },
-    "code": "AU"
+    code: "AO",
+    number: "+244",
+    flag: "🇦🇴",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Азербайджан"
+    ru: {
+      name: "Андорра",
     },
-    "en": {
-      "name": "Azerbaijan"
+    en: {
+      name: "Andorra",
     },
-    "code": "AZ"
+    code: "AD",
+    number: "+376",
+    flag: "🇦🇩",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Багамы"
+    ru: {
+      name: "Антигуа и Барбуда",
     },
-    "en": {
-      "name": "Bahamas"
+    en: {
+      name: "Antigua and Barbuda",
     },
-    "code": "BS"
+    code: "AG",
+    number: "+1",
+    flag: "🇦🇬",
+    exampleNumber: "xxx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Бахрейн"
+    ru: {
+      name: "Аргентина",
     },
-    "en": {
-      "name": "Bahrain"
+    en: {
+      name: "Argentina",
     },
-    "code": "BH"
+    code: "AR",
+    number: "+54",
+    flag: "🇦🇷",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Бангладеш"
+    ru: {
+      name: "Аруба",
     },
-    "en": {
-      "name": "Bangladesh"
+    en: {
+      name: "Aruba",
     },
-    "code": "BD"
+    code: "AW",
+    number: "+297",
+    flag: "🇦🇼",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Барбадос"
+    ru: {
+      name: "Афганистан",
     },
-    "en": {
-      "name": "Barbados"
+    en: {
+      name: "Afghanistan",
     },
-    "code": "BB"
+    code: "AF",
+    number: "+93",
+    flag: "🇦🇫",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Беларусь"
+    ru: {
+      name: "Багамы",
     },
-    "en": {
-      "name": "Belarus"
+    en: {
+      name: "Bahamas",
     },
-    "code": "BY"
+    code: "BS",
+    number: "+1",
+    flag: "🇧🇸",
+    exampleNumber: "xxx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Бельгия"
+    ru: {
+      name: "Бангладеш",
     },
-    "en": {
-      "name": "Belgium"
+    en: {
+      name: "Bangladesh",
     },
-    "code": "BE"
+    code: "BD",
+    number: "+880",
+    flag: "🇧🇩",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Белиз"
+    ru: {
+      name: "Барбадос",
     },
-    "en": {
-      "name": "Belize"
+    en: {
+      name: "Barbados",
     },
-    "code": "BZ"
+    code: "BB",
+    number: "+1",
+    flag: "🇧🇧",
+    exampleNumber: "xxx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Бенин"
+    ru: {
+      name: "Бахрейн",
     },
-    "en": {
-      "name": "Benin"
+    en: {
+      name: "Bahrain",
     },
-    "code": "BJ"
+    code: "BH",
+    number: "+973",
+    flag: "🇧🇭",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Бермуды"
+    ru: {
+      name: "Белиз",
     },
-    "en": {
-      "name": "Bermuda"
+    en: {
+      name: "Belize",
     },
-    "code": "BM"
+    code: "BZ",
+    number: "+501",
+    flag: "🇧🇿",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Бутан"
+    ru: {
+      name: "Бельгия",
     },
-    "en": {
-      "name": "Bhutan"
+    en: {
+      name: "Belgium",
     },
-    "code": "BT"
+    code: "BE",
+    number: "+32",
+    flag: "🇧🇪",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Боливия"
+    ru: {
+      name: "Бенин",
     },
-    "en": {
-      "name": "Bolivia"
+    en: {
+      name: "Benin",
     },
-    "code": "BO"
+    code: "BJ",
+    number: "+229",
+    flag: "🇧🇯",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Босния и Герцеговина"
+    ru: {
+      name: "Бермуда",
     },
-    "en": {
-      "name": "Bosnia and Herzegovina"
+    en: {
+      name: "Bermuda",
     },
-    "code": "BA"
+    code: "BM",
+    number: "+1",
+    flag: "🇧🇲",
+    exampleNumber: "xxx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Ботсвана"
+    ru: {
+      name: "Болгария",
     },
-    "en": {
-      "name": "Botswana"
+    en: {
+      name: "Bulgaria",
     },
-    "code": "BW"
+    code: "BG",
+    number: "+359",
+    flag: "🇧🇬",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Бразилия"
+    ru: {
+      name: "Боливия",
     },
-    "en": {
-      "name": "Brazil"
+    en: {
+      name: "Bolivia",
     },
-    "code": "BR"
+    code: "BO",
+    number: "+591",
+    flag: "🇧🇴",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Британская территория в Индийском океане"
+    ru: {
+      name: "Бонайре",
     },
-    "en": {
-      "name": "British Indian Ocean Territory"
+    en: {
+      name: "Bonaire",
     },
-    "code": "IO"
+    code: "BQ",
+    number: "+599",
+    flag: "🇧🇶",
+    exampleNumber: "xxx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Виргинские острова (Британские)"
+    ru: {
+      name: "Босния и Герцеговина",
     },
-    "en": {
-      "name": "Virgin Islands (British)"
+    en: {
+      name: "Bosnia and Herzegovina",
     },
-    "code": "VG"
+    code: "BA",
+    number: "+387",
+    flag: "🇧🇦",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Виргинские острова (США)"
+    ru: {
+      name: "Ботсвана",
     },
-    "en": {
-      "name": "Virgin Islands (U.S.)"
+    en: {
+      name: "Botswana",
     },
-    "code": "VI"
+    code: "BW",
+    number: "+267",
+    flag: "🇧🇼",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Бруней"
+    ru: {
+      name: "Бразилия",
     },
-    "en": {
-      "name": "Brunei Darussalam"
+    en: {
+      name: "Brazil",
     },
-    "code": "BN"
+    code: "BR",
+    number: "+55",
+    flag: "🇧🇷",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Болгария"
+    ru: {
+      name: "Британские Виргинские острова",
     },
-    "en": {
-      "name": "Bulgaria"
+    en: {
+      name: "British Virgin Islands",
     },
-    "code": "BG"
+    code: "VG",
+    number: "+1",
+    flag: "🇻🇬",
+    exampleNumber: "xxx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Буркина-Фасо"
+    ru: {
+      name: "Бруней",
     },
-    "en": {
-      "name": "Burkina Faso"
+    en: {
+      name: "Brunei",
     },
-    "code": "BF"
+    code: "BN",
+    number: "+673",
+    flag: "🇧🇳",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Бурунди"
+    ru: {
+      name: "Буркина-Фасо",
     },
-    "en": {
-      "name": "Burundi"
+    en: {
+      name: "Burkina Faso",
     },
-    "code": "BI"
+    code: "BF",
+    number: "+226",
+    flag: "🇧🇫",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Камбоджа"
+    ru: {
+      name: "Бурунди",
     },
-    "en": {
-      "name": "Cambodia"
+    en: {
+      name: "Burundi",
     },
-    "code": "KH"
+    code: "BI",
+    number: "+257",
+    flag: "🇧🇮",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Камерун"
+    ru: {
+      name: "Бутан",
     },
-    "en": {
-      "name": "Cameroon"
+    en: {
+      name: "Bhutan",
     },
-    "code": "CM"
+    code: "BT",
+    number: "+975",
+    flag: "🇧🇹",
+    exampleNumber: "xx yyyyyyy",
   },
+  // ... (Previous entries)
+
   {
-    "ru": {
-      "name": "Канада"
+    ru: {
+      name: "Сейшельские острова",
     },
-    "en": {
-      "name": "Canada"
+    en: {
+      name: "Seychelles",
     },
-    "code": "CA"
+    code: "SC",
+    number: "+248",
+    flag: "🇸🇨",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Кабо-Верде"
+    ru: {
+      name: "Сенегал",
     },
-    "en": {
-      "name": "Cabo Verde"
+    en: {
+      name: "Senegal",
     },
-    "code": "CV",
-    "capital": "Praia",
-    "region": "AF"
+    code: "SN",
+    number: "+221",
+    flag: "🇸🇳",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Каймановы острова"
+    ru: {
+      name: "Сербия",
     },
-    "en": {
-      "name": "Cayman Islands"
+    en: {
+      name: "Serbia",
     },
-    "code": "KY",
-    "capital": "George Town"
+    code: "RS",
+    number: "+381",
+    flag: "🇷🇸",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Центральноафриканская Республика"
+    ru: {
+      name: "Сеута",
     },
-    "en": {
-      "name": "Central African Republic"
+    en: {
+      name: "Ceuta",
     },
-    "code": "CF"
+    code: "ES",
+    number: "+34",
+    flag: "🇪🇦",
+    exampleNumber: "xxx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Чад"
+    ru: {
+      name: "Сингапур",
     },
-    "en": {
-      "name": "Chad"
+    en: {
+      name: "Singapore",
     },
-    "code": "TD"
+    code: "SG",
+    number: "+65",
+    flag: "🇸🇬",
+    exampleNumber: "xxxx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Чили"
+    ru: {
+      name: "Сирия",
     },
-    "en": {
-      "name": "Chile"
+    en: {
+      name: "Syria",
     },
-    "code": "CL",
-    "capital": "Santiago",
-    "region": "SA"
+    code: "SY",
+    number: "+963",
+    flag: "🇸🇾",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Китай"
+    ru: {
+      name: "Словения",
     },
-    "en": {
-      "name": "China"
+    en: {
+      name: "Slovenia",
     },
-    "code": "CN"
+    code: "SI",
+    number: "+386",
+    flag: "🇸🇮",
+    exampleNumber: "xx yyyyyy",
   },
   {
-    "ru": {
-      "name": "Колумбия"
+    ru: {
+      name: "Соломоновы острова",
     },
-    "en": {
-      "name": "Colombia"
+    en: {
+      name: "Solomon Islands",
     },
-    "code": "CO"
+    code: "SB",
+    number: "+677",
+    flag: "🇸🇧",
+    exampleNumber: "xxx yyyyy",
   },
   {
-    "ru": {
-      "name": "Коморы"
+    ru: {
+      name: "Сомали",
     },
-    "en": {
-      "name": "Comoros"
+    en: {
+      name: "Somalia",
     },
-    "code": "KM"
+    code: "SO",
+    number: "+252",
+    flag: "🇸🇴",
+    exampleNumber: "xx yyyyyy",
   },
   {
-    "ru": {
-      "name": "Конго"
+    ru: {
+      name: "Восточный Тимор",
     },
-    "en": {
-      "name": "Congo"
+    en: {
+      name: "Timor-Leste",
     },
-    "code": "CG"
+    code: "TL",
+    number: "+670",
+    flag: "🇹🇱",
+    exampleNumber: "xxx yyyyyy",
   },
   {
-    "ru": {
-      "name": "Демократическая Республика Конго"
+    ru: {
+      name: "США (Соединенные Штаты Америки)",
     },
-    "en": {
-      "name": "Congo"
+    en: {
+      name: "United States",
     },
-    "code": "CD"
+    code: "US",
+    number: "+1",
+    flag: "🇺🇸",
+    exampleNumber: "(xxx) yyy-yyyy",
   },
   {
-    "ru": {
-      "name": "Острова Кука"
+    ru: {
+      name: "Сьерра-Леоне",
     },
-    "en": {
-      "name": "Cook Islands"
+    en: {
+      name: "Sierra Leone",
     },
-    "code": "CK"
+    code: "SL",
+    number: "+232",
+    flag: "🇸🇱",
+    exampleNumber: "xx yyyyyy",
   },
   {
-    "ru": {
-      "name": "Коста-Рика"
+    ru: {
+      name: "Таджикистан",
     },
-    "en": {
-      "name": "Costa Rica"
+    en: {
+      name: "Tajikistan",
     },
-    "code": "CR"
+    code: "TJ",
+    number: "+992",
+    flag: "🇹🇯",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Хорватия"
+    ru: {
+      name: "Таиланд",
     },
-    "en": {
-      "name": "Croatia"
+    en: {
+      name: "Thailand",
     },
-    "code": "HR"
+    code: "TH",
+    number: "+66",
+    flag: "🇹🇭",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Куба"
+    ru: {
+      name: "Тайвань",
     },
-    "en": {
-      "name": "Cuba"
+    en: {
+      name: "Taiwan",
     },
-    "code": "CU"
+    code: "TW",
+    number: "+886",
+    flag: "🇹🇼",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Кипр"
+    ru: {
+      name: "Танзания",
     },
-    "en": {
-      "name": "Cyprus"
+    en: {
+      name: "Tanzania",
     },
-    "code": "CY"
+    code: "TZ",
+    number: "+255",
+    flag: "🇹🇿",
+    exampleNumber: "xx yyyyyy",
   },
   {
-    "ru": {
-      "name": "Чехия"
+    ru: {
+      name: "Теркс и Кайкос, острова",
     },
-    "en": {
-      "name": "Czech Republic"
+    en: {
+      name: "Turks and Caicos Islands",
     },
-    "code": "CZ"
+    code: "TC",
+    number: "+1",
+    flag: "🇹🇨",
+    exampleNumber: "(xxx) yyy-yyyy",
   },
   {
-    "ru": {
-      "name": "Дания"
+    ru: {
+      name: "Того",
     },
-    "en": {
-      "name": "Denmark"
+    en: {
+      name: "Togo",
     },
-    "code": "DK"
+    code: "TG",
+    number: "+228",
+    flag: "🇹🇬",
+    exampleNumber: "xx yyyyyy",
   },
   {
-    "ru": {
-      "name": "Джибути"
+    ru: {
+      name: "Тонга",
     },
-    "en": {
-      "name": "Djibouti"
+    en: {
+      name: "Tonga",
     },
-    "code": "DJ"
+    code: "TO",
+    number: "+676",
+    flag: "🇹🇴",
+    exampleNumber: "xxx yyy",
   },
   {
-    "ru": {
-      "name": "Доминика"
+    ru: {
+      name: "Тринидад и Тобаго",
     },
-    "en": {
-      "name": "Dominica"
+    en: {
+      name: "Trinidad and Tobago",
     },
-    "code": "DM"
+    code: "TT",
+    number: "+1",
+    flag: "🇹🇹",
+    exampleNumber: "(xxx) yyy-yyyy",
   },
   {
-    "ru": {
-      "name": "Доминиканская Республика"
+    ru: {
+      name: "Тувалу",
     },
-    "en": {
-      "name": "Dominican Republic"
+    en: {
+      name: "Tuvalu",
     },
-    "code": "DO"
+    code: "TV",
+    number: "+688",
+    flag: "🇹🇻",
+    exampleNumber: "xxx yyy",
   },
   {
-    "ru": {
-      "name": "Эквадор"
+    ru: {
+      name: "Тунис",
     },
-    "en": {
-      "name": "Ecuador"
+    en: {
+      name: "Tunisia",
     },
-    "code": "EC"
+    code: "TN",
+    number: "+216",
+    flag: "🇹🇳",
+    exampleNumber: "xx yyyyyy",
   },
   {
-    "ru": {
-      "name": "Египет"
+    ru: {
+      name: "Турция",
     },
-    "en": {
-      "name": "Egypt"
+    en: {
+      name: "Turkey",
     },
-    "code": "EG"
+    code: "TR",
+    number: "+90",
+    flag: "🇹🇷",
+    exampleNumber: "xxx yyyyyy",
   },
   {
-    "ru": {
-      "name": "Сальвадор"
+    ru: {
+      name: "Туркменистан",
     },
-    "en": {
-      "name": "El Salvador"
+    en: {
+      name: "Turkmenistan",
     },
-    "code": "SV"
+    code: "TM",
+    number: "+993",
+    flag: "🇹🇲",
+    exampleNumber: "xx yyyyyy",
   },
   {
-    "ru": {
-      "name": "Экваториальная Гвинея"
+    ru: {
+      name: "Уганда",
     },
-    "en": {
-      "name": "Equatorial Guinea"
+    en: {
+      name: "Uganda",
     },
-    "code": "GQ",
-    "capital": "Malabo",
-    "region": "AF"
+    code: "UG",
+    number: "+256",
+    flag: "🇺🇬",
+    exampleNumber: "xx yyyyyy",
   },
   {
-    "ru": {
-      "name": "Эритрея"
+    ru: {
+      name: "Венгрия",
     },
-    "en": {
-      "name": "Eritrea"
+    en: {
+      name: "Hungary",
     },
-    "code": "ER"
+    code: "HU",
+    number: "+36",
+    flag: "🇭🇺",
+    exampleNumber: "xx yyyyyy",
   },
   {
-    "ru": {
-      "name": "Эстония"
+    ru: {
+      name: "Узбекистан",
     },
-    "en": {
-      "name": "Estonia"
+    en: {
+      name: "Uzbekistan",
     },
-    "code": "EE"
+    code: "UZ",
+    number: "+998",
+    flag: "🇺🇿",
+    exampleNumber: "xx yyyyyy",
   },
   {
-    "ru": {
-      "name": "Эфиопия"
+    ru: {
+      name: "Уоллис и Футуна острова",
     },
-    "en": {
-      "name": "Ethiopia"
+    en: {
+      name: "Wallis and Futuna Islands",
     },
-    "code": "ET"
+    code: "WF",
+    number: "+681",
+    flag: "🇼🇫",
+    exampleNumber: "xx xx xx",
   },
   {
-    "ru": {
-      "name": "Фолклендские острова (Мальвинские)"
+    ru: {
+      name: "Уругвай",
     },
-    "en": {
-      "name": "Falkland Islands (Malvinas)"
+    en: {
+      name: "Uruguay",
     },
-    "code": "FK"
+    code: "UY",
+    number: "+598",
+    flag: "🇺🇾",
+    exampleNumber: "xx yyyyyy",
   },
   {
-    "ru": {
-      "name": "Фарерские острова"
+    ru: {
+      name: "Фиджи",
     },
-    "en": {
-      "name": "Faroe Islands"
+    en: {
+      name: "Fiji",
     },
-    "code": "FO"
+    code: "FJ",
+    number: "+679",
+    flag: "🇫🇯",
+    exampleNumber: "xxx yy yy",
   },
   {
-    "ru": {
-      "name": "Фиджи"
+    ru: {
+      name: "Филиппины",
     },
-    "en": {
-      "name": "Fiji"
+    en: {
+      name: "Philippines",
     },
-    "code": "FJ"
+    code: "PH",
+    number: "+63",
+    flag: "🇵🇭",
+    exampleNumber: "xx yyyyyyy",
   },
   {
-    "ru": {
-      "name": "Финляндия"
+    ru: {
+      name: "Финляндия",
     },
-    "en": {
-      "name": "Finland"
+    en: {
+      name: "Finland",
     },
-    "code": "FI",
-    "capital": "Helsinki",
-    "region": "EU"
+    code: "FI",
+    number: "+358",
+    flag: "🇫🇮",
+    exampleNumber: "xx yyy yyy",
   },
   {
-    "ru": {
-      "name": "Франция"
+    ru: {
+      name: "Франция",
     },
-    "en": {
-      "name": "France"
+    en: {
+      name: "France",
     },
-    "code": "FR",
-    "capital": "Paris"
+    code: "FR",
+    number: "+33",
+    flag: "🇫🇷",
+    exampleNumber: "xx xx xx xx",
   },
   {
-    "ru": {
-      "name": "Французская Гвиана"
+    ru: {
+      name: "Французская Гайана",
     },
-    "en": {
-      "name": "French Guiana"
+    en: {
+      name: "French Guiana",
     },
-    "code": "GF"
+    code: "GF",
+    number: "+594",
+    flag: "🇬🇫",
+    exampleNumber: "xx xx xx xx",
   },
   {
-    "ru": {
-      "name": "Французская Полинезия"
+    ru: {
+      name: "Французская Полинезия",
     },
-    "en": {
-      "name": "French Polynesia"
+    en: {
+      name: "French Polynesia",
     },
-    "code": "PF"
+    code: "PF",
+    number: "+689",
+    flag: "🇵🇫",
+    exampleNumber: "xx xx xx",
   },
   {
-    "ru": {
-      "name": "Габон"
+    ru: {
+      name: "Хорватия",
     },
-    "en": {
-      "name": "Gabon"
+    en: {
+      name: "Croatia",
     },
-    "code": "GA"
+    code: "HR",
+    number: "+385",
+    flag: "🇭🇷",
+    exampleNumber: "xx yyyyyy",
   },
   {
-    "ru": {
-      "name": "Гамбия"
+    ru: {
+      name: "Центральноафриканская Республика",
     },
-    "en": {
-      "name": "Gambia"
+    en: {
+      name: "Central African Republic",
     },
-    "code": "GM"
+    code: "CF",
+    number: "+236",
+    flag: "🇨🇫",
+    exampleNumber: "xx xx xx xx",
   },
   {
-    "ru": {
-      "name": "Грузия"
+    ru: {
+      name: "Чад",
     },
-    "en": {
-      "name": "Georgia"
+    en: {
+      name: "Chad",
     },
-    "code": "GE"
+    code: "TD",
+    number: "+235",
+    flag: "🇹🇩",
+    exampleNumber: "xx xx xx xx",
   },
   {
-    "ru": {
-      "name": "Германия"
+    ru: {
+      name: "Чехия",
     },
-    "en": {
-      "name": "Germany"
+    en: {
+      name: "Czech Republic",
     },
-    "code": "DE"
+    code: "CZ",
+    number: "+420",
+    flag: "🇨🇿",
+    exampleNumber: "xxx xxx xxx",
   },
+
   {
-    "ru": {
-      "name": "Гана"
+    ru: {
+      name: "Чили",
     },
-    "en": {
-      "name": "Ghana"
+    en: {
+      name: "Chile",
     },
-    "code": "GH"
+    code: "CL",
+    number: "+56",
+    flag: "🇨🇱",
+    exampleNumber: "9 xxxx xxxx",
   },
   {
-    "ru": {
-      "name": "Гибралтар"
+    ru: {
+      name: "Черногория",
     },
-    "en": {
-      "name": "Gibraltar"
+    en: {
+      name: "Montenegro",
     },
-    "code": "GI"
+    code: "ME",
+    number: "+382",
+    flag: "🇲🇪",
+    exampleNumber: "6x xxx xxx",
   },
   {
-    "ru": {
-      "name": "Греция"
+    ru: {
+      name: "Швейцария",
     },
-    "en": {
-      "name": "Greece"
+    en: {
+      name: "Switzerland",
     },
-    "code": "GR"
+    code: "CH",
+    number: "+41",
+    flag: "🇨🇭",
+    exampleNumber: "0xx xxx xx xx",
   },
   {
-    "ru": {
-      "name": "Гренландия"
+    ru: {
+      name: "Швеция",
     },
-    "en": {
-      "name": "Greenland"
+    en: {
+      name: "Sweden",
     },
-    "code": "GL"
+    code: "SE",
+    number: "+46",
+    flag: "🇸🇪",
+    exampleNumber: "07x-xxx xx xx",
   },
   {
-    "ru": {
-      "name": "Гренада"
+    ru: {
+      name: "Шри-Ланка",
     },
-    "en": {
-      "name": "Grenada"
+    en: {
+      name: "Sri Lanka",
     },
-    "code": "GD"
+    code: "LK",
+    number: "+94",
+    flag: "🇱🇰",
+    exampleNumber: "07x xxx xxxx",
   },
   {
-    "ru": {
-      "name": "Гваделупа"
+    ru: {
+      name: "Ямайка",
     },
-    "en": {
-      "name": "Guadeloupe"
+    en: {
+      name: "Jamaica",
     },
-    "code": "GP"
+    code: "JM",
+    number: "+1",
+    flag: "🇯🇲",
+    exampleNumber: "(876) xxx-xxxx",
   },
   {
-    "ru": {
-      "name": "Гуам"
+    ru: {
+      name: "Япония",
     },
-    "en": {
-      "name": "Guam"
+    en: {
+      name: "Japan",
     },
-    "code": "GU"
+    code: "JP",
+    number: "+81",
+    flag: "🇯🇵",
+    exampleNumber: "080-xxxx-xxxx",
   },
-  {
-    "ru": {
-      "name": "Гватемала"
-    },
-    "en": {
-      "name": "Guatemala"
-    },
-    "code": "GT"
-  },
-  {
-    "ru": {
-      "name": "Гвинея"
-    },
-    "en": {
-      "name": "Guinea"
-    },
-    "code": "GN"
-  },
-  {
-    "ru": {
-      "name": "Гвинея-Бисау"
-    },
-    "en": {
-      "name": "Guinea-Bissau"
-    },
-    "code": "GW"
-  },
-  {
-    "ru": {
-      "name": "Гайана"
-    },
-    "en": {
-      "name": "Guyana"
-    },
-    "code": "GY"
-  },
-  {
-    "ru": {
-      "name": "Гаити"
-    },
-    "en": {
-      "name": "Haiti"
-    },
-    "code": "HT"
-  },
-  {
-    "ru": {
-      "name": "Святой Престол (Ватикан)"
-    },
-    "en": {
-      "name": "Holy See"
-    },
-    "code": "VA"
-  },
-  {
-    "ru": {
-      "name": "Гондурас"
-    },
-    "en": {
-      "name": "Honduras"
-    },
-    "code": "HN"
-  },
-  {
-    "ru": {
-      "name": "Гонконг"
-    },
-    "en": {
-      "name": "Hong Kong"
-    },
-    "code": "HK"
-  },
-  {
-    "ru": {
-      "name": "Венгрия"
-    },
-    "en": {
-      "name": "Hungary"
-    },
-    "code": "HU"
-  },
-  {
-    "ru": {
-      "name": "Исландия"
-    },
-    "en": {
-      "name": "Iceland"
-    },
-    "code": "IS"
-  },
-  {
-    "ru": {
-      "name": "Индия"
-    },
-    "en": {
-      "name": "India"
-    },
-    "code": "IN"
-  },
-  {
-    "ru": {
-      "name": "Индонезия"
-    },
-    "en": {
-      "name": "Indonesia"
-    },
-    "code": "ID"
-  },
-  {
-    "ru": {
-      "name": "Кот-д'Ивуар"
-    },
-    "en": {
-      "name": "Côte d'Ivoire"
-    },
-    "code": "CI"
-  },
-  {
-    "ru": {
-      "name": "Иран"
-    },
-    "en": {
-      "name": "Iran"
-    },
-    "code": "IR"
-  },
-  {
-    "ru": {
-      "name": "Ирак"
-    },
-    "en": {
-      "name": "Iraq"
-    },
-    "code": "IQ"
-  },
-  {
-    "ru": {
-      "name": "Ирландия"
-    },
-    "en": {
-      "name": "Ireland"
-    },
-    "code": "IE"
-  },
-  {
-    "ru": {
-      "name": "Израиль"
-    },
-    "en": {
-      "name": "Israel"
-    },
-    "code": "IL"
-  },
-  {
-    "ru": {
-      "name": "Италия"
-    },
-    "en": {
-      "name": "Italy"
-    },
-    "code": "IT"
-  },
-  {
-    "ru": {
-      "name": "Ямайка"
-    },
-    "en": {
-      "name": "Jamaica"
-    },
-    "code": "JM"
-  },
-  {
-    "ru": {
-      "name": "Япония"
-    },
-    "en": {
-      "name": "Japan"
-    }
-  },
-]
+];

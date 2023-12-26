@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import SolidButton from "../../common/SolidButton";
 import ImgTitleContainer from "../../common/ImgTitleContainer";
 import TextInput from "../../common/TextInput";
+import PhoneInput from "../../common/PhoneInput";
 
 const HomePage = () => {
   const language = useSelector((state) => state.language.language);
@@ -39,11 +40,13 @@ const HomePage = () => {
 
         <RadioButtons arr={radioOptions} />
 
-        <ChoiseInput arr={countries} />
+        <ChoiseInput arr={countries} type={"name"} />
 
-        <ImgTitleContainer title={title} img={"img"} article={article} direction="row" bgColor="" shadow={true} />
+        <ImgTitleContainer title={title} img={"img"} article={article} direction="row" bgColor="" shadow={true} imgPosition={"left"}  />
 
-        <TextInput placeholder={"Andrew"} title={"Enter you name"}  />
+        <TextInput placeholder={"Andrew"} title={"Enter you name"} marginTop={true} />
+
+        <PhoneInput country={`France`} />
 
     </div>
   );
