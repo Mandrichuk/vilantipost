@@ -40,13 +40,13 @@ const HomePage = () => {
 
         <RadioButtons arr={radioOptions} />
 
-        <ChoiseInput arr={countries} type={"name"} />
+        <ChoiseInput arr={countries} />
 
         <ImgTitleContainer title={title} img={"img"} article={article} direction="row" bgColor="" shadow={true} imgPosition={"left"}  />
 
         <TextInput placeholder={"Andrew"} title={"Enter you name"} marginTop={true} />
 
-        <PhoneInput country={`France`} />
+        <PhoneInput arr={countries}  />
 
     </div>
   );

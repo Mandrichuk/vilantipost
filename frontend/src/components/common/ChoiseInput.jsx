@@ -9,8 +9,6 @@ const ChoiseInput = (props) => {
   const [countries, setCountries] = useState(props.arr);
   const customInputContainerRef = useRef(null);
 
-  // console.log(props)
-
   useEffect(() => {
     const searchName = input.toLowerCase();
 
@@ -60,9 +58,7 @@ const ChoiseInput = (props) => {
         ref={customInputContainerRef}
       >
         <input
-          className={`customInput ${isActive ? "active" : ""} ${
-            props.type === "number" ? "noneRoundedRight" : ""
-          }`}
+          className={`customInput ${isActive ? "active" : ""}`}
           placeholder={language === "en" ? "Choose" : "Выберите"}
           value={input}
           onClick={handleInputChange}
@@ -71,11 +67,7 @@ const ChoiseInput = (props) => {
         <FaCaretDown className={`inputIcon`} />
       </div>
       {isActive && (
-        <ListUL
-          itemsUL={countries}
-          type={props.type}
-          handleInputChoose={handleInputChoose}
-        />
+        <ListUL itemsUL={countries} handleInputChoose={handleInputChoose} />
       )}
     </div>
   );
@@ -85,65 +77,33 @@ const ListUL = (props) => {
   const language = useSelector((state) => state.language.language);
   const arr = props.itemsUL;
 
-  return (
-    <>
-      {props.type === "name" &&
-        (language === "en" ? (
-          <ul className={`customUL`}>
-            {arr.map((item, index) => (
-              <li
-                key={`input-li-${index}`}
-                value={item.name}
-                className={`tinyText`}
-                onClick={() => props.handleInputChoose(item.en.name)}
-              >
-                {item.en.name}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <ul className={`customUL`}>
-            {arr.map((item, index) => (
-              <li
-                key={`input-li-${index}`}
-                value={item.name}
-                className={`tinyText`}
-                onClick={() => props.handleInputChoose(item.ru.name)}
-              >
-                {item.ru.name}
-              </li>
-            ))}
-          </ul>
-        ))}
-      {props.type === "number" && (
-        <ul className={`customUL`}>
-          {arr.map((item, index) => (
-            <li
-              key={`input-li-${index}`}
-              value={item.name}
-              className={`tinyText flex flex-row items-center justify-start`}
-              onClick={() => props.handleInputChoose(item.number)}
-            >
-              <div className={`w-[30px]`}>{item.flag}</div>
-              {language === "en" ? (
-                <div
-                  className={`overflow-hidden whitespace-nowrap w-[70px] ellipsis`}
-                >
-                  {item.en.name}
-                </div>
-              ) : (
-                <div
-                  className={`overflow-hidden whitespace-nowrap w-[70px] ellipsis`}
-                >
-                  {item.ru.name}
-                </div>
-              )}
-              <div className={`ml-3`}>({item.number})</div>
-            </li>
-          ))}
-        </ul>
-      )}
-    </>
+
+  return language === "en" ? (
+    <ul className={`customUL`}>
+      {arr.map((item, index) => (
+        <li
+          key={`input-li-${index}`}
+          value={item.en.name}
+          className={`tinyText`}
+          onClick={() => props.handleInputChoose(item.en.name)}
+        >
+          {item.en.name}
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <ul className={`customUL`}>
+      {arr.map((item, index) => (
+        <li
+          key={`input-li-${index}`}
+          value={item.ru.name}
+          className={`tinyText`}
+          onClick={() => props.handleInputChoose(item.ru.name)}
+        >
+          {item.ru.name}
+        </li>
+      ))}
+    </ul>
   );
 };
 
