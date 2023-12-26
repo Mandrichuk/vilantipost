@@ -15,6 +15,7 @@
   --extra-color: rgb(37, 191, 180);
   --extra-color-hover: rgb(32, 152, 144);
   --shadow-color: rgba(138, 245, 238, 0.5);
+  --error-color: #fc3535;
 
   --btn-text: 1.1rem;
   --input-radius: 3px;
@@ -119,6 +120,15 @@ body {
   border-bottom-right-radius: 0 !important;
 }
 
+.phoneUl {
+  height: 150px !important;
+  width: 100%;
+}
+
+.errorBorder {
+  border: var(--border-px) solid var(--error-color) !important;
+}
+
 .customRadio {
   display: none;
 }
@@ -202,7 +212,7 @@ body {
   color: white;
   max-height: 235px;
   overflow-y: auto;
-  z-index: 999;
+  z-index: 100;
 }
 
 .customUL li {
@@ -241,7 +251,6 @@ body {
 
 .inputBox {
   position: relative;
-  width: 250px;
   margin-top: 10px;
 }
 
@@ -293,6 +302,8 @@ body {
 }
 
 .ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 

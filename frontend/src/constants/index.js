@@ -1,6 +1,18 @@
 export const countries = [
   {
     ru: {
+      name: "Украина",
+    },
+    en: {
+      name: "Ukraine",
+    },
+    code: "UA",
+    number: "+380",
+    flag: "🇺🇦",
+    exampleNumber: "xx yyyyyyy",
+  },
+  {
+    ru: {
       name: "Россия",
     },
     en: {

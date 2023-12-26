@@ -12,6 +12,7 @@ function PhoneInput(props) {
   const [countries, setCountries] = useState(props.arr);
   const [numberInput, setNumberInput] = useState("");
   const [chosenNumber, setChosenNumber] = useState(countries[0].exampleNumber);
+  const chosenNumberLen = chosenNumber.replace(/\s/g, "").length;
 
   useEffect(() => {
     const foundItem = countries.find((item) => item.number === input);
@@ -31,9 +32,6 @@ function PhoneInput(props) {
   }, [isActive]);
 
   function handleInputChange(e) {
-    const value = e.target.value;
-    const capitalizedValue = value.charAt(0).toUpperCase() + value.slice(1);
-    setInput(capitalizedValue);
     setIsActive(true);
   }
 
@@ -52,25 +50,24 @@ function PhoneInput(props) {
     let inputValue = e.target.value;
     const fixedInputValue = numericInput(inputValue);
 
-    if (inputValue.length <= 15) {
+    if (inputValue.length <= chosenNumberLen) {
       setNumberInput(fixedInputValue);
     }
   }
 
   return (
-    <div className={`flex flex-row`}>
+    <div ref={customInputContainerRef} className={`phoneInputContainer flex flex-row mt-2.5`}>
       <div>
         <div
-          className={`customInputContainer w-[90px]`}
+          className={`customInputContainer w-[80px]`}
           onBlur={handleInputBlur}
-          ref={customInputContainerRef}
         >
           <input
             className={`customInput ${
               isActive ? "active" : ""
             } noneRoundedRight`}
             placeholder={language === "en" ? "Choose" : "Выберите"}
-            value={input}
+            value={input.number}
             onClick={handleInputChange}
           />
           <FaCaretDown className={`inputIcon`} />
@@ -82,13 +79,13 @@ function PhoneInput(props) {
 
       <div className={`inputBox ${props.marginTop ? "" : "noMargin"}`}>
         <input
-          className={`noneRoundedLeft`}
+          className={`noneRoundedLeft ${isActive ? "noneRoundedBottom" : ""}`}
           placeholder={chosenNumber}
           value={numberInput}
           required={true}
           onChange={handleNumberInputChange}
         />
-        <span>{props.title}</span>
+        <span>{input && input.code}</span>
       </div>
     </div>
   );
@@ -99,15 +96,16 @@ const ListUL = (props) => {
   const arr = props.itemsUL;
 
   return (
-    <ul className={`customUL`}>
+    <ul className={`customUL phoneUl`}>
       {arr.map((item, index) => (
         <li
           key={`input-li-${index}`}
           value={item.number}
           className={`tinyText flex flex-row`}
-          onClick={() => props.handleInputChoose(item.number)}
+          onClick={() => props.handleInputChoose(item)}
         >
           <div className={`w-[20px]`}>{item.flag}</div>
+          <div className={`ellipsis w-[100px] mx-3`}>{item.ru.name}</div>
           <div className={`w-[50px]`}>({item.number})</div>
         </li>
       ))}
