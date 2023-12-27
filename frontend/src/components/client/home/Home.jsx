@@ -33,7 +33,7 @@ const HomePage = () => {
       <div className={`wrapper`}>
 
 
-        {/* <div className={`titleText`}>ddd</div>
+        <div className={`titleText`}>ddd</div>
 
         <div className={`labelText`}>aaa</div>
 
@@ -51,7 +51,7 @@ const HomePage = () => {
 
         <TextInput placeholder={"Andrew"} title={"Enter you name"} marginTop={true} />
 
-        <PhoneInput arr={countries}  /> */}
+        <PhoneInput arr={countries}  />
 
       </div>
     </>

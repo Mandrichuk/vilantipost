@@ -1,5 +1,6 @@
 // Logos
 import logo from "../assets/logos/logo.png";
+import fullLogo from "../assets/logos/fullLogo.png";
 
 // Graphics
 import MapInPhone from "../assets/graphics/MapInPhone.jpg";
@@ -13,6 +14,18 @@ import uploadScreen from "../assets/lotties/uploadScreen.json";
 import walkingPackage from "../assets/lotties/walkingPackage.json";
 
 
+export default {
+  logo,
+  fullLogo,
+  MapInPhone,
+  PeopleDeal,
+  MapLocation,
+  question,
+  spinningWorld,
+  uploadScreen,
+  walkingPackage,
+}
+
 export const sidebar = {
   nav: [
     {
@@ -20,10 +33,10 @@ export const sidebar = {
         name: "Главная",
       },
       en: {
-        name: "Main",
+        name: "Home",
       },
       type: "active",
-      icon: "IoHome ",
+      icon: "IoHome",
       link: "/" 
     },
     {
@@ -33,7 +46,7 @@ export const sidebar = {
       en: {
         name: "Orders",
       },
-      type: "",
+      type: "alert",
       icon: "PiPackageFill",
       link: "/orders" 
     },
@@ -47,6 +60,16 @@ export const sidebar = {
       type: "",
       icon: "IoIosSettings",
       link: "/settings"
+    },
+    {
+      ru: {
+        name: "Язык",
+      },
+      en: {
+        name: "Language",
+      },
+      type: "",
+      icon: "FaLanguage",
     },
   ],
   socials: [
@@ -63,19 +86,6 @@ export const sidebar = {
     }
   ]
 };
-
-
-export default {
-  logo,
-  MapInPhone,
-  PeopleDeal,
-  MapLocation,
-  question,
-  spinningWorld,
-  uploadScreen,
-  walkingPackage,
-}
-
 
 export const countries = [
   {
