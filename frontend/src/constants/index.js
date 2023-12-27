@@ -1,3 +1,82 @@
+// Logos
+import logo from "../assets/logos/logo.png";
+
+// Graphics
+import MapInPhone from "../assets/graphics/MapInPhone.jpg";
+import PeopleDeal from "../assets/graphics/PeopleDeal.jpg";
+import MapLocation from "../assets/graphics/MapLocation.jpg";
+
+// Lotties
+import question from "../assets/lotties/question.json";
+import spinningWorld from "../assets/lotties/spinningWorld.json";
+import uploadScreen from "../assets/lotties/uploadScreen.json";
+import walkingPackage from "../assets/lotties/walkingPackage.json";
+
+
+export const sidebar = {
+  nav: [
+    {
+      ru: {
+        name: "Главная",
+      },
+      en: {
+        name: "Main",
+      },
+      type: "active",
+      icon: "IoHome ",
+      link: "/" 
+    },
+    {
+      ru: {
+        name: "Заказы",
+      },
+      en: {
+        name: "Orders",
+      },
+      type: "",
+      icon: "PiPackageFill",
+      link: "/orders" 
+    },
+    {
+      ru: {
+        name: "Настройки",
+      },
+      en: {
+        name: "Settings",
+      },
+      type: "",
+      icon: "IoIosSettings",
+      link: "/settings"
+    },
+  ],
+  socials: [
+    {
+      ru: {
+        name: "Инстаграм",
+      },
+      en: {
+        name: "Instagram",
+      },
+      type: "",
+      icon: "FaInstagram",
+      link: "/instagram"
+    }
+  ]
+};
+
+
+export default {
+  logo,
+  MapInPhone,
+  PeopleDeal,
+  MapLocation,
+  question,
+  spinningWorld,
+  uploadScreen,
+  walkingPackage,
+}
+
+
 export const countries = [
   {
     ru: {
