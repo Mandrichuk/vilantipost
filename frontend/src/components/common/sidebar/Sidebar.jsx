@@ -35,14 +35,23 @@ export default function Sidebar() {
   useEffect(() => {
     const handleResize = () => {
       setWideScreen(window.innerWidth > 1024);
+      setExpanded(window.innerWidth > 1024);
+
+      const root = document.getElementById('root');
+      if (window.innerWidth > 1024) {
+        root.style.setProperty('--navbar-width', '293px');
+      } else {
+        root.style.setProperty('--navbar-width', '73px');
+      }
     };
+
+    handleResize();
 
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
 
   return (
     <aside className={`${styles.sidebar} h-full fixed`}>
@@ -55,16 +64,18 @@ export default function Sidebar() {
             }`}
             alt=""
           />
-          <button
-            onClick={() => setExpanded((curr) => !curr)}
-            className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100"
-          >
-            {expanded ? (
-              <IoIosArrowBack size={iconSize} />
-            ) : (
-              <IoIosArrowForward size={iconSize} />
-            )}
-          </button>
+          {!wideScreen && (
+            <button
+              onClick={() => setExpanded((curr) => !curr)}
+              className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100"
+            >
+              {expanded ? (
+                <IoIosArrowBack size={iconSize} />
+              ) : (
+                <IoIosArrowForward size={iconSize} />
+              )}
+            </button>
+          )}
         </div>
 
         <SidebarContext.Provider value={{ expanded }}>
@@ -163,14 +174,25 @@ export function SidebarItem({ icon, ruText, enText, type, link }) {
           }`}
         >
           {language === "en" ? enText : ruText}
-          
+
           {ruText === "Язык" && enText === "Language" && (
             <div className={`2 h-full`}>
-              <span className={`mr-2 ${language === "ru" ? "chosenElement" : ""} px-2`} onClick={() => dispatch(setLanguage("ru"))}>RU</span>
-              <span className={` ${language === "en" ? "chosenElement" : ""} px-2`} onClick={() => dispatch(setLanguage("en"))}>EN</span>
+              <span
+                className={`mr-2 ${
+                  language === "ru" ? "chosenElement" : ""
+                } px-2`}
+                onClick={() => dispatch(setLanguage("ru"))}
+              >
+                RU
+              </span>
+              <span
+                className={` ${language === "en" ? "chosenElement" : ""} px-2`}
+                onClick={() => dispatch(setLanguage("en"))}
+              >
+                EN
+              </span>
             </div>
           )}
-
         </span>
         {type === "alert" && (
           <div
