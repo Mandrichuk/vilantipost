@@ -5,10 +5,12 @@ import App from './App';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import languageReducer from './features/language';
+import darkThemeReducer from './features/darkTheme';
 
 const store = configureStore({
   reducer: {
     language: languageReducer,
+    darkTheme: darkThemeReducer,
   },
 });
 

@@ -10,12 +10,15 @@ import { IoHome } from "react-icons/io5";
 import { FaLanguage } from "react-icons/fa6";
 import { PiPackageFill } from "react-icons/pi";
 import { FaInstagram } from "react-icons/fa";
+import { MdColorLens } from "react-icons/md";
 import styles from "./sidebar.module.css";
 import { sidebar } from "../../../constants/index";
 import images from "../../../constants/index";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setLanguage } from "../../../features/language";
+import { setTheme } from "../../../features/darkTheme";
+
 
 const SidebarContext = createContext();
 const iconSize = 25;
@@ -25,10 +28,12 @@ const iconMapping = {
   IoIosSettings: <IoIosSettings size={iconSize} />,
   FaInstagram: <FaInstagram size={iconSize} />,
   FaLanguage: <FaLanguage size={iconSize} />,
+  MdColorLens: <MdColorLens size={iconSize} />,
 };
 
 export default function Sidebar() {
   const language = useSelector((state) => state.language.language);
+  const darkTheme = useSelector((state) => state.darkTheme.theme);
   const [wideScreen, setWideScreen] = useState(true);
   const [expanded, setExpanded] = useState(wideScreen);
 
@@ -55,7 +60,7 @@ export default function Sidebar() {
 
   return (
     <aside className={`${styles.sidebar} h-full fixed`}>
-      <nav className="h-full flex flex-col bg-white border-r shadow-sm">
+      <nav className={`h-full flex flex-col ${darkTheme ? "bg-dark-gray-color-500" : "bg-white"} border-r shadow-sm`}>
         <div className="p-4 pb-2 flex justify-between items-center">
           <img
             src={images.fullLogo}
@@ -67,12 +72,12 @@ export default function Sidebar() {
           {!wideScreen && (
             <button
               onClick={() => setExpanded((curr) => !curr)}
-              className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100"
+              className={`p-1.5 rounded-lg ${darkTheme ? "bg-dark-gray-color-300 hover:bg-dark-gray-color-200" : "bg-gray-50 hover:bg-gray-100"} `}
             >
               {expanded ? (
-                <IoIosArrowBack size={iconSize} />
+                <IoIosArrowBack size={iconSize} className={`${darkTheme ? "fill-white" : "fill-black" }`} />
               ) : (
-                <IoIosArrowForward size={iconSize} />
+                <IoIosArrowForward size={iconSize} className={`${darkTheme ? "fill-white" : "fill-black"}`} />
               )}
             </button>
           )}
@@ -107,7 +112,7 @@ export default function Sidebar() {
           </ul>
         </SidebarContext.Provider>
 
-        <div className="border-t flex p-3 h-[58.4px]">
+        <div className="border-t mx-3 flex p-3 h-[58.4px]">
           <div
             className={`
               overflow-hidden transition-all ${
@@ -118,9 +123,7 @@ export default function Sidebar() {
           `}
           >
             <div
-              className={`leading-4 ${
-                expanded ? "block" : "flex items-center justify-center"
-              }`}
+              className={`leading-4 ${expanded ? "block" : "flex items-center justify-center"} ${darkTheme ? "text-white" : ""}`}
             >
               {expanded ? (
                 <>
@@ -129,14 +132,14 @@ export default function Sidebar() {
                   ) : (
                     <h4 className="font-semibold">Поддержка</h4>
                   )}
-                  <Link to="/help" className="text-xs text-gray-600">
+                  <Link to="/help" className={`${darkTheme ? "text-gray-300" : "text-gray-600"} text-xs`}>
                     /helpme
                   </Link>
                 </>
               ) : (
                 <IoMdHelpCircleOutline
                   size={iconSize}
-                  className="text-gray-600 cursor-pointer"
+                  className={`${darkTheme ? "text-white" : "text-gray-600"} cursor-pointer`}
                 />
               )}
             </div>
@@ -148,24 +151,38 @@ export default function Sidebar() {
 }
 
 export function SidebarItem({ icon, ruText, enText, type, link }) {
+  const darkTheme = useSelector((state) => state.darkTheme.theme);
   const language = useSelector((state) => state.language.language);
   const { expanded } = useContext(SidebarContext);
   const renderedIcon = iconMapping[icon];
   const dispatch = useDispatch();
+  const toggleLanguage = () => {
+    if (language === "en") {
+      dispatch(setLanguage("ru"));
+    } else {
+      dispatch(setLanguage("en"));
+    }
+  }
+  const toggleTheme = () => {
+    dispatch(setTheme());
+  }
+
 
   return (
     <Link to={link}>
       <li
+        {...(!expanded && ruText === "Язык" && enText === "Language" && { onClick: toggleLanguage })}
+        {...(!expanded && ruText === "Тема" && enText === "Theme" && { onClick: toggleTheme })}
         className={`
           relative flex items-center py-2 px-3 my-1
           font-medium rounded-md cursor-pointer
           transition-colors group
           ${
             type === "active"
-              ? "bg-gradient-to-tr from-custom-color-200 to-custom-color-100 bg-custom-color-800"
-              : "hover:bg-custom-color-50 text-gray-600"
+              ? `${darkTheme ? "bg-gradient-to-tr from-custom-color-500 to-custom-color-300 bg-custom-color-800" : "bg-gradient-to-tr from-custom-color-200 to-custom-color-100 bg-custom-color-800"}`
+              : `${darkTheme ? "hover:bg-custom-color-700 text-white" : "hover:bg-custom-color-50 text-gray-600"}`
           }
-      `}
+        `}
       >
         {renderedIcon}
         <span
@@ -196,7 +213,7 @@ export function SidebarItem({ icon, ruText, enText, type, link }) {
         </span>
         {type === "alert" && (
           <div
-            className={`absolute right-3 w-2 h-2 rounded bg-custom-color-400 ${
+            className={`${styles.alertIndicator} absolute right-3 w-2 h-2 rounded bg-custom-color-400 ${
               expanded ? "" : "top-2 right-2"
             }`}
           />
@@ -204,9 +221,8 @@ export function SidebarItem({ icon, ruText, enText, type, link }) {
 
         {!expanded && (
           <div
-            className={`
-            absolute left-full rounded-md px-2 py-1 ml-6
-            bg-custom-color-100 custom-color-800 text-sm
+            className={` ${darkTheme ? "bg-custom-color-700 custom-color-800" : "bg-custom-color-100 custom-color-800"} 
+            absolute left-full rounded-md px-2 py-1 ml-6 text-sm
             invisible opacity-20 -translate-x-3 transition-all
             group-hover:visible group-hover:opacity-100 group-hover:translate-x-0
         `}

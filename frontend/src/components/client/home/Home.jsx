@@ -18,8 +18,6 @@ const HomePage = () => {
     { label: "10 kg", value: 10 },
     { label: "15 kg", value: 15 },
     { label: "20 kg", value: 20 },
-    { label: "25 kg", value: 25 },
-    { label: "30 kg", value: 30 },
   ];
 
   const label = "Pay";

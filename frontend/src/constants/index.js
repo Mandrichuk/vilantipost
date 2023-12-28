@@ -71,6 +71,16 @@ export const sidebar = {
       type: "",
       icon: "FaLanguage",
     },
+    {
+      ru: {
+        name: "Тема",
+      },
+      en: {
+        name: "Theme",
+      },
+      type: "",
+      icon: "MdColorLens",
+    },
   ],
   socials: [
     {

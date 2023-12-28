@@ -14,6 +14,18 @@ module.exports = {
         'custom-color-700': 'rgb(76, 170, 162)',
         'custom-color-800': 'rgb(65, 144, 136)',
         'custom-color-900': 'rgb(54, 119, 111)',
+
+
+        'dark-gray-color-50': '#6b7483',
+        'dark-gray-color-100': '#5f6879',
+        'dark-gray-color-200': '#535b6f',
+        'dark-gray-color-300': '#474f65',
+        'dark-gray-color-400': '#3b435b',
+        'dark-gray-color-500': '#373f51', // Original color
+        'dark-gray-color-600': '#313743',
+        'dark-gray-color-700': '#2b3040',
+        'dark-gray-color-800': '#252a36',
+        'dark-gray-color-900': '#1f232c',
       }
     },
   },
