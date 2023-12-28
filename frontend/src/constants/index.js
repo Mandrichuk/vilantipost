@@ -13,7 +13,6 @@ import spinningWorld from "../assets/lotties/spinningWorld.json";
 import uploadScreen from "../assets/lotties/uploadScreen.json";
 import walkingPackage from "../assets/lotties/walkingPackage.json";
 
-
 export default {
   logo,
   fullLogo,
@@ -24,7 +23,42 @@ export default {
   spinningWorld,
   uploadScreen,
   walkingPackage,
-}
+};
+
+export const homePage = {
+  orderBox: {
+    ru: {
+      title: "Отправьте свои документы в/из Россию!",
+      fromWhereInputs: ["В Россию", "Из России"],
+      fromInput: "Из какой страны вы отправляете",
+      toInput: "В какую страну отправляете",
+      amountInput: "Укажите вес документов",
+      amountVariants: [
+        { kilograms: "0.5кг", value: 0.5 },
+        { kilograms: "1кг", value: 1 },
+        { kilograms: "1.5кг", value: 1.5 },
+        { kilograms: "2кг", value: 2 },
+        { kilograms: "2.5кг", value: 2.5 },
+      ],
+      buttonSubmit: "Перейти к деталям",
+    },
+    en: {
+      title: "Send your documents to/from Russia!",
+      fromWhereInputs: ["To Russia", "From Russia"],
+      fromInput: "From which country you send",
+      toInput: "To which country you send",
+      amountInput: "Specify the weight of the documents",
+      amountVariants: [
+        { kilograms: "0.5kg", value: 0.5 },
+        { kilograms: "1kg", value: 1 },
+        { kilograms: "1.5kg", value: 1.5 },
+        { kilograms: "2kg", value: 2 },
+        { kilograms: "2.5kg", value: 2.5 },
+      ],
+      buttonSubmit: "Go to details",
+    },
+  },
+};
 
 export const sidebar = {
   nav: [
@@ -37,7 +71,7 @@ export const sidebar = {
       },
       type: "active",
       icon: "IoHome",
-      link: "/" 
+      link: "/",
     },
     {
       ru: {
@@ -48,7 +82,7 @@ export const sidebar = {
       },
       type: "alert",
       icon: "PiPackageFill",
-      link: "/orders" 
+      link: "/orders",
     },
     {
       ru: {
@@ -59,7 +93,7 @@ export const sidebar = {
       },
       type: "",
       icon: "IoIosSettings",
-      link: "/settings"
+      link: "/settings",
     },
     {
       ru: {
@@ -92,9 +126,20 @@ export const sidebar = {
       },
       type: "",
       icon: "FaInstagram",
-      link: "/instagram"
-    }
-  ]
+      link: "/instagram",
+    },
+    {
+      ru: {
+        name: "Телеграм",
+      },
+      en: {
+        name: "Telegram",
+      },
+      type: "",
+      icon: "FaTelegram",
+      link: "/telegram",
+    },
+  ],
 };
 
 export const countries = [

@@ -18,6 +18,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { FaSun } from "react-icons/fa";
 import { IoMoon } from "react-icons/io5";
+import { FaTelegram } from "react-icons/fa6";
 import { setLanguage } from "../../../features/language";
 import { setTheme } from "../../../features/darkTheme";
 
@@ -31,6 +32,7 @@ const iconMapping = {
   FaInstagram: <FaInstagram size={iconSize} />,
   FaLanguage: <FaLanguage size={iconSize} />,
   MdColorLens: <MdColorLens size={iconSize} />,
+  FaTelegram: <FaTelegram size={iconSize} />,
 };
 
 export default function Sidebar() {
