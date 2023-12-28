@@ -16,6 +16,8 @@ import { sidebar } from "../../../constants/index";
 import images from "../../../constants/index";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { FaSun } from "react-icons/fa";
+import { IoMoon } from "react-icons/io5";
 import { setLanguage } from "../../../features/language";
 import { setTheme } from "../../../features/darkTheme";
 
@@ -32,6 +34,7 @@ const iconMapping = {
 };
 
 export default function Sidebar() {
+  const dispatch = useDispatch();
   const language = useSelector((state) => state.language.language);
   const darkTheme = useSelector((state) => state.darkTheme.theme);
   const [wideScreen, setWideScreen] = useState(true);
@@ -193,23 +196,45 @@ export function SidebarItem({ icon, ruText, enText, type, link }) {
           {language === "en" ? enText : ruText}
 
           {ruText === "Язык" && enText === "Language" && (
-            <div className={`2 h-full`}>
+            <div className={`h-full flex flex-row items-center`}>
               <span
                 className={`mr-2 ${
                   language === "ru" ? "chosenElement" : ""
-                } px-2`}
+                } px-[5.4px] py-1`}
                 onClick={() => dispatch(setLanguage("ru"))}
               >
                 RU
               </span>
               <span
-                className={` ${language === "en" ? "chosenElement" : ""} px-2`}
+                className={` ${language === "en" ? "chosenElement" : ""} px-[5.4px] py-1`}
                 onClick={() => dispatch(setLanguage("en"))}
               >
                 EN
               </span>
             </div>
           )}
+
+          {ruText === "Тема" && enText === "Theme" && (
+            <div className={`h-full flex flex-row items-center`}>
+              <span
+                className={`mr-1 ${
+                  !darkTheme ? "chosenElement" : ""
+                } px-2 py-2`}
+                onClick={() => dispatch(setTheme())}
+              >
+                <FaSun />
+              </span>
+              <span
+                className={`mr-1 ${
+                  darkTheme ? "chosenElement" : ""
+                } px-2 py-2`}
+                onClick={() => dispatch(setTheme())}
+              >
+                <IoMoon />
+              </span>
+            </div>
+          )}
+
         </span>
         {type === "alert" && (
           <div

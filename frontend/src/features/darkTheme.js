@@ -9,7 +9,6 @@ export const darkThemeSlice = createSlice({
   },
   reducers: {
     setTheme: (state) => {
-      // console.log(state.theme)
       state.theme = !state.theme;
     }
   }
