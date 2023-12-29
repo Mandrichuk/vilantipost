@@ -17,9 +17,17 @@ const HomePage = () => {
   return (
     <>
       <Sidebar />
+      <div className={`${styles.backgroundCover}`}>
+        <div className={`wrapper`}>
+
+          <div className={`${styles.orderBox} h-[400px]`}>
+          ddd
+          </div>
+
+        </div>
+      </div>
       <div className={`wrapper`}>
-
-
+        dddd
       </div>
     </>
   );
