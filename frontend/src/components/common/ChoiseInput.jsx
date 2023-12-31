@@ -83,7 +83,7 @@ const ListUL = (props) => {
         <li
           key={`input-li-${index}`}
           value={item.en.name}
-          className={`tinyText`}
+          className={`text-xs`}
           onClick={() => props.handleInputChoose(item.en.name)}
         >
           {item.en.name}
@@ -96,7 +96,7 @@ const ListUL = (props) => {
         <li
           key={`input-li-${index}`}
           value={item.ru.name}
-          className={`tinyText`}
+          className={`text-xs`}
           onClick={() => props.handleInputChoose(item.ru.name)}
         >
           {item.ru.name}

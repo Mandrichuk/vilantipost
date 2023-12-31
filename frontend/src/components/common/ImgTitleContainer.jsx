@@ -1,27 +1,34 @@
 import React from "react";
 import { FaGun } from "react-icons/fa6";
+import images from "../../constants/index";
 
 function ImgTitleContainer(props) {
-  const { direction = "column", bgColor = "transparent", shadow } = props;
+  const { direction = "column", bgColor = "transparent", shadow, title, article, img } = props;
 
   const containerStyles = {
     display: "flex",
     flexDirection: direction,
-    alignItems: "center",
     justifyContent: "start",
-    width: "350px",
-    height: "auto",
+    alignItems: "center",
+    width: "100%",
+    height: "70px",
     backgroundColor: bgColor,
     boxShadow: shadow ? "0 4px 8px rgba(0, 0, 0, 0.1)" : "none",
   };
 
   return (
-    <div style={containerStyles} className="infoContainer">
-      <div className={`h-[70px] w-[100px] mr-4`}>
-        <img src="" alt="" className={`w-full h-full object-cover`} />
+    <div style={containerStyles} className="infoContainer text-gray-100">
+      <div className={`h-[50px] mr-4`}>
+        <img src={images.envelope} alt="" className={`w-full h-full object-cover`} />
       </div>
-      <div className={`text-lg font-bold`}>
-        {props.title}
+      <div className={`flex flex-col`}>
+      
+        <div className={`text-lg font-bold`}>
+          {title}
+        </div>
+        <div className={`text-lg font-bold tinyText`}>
+          {article}
+        </div>
       </div>
     </div>
   );

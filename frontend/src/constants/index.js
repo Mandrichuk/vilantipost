@@ -13,6 +13,9 @@ import spinningWorld from "../assets/lotties/spinningWorld.json";
 import uploadScreen from "../assets/lotties/uploadScreen.json";
 import walkingPackage from "../assets/lotties/walkingPackage.json";
 
+// icons
+import envelope from "../assets/icons/envelope.png";
+
 export default {
   logo,
   fullLogo,
@@ -23,22 +26,34 @@ export default {
   spinningWorld,
   uploadScreen,
   walkingPackage,
+  envelope,
 };
+
+export const links = {
+  home: "/",
+  sendForm: "/sendform",
+  
+}
 
 export const homePage = {
   orderBox: {
     ru: {
-      title: "Отправьте свои документы в/из Россию!",
+      title: "Отправьте свои документы в/из России!",
       fromWhereInputs: ["В Россию", "Из России"],
       fromInput: "Из какой страны вы отправляете",
       toInput: "В какую страну отправляете",
+      youSend: {
+        label: "Вы отправляете",
+        name: "Документы",
+        article: "вес от 0.5 до 2.5 кг",
+      },
       amountInput: "Укажите вес документов",
       amountVariants: [
-        { kilograms: "0.5кг", value: 0.5 },
-        { kilograms: "1кг", value: 1 },
-        { kilograms: "1.5кг", value: 1.5 },
-        { kilograms: "2кг", value: 2 },
-        { kilograms: "2.5кг", value: 2.5 },
+        { label: "0.5кг", value: 0.5 },
+        { label: "1кг", value: 1 },
+        { label: "1.5кг", value: 1.5 },
+        { label: "2кг", value: 2 },
+        { label: "2.5кг", value: 2.5 },
       ],
       buttonSubmit: "Перейти к деталям",
     },
@@ -47,13 +62,18 @@ export const homePage = {
       fromWhereInputs: ["To Russia", "From Russia"],
       fromInput: "From which country you send",
       toInput: "To which country you send",
+      youSend: {
+        label: "You send",
+        name: "Documents",
+        article: "weight from 0.5 to 2.5 kg",
+      },
       amountInput: "Specify the weight of the documents",
       amountVariants: [
-        { kilograms: "0.5kg", value: 0.5 },
-        { kilograms: "1kg", value: 1 },
-        { kilograms: "1.5kg", value: 1.5 },
-        { kilograms: "2kg", value: 2 },
-        { kilograms: "2.5kg", value: 2.5 },
+        { label: "0.5kg", value: 0.5 },
+        { label: "1kg", value: 1 },
+        { label: "1.5kg", value: 1.5 },
+        { label: "2kg", value: 2 },
+        { label: "2.5kg", value: 2.5 },
       ],
       buttonSubmit: "Go to details",
     },

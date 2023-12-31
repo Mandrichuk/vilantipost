@@ -8,7 +8,7 @@ const RadioButtons = (props) => {
   };
 
   return (
-    <div className={`mt-5 mb-3`}>
+    <div className={`mt-5 mb-3 flex flex-row items-center justify-between`}>
       {
         radioOptions.map(item => (
           <RadioButton
