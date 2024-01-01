@@ -70,8 +70,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 90%;
+  width: 96%;
   margin-top: 20px;
+  margin-bottom: 40px;
   max-width: 1450px;
 }
 
@@ -172,6 +173,7 @@ body {
   cursor: pointer;
   border-radius: 10px;
   font-size: 0.7rem;
+  text-align: center;
   transition: background-color 100ms ease-in-out, color 100ms ease-in-out,
     box-shadow 100ms ease-in-out;
 }
@@ -240,7 +242,7 @@ body {
 
 .customUL {
   position: absolute;
-  background-color: var(--custom-color);
+  background-color: var(--custom-color-700);
   border: var(--border-px) solid var(--custom-color);
   border-top: none;
   color: white;
@@ -255,7 +257,7 @@ body {
 }
 
 .customUL li:hover {
-  background-color: var(--custom-color-700);
+  background-color: var(--custom-color);
 }
 
 .button,
@@ -351,9 +353,9 @@ body {
   text-overflow: ellipsis;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 500px) {
   :root {
-    --btn-text: 1.1rem;
+    --btn-text: 1rem;
   }
 
   .wrapper {

@@ -32,7 +32,7 @@ export default {
 export const links = {
   home: "/",
   sendForm: "/sendform",
-  
+
 }
 
 export const homePage = {
@@ -45,7 +45,7 @@ export const homePage = {
       youSend: {
         label: "Вы отправляете",
         name: "Документы",
-        article: "вес от 0.5 до 2.5 кг",
+        article: "вес от 0.5кг до 2.5кг",
       },
       amountInput: "Укажите вес документов",
       amountVariants: [
@@ -65,7 +65,7 @@ export const homePage = {
       youSend: {
         label: "You send",
         name: "Documents",
-        article: "weight from 0.5 to 2.5 kg",
+        article: "weight from 0.5kg to 2.5kg",
       },
       amountInput: "Specify the weight of the documents",
       amountVariants: [

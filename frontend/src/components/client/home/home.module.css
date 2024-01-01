@@ -1,5 +1,9 @@
-@media (min-width: 768px) {
+@media (min-width: 650px) {
   .orderBox {
     padding: 20px;
+  }
+
+  .deliveryInputs {
+    flex-direction: row;
   }
 }
