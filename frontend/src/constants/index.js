@@ -31,7 +31,7 @@ export default {
 
 export const links = {
   home: "/",
-  sendForm: "/sendform",
+  form: "/form",
 };
 
 export const homePage = {
@@ -41,6 +41,7 @@ export const homePage = {
       fromWhereInputs: ["В Россию", "Из России"],
       fromInput: "Из какой страны вы отправляете",
       toInput: "В какую страну отправляете",
+      errorMessage: "*Выберите страну из всплывающего списка!", 
       youSend: {
         label: "Вы отправляете",
         name: "Документы",
@@ -61,6 +62,7 @@ export const homePage = {
       fromWhereInputs: ["To Russia", "From Russia"],
       fromInput: "From which country you send",
       toInput: "To which country you send",
+      errorMessage: "*Select country from the popup list!",
       youSend: {
         label: "You send",
         name: "Documents",
@@ -161,6 +163,20 @@ export const sidebar = {
   ],
 };
 
+export const RussiaData = {
+  id: 2,
+  ru: {
+    name: "Россия",
+  },
+  en: {
+    name: "Russia",
+  },
+  code: "RU",
+  number: "+7",
+  flag: "🇷🇺",
+  exampleNumber: "xx yyyyyyyy",
+};
+
 export const countries = [
   {
     id: 1,
@@ -174,19 +190,6 @@ export const countries = [
     number: "+380",
     flag: "🇺🇦",
     exampleNumber: "xx yyyyyyy",
-  },
-  {
-    id: 2,
-    ru: {
-      name: "Россия",
-    },
-    en: {
-      name: "Russia",
-    },
-    code: "RU",
-    number: "+7",
-    flag: "🇷🇺",
-    exampleNumber: "xx yyyyyyyy",
   },
   {
     id: 3,

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux"; 
 import styles from "./home.module.css";
 import Payment from "../payment/Payment";
 import RadioButtons from "../../common/RadioButtons";
@@ -14,65 +15,66 @@ import { homePage } from "../../../constants/index";
 import images from "../../../constants/index";
 import { links } from "../../../constants/index";
 import useWindowWidth from "../../../utils/useWindowWidth";
-import { countryById } from "../../../features/countryById";
-
+import { countryById } from "../../../utils/countryById";
+import { useDispatch } from "react-redux";
+import { setOrderBoxData } from "../../../features/orderBox";
+import { RussiaData } from "../../../constants/index";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const language = useSelector((state) => state.language.language);
+  const orderBoxData = useSelector((state) => state.orderBox.orderBox);
   const orderBoxInfo = homePage.orderBox;
   const wideScreen = 650;
-  const [fromWhere, setFromWhere] = useState("to");
   const windowWidth = useWindowWidth();
-  const RussiaData = countryById(2);
   const [formData, setFormData] = useState({
-    departure: RussiaData,
-    destination: "",
-    type: "envelope",
-    weigth: 0.5,
+    fromWhere: "to",
+    inputCountry: {},
+    weight: 0.5,
   });
+  const [inputError, setInputError] = useState(false);
 
   function submitForm() {
     const formValid = isFormValid(formData);
-    console.log(formValid);
-    console.log(formData);
-  }
-
-  function isFormValid(formData) {
-    console.log(formData.departure)
-    if (formData.departure && formData.destination && formData.weigth && formData.departure != formData.destination) {
-      return true;
-    } 
-    return false;
-    
-  }
-
-  function handleFromWhereChange(e) {
-    setFromWhere(e);
-  }
-
-  function handleFormDataChange(name, value) {
-    console.log(name, value);
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  }
-
-  function getCountry(value) {
-    switch (fromWhere) {
-      case "from":
-        handleFormDataChange("departure", value);
-        break;
-      case "to":
-        handleFormDataChange("destination", value);
-        break;
-      default:
-        break;
+    if (formValid) {
+      const departure = formData.fromWhere === "from" ? RussiaData : formData.inputCountry;
+      const destination = formData.fromWhere === "to" ? RussiaData : formData.inputCountry;
+      const newOrderBoxData = {
+        departure: departure,
+        destination: destination,
+        weight: formData.weight,
+      }
+      dispatch(setOrderBoxData(newOrderBoxData));
+      navigate(links.form);
+    } else {
+      setInputError(true);
     }
   }
 
+  function isFormValid(formData) {
+    return (
+      formData.fromWhere &&
+      formData.inputCountry &&
+      formData.weight &&
+      !isObjectEmpty(formData.inputCountry)
+    );
+  }
+
+  function isObjectEmpty(obj) {
+    return Object.keys(obj).length === 0 && obj.constructor === Object;
+  }
+
+  function handleFromWhereChange(value) {
+    setFormData((prevData) => ({ ...prevData, fromWhere: value }));
+  }
+
+  function getInputCountry(value) {
+    setFormData((prevData) => ({ ...prevData, inputCountry: value }));
+  }
+
   function getWeight(value) {
-    handleFormDataChange("weigth", value);
+    setFormData((prevData) => ({ ...prevData, weight: value }));
   }
 
   return (
@@ -101,9 +103,9 @@ const HomePage = () => {
                   <button
                     onClick={() => {
                       handleFromWhereChange("to");
-                      handleFormDataChange("departure", RussiaData);
-                    }}                    className={`${
-                      fromWhere === "to" ? "selectedButton" : "button"
+                    }}
+                    className={`${
+                      formData.fromWhere === "to" ? "selectedButton" : "button"
                     } flex-1 mb-3`}
                   >
                     {language === "en"
@@ -111,9 +113,13 @@ const HomePage = () => {
                       : orderBoxInfo.ru.fromWhereInputs[0]}
                   </button>
                   <button
-                    onClick={() => {handleFromWhereChange("from"); handleFormDataChange("destination", RussiaData);}}
+                    onClick={() => {
+                      handleFromWhereChange("from");
+                    }}
                     className={`${
-                      fromWhere === "from" ? "selectedButton" : "button"
+                      formData.fromWhere === "from"
+                        ? "selectedButton"
+                        : "button"
                     } flex-1 mb-3`}
                   >
                     {language === "en"
@@ -123,14 +129,19 @@ const HomePage = () => {
                 </div>
 
                 <div className={`${styles.fromToInputs}`}>
-                  {fromWhere === "to" ? (
+                  {formData.fromWhere === "to" ? (
                     <div className={`mb-4`}>
                       <div className={`labelText`}>
                         {language === "en"
                           ? orderBoxInfo.en.fromInput
                           : orderBoxInfo.ru.fromInput}
                       </div>
-                      <ChoiseInput arr={countries}  getCountry={getCountry} />
+                      <ChoiseInput
+                        arr={countries}
+                        getCountry={getInputCountry}
+                        error={inputError}
+                        errorMessage={language === "en" ? orderBoxInfo.en.errorMessage : orderBoxInfo.ru.errorMessage}
+                      />
                     </div>
                   ) : (
                     <div>
@@ -139,7 +150,12 @@ const HomePage = () => {
                           ? orderBoxInfo.en.toInput
                           : orderBoxInfo.ru.toInput}
                       </div>
-                      <ChoiseInput arr={countries}  getCountry={getCountry} />
+                      <ChoiseInput
+                        arr={countries}
+                        getCountry={getInputCountry}
+                        error={inputError}
+                        errorMessage={language === "en" ? orderBoxInfo.en.errorMessage : orderBoxInfo.ru.errorMessage}
+                      />
                     </div>
                   )}
                 </div>
@@ -188,6 +204,7 @@ const HomePage = () => {
                           ?.amountVariants || []
                       }
                       getData={getWeight}
+                      startValue={formData.weight}
                     />
                   </div>
                 </div>
@@ -197,18 +214,14 @@ const HomePage = () => {
             <div className={`separator my-4`} />
 
             <div className={`flex flex-row items-center justify-center`}>
-              <Link 
-                // to={links.sendForm}
-               className={`w-[260px]`}>
-                <button
-                  onClick={() => submitForm()}
-                  className={`flex-1 mb-3 regularButton`}
-                >
-                  {language === "en"
-                    ? orderBoxInfo.en.buttonSubmit
-                    : orderBoxInfo.ru.buttonSubmit}
-                </button>
-              </Link>
+              <button
+                onClick={() => submitForm()}
+                className={`flex-1 mb-3 regularButton max-w-[260px]`}
+              >
+                {language === "en"
+                  ? orderBoxInfo.en.buttonSubmit
+                  : orderBoxInfo.ru.buttonSubmit}
+              </button>
             </div>
           </div>
         </div>

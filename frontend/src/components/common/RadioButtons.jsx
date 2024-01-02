@@ -2,11 +2,11 @@ import React, { useState } from "react";
 
 const RadioButtons = (props) => {
   const radioOptions = props.arr;
-  const [selectedRadio, setSelectedRadio] = useState(radioOptions[0].value);
+  const [selectedRadio, setSelectedRadio] = useState(props.startValue || radioOptions[0].value);
 
   const handleRadioChange = (value) => {
     setSelectedRadio(value);
-    props.getData(selectedRadio);
+    props.getData(value);
   };
 
   return (

@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 const ChoiseInput = (props) => {
   const language = useSelector((state) => state.language.language);
   const [input, setInput] = useState("");
+  const [selectedCountry, setSelectedCountry] = useState({});
   const [isActive, setIsActive] = useState(false);
   const [countries, setCountries] = useState(props.arr);
   const customInputContainerRef = useRef(null);
@@ -32,38 +33,38 @@ const ChoiseInput = (props) => {
     }
   }, [isActive]);
 
+  useEffect(() => {
+    props.getCountry(selectedCountry);
+  }, [selectedCountry]);
+
+  function handleInputClick() {
+    setIsActive(!isActive);
+  }
+
   function handleInputChange(e) {
     const value = e.target.value;
-    const capitalizedValue = value.charAt(0).toUpperCase() + value.slice(1);
-    setInput(capitalizedValue);
+    setInput(value);
     setIsActive(true);
   }
 
-  function handleInputChoose(newInput) {
-    if (language === "en") setInput(newInput.en.name);
-    if (language === "ru") setInput(newInput.ru.name);
-    handleInputBlur();
-    props.getCountry(newInput); 
-  }
-
-  function handleInputBlur() {
-    setTimeout(() => {
-      setIsActive(false);
-    }, 150);
+  function handleInputChoose(selectedItem) {
+    const selectedName = language === "en" ? selectedItem.en.name : selectedItem.ru.name;
+    setSelectedCountry(selectedItem);
+    setInput(selectedName);
+    setIsActive(false);
   }
 
   return (
     <div>
       <div
         className={`customInputContainer`}
-        onBlur={handleInputBlur}
+        onClick={handleInputClick}
         ref={customInputContainerRef}
       >
         <input
-          className={`customInput ${isActive ? "active" : ""}`}
+          className={`customInput ${isActive ? "active" : ""} ${props.error ? "errorBorder" : ""}`}
           placeholder={language === "en" ? "Choose" : "Выберите"}
           value={input}
-          onClick={handleInputChange}
           onChange={handleInputChange}
         />
         <FaCaretDown className={`inputIcon`} />
@@ -71,6 +72,7 @@ const ChoiseInput = (props) => {
       {isActive && (
         <ListUL itemsUL={countries} handleInputChoose={handleInputChoose} />
       )}
+      {props.error && <span className={`tinyText text-[#fc3535]`}>{props.errorMessage}</span>}
     </div>
   );
 };
@@ -79,29 +81,16 @@ const ListUL = (props) => {
   const language = useSelector((state) => state.language.language);
   const arr = props.itemsUL;
 
-  return language === "en" ? (
+  return (
     <ul className={`customUL`}>
       {arr.map((item, index) => (
         <li
           key={`input-li-${index}`}
-          value={item.en.name}
+          value={language === "en" ? item.en.name : item.ru.name}
           className={`text-xs`}
           onClick={() => props.handleInputChoose(item)}
         >
-          {item.en.name}
-        </li>
-      ))}
-    </ul>
-  ) : (
-    <ul className={`customUL`}>
-      {arr.map((item, index) => (
-        <li
-          key={`input-li-${index}`}
-          value={item.ru.name}
-          className={`text-xs`}
-          onClick={() => props.handleInputChoose(item)}
-        >
-          {item.ru.name}
+          {language === "en" ? item.en.name : item.ru.name}
         </li>
       ))}
     </ul>

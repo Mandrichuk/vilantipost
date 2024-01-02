@@ -1,26 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialStateValue = {
-  fromWhere: "from",
-  toWhere: "to",
-  type: "envelope",
-  weigth: 0.5,
-  fromWhereInputError: false,
-  toWhereInputError: false,
+  departure: {},
+  destination: {},
+  weight: 0.5,
 }; 
 
 export const orderBoxSlice = createSlice({
   name: "orderBox",
   initialState: {
-    orderBoxInfo: initialStateValue,
+    orderBox: initialStateValue,
   },
   reducers: {
-    setOrderBoxInfo: (state, action) => {
-      state.orderBoxInfo = action.payload;
+    setOrderBoxData: (state, action) => {
+      state.orderBox = action.payload;
     },
   },
 });
 
 
-export const { setOrderBoxInfo } = orderBoxSlice.actions;
+export const { setOrderBoxData } = orderBoxSlice.actions;
 export default orderBoxSlice.reducer;
