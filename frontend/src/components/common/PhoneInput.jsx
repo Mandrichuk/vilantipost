@@ -56,16 +56,16 @@ function PhoneInput(props) {
   }
 
   return (
-    <div ref={customInputContainerRef} className={`phoneInputContainer flex flex-row mt-2.5`}>
+    <div ref={customInputContainerRef} className={`phoneInputContainer flex flex-row`}>
       <div>
         <div
           className={`customInputContainer w-[80px]`}
           onBlur={handleInputBlur}
         >
           <input
-            className={`customInput ${
+            className={`customInput numberInput ${
               isActive ? "active" : ""
-            } noneRoundedRight`}
+            } noneRoundedRight `}
             placeholder={language === "en" ? "Choose" : "Выберите"}
             value={input.number}
             onClick={handleInputChange}
@@ -77,7 +77,7 @@ function PhoneInput(props) {
         )}
       </div>
 
-      <div className={`inputBox ${props.marginTop ? "" : "noMargin"}`}>
+      <div className={`w-full inputBox ${props.marginTop ? "" : "noMargin"}`}>
         <input
           className={`noneRoundedLeft ${isActive ? "noneRoundedBottom" : ""}`}
           placeholder={chosenNumber}
@@ -85,7 +85,7 @@ function PhoneInput(props) {
           required={true}
           onChange={handleNumberInputChange}
         />
-        <span>{input && input.code}</span>
+        <span>{props.value}</span>
       </div>
     </div>
   );
@@ -101,7 +101,7 @@ const ListUL = (props) => {
         <li
           key={`input-li-${index}`}
           value={item.number}
-          className={`tinyText flex flex-row`}
+          className={`text-xs flex flex-row`}
           onClick={() => props.handleInputChoose(item)}
         >
           <div className={`w-[20px]`}>{item.flag}</div>

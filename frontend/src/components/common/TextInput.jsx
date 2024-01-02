@@ -16,7 +16,7 @@ function TextInput(props) {
         required={true}
         onChange={handleChange}
       />
-      <span>{props.title}</span>
+      <span>{props.value}</span>
     </div>
   );
 }

@@ -212,14 +212,13 @@ body {
   position: relative;
 }
 
-.customInput {
+.customInput,
+.numberInput {
   position: relative;
   width: 100%;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  color: var(--black-color);
-  background-color: var(--white-color);
   padding: 8px 10px;
   border-radius: 3px;
   font-size: 0.9rem;
@@ -227,11 +226,21 @@ body {
   border: var(--border-px) solid var(--custom-color-50);
 }
 
+.customInput {
+  color: var(--black-color);
+  background-color: var(--white-color);
+}
+
 .customInput.active {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   border: var(--border-px) solid var(--custom-color);
 }
+
+.numberInput {
+  color: var(--black-color);
+  background-color: var(--custom-color-400);
+} 
 
 .inputIcon {
   color: var(--black-color);

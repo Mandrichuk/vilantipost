@@ -81,6 +81,41 @@ export const homePage = {
   },
 };
 
+export const formPage = {
+  formFromClient: {
+    ru: {
+      formTitle: "Откуда",
+      informDetails: "Откуда (форма заполняется на английском)",
+      alertMessage: "*Все поля обязательны для заполнения",
+      numberInput: {value: "Телефон", type: "number", placeholder: "<номер>"},
+      textInputs: [
+        {value: "Отправитель", type: "text", placeholder: "Имя"},
+        {value: "Город", type: "text", placeholder: "Москва"},
+        {value: "<Страна>", type: "text", placeholder: "<Страна>", static: true},
+        {value: "Улица", type: "text", placeholder: "ул. Арбат"},
+        {value: "Номер дома", type: "text", placeholder: "150"},
+        {value: "Почтовый индекс", type: "number", placeholder: "1234567"},
+        {value: "Эл. почта отправителя", type: "email", placeholder: "email@gmail.com"},
+      ],
+    },
+    en: {
+      formTitle: "From",
+      informDetails: "From (form is filled on English)",
+      alertMessage: "*All fields are required",
+      numberInput: {value: "Phone", type: "number", placeholder: "<number>"},
+      textInputs: [
+        {value: "Sender", type: "text", placeholder: "Name"},
+        {value: "City", type: "text", placeholder: "Moscow"},
+        {value: "<Country>", type: "text", placeholder: "<Country>", static: true},
+        {value: "Street", type: "text", placeholder: "st. Arbat"},
+        {value: "House number", type: "text", placeholder: "150"},
+        {value: "ZIP code", type: "number", placeholder: "1234567"},
+        {value: "Sender's email", type: "email", placeholder: "email@gmail.com"},
+      ],
+    },
+  },
+};
+
 export const sidebar = {
   nav: [
     {
