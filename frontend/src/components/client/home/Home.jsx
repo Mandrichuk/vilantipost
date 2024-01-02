@@ -14,21 +14,65 @@ import { homePage } from "../../../constants/index";
 import images from "../../../constants/index";
 import { links } from "../../../constants/index";
 import useWindowWidth from "../../../utils/useWindowWidth";
+import { countryById } from "../../../features/countryById";
+
 
 const HomePage = () => {
   const language = useSelector((state) => state.language.language);
   const orderBoxInfo = homePage.orderBox;
   const wideScreen = 650;
-  const [fromWhere, setFromWhere] = useState("from");
+  const [fromWhere, setFromWhere] = useState("to");
   const windowWidth = useWindowWidth();
-  const [formData, setFormData] = useState({});
+  const RussiaData = countryById(2);
+  const [formData, setFormData] = useState({
+    departure: RussiaData,
+    destination: "",
+    type: "envelope",
+    weigth: 0.5,
+  });
 
-  function sendForm(form) {
-    return;
+  function submitForm() {
+    const formValid = isFormValid(formData);
+    console.log(formValid);
+    console.log(formData);
+  }
+
+  function isFormValid(formData) {
+    console.log(formData.departure)
+    if (formData.departure && formData.destination && formData.weigth && formData.departure != formData.destination) {
+      return true;
+    } 
+    return false;
+    
   }
 
   function handleFromWhereChange(e) {
     setFromWhere(e);
+  }
+
+  function handleFormDataChange(name, value) {
+    console.log(name, value);
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  }
+
+  function getCountry(value) {
+    switch (fromWhere) {
+      case "from":
+        handleFormDataChange("departure", value);
+        break;
+      case "to":
+        handleFormDataChange("destination", value);
+        break;
+      default:
+        break;
+    }
+  }
+
+  function getWeight(value) {
+    handleFormDataChange("weigth", value);
   }
 
   return (
@@ -55,8 +99,10 @@ const HomePage = () => {
               <div className={`${styles.firstSection} flex-1`}>
                 <div className={`${styles.fromWhereInputs} flex flex-col`}>
                   <button
-                    onClick={() => handleFromWhereChange("to")}
-                    className={`${
+                    onClick={() => {
+                      handleFromWhereChange("to");
+                      handleFormDataChange("departure", RussiaData);
+                    }}                    className={`${
                       fromWhere === "to" ? "selectedButton" : "button"
                     } flex-1 mb-3`}
                   >
@@ -65,7 +111,7 @@ const HomePage = () => {
                       : orderBoxInfo.ru.fromWhereInputs[0]}
                   </button>
                   <button
-                    onClick={() => handleFromWhereChange("from")}
+                    onClick={() => {handleFromWhereChange("from"); handleFormDataChange("destination", RussiaData);}}
                     className={`${
                       fromWhere === "from" ? "selectedButton" : "button"
                     } flex-1 mb-3`}
@@ -84,7 +130,7 @@ const HomePage = () => {
                           ? orderBoxInfo.en.fromInput
                           : orderBoxInfo.ru.fromInput}
                       </div>
-                      <ChoiseInput arr={countries} />
+                      <ChoiseInput arr={countries}  getCountry={getCountry} />
                     </div>
                   ) : (
                     <div>
@@ -93,7 +139,7 @@ const HomePage = () => {
                           ? orderBoxInfo.en.toInput
                           : orderBoxInfo.ru.toInput}
                       </div>
-                      <ChoiseInput arr={countries} />
+                      <ChoiseInput arr={countries}  getCountry={getCountry} />
                     </div>
                   )}
                 </div>
@@ -141,6 +187,7 @@ const HomePage = () => {
                         (language === "en" ? orderBoxInfo.en : orderBoxInfo.ru)
                           ?.amountVariants || []
                       }
+                      getData={getWeight}
                     />
                   </div>
                 </div>
@@ -150,9 +197,11 @@ const HomePage = () => {
             <div className={`separator my-4`} />
 
             <div className={`flex flex-row items-center justify-center`}>
-              <Link to={links.sendForm} className={`w-[260px]`}>
+              <Link 
+                // to={links.sendForm}
+               className={`w-[260px]`}>
                 <button
-                  to={links.sendForm}
+                  onClick={() => submitForm()}
                   className={`flex-1 mb-3 regularButton`}
                 >
                   {language === "en"

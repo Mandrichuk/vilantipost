@@ -32,8 +32,7 @@ export default {
 export const links = {
   home: "/",
   sendForm: "/sendform",
-
-}
+};
 
 export const homePage = {
   orderBox: {
@@ -164,6 +163,7 @@ export const sidebar = {
 
 export const countries = [
   {
+    id: 1,
     ru: {
       name: "Украина",
     },
@@ -176,6 +176,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 2,
     ru: {
       name: "Россия",
     },
@@ -188,6 +189,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyyy",
   },
   {
+    id: 3,
     ru: {
       name: "Польша",
     },
@@ -200,6 +202,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 4,
     ru: {
       name: "Словацкая Республика",
     },
@@ -212,6 +215,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 5,
     ru: {
       name: "Австралия",
     },
@@ -224,6 +228,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 6,
     ru: {
       name: "Австрия",
     },
@@ -236,6 +241,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 7,
     ru: {
       name: "Азербайджан",
     },
@@ -248,6 +254,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 8,
     ru: {
       name: "Азорские острова",
     },
@@ -260,6 +267,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 9,
     ru: {
       name: "Албания",
     },
@@ -272,6 +280,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 10,
     ru: {
       name: "Алжир",
     },
@@ -284,18 +293,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
-    ru: {
-      name: "Американские острова Самоа",
-    },
-    en: {
-      name: "American Samoa",
-    },
-    code: "AS",
-    number: "+1",
-    flag: "🇦🇸",
-    exampleNumber: "xxx yyyyyyy",
-  },
-  {
+    id: 11,
     ru: {
       name: "Ангилья",
     },
@@ -308,6 +306,7 @@ export const countries = [
     exampleNumber: "xxx yyyyyyy",
   },
   {
+    id: 12,
     ru: {
       name: "Ангола",
     },
@@ -320,6 +319,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 13,
     ru: {
       name: "Андорра",
     },
@@ -332,6 +332,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 14,
     ru: {
       name: "Антигуа и Барбуда",
     },
@@ -344,6 +345,7 @@ export const countries = [
     exampleNumber: "xxx yyyyyyy",
   },
   {
+    id: 15,
     ru: {
       name: "Аргентина",
     },
@@ -356,6 +358,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 16,
     ru: {
       name: "Аруба",
     },
@@ -368,6 +371,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 17,
     ru: {
       name: "Афганистан",
     },
@@ -380,6 +384,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 18,
     ru: {
       name: "Багамы",
     },
@@ -392,6 +397,7 @@ export const countries = [
     exampleNumber: "xxx yyyyyyy",
   },
   {
+    id: 19,
     ru: {
       name: "Бангладеш",
     },
@@ -404,6 +410,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 20,
     ru: {
       name: "Барбадос",
     },
@@ -416,6 +423,7 @@ export const countries = [
     exampleNumber: "xxx yyyyyyy",
   },
   {
+    id: 21,
     ru: {
       name: "Бахрейн",
     },
@@ -428,6 +436,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 22,
     ru: {
       name: "Белиз",
     },
@@ -440,6 +449,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 23,
     ru: {
       name: "Бельгия",
     },
@@ -452,6 +462,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 24,
     ru: {
       name: "Бенин",
     },
@@ -464,6 +475,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 25,
     ru: {
       name: "Бермуда",
     },
@@ -476,6 +488,7 @@ export const countries = [
     exampleNumber: "xxx yyyyyyy",
   },
   {
+    id: 26,
     ru: {
       name: "Болгария",
     },
@@ -488,6 +501,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 27,
     ru: {
       name: "Боливия",
     },
@@ -500,6 +514,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 28,
     ru: {
       name: "Бонайре",
     },
@@ -512,6 +527,7 @@ export const countries = [
     exampleNumber: "xxx yyyyyyy",
   },
   {
+    id: 29,
     ru: {
       name: "Босния и Герцеговина",
     },
@@ -524,6 +540,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 30,
     ru: {
       name: "Ботсвана",
     },
@@ -536,6 +553,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 31,
     ru: {
       name: "Бразилия",
     },
@@ -548,6 +566,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 32,
     ru: {
       name: "Британские Виргинские острова",
     },
@@ -560,6 +579,7 @@ export const countries = [
     exampleNumber: "xxx yyyyyyy",
   },
   {
+    id: 33,
     ru: {
       name: "Бруней",
     },
@@ -572,6 +592,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 34,
     ru: {
       name: "Буркина-Фасо",
     },
@@ -584,6 +605,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 35,
     ru: {
       name: "Бурунди",
     },
@@ -596,6 +618,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 36,
     ru: {
       name: "Бутан",
     },
@@ -607,9 +630,8 @@ export const countries = [
     flag: "🇧🇹",
     exampleNumber: "xx yyyyyyy",
   },
-  // ... (Previous entries)
-
   {
+    id: 37,
     ru: {
       name: "Сейшельские острова",
     },
@@ -622,6 +644,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 38,
     ru: {
       name: "Сенегал",
     },
@@ -634,6 +657,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 39,
     ru: {
       name: "Сербия",
     },
@@ -646,6 +670,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 40,
     ru: {
       name: "Сеута",
     },
@@ -658,6 +683,7 @@ export const countries = [
     exampleNumber: "xxx yyyyyyy",
   },
   {
+    id: 41,
     ru: {
       name: "Сингапур",
     },
@@ -670,6 +696,7 @@ export const countries = [
     exampleNumber: "xxxx yyyyyyy",
   },
   {
+    id: 42,
     ru: {
       name: "Сирия",
     },
@@ -682,6 +709,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 43,
     ru: {
       name: "Словения",
     },
@@ -694,6 +722,7 @@ export const countries = [
     exampleNumber: "xx yyyyyy",
   },
   {
+    id: 44,
     ru: {
       name: "Соломоновы острова",
     },
@@ -706,6 +735,7 @@ export const countries = [
     exampleNumber: "xxx yyyyy",
   },
   {
+    id: 45,
     ru: {
       name: "Сомали",
     },
@@ -718,6 +748,7 @@ export const countries = [
     exampleNumber: "xx yyyyyy",
   },
   {
+    id: 46,
     ru: {
       name: "Восточный Тимор",
     },
@@ -730,6 +761,7 @@ export const countries = [
     exampleNumber: "xxx yyyyyy",
   },
   {
+    id: 47,
     ru: {
       name: "США (Соединенные Штаты Америки)",
     },
@@ -742,6 +774,7 @@ export const countries = [
     exampleNumber: "(xxx) yyy-yyyy",
   },
   {
+    id: 48,
     ru: {
       name: "Сьерра-Леоне",
     },
@@ -754,6 +787,7 @@ export const countries = [
     exampleNumber: "xx yyyyyy",
   },
   {
+    id: 49,
     ru: {
       name: "Таджикистан",
     },
@@ -766,6 +800,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 50,
     ru: {
       name: "Таиланд",
     },
@@ -778,6 +813,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 51,
     ru: {
       name: "Тайвань",
     },
@@ -790,6 +826,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 52,
     ru: {
       name: "Танзания",
     },
@@ -802,6 +839,7 @@ export const countries = [
     exampleNumber: "xx yyyyyy",
   },
   {
+    id: 53,
     ru: {
       name: "Теркс и Кайкос, острова",
     },
@@ -814,6 +852,7 @@ export const countries = [
     exampleNumber: "(xxx) yyy-yyyy",
   },
   {
+    id: 54,
     ru: {
       name: "Того",
     },
@@ -826,6 +865,7 @@ export const countries = [
     exampleNumber: "xx yyyyyy",
   },
   {
+    id: 55,
     ru: {
       name: "Тонга",
     },
@@ -838,6 +878,7 @@ export const countries = [
     exampleNumber: "xxx yyy",
   },
   {
+    id: 56,
     ru: {
       name: "Тринидад и Тобаго",
     },
@@ -850,6 +891,7 @@ export const countries = [
     exampleNumber: "(xxx) yyy-yyyy",
   },
   {
+    id: 57,
     ru: {
       name: "Тувалу",
     },
@@ -862,6 +904,7 @@ export const countries = [
     exampleNumber: "xxx yyy",
   },
   {
+    id: 58,
     ru: {
       name: "Тунис",
     },
@@ -874,6 +917,7 @@ export const countries = [
     exampleNumber: "xx yyyyyy",
   },
   {
+    id: 59,
     ru: {
       name: "Турция",
     },
@@ -886,6 +930,7 @@ export const countries = [
     exampleNumber: "xxx yyyyyy",
   },
   {
+    id: 60,
     ru: {
       name: "Туркменистан",
     },
@@ -898,6 +943,7 @@ export const countries = [
     exampleNumber: "xx yyyyyy",
   },
   {
+    id: 61,
     ru: {
       name: "Уганда",
     },
@@ -910,6 +956,7 @@ export const countries = [
     exampleNumber: "xx yyyyyy",
   },
   {
+    id: 62,
     ru: {
       name: "Венгрия",
     },
@@ -922,6 +969,7 @@ export const countries = [
     exampleNumber: "xx yyyyyy",
   },
   {
+    id: 63,
     ru: {
       name: "Узбекистан",
     },
@@ -934,6 +982,7 @@ export const countries = [
     exampleNumber: "xx yyyyyy",
   },
   {
+    id: 64,
     ru: {
       name: "Уоллис и Футуна острова",
     },
@@ -946,6 +995,7 @@ export const countries = [
     exampleNumber: "xx xx xx",
   },
   {
+    id: 65,
     ru: {
       name: "Уругвай",
     },
@@ -958,6 +1008,7 @@ export const countries = [
     exampleNumber: "xx yyyyyy",
   },
   {
+    id: 66,
     ru: {
       name: "Фиджи",
     },
@@ -970,6 +1021,7 @@ export const countries = [
     exampleNumber: "xxx yy yy",
   },
   {
+    id: 67,
     ru: {
       name: "Филиппины",
     },
@@ -982,6 +1034,7 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 68,
     ru: {
       name: "Финляндия",
     },
@@ -994,6 +1047,7 @@ export const countries = [
     exampleNumber: "xx yyy yyy",
   },
   {
+    id: 69,
     ru: {
       name: "Франция",
     },
@@ -1006,6 +1060,7 @@ export const countries = [
     exampleNumber: "xx xx xx xx",
   },
   {
+    id: 70,
     ru: {
       name: "Французская Гайана",
     },
@@ -1018,6 +1073,7 @@ export const countries = [
     exampleNumber: "xx xx xx xx",
   },
   {
+    id: 71,
     ru: {
       name: "Французская Полинезия",
     },
@@ -1030,6 +1086,7 @@ export const countries = [
     exampleNumber: "xx xx xx",
   },
   {
+    id: 72,
     ru: {
       name: "Хорватия",
     },
@@ -1042,6 +1099,7 @@ export const countries = [
     exampleNumber: "xx yyyyyy",
   },
   {
+    id: 73,
     ru: {
       name: "Центральноафриканская Республика",
     },
@@ -1054,6 +1112,7 @@ export const countries = [
     exampleNumber: "xx xx xx xx",
   },
   {
+    id: 74,
     ru: {
       name: "Чад",
     },
@@ -1066,6 +1125,7 @@ export const countries = [
     exampleNumber: "xx xx xx xx",
   },
   {
+    id: 75,
     ru: {
       name: "Чехия",
     },
@@ -1077,8 +1137,8 @@ export const countries = [
     flag: "🇨🇿",
     exampleNumber: "xxx xxx xxx",
   },
-
   {
+    id: 76,
     ru: {
       name: "Чили",
     },
@@ -1091,6 +1151,7 @@ export const countries = [
     exampleNumber: "9 xxxx xxxx",
   },
   {
+    id: 77,
     ru: {
       name: "Черногория",
     },
@@ -1103,6 +1164,7 @@ export const countries = [
     exampleNumber: "6x xxx xxx",
   },
   {
+    id: 78,
     ru: {
       name: "Швейцария",
     },
@@ -1115,6 +1177,7 @@ export const countries = [
     exampleNumber: "0xx xxx xx xx",
   },
   {
+    id: 79,
     ru: {
       name: "Швеция",
     },
@@ -1127,6 +1190,7 @@ export const countries = [
     exampleNumber: "07x-xxx xx xx",
   },
   {
+    id: 80,
     ru: {
       name: "Шри-Ланка",
     },
@@ -1139,6 +1203,7 @@ export const countries = [
     exampleNumber: "07x xxx xxxx",
   },
   {
+    id: 81,
     ru: {
       name: "Ямайка",
     },
@@ -1151,6 +1216,7 @@ export const countries = [
     exampleNumber: "(876) xxx-xxxx",
   },
   {
+    id: 82,
     ru: {
       name: "Япония",
     },

@@ -40,8 +40,10 @@ const ChoiseInput = (props) => {
   }
 
   function handleInputChoose(newInput) {
-    setInput(newInput);
+    if (language === "en") setInput(newInput.en.name);
+    if (language === "ru") setInput(newInput.ru.name);
     handleInputBlur();
+    props.getCountry(newInput); 
   }
 
   function handleInputBlur() {
@@ -84,7 +86,7 @@ const ListUL = (props) => {
           key={`input-li-${index}`}
           value={item.en.name}
           className={`text-xs`}
-          onClick={() => props.handleInputChoose(item.en.name)}
+          onClick={() => props.handleInputChoose(item)}
         >
           {item.en.name}
         </li>
@@ -97,7 +99,7 @@ const ListUL = (props) => {
           key={`input-li-${index}`}
           value={item.ru.name}
           className={`text-xs`}
-          onClick={() => props.handleInputChoose(item.ru.name)}
+          onClick={() => props.handleInputChoose(item)}
         >
           {item.ru.name}
         </li>

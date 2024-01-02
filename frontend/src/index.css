@@ -285,7 +285,7 @@ body {
 
 .button {
   background-color: var(--white-color);
-  color: var(--black-color);
+  color: rgb(82, 82, 82);
 }
 
 .infoContainer {
@@ -373,16 +373,16 @@ body {
   }
 
   .titleText {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
   }
 
   .labelText {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 
   .articleText,
   .linkText {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 
   .customInput {
