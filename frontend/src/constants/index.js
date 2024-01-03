@@ -85,11 +85,11 @@ export const formPage = {
   formFromClient: {
     ru: {
       formTitle: "Откуда",
-      informDetails: "Откуда (форма заполняется на английском)",
+      informDetails: "(форма заполняется на английском)",
       alertMessage: "*Все поля обязательны для заполнения",
       numberInput: {value: "Телефон", type: "number", placeholder: "<номер>"},
       textInputs: [
-        {value: "Отправитель", type: "text", placeholder: "Имя"},
+        {value: "Отправитель", type: "text", placeholder: "ФИО"},
         {value: "Город", type: "text", placeholder: "Москва"},
         {value: "<Страна>", type: "text", placeholder: "<Страна>", static: true},
         {value: "Улица", type: "text", placeholder: "ул. Арбат"},
@@ -97,14 +97,15 @@ export const formPage = {
         {value: "Почтовый индекс", type: "number", placeholder: "1234567"},
         {value: "Эл. почта отправителя", type: "email", placeholder: "email@gmail.com"},
       ],
+      submitButton: "Продолжить"
     },
     en: {
-      formTitle: "From",
-      informDetails: "From (form is filled on English)",
+      formTitle: "Where from",
+      informDetails: "(form is filled in English)",
       alertMessage: "*All fields are required",
       numberInput: {value: "Phone", type: "number", placeholder: "<number>"},
       textInputs: [
-        {value: "Sender", type: "text", placeholder: "Name"},
+        {value: "Sender", type: "text", placeholder: "FIO"},
         {value: "City", type: "text", placeholder: "Moscow"},
         {value: "<Country>", type: "text", placeholder: "<Country>", static: true},
         {value: "Street", type: "text", placeholder: "st. Arbat"},
@@ -112,6 +113,41 @@ export const formPage = {
         {value: "ZIP code", type: "number", placeholder: "1234567"},
         {value: "Sender's email", type: "email", placeholder: "email@gmail.com"},
       ],
+      submitButton: "Continue"
+    },
+  },
+  formToClient: {
+    ru: {
+      formTitle: "Куда",
+      informDetails: "(форма заполняется на английском)",
+      alertMessage: "*Все поля обязательны для заполнения",
+      numberInput: {value: "Телефон", type: "number", placeholder: "<номер>"},
+      textInputs: [
+        {value: "Отримувач", type: "text", placeholder: "ФИО"},
+        {value: "Город", type: "text", placeholder: "Москва"},
+        {value: "<Страна>", type: "text", placeholder: "<Страна>", static: true},
+        {value: "Улица", type: "text", placeholder: "ул. Арбат"},
+        {value: "Номер дома", type: "text", placeholder: "150"},
+        {value: "Почтовый индекс", type: "number", placeholder: "1234567"},
+        {value: "Эл. почта отримувача", type: "email", placeholder: "email@gmail.com"},
+      ],
+      submitButton: "Продолжить"
+    },
+    en: {
+      formTitle: "Where to",
+      informDetails: "(form is filled in English)",
+      alertMessage: "*All fields are required",
+      numberInput: {value: "Phone", type: "number", placeholder: "<number>"},
+      textInputs: [
+        {value: "Sender", type: "text", placeholder: "FIO"},
+        {value: "City", type: "text", placeholder: "Moscow"},
+        {value: "<Country>", type: "text", placeholder: "<Country>", static: true},
+        {value: "Street", type: "text", placeholder: "st. Arbat"},
+        {value: "House number", type: "text", placeholder: "150"},
+        {value: "ZIP code", type: "number", placeholder: "1234567"},
+        {value: "Sender's email", type: "email", placeholder: "email@gmail.com"},
+      ],
+      submitButton: "Continue"
     },
   },
 };

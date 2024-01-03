@@ -1,19 +1,23 @@
-.fromClientContainer {
+.formClientContainer {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 15px;
   row-gap: 20px;
-  border-radius: 0.75rem;
+  /* border-radius: 0.75rem; */
+}
+
+.formClientTitle {
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 @media (min-width: 650px) {
-  .fromClientContainer {
+  .formClientContainer {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1024px) {
-  .fromClientContainer {
+  .formClientContainer {
     grid-template-columns: repeat(3, 1fr);
   }
 }

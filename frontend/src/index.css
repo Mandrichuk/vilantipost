@@ -35,7 +35,7 @@
   --custom-color-800: rgb(65, 144, 136);
   --custom-color-900: rgb(54, 119, 111);
 
-  --btn-text: 0.9rem;
+  --btn-text: 1rem;
   --border-px: 1px;
   --transition-time: 300ms;
 }
@@ -87,20 +87,16 @@ body {
 }
 
 .titleText {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .labelText {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 
 .articleText,
 .linkText {
-  font-size: 0.7rem;
-}
-
-.articleText {
-  color: var(--article-color);
+  font-size: 1rem;
 }
 
 .linkText {
@@ -271,7 +267,8 @@ body {
 
 .button,
 .selectedButton,
-.regularButton {
+.regularButton,
+.darkerButton {
   width: 100%;
   height: 50px;
   font-weight: bold;
@@ -282,9 +279,20 @@ body {
   transition: background-color var(--transition-time) ease-in-out, color var(--transition-time) ease-in-out;
 }
 
+.darkerButton {
+  color: var(--custom-color);
+  background-color: var(--dark-gray-color-700);
+  transition: all 300ms;
+}
+
+.darkerButton:hover {
+  color: var(--custom-color-300);
+  background-color: var(--dark-gray-color-400);
+}
+
 .regularButton {
-  background-color: var(--custom-color);
   color: var(--white-color);
+  background-color: var(--custom-color);
 }
 
 .selectedButton {
@@ -386,18 +394,17 @@ body {
   }
 
   .labelText {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 
   .articleText,
   .linkText {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
   }
 
   .customInput {
     font-size: 1rem;
   }
-
 }
 
 @media (min-width: 1200px) {
