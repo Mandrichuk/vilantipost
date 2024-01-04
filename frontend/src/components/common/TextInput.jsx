@@ -1,16 +1,18 @@
 import React, { useState } from "react";
+import onlyEnLetters from "../../utils/onlyEnLetters"; 
 
 function TextInput(props) {
   const [input, setInput] = useState("");
 
   function handleChange(e) {
-    let inputValue = e.target.value;
+    let inputValue = onlyEnLetters(e.target.value);
     setInput(inputValue);
   }
 
   return (
     <div className={`inputBox ${props.marginTop ? "" : "noMargin"}`}>
       <input
+        type={props.type}
         placeholder={props.placeholder}
         value={input}
         required={true}

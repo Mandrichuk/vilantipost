@@ -7,12 +7,13 @@ import numericInput from "../../utils/numericInput";
 function PhoneInput(props) {
   const language = useSelector((state) => state.language.language);
   const customInputContainerRef = useRef(null);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(props.initailNumber || "");
   const [isActive, setIsActive] = useState(false);
   const [countries, setCountries] = useState(props.arr);
   const [numberInput, setNumberInput] = useState("");
   const [chosenNumber, setChosenNumber] = useState(countries[0].exampleNumber);
   const chosenNumberLen = chosenNumber.replace(/\s/g, "").length;
+
 
   useEffect(() => {
     const foundItem = countries.find((item) => item.number === input);

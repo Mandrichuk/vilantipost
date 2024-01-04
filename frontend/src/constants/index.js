@@ -90,9 +90,9 @@ export const formPage = {
       numberInput: { value: "Телефон", type: "number", placeholder: "<номер>" },
       countryName: { value: "Страна" },
       textInputs: [
-        { value: "Отправитель", type: "text", placeholder: "ФИО" },
-        { value: "Город", type: "text", placeholder: "Москва" },
-        { value: "Улица", type: "text", placeholder: "ул. Арбат" },
+        { value: "Отправитель", type: "text", placeholder: "FIO" },
+        { value: "Город", type: "text", placeholder: "Moscow" },
+        { value: "Улица", type: "text", placeholder: "st. Arbat" },
         { value: "Номер дома", type: "text", placeholder: "150" },
         { value: "Почтовый индекс", type: "number", placeholder: "1234567" },
         {
@@ -132,9 +132,9 @@ export const formPage = {
       numberInput: { value: "Телефон", type: "number", placeholder: "<номер>" },
       countryName: { value: "Страна" },
       textInputs: [
-        { value: "Получатель", type: "text", placeholder: "ФИО" },
-        { value: "Город", type: "text", placeholder: "Москва" },
-        { value: "Улица", type: "text", placeholder: "ул. Арбат" },
+        { value: "Получатель", type: "text", placeholder: "FIO" },
+        { value: "Город", type: "text", placeholder: "Moscow" },
+        { value: "Улица", type: "text", placeholder: "st. Arbat" },
         { value: "Номер дома", type: "text", placeholder: "150" },
         { value: "Почтовый индекс", type: "number", placeholder: "1234567" },
         {
@@ -277,19 +277,6 @@ export const countries = [
     number: "+380",
     flag: "🇺🇦",
     exampleNumber: "xx yyyyyyy",
-  },
-  {
-    id: 2,
-    ru: {
-      name: "Россия",
-    },
-    en: {
-      name: "Russia",
-    },
-    code: "RU",
-    number: "+7",
-    flag: "🇷🇺",
-    exampleNumber: "xx yyyyyyyy",
   },
   {
     id: 3,
