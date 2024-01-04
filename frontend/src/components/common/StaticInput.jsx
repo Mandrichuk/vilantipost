@@ -7,7 +7,7 @@ function TextInput(props) {
     <div className={`inputBox ${props.marginTop ? "" : "noMargin"}`}>
       <input
         placeholder={props.placeholder}
-        className={`placeholder-black font-bold`}
+        className={`placeholder-dark-gray-color-600 font-bold`}
         readOnly 
       />
       <span>{props.value}</span>

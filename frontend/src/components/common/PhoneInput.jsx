@@ -32,6 +32,10 @@ function PhoneInput(props) {
     }
   }, [isActive]);
 
+  useEffect(() => {
+    setNumberInput("");
+  }, [input]);
+
   function handleInputChange(e) {
     setIsActive(true);
   }

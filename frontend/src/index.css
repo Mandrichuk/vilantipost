@@ -53,6 +53,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: var(--dark-gray-color-600);
 }
 
 #root {
@@ -373,6 +374,10 @@ body {
 @media (min-width: 500px) {
   :root {
     --btn-text: 1rem;
+  }
+
+  .titleText {
+    font-size: 2rem;
   }
 
   .wrapper {

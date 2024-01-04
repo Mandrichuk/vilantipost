@@ -1,24 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux"; 
+import { useSelector, useDispatch } from "react-redux"; 
 import styles from "./home.module.css";
-import Payment from "../payment/Payment";
 import RadioButtons from "../../common/RadioButtons";
 import ChoiseInput from "../../common/ChoiseInput";
-import { countries, sidebar } from "../../../constants/index";
+import { countries } from "../../../constants/index";
 import ImgTitleContainer from "../../common/ImgTitleContainer";
-import TextInput from "../../common/TextInput";
-import PhoneInput from "../../common/PhoneInput";
 import Sidebar from "../../common/sidebar/Sidebar";
 import { homePage } from "../../../constants/index";
 import images from "../../../constants/index";
 import { links } from "../../../constants/index";
 import useWindowWidth from "../../../utils/useWindowWidth";
-import { countryById } from "../../../utils/countryById";
-import { useDispatch } from "react-redux";
 import { setOrderBoxData } from "../../../features/orderBox";
 import { RussiaData } from "../../../constants/index";
+import { annulData } from "../../../features/orderBox";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -34,6 +30,10 @@ const HomePage = () => {
     weight: 0.5,
   });
   const [inputError, setInputError] = useState(false);
+
+  useEffect(() => {
+    dispatch(annulData());
+  }, []);
 
   function submitForm() {
     const formValid = isFormValid(formData);

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import styles from "./form.module.css";
 import PhoneInput from "../../common/PhoneInput";
@@ -12,6 +13,7 @@ import {
 } from "react-icons/tb";
 import useWindowWidth from "../../../utils/useWindowWidth";
 import StaticInput from "../../common/StaticInput";
+import images from "../../../constants/index";
 
 function Form() {
   const orderBox = useSelector((state) => state.orderBox.orderBox);
@@ -30,7 +32,7 @@ function Form() {
   const departureCountry = orderBox.departure;
   const destinationCountry = orderBox.destination;
   const [openFromForm, setOpenFromForm] = React.useState(true);
-  const [openToForm, setOpenToForm] = React.useState(true);
+  const [openToForm, setOpenToForm] = React.useState(false);
 
   return (
     <div
@@ -39,6 +41,37 @@ function Form() {
       <Sidebar />
       <div className={`wrapper`}>
         <div className={`${styles.form} w-full`}>
+          <div
+            className={`${styles.formIntroduction} w-full flex flex-col items-center justify-center font-bold text-[1rem]`}
+          >
+            <div className={`titleText`}>
+              {language === "en" ? formPage.en.title : formPage.ru.title}
+            </div>
+            <div
+              className={`bg-[#419088] text-white w-full rounded-md noneRoundedBottom p-5 flex flex-row items-center justify-center mt-[30px]`}
+            >
+              <img
+                className={`max-h-[70px] object-cover mr-5`}
+                src={images.envelope}
+              />
+              <div
+                className={`h-[70px] flex flex-col justify-center`}
+              >
+                <div className={`mb-1`}>
+                  {language === "en"
+                    ? formPage.en.envelopeText
+                    : formPage.ru.envelopeText}
+                  ({orderBox.weight}
+                  {language === "en" ? "kg" : "кг"})
+                </div>
+                <div>
+                  {language === "en"
+                    ? formPage.en.totalPrice
+                    : formPage.ru.totalPrice}
+                </div>
+              </div>
+            </div>
+          </div>
           <form className={`${styles.formClientInfo} mb-6`}>
             <div
               className={`${styles.formClientTitle} text-custom-color-700 font-bold labelText p-3 mb-5 w-full flex flex-row items-center`}

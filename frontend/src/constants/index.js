@@ -82,6 +82,16 @@ export const homePage = {
 };
 
 export const formPage = {
+  ru: {
+    title: "Заполнение формы",
+    envelopeText: "Документы ",
+    totalPrice: "Итого: 5000₽",
+  },
+  en: {
+    title: "Form filling",
+    envelopeText: "Documents ",
+    totalPrice: "Total: 60€",
+  },
   formFromClient: {
     ru: {
       formTitle: "Откуда",

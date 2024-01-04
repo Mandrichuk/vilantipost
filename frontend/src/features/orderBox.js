@@ -15,9 +15,12 @@ export const orderBoxSlice = createSlice({
     setOrderBoxData: (state, action) => {
       state.orderBox = action.payload;
     },
+    annulData: (state) => {
+      state.orderBox = initialStateValue;
+    }
   },
 });
 
 
-export const { setOrderBoxData } = orderBoxSlice.actions;
+export const { setOrderBoxData, annulData } = orderBoxSlice.actions;
 export default orderBoxSlice.reducer;
