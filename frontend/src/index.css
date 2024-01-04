@@ -217,7 +217,7 @@ body {
   -moz-appearance: none;
   padding: 8px 10px;
   border-radius: 3px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   outline: none;
   border: var(--border-px) solid var(--custom-color-50);
 }
@@ -312,6 +312,36 @@ body {
   border-radius: 6px;
 }
 
+.staticInputBox {
+  position: relative;
+  margin-top: 10px;
+}
+
+.inputBox div {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 3px;
+  border: var(--border-px) solid var(--custom-color-200);
+  outline: none;
+  font-size: 1rem;
+  background-color: var(--custom-color-100);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+}
+
+.inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  font-size: var(--btn-text);
+  transition: var(--transition-time);
+  color: var(--extra-color-hover);
+}
+
+
 .inputBox {
   position: relative;
   margin-top: 10px;
@@ -400,10 +430,6 @@ body {
   .articleText,
   .linkText {
     font-size: 1.1rem;
-  }
-
-  .customInput {
-    font-size: 1rem;
   }
 }
 

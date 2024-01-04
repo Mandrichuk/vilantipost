@@ -16,7 +16,7 @@ function TextInput(props) {
         required={true}
         onChange={handleChange}
       />
-      <span>{props.value}</span>
+      <span>{props.value && typeof props.value === "object" ? JSON.stringify(props.value) : props.value}</span>
     </div>
   );
 }

@@ -48,7 +48,8 @@ const ChoiseInput = (props) => {
   }
 
   function handleInputChoose(selectedItem) {
-    const selectedName = language === "en" ? selectedItem.en.name : selectedItem.ru.name;
+    const selectedName =
+      language === "en" ? selectedItem.en.name : selectedItem.ru.name;
     setSelectedCountry(selectedItem);
     setInput(selectedName);
     setIsActive(false);
@@ -62,7 +63,9 @@ const ChoiseInput = (props) => {
         ref={customInputContainerRef}
       >
         <input
-          className={`customInput ${isActive ? "active" : ""} ${props.error ? "errorBorder" : ""}`}
+          className={`customInput ${isActive ? "active" : ""} ${
+            props.error ? "errorBorder" : ""
+          }`}
           placeholder={language === "en" ? "Choose" : "Выберите"}
           value={input}
           onChange={handleInputChange}
@@ -72,7 +75,9 @@ const ChoiseInput = (props) => {
       {isActive && (
         <ListUL itemsUL={countries} handleInputChoose={handleInputChoose} />
       )}
-      {props.error && <span className={`tinyText text-[#fc3535]`}>{props.errorMessage}</span>}
+      {props.error && (
+        <span className={`tinyText text-[#fc3535]`}>{props.errorMessage}</span>
+      )}
     </div>
   );
 };
@@ -83,16 +88,20 @@ const ListUL = (props) => {
 
   return (
     <ul className={`customUL`}>
-      {arr.map((item, index) => (
-        <li
-          key={`input-li-${index}`}
-          value={language === "en" ? item.en.name : item.ru.name}
-          className={`text-xs`}
-          onClick={() => props.handleInputChoose(item)}
-        >
-          {language === "en" ? item.en.name : item.ru.name}
-        </li>
-      ))}
+      {arr.map((item, index) => {
+        if (item.ru.name !== "Россия" && item.en.name !== "Russia") {
+          return (
+            <li
+              key={`input-li-${index}`}
+              value={language === "en" ? item.en.name : item.ru.name}
+              className={`text-xs`}
+              onClick={() => props.handleInputChoose(item)}
+            >
+              {language === "en" ? item.en.name : item.ru.name}
+            </li>
+          );
+        }
+      })}
     </ul>
   );
 };
