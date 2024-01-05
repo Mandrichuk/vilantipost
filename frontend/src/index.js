@@ -7,13 +7,14 @@ import { configureStore } from '@reduxjs/toolkit';
 import languageReducer from './features/language';
 import darkThemeReducer from './features/darkTheme';
 import orderBoxReducer from './features/orderBox';
-
+import formsClientReducer from './features/formsClient';
 
 const store = configureStore({
   reducer: {
     language: languageReducer,
     darkTheme: darkThemeReducer,
     orderBox: orderBoxReducer,
+    formsClient: formsClientReducer,
   },
 });
 

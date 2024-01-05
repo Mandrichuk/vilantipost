@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import styles from "./form.module.css";
@@ -14,6 +14,7 @@ import {
 import useWindowWidth from "../../../utils/useWindowWidth";
 import StaticInput from "../../common/StaticInput";
 import images from "../../../constants/index";
+import isObjNotEmpty from "../../../utils/isObjNotEmpty";
 
 function Form() {
   const orderBox = useSelector((state) => state.orderBox.orderBox);
@@ -33,6 +34,73 @@ function Form() {
   const destinationCountry = orderBox.destination;
   const [openFromForm, setOpenFromForm] = React.useState(true);
   const [openToForm, setOpenToForm] = React.useState(false);
+  const [notFullfilledError, setNotFullfilledError] = useState(false);
+
+  const [fromFormData, setFromFormData] = React.useState({
+    sender: "",
+    country: departureCountry,
+    city: "",
+    street: "",
+    houseNumber: "",
+    zipCode: "",
+    email: "",
+    phoneNumber: "",
+  });
+  
+  const [toFormData, setToFormData] = React.useState({
+    sender: "",
+    country: departureCountry,
+    city: "",
+    street: "",
+    houseNumber: "",
+    zipCode: "",
+    email: "",
+    phoneNumber: "",
+  });
+
+  const handleFormFromDataChange = (field, value) => {
+    setFromFormData((prevData) => ({ ...prevData, [field]: value }));
+  };
+
+  const handleFormToDataChange = (field, value) => {
+    setFromFormData((prevData) => ({ ...prevData, [field]: value }));
+  };
+
+  function submitFromForm() {
+    if (isFormValid(fromFormData)) {
+      setOpenFromForm(false);
+      setOpenToForm(true);
+    }
+  }
+
+  function submitToForm() {
+    if (isFormValid(toFormData)) {
+      setOpenFromForm(false);
+      setOpenToForm(false);
+    }
+  }
+
+  function isFormValid(fromFormData) {
+    const { sender, city, street, houseNumber, zipCode, email, phoneNumber } =
+      fromFormData;
+
+    let isValid = false;
+    if (
+      sender &&
+      city &&
+      street &&
+      houseNumber &&
+      zipCode &&
+      email &&
+      phoneNumber &&
+      phoneNumber.length >= 7
+    ) {
+      isValid = true;
+    }
+
+    setNotFullfilledError(!isValid);
+    return isValid;
+  }
 
   return (
     <div
@@ -54,9 +122,7 @@ function Form() {
                 className={`max-h-[70px] object-cover mr-5`}
                 src={images.envelope}
               />
-              <div
-                className={`h-[70px] flex flex-col justify-center`}
-              >
+              <div className={`h-[70px] flex flex-col justify-center`}>
                 <div className={`mb-1`}>
                   {language === "en"
                     ? formPage.en.envelopeText
@@ -74,7 +140,7 @@ function Form() {
           </div>
           <form className={`${styles.formClientInfo} mb-6`}>
             <div
-              className={`${styles.formClientTitle} text-custom-color-700 font-bold labelText p-3 mb-5 w-full flex flex-row items-center`}
+              className={`${styles.formClientTitle} ${openFromForm &&`text-custom-color-700`} font-bold labelText p-3 mb-5 w-full flex flex-row items-center`}
             >
               <TbCircleNumber1 className={`mr-2 text-[1.3rem]`} />
               {language === "en"
@@ -111,7 +177,12 @@ function Form() {
                     }
                   />
                   {textInputsFrom.map((item, index) => (
-                    <TextInput key={index} {...item} />
+                    <TextInput
+                      key={index}
+                      {...item}
+                      getValue={handleFormFromDataChange}
+                      error={notFullfilledError}
+                    />
                   ))}
                   <PhoneInput
                     arr={countries}
@@ -120,13 +191,17 @@ function Form() {
                         ? formFromClient.en.numberInput.value
                         : formFromClient.ru.numberInput.value
                     }
+                    field={"phoneNumber"}
                     initailNumber={departureCountry}
+                    getValue={handleFormFromDataChange}
+                    error={notFullfilledError}
                   />
                 </div>
                 <div
-                  className={`w-full flex flex-col items-end justify-end mt-7`}
+                  className={`w-full flex flex-row items-end justify-end mt-7`}
                 >
                   <button
+                    onClick={submitFromForm}
                     type="submit"
                     className={`darkerButton ${
                       windowWidth < 650 ? "" : `max-w-[300px]`
@@ -143,7 +218,7 @@ function Form() {
 
           <form className={`${styles.formClientInfo} mb-6`}>
             <div
-              className={`${styles.formClientTitle} text-custom-color-700 font-bold labelText p-3 mb-5 w-full flex flex-row items-center`}
+              className={`${styles.formClientTitle} ${openToForm &&`text-custom-color-700`} font-bold labelText p-3 mb-5 w-full flex flex-row items-center`}
             >
               <TbCircleNumber2 className={`mr-2 text-[1.3rem]`} />
               {language === "en"
@@ -179,9 +254,10 @@ function Form() {
                         ? destinationCountry.en.name
                         : destinationCountry.ru.name
                     }
+                    getValue={handleFormToDataChange}
                   />
                   {textInputsTo.map((item, index) => (
-                    <TextInput key={index} {...item} />
+                    <TextInput key={index} {...item} getValue={handleFormToDataChange} error={notFullfilledError} />
                   ))}
                   <PhoneInput
                     arr={countries}
@@ -191,12 +267,15 @@ function Form() {
                         : formToClient.ru.numberInput.value
                     }
                     initailNumber={destinationCountry}
+                    getValue={handleFormToDataChange}
+                    error={notFullfilledError}
                   />
                 </div>
                 <div
                   className={`w-full flex flex-col items-end justify-end mt-7`}
                 >
                   <button
+                    onClick={submitToForm}
                     type="submit"
                     className={`darkerButton ${
                       windowWidth < 650 ? "" : `max-w-[300px]`

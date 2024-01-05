@@ -224,7 +224,7 @@ body {
 }
 
 .customInput {
-  color: var(--black-color);
+  color: var(--dark-gray-color-700);
   background-color: var(--white-color);
 }
 
@@ -235,12 +235,12 @@ body {
 }
 
 .numberInput {
-  color: var(--black-color);
+  color: var(--dark-gray-color-700);
   background-color: var(--custom-color-400);
 } 
 
 .inputIcon {
-  color: var(--black-color);
+  color: var(--dark-gray-color-700);
   position: absolute;
   top: 13px;
   right: 10px;

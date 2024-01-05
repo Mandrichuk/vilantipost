@@ -1,3 +1,3 @@
-export default function onlyenLetters(text) {
-  return text.replace(/[^a-zA-Z0-9@!#$%&*().,/]/g, "");
+export default function onlyEnLettersWithSpace(text) {
+  return text.replace(/[^a-zA-Z0-9@!#$%&*().,/\s]/g, "");
 }

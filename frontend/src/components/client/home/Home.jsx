@@ -15,6 +15,8 @@ import useWindowWidth from "../../../utils/useWindowWidth";
 import { setOrderBoxData } from "../../../features/orderBox";
 import { RussiaData } from "../../../constants/index";
 import { annulData } from "../../../features/orderBox";
+import Footer from "../../common/footer/Footer";
+
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -81,7 +83,7 @@ const HomePage = () => {
     <>
       <Sidebar />
       <div
-        className={`${styles.backgroundCover} w-full h-[100vh] flex flex-col items-center  bg-custom-color-50`}
+        className={`${styles.backgroundCover} w-full flex flex-col items-center  bg-custom-color-50`}
       >
         <div className={`wrapper`}>
           <div
@@ -227,6 +229,8 @@ const HomePage = () => {
         </div>
       </div>
       <div className={`wrapper`}>dddd</div>
+
+      <Footer />
     </>
   );
 };

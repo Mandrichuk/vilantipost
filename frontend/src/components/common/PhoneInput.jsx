@@ -14,6 +14,10 @@ function PhoneInput(props) {
   const [chosenNumber, setChosenNumber] = useState(countries[0].exampleNumber);
   const chosenNumberLen = chosenNumber.replace(/\s/g, "").length;
 
+  useEffect(() => {
+    const combinedNumber = `${input.number}${numberInput}`;
+    props.getValue(props.field, combinedNumber);
+  }, [input, numberInput]);
 
   useEffect(() => {
     const foundItem = countries.find((item) => item.number === input);
@@ -84,7 +88,7 @@ function PhoneInput(props) {
 
       <div className={`w-full inputBox ${props.marginTop ? "" : "noMargin"}`}>
         <input
-          className={`noneRoundedLeft ${isActive ? "noneRoundedBottom" : ""}`}
+          className={`noneRoundedLeft ${isActive ? "noneRoundedBottom" : ""} ${props.error && numberInput.length === 0 && "errorBorder"}`}
           placeholder={chosenNumber}
           value={numberInput}
           required={true}

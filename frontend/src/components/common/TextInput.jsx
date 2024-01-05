@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import onlyEnLetters from "../../utils/onlyEnLetters"; 
 
 function TextInput(props) {
@@ -9,6 +9,10 @@ function TextInput(props) {
     setInput(inputValue);
   }
 
+  useEffect(() => {
+    props.getValue(props.field, input);
+  }, [input]);
+
   return (
     <div className={`inputBox ${props.marginTop ? "" : "noMargin"}`}>
       <input
@@ -17,6 +21,7 @@ function TextInput(props) {
         value={input}
         required={true}
         onChange={handleChange}
+        className={`${props.error && input.length === 0 && "errorBorder"}`}
       />
       <span>{props.value && typeof props.value === "object" ? JSON.stringify(props.value) : props.value}</span>
     </div>
