@@ -8,7 +8,7 @@ import { formPage } from "../../../constants/index";
 import TextInput from "../../common/TextInput";
 import images from "../../../constants/index";
 
-function FormFrom(props) {
+function ShippingForm(props) {
   const orderBox = useSelector((state) => state.orderBox.orderBox);
   const windowWidth = useWindowWidth();
   const language = useSelector((state) => state.language.language);
@@ -28,13 +28,12 @@ function FormFrom(props) {
     event.preventDefault();
 
     if (isFormValid(adressInput)) {
+      console.log("ehl");
       // props.handleOpenToForm();
     }
   }
 
-
-
-function isFormValid(adressInput) {
+  function isFormValid(adressInput) {
     let isValid = false;
     if (adressInput) {
       isValid = true;
@@ -43,7 +42,6 @@ function isFormValid(adressInput) {
     setNotFullfilledError(!isValid);
     return isValid;
   }
-
 
   return (
     <form className={`${styles.shippingFormInfo} mb-6`}>
@@ -58,7 +56,9 @@ function isFormValid(adressInput) {
           : shippingFromClient.ru.formTitle}
       </div>
       <div
-        className={`${styles.shippingContainer}  ${windowWidth < 650 ? "px-3" : `px-5`} py-3 w-full rounded-md flex flex-col`}
+        className={`${styles.borderCustomContainer}  ${
+          windowWidth < 650 ? "px-3" : `px-5`
+        }`}
       >
         <div className={`labelText`}>
           {language === "en"
@@ -66,11 +66,7 @@ function isFormValid(adressInput) {
             : shippingFromClient.ru.deliveryMethod}
         </div>
         <div className={`flex flex-row items-center`}>
-          <img
-            src={images.checked}
-            alt=""
-            className={`w-[18px] object-cover mr-1`}
-          />
+          <input type="checkbox" checked className={`mr-1`} />
           {language === "en"
             ? shippingFromClient.en.deliveryBy
             : shippingFromClient.ru.deliveryBy}
@@ -90,7 +86,6 @@ function isFormValid(adressInput) {
             </div>
 
             <TextInput
-              error={notFullfilledError}
               type={adressInputText.type}
               placeholder={adressInputText.placeholder}
               getValue={getAdressInput}
@@ -102,9 +97,7 @@ function isFormValid(adressInput) {
         <button
           onClick={(event) => submitShippingForm(event)}
           type="submit"
-          className={`darkerButton ${
-            windowWidth < 650 ? "" : `max-w-[300px]`
-          }`}
+          className={`darkerButton ${windowWidth < 650 ? "" : `max-w-[300px]`}`}
         >
           {language === "en"
             ? shippingFromClient.en.submitButton
@@ -115,4 +108,4 @@ function isFormValid(adressInput) {
   );
 }
 
-export default FormFrom;
+export default ShippingForm;

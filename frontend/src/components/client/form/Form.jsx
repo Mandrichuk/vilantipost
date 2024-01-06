@@ -13,15 +13,16 @@ import isObjNotEmpty from "../../../utils/isObjNotEmpty";
 import FormFrom from "./FormFrom";
 import FormTo from "./FormTo";
 import ShippingForm from "./ShippingForm";
-
+import PaymentForm from "./PaymentForm";
 
 function Form() {
   const windowWidth = useWindowWidth();
   const orderBox = useSelector((state) => state.orderBox.orderBox);
   const language = useSelector((state) => state.language.language);
-  const [openFromForm, setOpenFromForm] = React.useState(true);
-  const [openToForm, setOpenToForm] = React.useState(true);
-  const [openShippingForm, setOpenShippingForm] = React.useState(true);
+  const [openFromForm, setOpenFromForm] = useState(true);
+  const [openToForm, setOpenToForm] = useState(true);
+  const [openShippingForm, setOpenShippingForm] = useState(true);
+  const [openPaymentForm, setOpenPaymentForm] = useState(true);
 
 
   // useEffect(() => {
@@ -70,16 +71,16 @@ function Form() {
           </div>
 
           <FormFrom
-            openForm={openFromForm}
             isOpened={openFromForm}
           />
           <FormTo
-            openForm={openToForm}
             isOpened={openToForm}
           />
           <ShippingForm
-            openForm={openToForm}
             isOpened={openShippingForm}
+          />
+          <PaymentForm 
+            isOpened={openPaymentForm}
           />
 
 

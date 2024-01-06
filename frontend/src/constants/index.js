@@ -31,6 +31,16 @@ export default {
   checked,
 };
 
+export const deliveryPrices = {
+  value: 5000,
+  ru: {
+    price: "6000₽",
+  },
+  en: {
+    price: "60€",
+  },
+};
+
 export const links = {
   home: "/",
   form: "/form",
@@ -89,13 +99,13 @@ export const formPage = {
   ru: {
     title: "Заполнение формы",
     envelopeText: "Документы ",
-    totalPrice: "Итого: 6000₽",
+    totalPrice: `Итого: ${deliveryPrices.ru.price}`,
     formNotFullfilled: "Необходимо заполнить все поля",
   },
   en: {
     title: "Form filling",
     envelopeText: "Documents ",
-    totalPrice: "Total: 60€",
+    totalPrice: `Total: ${deliveryPrices.en.price}`,
     formNotFullfilled: "Fill in all fields",
   },
   formFromClient: {
@@ -103,19 +113,44 @@ export const formPage = {
       formTitle: "Откуда",
       informDetails: "(форма заполняется на английском)",
       alertMessage: "*Все поля обязательны для заполнения",
-      numberInput: { value: "Телефон", type: "number", placeholder: "<номер>", field: "phoneNumber" },
+      numberInput: {
+        value: "Телефон",
+        type: "number",
+        placeholder: "<номер>",
+        field: "phoneNumber",
+      },
       countryName: { value: "Страна", field: "" },
       textInputs: [
-        { value: "Отправитель", type: "text", placeholder: "FIO", field: "sender" },
+        {
+          value: "Отправитель",
+          type: "text",
+          placeholder: "FIO",
+          field: "sender",
+        },
         { value: "Город", type: "text", placeholder: "Moscow", field: "city" },
-        { value: "Улица", type: "text", placeholder: "st. Arbat", field: "street" },
-        { value: "Номер дома", type: "text", placeholder: "150", field: "houseNumber" },
-        { value: "Почтовый индекс", type: "number", placeholder: "1234567", field: "zipCode" },
+        {
+          value: "Улица",
+          type: "text",
+          placeholder: "st. Arbat",
+          field: "street",
+        },
+        {
+          value: "Номер дома",
+          type: "text",
+          placeholder: "150",
+          field: "houseNumber",
+        },
+        {
+          value: "Почтовый индекс",
+          type: "number",
+          placeholder: "1234567",
+          field: "zipCode",
+        },
         {
           value: "Эл. почта отправителя",
           type: "email",
           placeholder: "email@gmail.com",
-          field: "email"
+          field: "email",
         },
       ],
       submitButton: "Продолжить",
@@ -124,19 +159,39 @@ export const formPage = {
       formTitle: "Where from",
       informDetails: "(form is filled in English)",
       alertMessage: "*All fields are required",
-      numberInput: { value: "Phone", type: "number", placeholder: "<number>", field: "phoneNumber" },
+      numberInput: {
+        value: "Phone",
+        type: "number",
+        placeholder: "<number>",
+        field: "phoneNumber",
+      },
       countryName: { value: "Country", field: "" },
       textInputs: [
         { value: "Sender", type: "text", placeholder: "FIO", field: "sender" },
         { value: "City", type: "text", placeholder: "Moscow", field: "city" },
-        { value: "Street", type: "text", placeholder: "st. Arbat", field: "street" },
-        { value: "House number", type: "text", placeholder: "150", field: "houseNumber" },
-        { value: "ZIP code", type: "number", placeholder: "1234567", field: "zipCode" },
+        {
+          value: "Street",
+          type: "text",
+          placeholder: "st. Arbat",
+          field: "street",
+        },
+        {
+          value: "House number",
+          type: "text",
+          placeholder: "150",
+          field: "houseNumber",
+        },
+        {
+          value: "ZIP code",
+          type: "number",
+          placeholder: "1234567",
+          field: "zipCode",
+        },
         {
           value: "Sender's email",
           type: "email",
           placeholder: "email@gmail.com",
-          field: "email"
+          field: "email",
         },
       ],
       submitButton: "Continue",
@@ -147,19 +202,44 @@ export const formPage = {
       formTitle: "Куда",
       informDetails: "(форма заполняется на английском)",
       alertMessage: "*Все поля обязательны для заполнения",
-      numberInput: { value: "Телефон", type: "number", placeholder: "<номер>", field: "phoneNumber" },
+      numberInput: {
+        value: "Телефон",
+        type: "number",
+        placeholder: "<номер>",
+        field: "phoneNumber",
+      },
       countryName: { value: "Страна", field: "" },
       textInputs: [
-        { value: "Получатель", type: "text", placeholder: "FIO", field: "recipient" },
+        {
+          value: "Получатель",
+          type: "text",
+          placeholder: "FIO",
+          field: "recipient",
+        },
         { value: "Город", type: "text", placeholder: "Moscow", field: "city" },
-        { value: "Улица", type: "text", placeholder: "st. Arbat", field: "street" },
-        { value: "Номер дома", type: "text", placeholder: "150", field: "houseNumber" },
-        { value: "Почтовый индекс", type: "number", placeholder: "1234567", field: "zipCode" },
+        {
+          value: "Улица",
+          type: "text",
+          placeholder: "st. Arbat",
+          field: "street",
+        },
+        {
+          value: "Номер дома",
+          type: "text",
+          placeholder: "150",
+          field: "houseNumber",
+        },
+        {
+          value: "Почтовый индекс",
+          type: "number",
+          placeholder: "1234567",
+          field: "zipCode",
+        },
         {
           value: "Эл. почта получателя",
           type: "email",
           placeholder: "email@gmail.com",
-          field: "email"
+          field: "email",
         },
       ],
       submitButton: "Продолжить",
@@ -168,19 +248,44 @@ export const formPage = {
       formTitle: "Where to",
       informDetails: "(form is filled in English)",
       alertMessage: "*All fields are required",
-      numberInput: { value: "Phone", type: "number", placeholder: "<number>", field: "phoneNumber" },
+      numberInput: {
+        value: "Phone",
+        type: "number",
+        placeholder: "<number>",
+        field: "phoneNumber",
+      },
       countryName: { value: "Country", field: "" },
       textInputs: [
-        { value: "Recipient", type: "text", placeholder: "FIO", field: "recipient" },
+        {
+          value: "Recipient",
+          type: "text",
+          placeholder: "FIO",
+          field: "recipient",
+        },
         { value: "City", type: "text", placeholder: "Moscow", field: "city" },
-        { value: "Street", type: "text", placeholder: "st. Arbat", field: "street" },
-        { value: "House number", type: "text", placeholder: "150", field: "houseNumber" },
-        { value: "ZIP code", type: "number", placeholder: "1234567", field: "zipCode" },
+        {
+          value: "Street",
+          type: "text",
+          placeholder: "st. Arbat",
+          field: "street",
+        },
+        {
+          value: "House number",
+          type: "text",
+          placeholder: "150",
+          field: "houseNumber",
+        },
+        {
+          value: "ZIP code",
+          type: "number",
+          placeholder: "1234567",
+          field: "zipCode",
+        },
         {
           value: "Recipient's email",
           type: "email",
           placeholder: "email@gmail.com",
-          field: "email"
+          field: "email",
         },
       ],
       submitButton: "Continue",
@@ -192,7 +297,12 @@ export const formPage = {
       deliveryMethod: "Бесплатная доставка курьером!",
       deliveryBy: "Будет доставлен курьером",
       toInputText: "Введите адрес для курьера:",
-      adressInput: { value: "Адрес", type: "text", placeholder: "Moscow, st. Lenina, 1", field: "address" },
+      adressInput: {
+        value: "Адрес",
+        type: "text",
+        placeholder: "Moscow, st. Lenina, 1",
+        field: "address",
+      },
       submitButton: "Продолжить",
     },
     en: {
@@ -200,8 +310,55 @@ export const formPage = {
       deliveryMethod: "Free shipping by the courier!",
       deliveryBy: "Will be delivered by the courier",
       toInputText: "Enter the address for the courier:",
-      adressInput: { value: "Address", type: "text", placeholder: "Moscow, st. Lenina, 1", field: "address" },
+      adressInput: {
+        value: "Address",
+        type: "text",
+        placeholder: "Moscow, st. Lenina, 1",
+        field: "address",
+      },
       submitButton: "Continue",
+    },
+  },
+  paymentForm: {
+    ru: {
+      formTitle: "Оплаты",
+      paymentMethod: "Вид оплаты: Карта",
+      paymentDetails: [
+        "Интернет-платеж производится на странице платежного шлюза «Stripe»",
+        "Оплата возможна картами Visa/MasterCard",
+        "Оплата производится в Евро",
+      ],
+      connectionAfter: {
+        do: { message: "Свяжитесь со мной для уточнения деталей", value: true, name: "connectAfter" },
+        dont: {
+          message: "Не связываться со мной, я уверен в своем заказе",
+          value: false, name: "connectAfter",
+        },
+      },
+      acceptRules:
+        "Я прочитал(а) и согласен с политикой конфиденциальности и условиями предоставления услуг",
+      finalPrice: `Стоимость: ${deliveryPrices.ru.price}`,
+      submitButton: "Перейти к оплате",
+    },
+    en: {
+      formTitle: "Payment",
+      paymentMethod: "Payment method: Card",
+      paymentDetails: [
+        "The payment is made on the payment gateway of «Stripe»",
+        "Payment is possible on Visa/MasterCard cards",
+        "Payment is made in EUR",
+      ],
+      connectionAfter: {
+        do: { message: "Contact me for details", value: true, name: "connectAfter" },
+        dont: {
+          message: "I don't want to be contacted, I'm sure of my order",
+          value: false, name: "connectAfter",
+        },
+      },
+      acceptRules:
+        "I have read and accept the privacy policy and terms of service",
+      finalPrice: `Final price: ${deliveryPrices.en.price}`,
+      submitButton: "Go to payment",
     },
   },
 };
