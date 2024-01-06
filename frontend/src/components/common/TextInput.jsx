@@ -3,7 +3,6 @@ import onlyEnLetters from "../../utils/onlyEnLetters";
 
 function TextInput(props) {
   const [input, setInput] = useState("");
-
   function handleChange(e) {
     let inputValue = onlyEnLetters(e.target.value);
     setInput(inputValue);
@@ -14,7 +13,7 @@ function TextInput(props) {
   }, [input]);
 
   return (
-    <div className={`inputBox ${props.marginTop ? "" : "noMargin"}`}>
+    <div className={`inputBox ${props.marginTop ? "" : "noMargin"} w-full`}>
       <input
         type={props.type}
         placeholder={props.placeholder}

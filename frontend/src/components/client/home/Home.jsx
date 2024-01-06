@@ -83,7 +83,7 @@ const HomePage = () => {
     <>
       <Sidebar />
       <div
-        className={`${styles.backgroundCover} w-full flex flex-col items-center  bg-custom-color-50`}
+        className={`${styles.backgroundCover} w-full h-[100vh] flex flex-col items-center  bg-custom-color-50`}
       >
         <div className={`wrapper`}>
           <div
@@ -97,7 +97,7 @@ const HomePage = () => {
                 : orderBoxInfo.ru.title}
             </div>
 
-            <div className={`separator my-4`} />
+            <div className={`separator my-4 text-white`} />
 
             <div className={`${styles.deliveryInputs} w-full flex flex-col`}>
               <div className={`${styles.firstSection} flex-1`}>
@@ -163,7 +163,7 @@ const HomePage = () => {
                 </div>
               </div>
 
-              {windowWidth < wideScreen && <div className={`separator my-4`} />}
+              {windowWidth < wideScreen && <div className={`separator my-4 text-white`} />}
               {windowWidth > wideScreen && (
                 <div className={`w-[1px] bg-gray-200 mx-3`} />
               )}
@@ -213,7 +213,7 @@ const HomePage = () => {
               </div>
             </div>
 
-            <div className={`separator my-4`} />
+            <div className={`separator my-4 text-white`} />
 
             <div className={`flex flex-row items-center justify-center`}>
               <button

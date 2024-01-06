@@ -21,8 +21,6 @@ import { IoMoon } from "react-icons/io5";
 import { FaTelegram } from "react-icons/fa6";
 import { setLanguage } from "../../../features/language";
 import { setTheme } from "../../../features/darkTheme";
-
-
 const SidebarContext = createContext();
 const iconSize = 25;
 const iconMapping = {
@@ -97,7 +95,6 @@ export default function Sidebar() {
                 icon={item.icon}
                 enText={item.en.name}
                 ruText={item.ru.name}
-                type={item.type}
                 link={item.link}
               />
             ))}
@@ -110,7 +107,6 @@ export default function Sidebar() {
                 icon={item.icon}
                 enText={item.en.name}
                 ruText={item.ru.name}
-                type={item.type}
                 link={item.link}
               />
             ))}
@@ -155,12 +151,13 @@ export default function Sidebar() {
   );
 }
 
-export function SidebarItem({ icon, ruText, enText, type, link }) {
+export function SidebarItem({ icon, ruText, enText, link }) {
   const darkTheme = useSelector((state) => state.darkTheme.theme);
   const language = useSelector((state) => state.language.language);
   const { expanded } = useContext(SidebarContext);
   const renderedIcon = iconMapping[icon];
   const dispatch = useDispatch();
+  const type = link === window.location.pathname ? "active" : "";
   const toggleLanguage = () => {
     if (language === "en") {
       dispatch(setLanguage("ru"));
@@ -171,6 +168,7 @@ export function SidebarItem({ icon, ruText, enText, type, link }) {
   const toggleTheme = () => {
     dispatch(setTheme());
   }
+
 
 
   return (

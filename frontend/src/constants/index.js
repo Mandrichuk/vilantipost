@@ -15,6 +15,7 @@ import walkingPackage from "../assets/lotties/walkingPackage.json";
 
 // icons
 import envelope from "../assets/icons/envelope.png";
+import checked from "../assets/icons/checked.png";
 
 export default {
   logo,
@@ -27,11 +28,14 @@ export default {
   uploadScreen,
   walkingPackage,
   envelope,
+  checked,
 };
 
 export const links = {
   home: "/",
   form: "/form",
+  orders: "/orders",
+  settings: "/settings",
 };
 
 export const homePage = {
@@ -100,7 +104,7 @@ export const formPage = {
       informDetails: "(форма заполняется на английском)",
       alertMessage: "*Все поля обязательны для заполнения",
       numberInput: { value: "Телефон", type: "number", placeholder: "<номер>", field: "phoneNumber" },
-      countryName: { value: "Страна" },
+      countryName: { value: "Страна", field: "" },
       textInputs: [
         { value: "Отправитель", type: "text", placeholder: "FIO", field: "sender" },
         { value: "Город", type: "text", placeholder: "Moscow", field: "city" },
@@ -146,11 +150,11 @@ export const formPage = {
       numberInput: { value: "Телефон", type: "number", placeholder: "<номер>", field: "phoneNumber" },
       countryName: { value: "Страна", field: "" },
       textInputs: [
-        { value: "Получатель", type: "text", placeholder: "FIO", field: "" },
-        { value: "Город", type: "text", placeholder: "Moscow", field: "" },
-        { value: "Улица", type: "text", placeholder: "st. Arbat", field: "" },
-        { value: "Номер дома", type: "text", placeholder: "150", field: "" },
-        { value: "Почтовый индекс", type: "number", placeholder: "1234567", field: "" },
+        { value: "Получатель", type: "text", placeholder: "FIO", field: "recipient" },
+        { value: "Город", type: "text", placeholder: "Moscow", field: "city" },
+        { value: "Улица", type: "text", placeholder: "st. Arbat", field: "street" },
+        { value: "Номер дома", type: "text", placeholder: "150", field: "houseNumber" },
+        { value: "Почтовый индекс", type: "number", placeholder: "1234567", field: "zipCode" },
         {
           value: "Эл. почта получателя",
           type: "email",
@@ -165,13 +169,13 @@ export const formPage = {
       informDetails: "(form is filled in English)",
       alertMessage: "*All fields are required",
       numberInput: { value: "Phone", type: "number", placeholder: "<number>", field: "phoneNumber" },
-      countryName: { value: "Country" },
+      countryName: { value: "Country", field: "" },
       textInputs: [
-        { value: "Recipient", type: "text", placeholder: "FIO", field: "" },
-        { value: "City", type: "text", placeholder: "Moscow", field: "" },
-        { value: "Street", type: "text", placeholder: "st. Arbat", field: "" },
-        { value: "House number", type: "text", placeholder: "150", field: "" },
-        { value: "ZIP code", type: "number", placeholder: "1234567", field: "" },
+        { value: "Recipient", type: "text", placeholder: "FIO", field: "recipient" },
+        { value: "City", type: "text", placeholder: "Moscow", field: "city" },
+        { value: "Street", type: "text", placeholder: "st. Arbat", field: "street" },
+        { value: "House number", type: "text", placeholder: "150", field: "houseNumber" },
+        { value: "ZIP code", type: "number", placeholder: "1234567", field: "zipCode" },
         {
           value: "Recipient's email",
           type: "email",
@@ -179,6 +183,24 @@ export const formPage = {
           field: "email"
         },
       ],
+      submitButton: "Continue",
+    },
+  },
+  shippingForm: {
+    ru: {
+      formTitle: "Метод доставки",
+      deliveryMethod: "Бесплатная доставка курьером!",
+      deliveryBy: "Будет доставлен курьером",
+      toInputText: "Введите адрес для курьера:",
+      adressInput: { value: "Адрес", type: "text", placeholder: "Moscow, st. Lenina, 1", field: "address" },
+      submitButton: "Продолжить",
+    },
+    en: {
+      formTitle: "Shipping method",
+      deliveryMethod: "Free shipping by the courier!",
+      deliveryBy: "Will be delivered by the courier",
+      toInputText: "Enter the address for the courier:",
+      adressInput: { value: "Address", type: "text", placeholder: "Moscow, st. Lenina, 1", field: "address" },
       submitButton: "Continue",
     },
   },
@@ -193,7 +215,7 @@ export const sidebar = {
       en: {
         name: "Home",
       },
-      type: "active",
+      type: "",
       icon: "IoHome",
       link: "/",
     },
