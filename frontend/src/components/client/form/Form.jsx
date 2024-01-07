@@ -19,11 +19,26 @@ function Form() {
   const windowWidth = useWindowWidth();
   const orderBox = useSelector((state) => state.orderBox.orderBox);
   const language = useSelector((state) => state.language.language);
-  const [openFromForm, setOpenFromForm] = useState(true);
-  const [openToForm, setOpenToForm] = useState(false);
-  const [openShippingForm, setOpenShippingForm] = useState(false);
-  const [openPaymentForm, setOpenPaymentForm] = useState(false);
+  const [toggleOpenForms, setToggleOpenForms] = useState({
+    openFromForm: true,
+    openToForm: true,
+    openShippingForm: true,
+    openPaymentForm: true,
+  });
 
+  function handleChangeActiveForm(currentActiveForm) {
+    const initialValue = {
+      openFromForm: false,
+      openToForm: false,
+      openShippingForm: false,
+      openPaymentForm: false,
+    };
+
+    setToggleOpenForms({
+      ...initialValue,
+      [currentActiveForm]: true,
+    });
+  }
 
   // useEffect(() => {
   //   window.addEventListener("beforeunload");
@@ -31,7 +46,6 @@ function Form() {
   //     window.removeEventListener("beforeunload");
   //   };
   // }, []);
-
 
   return (
     <div
@@ -71,19 +85,21 @@ function Form() {
           </div>
 
           <FormFrom
-            isOpened={openFromForm}
+            isOpened={toggleOpenForms.openFromForm}
+            handleChangeActiveForm={handleChangeActiveForm}
           />
           <FormTo
-            isOpened={openToForm}
+            isOpened={toggleOpenForms.openToForm}
+            handleChangeActiveForm={handleChangeActiveForm}
           />
           <ShippingForm
-            isOpened={openShippingForm}
+            isOpened={toggleOpenForms.openShippingForm}
+            handleChangeActiveForm={handleChangeActiveForm}
           />
-          <PaymentForm 
-            isOpened={openPaymentForm}
+          <PaymentForm
+            isOpened={toggleOpenForms.openPaymentForm}
+            handleChangeActiveForm={handleChangeActiveForm}
           />
-
-
         </div>
       </div>
     </div>

@@ -56,7 +56,7 @@ body {
   color: var(--dark-gray-color-600);
 }
 
-label {
+label, input[type="checkbox"] {
   cursor: pointer;
 }
 
@@ -282,6 +282,15 @@ label {
   border-radius: 6px;
   cursor: pointer;
   transition: background-color var(--transition-time) ease-in-out, color var(--transition-time) ease-in-out;
+}
+
+.darkerButton.unavailable {
+  cursor: auto;
+  opacity: 0.6;
+}
+
+.darkerButton.unavailable:hover {
+  
 }
 
 .darkerButton {

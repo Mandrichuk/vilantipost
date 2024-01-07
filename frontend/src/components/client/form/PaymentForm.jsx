@@ -1,39 +1,55 @@
-import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import styles from "./form.module.css";
 import { TbCircleNumber4 } from "react-icons/tb";
 import useWindowWidth from "../../../utils/useWindowWidth";
-import StaticInput from "../../common/StaticInput";
 import { formPage } from "../../../constants/index";
-import TextInput from "../../common/TextInput";
-import images from "../../../constants/index";
-import { deliveryPrices } from "../../../constants/index";
+import { setFormData } from "../../../features/formsClient";
+
 
 function PaymentForm(props) {
+  const dispatch = useDispatch();
   const isOpened = props.isOpened;
   const orderBox = useSelector((state) => state.orderBox.orderBox);
   const windowWidth = useWindowWidth();
   const language = useSelector((state) => state.language.language);
-  const paymentForm = formPage.paymentForm;
+  const paymentFormText = formPage.paymentForm;
   const paymentDetails =
     language === "en"
-      ? paymentForm.en.paymentDetails
-      : paymentForm.ru.paymentDetails;
+      ? paymentFormText.en.paymentDetails
+      : paymentFormText.ru.paymentDetails;
   const [notFullfilledError, setNotFullfilledError] = useState(false);
+  const [paymentForm, setPaymentForm] = useState({
+    contactAfter: true,
+    acceptRules: false,
+  });
+  const [btnAvailable, setBtnAvailable] = useState(paymentForm.acceptRules);
 
-  // function submitShippingForm(event) {
-  //   event.preventDefault();
+  function handleChangePaymentForm(field, value) {
+    setPaymentForm((prevData) => ({ ...prevData, [field]: value }));
 
-  //   if (isFormValid(adressInput)) {
-  //     // props.handleOpenToForm();
-  //   }
-  // }
+    if (field === "acceptRules") {
+      setBtnAvailable(value);
+    }
+  }
 
-  function isFormValid(adressInput) {
+  function submitPaymentForm(event) {
+    event.preventDefault();
+
+    if (isFormValid()) {
+      dispatch(setFormData({ type: "UPDATE_PAYMENT_FORM_DATA", value: paymentForm }));
+
+      // props.handleOpenToForm();
+    }
+  }
+
+  console.log()
+
+  function isFormValid() {
     let isValid = false;
-    // if (adressInput) {
-    //   isValid = true;
-    // }
+    if (paymentForm.acceptRules) {
+      isValid = true;
+    }
 
     setNotFullfilledError(!isValid);
     return isValid;
@@ -44,12 +60,14 @@ function PaymentForm(props) {
       <div
         className={`${styles.title} ${
           isOpened && `text-custom-color-700 font-bold`
-        } labelText p-3 ${isOpened ? "mb-5" : "mb-1"}5 w-full flex flex-row items-center`}
+        } labelText p-3 ${
+          isOpened ? "mb-5" : "mb-1"
+        } w-full flex flex-row items-center`}
       >
         <TbCircleNumber4 className={`mr-2 text-[1.3rem]`} />
         {language === "en"
-          ? paymentForm.en.formTitle
-          : paymentForm.ru.formTitle}
+          ? paymentFormText.en.formTitle
+          : paymentFormText.ru.formTitle}
       </div>
 
       {isOpened && (
@@ -61,8 +79,8 @@ function PaymentForm(props) {
           >
             <div className={`artileText font-bold`}>
               {language === "en"
-                ? paymentForm.en.paymentMethod
-                : paymentForm.ru.paymentMethod}
+                ? paymentFormText.en.paymentMethod
+                : paymentFormText.ru.paymentMethod}
             </div>
             <div className={`${styles.paymentDetails} my-3`}>
               {paymentDetails.map((item, index) => (
@@ -74,19 +92,33 @@ function PaymentForm(props) {
             </div>
             <div className={`${styles.connectAfter}`}>
               <div className={`flex flex-row items-center`}>
-                <input type="checkbox" id={`do`} className={`mr-2`} />
+                <input
+                  type="checkbox"
+                  id={`do`}
+                  className={`mr-2`}
+                  checked={paymentForm.contactAfter}
+                  onChange={() => handleChangePaymentForm("contactAfter", true)}
+                />
                 <label htmlFor={`do`}>
                   {language === "en"
-                    ? paymentForm.en.connectionAfter.do.message
-                    : paymentForm.ru.connectionAfter.do.message}
+                    ? paymentFormText.en.connectionAfter.do.message
+                    : paymentFormText.ru.connectionAfter.do.message}
                 </label>
               </div>
               <div className={`flex flex-row items-center`}>
-                <input type="checkbox" id={`dont`} className={`mr-2`} />
+                <input
+                  type="checkbox"
+                  id={`dont`}
+                  className={`mr-2`}
+                  checked={!paymentForm.contactAfter}
+                  onChange={() =>
+                    handleChangePaymentForm("contactAfter", false)
+                  }
+                />
                 <label htmlFor={`dont`}>
                   {language === "en"
-                    ? paymentForm.en.connectionAfter.dont.message
-                    : paymentForm.ru.connectionAfter.dont.message}
+                    ? paymentFormText.en.connectionAfter.dont.message
+                    : paymentFormText.ru.connectionAfter.dont.message}
                 </label>
               </div>
             </div>
@@ -102,35 +134,46 @@ function PaymentForm(props) {
             <div
               className={`${
                 windowWidth < 650 ? "" : "max-w-[200px]"
-              } flex flex-row items-center`}
+              } flex flex-row items-center ${notFullfilledError && "p-2 errorBorder rounded-md"}`}
             >
-              <input type="checkbox" id="acceptRules" className={`mr-2`} />
+              <input
+                type="checkbox"
+                checked={paymentForm.acceptRules}
+                id="acceptRules"
+                className={`mr-2`}
+                onClick={() =>
+                  handleChangePaymentForm(
+                    "acceptRules",
+                    !paymentForm.acceptRules
+                  )
+                }
+              />
               <label htmlFor="acceptRules" className={`tinyText`}>
                 {language === "en"
-                  ? paymentForm.en.acceptRules
-                  : paymentForm.ru.acceptRules}
+                  ? paymentFormText.en.acceptRules
+                  : paymentFormText.ru.acceptRules}
               </label>
             </div>
             <div
               className={`${styles.finalPrice} labelText text-custom-color-700 flex flex-row items-center mt-3`}
             >
               {language === "en"
-                ? paymentForm.en.finalPrice
-                : paymentForm.ru.finalPrice}
+                ? paymentFormText.en.finalPrice
+                : paymentFormText.ru.finalPrice}
             </div>
           </div>
 
           <div className={`w-full flex flex-row items-end justify-end mt-7`}>
             <button
-              // onClick={(event) => submitFromForm(event)}
+              onClick={(event) => submitPaymentForm(event)}
               type="submit"
-              className={`darkerButton ${
+              className={`darkerButton ${btnAvailable ? "" : "unavailable"} ${
                 windowWidth < 650 ? "" : `max-w-[300px]`
               }`}
             >
               {language === "en"
-                ? paymentForm.en.submitButton
-                : paymentForm.ru.submitButton}
+                ? paymentFormText.en.submitButton
+                : paymentFormText.ru.submitButton}
             </button>
           </div>
         </div>

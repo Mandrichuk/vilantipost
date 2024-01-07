@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import styles from "./form.module.css";
 import { TbCircleNumber3 } from "react-icons/tb";
 import useWindowWidth from "../../../utils/useWindowWidth";
-import StaticInput from "../../common/StaticInput";
 import { formPage } from "../../../constants/index";
 import TextInput from "../../common/TextInput";
-import images from "../../../constants/index";
+import { setFormData } from "../../../features/formsClient";
+
 
 function ShippingForm(props) {
+  const dispatch = useDispatch();
   const isOpened = props.isOpened;
   const orderBox = useSelector((state) => state.orderBox.orderBox);
   const windowWidth = useWindowWidth();
@@ -29,8 +30,8 @@ function ShippingForm(props) {
     event.preventDefault();
 
     if (isFormValid(adressInput)) {
-      console.log("ehl");
-      // props.handleOpenToForm();
+      dispatch(setFormData({ type: "UPDATE_FROM_FORM_DATA", value: adressInput }));
+      props.handleChangeActiveForm("openPaymentForm");
     }
   }
 

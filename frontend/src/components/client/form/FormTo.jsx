@@ -1,6 +1,5 @@
-// FormTo.js
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import styles from "./form.module.css";
 import PhoneInput from "../../common/PhoneInput";
 import TextInput from "../../common/TextInput";
@@ -9,10 +8,10 @@ import { formPage, countries } from "../../../constants/index";
 import { TbCircleNumber2 } from "react-icons/tb";
 import useWindowWidth from "../../../utils/useWindowWidth";
 import StaticInput from "../../common/StaticInput";
-import images from "../../../constants/index";
-import isObjNotEmpty from "../../../utils/isObjNotEmpty";
+import { setFormData } from "../../../features/formsClient";
 
 function FormTo(props) {
+  const dispatch = useDispatch();
   const isOpened = props.isOpened;
   const orderBox = useSelector((state) => state.orderBox.orderBox);
   const windowWidth = useWindowWidth();
@@ -24,7 +23,6 @@ function FormTo(props) {
       : formToClient.ru?.textInputs || [];
   const destinationCountry = orderBox.destination;
   const [notFullfilledError, setNotFullfilledError] = useState(false);
-
   const [toFormData, setToFormData] = useState({
     recipient: "",
     country: destinationCountry,
@@ -41,15 +39,24 @@ function FormTo(props) {
   };
 
   function submitToForm(event) {
-    event.preventDefault(); 
+    event.preventDefault();
 
     if (isFormValid(toFormData)) {
+      dispatch(setFormData({ type: "UPDATE_TO_FORM_DATA", value: toFormData }));
+      props.handleChangeActiveForm("openShippingForm");
     }
   }
 
   function isFormValid(toFormData) {
-    const { recipient, city, street, houseNumber, zipCode, email, phoneNumber } =
-      toFormData;
+    const {
+      recipient,
+      city,
+      street,
+      houseNumber,
+      zipCode,
+      email,
+      phoneNumber,
+    } = toFormData;
 
     let isValid = false;
     if (
@@ -74,7 +81,9 @@ function FormTo(props) {
       <div
         className={`${styles.title} ${
           isOpened && `text-custom-color-700 font-bold`
-        } labelText p-3 ${isOpened ? "mb-5" : "mb-1"} w-full flex flex-row items-center`}
+        } labelText p-3 ${
+          isOpened ? "mb-5" : "mb-1"
+        } w-full flex flex-row items-center`}
       >
         <TbCircleNumber2 className={`mr-2 text-[1.3rem]`} />
         {language === "en"
@@ -122,6 +131,7 @@ function FormTo(props) {
             ))}
             <PhoneInput
               arr={countries}
+              field={"phoneNumber"}
               value={
                 language === "en"
                   ? formToClient.en.numberInput.value

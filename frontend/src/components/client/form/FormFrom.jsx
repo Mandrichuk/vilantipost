@@ -1,18 +1,17 @@
-// FormFrom.js
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import styles from "./form.module.css";
 import PhoneInput from "../../common/PhoneInput";
 import TextInput from "../../common/TextInput";
-import Sidebar from "../../common/sidebar/Sidebar";
 import { formPage, countries } from "../../../constants/index";
 import { TbCircleNumber1 } from "react-icons/tb";
 import useWindowWidth from "../../../utils/useWindowWidth";
 import StaticInput from "../../common/StaticInput";
-import images from "../../../constants/index";
-import isObjNotEmpty from "../../../utils/isObjNotEmpty";
+import {setFormData} from "../../../features/formsClient";
+
 
 function FormFrom(props) {
+  const dispatch = useDispatch();
   const isOpened = props.isOpened;
   const orderBox = useSelector((state) => state.orderBox.orderBox);
   const windowWidth = useWindowWidth();
@@ -24,17 +23,18 @@ function FormFrom(props) {
       : formFromClient.ru?.textInputs || [];
   const departureCountry = orderBox.departure;
   const [notFullfilledError, setNotFullfilledError] = useState(false);
-
+  const formFromRedux = useSelector((state) => state.formsClient.formsData.formFromClient);
   const [fromFormData, setFromFormData] = useState({
-    sender: "",
+    sender: formFromRedux.sender,
     country: departureCountry,
-    city: "",
-    street: "",
-    houseNumber: "",
-    zipCode: "",
-    email: "",
-    phoneNumber: "",
+    city: formFromClient.city,
+    street: formFromClient.street,
+    houseNumber: formFromClient.houseNumber,
+    zipCode: formFromClient.zipCode,
+    email: formFromClient.email,
+    phoneNumber: formFromClient.phoneNumber,
   });
+
 
   const handleFormFromDataChange = (field, value) => {
     setFromFormData((prevData) => ({ ...prevData, [field]: value }));
@@ -44,7 +44,8 @@ function FormFrom(props) {
     event.preventDefault(); 
 
     if (isFormValid(fromFormData)) {
-
+      dispatch(setFormData({ type: "UPDATE_FROM_FORM_DATA", value: fromFormData }));
+      props.handleChangeActiveForm("openToForm");
     }
   }
 

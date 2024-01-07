@@ -335,7 +335,7 @@ export const formPage = {
           name: "connectAfter",
         },
         dont: {
-          message: "Не связываться со мной, я уверен в своем заказе",
+          message: "Не связываться со мной",
           value: false,
           name: "connectAfter",
         },
@@ -360,7 +360,7 @@ export const formPage = {
           name: "connectAfter",
         },
         dont: {
-          message: "I don't want to be contacted, I'm sure of my order",
+          message: "I don't want to be contacted",
           value: false,
           name: "connectAfter",
         },
@@ -437,6 +437,18 @@ export const sidebar = {
   socials: [
     {
       ru: {
+        name: "Телеграм",
+      },
+      en: {
+        name: "Telegram",
+      },
+      type: "",
+      icon: "FaTelegram",
+      link: "https://www.telegram.org/",
+      withinSite: false,
+    },
+    {
+      ru: {
         name: "Вайбер",
       },
       en: {
@@ -457,18 +469,6 @@ export const sidebar = {
       type: "",
       icon: "FaInstagram",
       link: "https://www.instagram.com/",
-      withinSite: false,
-    },
-    {
-      ru: {
-        name: "Телеграм",
-      },
-      en: {
-        name: "Telegram",
-      },
-      type: "",
-      icon: "FaTelegram",
-      link: "https://www.telegram.org/",
       withinSite: false,
     },
     // {
