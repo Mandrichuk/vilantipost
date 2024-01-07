@@ -21,9 +21,9 @@ function Form() {
   const language = useSelector((state) => state.language.language);
   const [toggleOpenForms, setToggleOpenForms] = useState({
     openFromForm: true,
-    openToForm: true,
-    openShippingForm: true,
-    openPaymentForm: true,
+    openToForm: false,
+    openShippingForm: false,
+    openPaymentForm: false,
   });
 
   function handleChangeActiveForm(currentActiveForm) {
