@@ -329,10 +329,15 @@ export const formPage = {
         "Оплата производится в Евро",
       ],
       connectionAfter: {
-        do: { message: "Свяжитесь со мной для уточнения деталей", value: true, name: "connectAfter" },
+        do: {
+          message: "Свяжитесь со мной для уточнения деталей",
+          value: true,
+          name: "connectAfter",
+        },
         dont: {
           message: "Не связываться со мной, я уверен в своем заказе",
-          value: false, name: "connectAfter",
+          value: false,
+          name: "connectAfter",
         },
       },
       acceptRules:
@@ -349,10 +354,15 @@ export const formPage = {
         "Payment is made in EUR",
       ],
       connectionAfter: {
-        do: { message: "Contact me for details", value: true, name: "connectAfter" },
+        do: {
+          message: "Contact me for details",
+          value: true,
+          name: "connectAfter",
+        },
         dont: {
           message: "I don't want to be contacted, I'm sure of my order",
-          value: false, name: "connectAfter",
+          value: false,
+          name: "connectAfter",
         },
       },
       acceptRules:
@@ -375,6 +385,7 @@ export const sidebar = {
       type: "",
       icon: "IoHome",
       link: "/",
+      withinSite: true,
     },
     {
       ru: {
@@ -386,6 +397,7 @@ export const sidebar = {
       type: "alert",
       icon: "PiPackageFill",
       link: "/orders",
+      withinSite: true,
     },
     {
       ru: {
@@ -397,6 +409,7 @@ export const sidebar = {
       type: "",
       icon: "IoIosSettings",
       link: "/settings",
+      withinSite: true,
     },
     {
       ru: {
@@ -407,6 +420,7 @@ export const sidebar = {
       },
       type: "",
       icon: "FaLanguage",
+      withinSite: true,
     },
     {
       ru: {
@@ -417,9 +431,22 @@ export const sidebar = {
       },
       type: "",
       icon: "MdColorLens",
+      withinSite: true,
     },
   ],
   socials: [
+    {
+      ru: {
+        name: "Вайбер",
+      },
+      en: {
+        name: "WhatsApp",
+      },
+      type: "",
+      icon: "FaWhatsapp",
+      link: "https://www.whatsapp.com/",
+      withinSite: false,
+    },
     {
       ru: {
         name: "Инстаграм",
@@ -429,7 +456,8 @@ export const sidebar = {
       },
       type: "",
       icon: "FaInstagram",
-      link: "/instagram",
+      link: "https://www.instagram.com/",
+      withinSite: false,
     },
     {
       ru: {
@@ -440,8 +468,21 @@ export const sidebar = {
       },
       type: "",
       icon: "FaTelegram",
-      link: "/telegram",
+      link: "https://www.telegram.org/",
+      withinSite: false,
     },
+    // {
+    //   ru: {
+    //     name: "Вайбер",
+    //   },
+    //   en: {
+    //     name: "Viber",
+    //   },
+    //   type: "",
+    //   icon: "FaViber",
+    //   link: "https://www.viber.com/",
+    //   withinSite: false,
+    // },
   ],
 };
 

@@ -279,7 +279,7 @@ label {
   font-weight: bold;
   font-size: var(--btn-text);
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background-color var(--transition-time) ease-in-out, color var(--transition-time) ease-in-out;
 }

@@ -7,9 +7,9 @@ import {
   IoMdHelpCircleOutline,
 } from "react-icons/io";
 import { IoHome } from "react-icons/io5";
-import { FaLanguage } from "react-icons/fa6";
+import { FaLanguage, FaViber, FaTelegram } from "react-icons/fa6";
 import { PiPackageFill } from "react-icons/pi";
-import { FaInstagram } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { MdColorLens } from "react-icons/md";
 import styles from "./sidebar.module.css";
 import { sidebar } from "../../../constants/index";
@@ -18,9 +18,9 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { FaSun } from "react-icons/fa";
 import { IoMoon } from "react-icons/io5";
-import { FaTelegram } from "react-icons/fa6";
 import { setLanguage } from "../../../features/language";
 import { setTheme } from "../../../features/darkTheme";
+
 const SidebarContext = createContext();
 const iconSize = 25;
 const iconMapping = {
@@ -31,6 +31,8 @@ const iconMapping = {
   FaLanguage: <FaLanguage size={iconSize} />,
   MdColorLens: <MdColorLens size={iconSize} />,
   FaTelegram: <FaTelegram size={iconSize} />,
+  FaViber: <FaViber size={iconSize} />,
+  FaWhatsapp: <FaWhatsapp size={iconSize} />,
 };
 
 export default function Sidebar() {
@@ -45,11 +47,11 @@ export default function Sidebar() {
       setWideScreen(window.innerWidth > 1024);
       setExpanded(window.innerWidth > 1024);
 
-      const root = document.getElementById('root');
+      const root = document.getElementById("root");
       if (window.innerWidth > 1024) {
-        root.style.setProperty('--navbar-width', '293px');
+        root.style.setProperty("--navbar-width", "293px");
       } else {
-        root.style.setProperty('--navbar-width', '73px');
+        root.style.setProperty("--navbar-width", "73px");
       }
     };
 
@@ -63,7 +65,11 @@ export default function Sidebar() {
 
   return (
     <aside className={`${styles.sidebar} h-full fixed`}>
-      <nav className={`h-full flex flex-col ${darkTheme ? "bg-dark-gray-color-500" : "bg-white"} border-r shadow-sm`}>
+      <nav
+        className={`h-full flex flex-col ${
+          darkTheme ? "bg-dark-gray-color-500" : "bg-white"
+        } border-r shadow-sm`}
+      >
         <div className="p-4 pb-2 flex justify-between items-center">
           <img
             src={images.fullLogo}
@@ -75,12 +81,22 @@ export default function Sidebar() {
           {!wideScreen && (
             <button
               onClick={() => setExpanded((curr) => !curr)}
-              className={`p-1.5 rounded-lg ${darkTheme ? "bg-dark-gray-color-300 hover:bg-dark-gray-color-200" : "bg-gray-50 hover:bg-gray-100"} `}
+              className={`p-1.5 rounded-lg ${
+                darkTheme
+                  ? "bg-dark-gray-color-300 hover:bg-dark-gray-color-200"
+                  : "bg-gray-50 hover:bg-gray-100"
+              } `}
             >
               {expanded ? (
-                <IoIosArrowBack size={iconSize} className={`${darkTheme ? "fill-white" : "fill-black" }`} />
+                <IoIosArrowBack
+                  size={iconSize}
+                  className={`${darkTheme ? "fill-white" : "fill-black"}`}
+                />
               ) : (
-                <IoIosArrowForward size={iconSize} className={`${darkTheme ? "fill-white" : "fill-black"}`} />
+                <IoIosArrowForward
+                  size={iconSize}
+                  className={`${darkTheme ? "fill-white" : "fill-black"}`}
+                />
               )}
             </button>
           )}
@@ -96,6 +112,7 @@ export default function Sidebar() {
                 enText={item.en.name}
                 ruText={item.ru.name}
                 link={item.link}
+                withinSite={item.withinSite}
               />
             ))}
 
@@ -108,6 +125,7 @@ export default function Sidebar() {
                 enText={item.en.name}
                 ruText={item.ru.name}
                 link={item.link}
+                withinSite={item.withinSite}
               />
             ))}
           </ul>
@@ -124,7 +142,9 @@ export default function Sidebar() {
           `}
           >
             <div
-              className={`leading-4 ${expanded ? "block" : "flex items-center justify-center"} ${darkTheme ? "text-white" : ""}`}
+              className={`leading-4 ${
+                expanded ? "block" : "flex items-center justify-center"
+              } ${darkTheme ? "text-white" : ""}`}
             >
               {expanded ? (
                 <>
@@ -133,14 +153,21 @@ export default function Sidebar() {
                   ) : (
                     <h4 className="font-semibold">Поддержка</h4>
                   )}
-                  <Link to="/help" className={`${darkTheme ? "text-gray-300" : "text-gray-600"} text-xs`}>
+                  <Link
+                    to="/help"
+                    className={`${
+                      darkTheme ? "text-gray-300" : "text-gray-600"
+                    } text-xs`}
+                  >
                     /helpme
                   </Link>
                 </>
               ) : (
                 <IoMdHelpCircleOutline
                   size={iconSize}
-                  className={`${darkTheme ? "text-white" : "text-gray-600"} cursor-pointer`}
+                  className={`${
+                    darkTheme ? "text-white" : "text-gray-600"
+                  } cursor-pointer`}
                 />
               )}
             </div>
@@ -151,7 +178,7 @@ export default function Sidebar() {
   );
 }
 
-export function SidebarItem({ icon, ruText, enText, link }) {
+export function SidebarItem({ icon, ruText, enText, link, withinSite }) {
   const darkTheme = useSelector((state) => state.darkTheme.theme);
   const language = useSelector((state) => state.language.language);
   const { expanded } = useContext(SidebarContext);
@@ -164,26 +191,36 @@ export function SidebarItem({ icon, ruText, enText, link }) {
     } else {
       dispatch(setLanguage("en"));
     }
-  }
+  };
   const toggleTheme = () => {
     dispatch(setTheme());
-  }
-
-
+  };
 
   return (
-    <Link to={link}>
+    <Link to={link} target={withinSite ? "" : "_blank"}>
       <li
-        {...(!expanded && ruText === "Язык" && enText === "Language" && { onClick: toggleLanguage })}
-        {...(!expanded && ruText === "Тема" && enText === "Theme" && { onClick: toggleTheme })}
+        {...(!expanded &&
+          ruText === "Язык" &&
+          enText === "Language" && { onClick: toggleLanguage })}
+        {...(!expanded &&
+          ruText === "Тема" &&
+          enText === "Theme" && { onClick: toggleTheme })}
         className={`
           relative flex items-center py-2 px-3 my-1
           font-medium rounded-md cursor-pointer
           transition-colors group
           ${
             type === "active"
-              ? `${darkTheme ? "bg-gradient-to-tr from-custom-color-500 to-custom-color-300 bg-custom-color-800" : "bg-gradient-to-tr from-custom-color-200 to-custom-color-100 bg-custom-color-800"}`
-              : `${darkTheme ? "hover:bg-custom-color-700 text-white" : "hover:bg-custom-color-50 text-gray-600"}`
+              ? `${
+                  darkTheme
+                    ? "bg-gradient-to-tr from-custom-color-500 to-custom-color-300 bg-custom-color-800"
+                    : "bg-gradient-to-tr from-custom-color-200 to-custom-color-100 bg-custom-color-800"
+                }`
+              : `${
+                  darkTheme
+                    ? "hover:bg-custom-color-700 text-white"
+                    : "hover:bg-custom-color-50 text-gray-600"
+                }`
           }
         `}
       >
@@ -206,7 +243,9 @@ export function SidebarItem({ icon, ruText, enText, link }) {
                 RU
               </span>
               <span
-                className={` ${language === "en" ? "chosenElement" : ""} px-[5.4px] py-1`}
+                className={` ${
+                  language === "en" ? "chosenElement" : ""
+                } px-[5.4px] py-1`}
                 onClick={() => dispatch(setLanguage("en"))}
               >
                 EN
@@ -225,20 +264,19 @@ export function SidebarItem({ icon, ruText, enText, link }) {
                 <FaSun />
               </span>
               <span
-                className={`mr-1 ${
-                  darkTheme ? "chosenElement" : ""
-                } px-2 py-2`}
+                className={`mr-1 ${darkTheme ? "chosenElement" : ""} px-2 py-2`}
                 onClick={() => dispatch(setTheme())}
               >
                 <IoMoon />
               </span>
             </div>
           )}
-
         </span>
         {type === "alert" && (
           <div
-            className={`${styles.alertIndicator} absolute right-3 w-2 h-2 rounded bg-custom-color-400 ${
+            className={`${
+              styles.alertIndicator
+            } absolute right-3 w-2 h-2 rounded bg-custom-color-400 ${
               expanded ? "" : "top-2 right-2"
             }`}
           />
@@ -246,7 +284,11 @@ export function SidebarItem({ icon, ruText, enText, link }) {
 
         {!expanded && (
           <div
-            className={` ${darkTheme ? "bg-custom-color-700 custom-color-800" : "bg-custom-color-100 custom-color-800"} 
+            className={` ${
+              darkTheme
+                ? "bg-custom-color-700 custom-color-800"
+                : "bg-custom-color-100 custom-color-800"
+            } 
             absolute left-full rounded-md px-2 py-1 ml-6 text-sm
             invisible opacity-20 -translate-x-3 transition-all
             group-hover:visible group-hover:opacity-100 group-hover:translate-x-0

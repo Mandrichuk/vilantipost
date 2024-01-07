@@ -13,6 +13,7 @@ import images from "../../../constants/index";
 import isObjNotEmpty from "../../../utils/isObjNotEmpty";
 
 function FormFrom(props) {
+  const isOpened = props.isOpened;
   const orderBox = useSelector((state) => state.orderBox.orderBox);
   const windowWidth = useWindowWidth();
   const language = useSelector((state) => state.language.language);
@@ -70,18 +71,18 @@ function FormFrom(props) {
   }
 
   return (
-    <form className={`${styles.formClientInfo} mb-6`}>
+    <form className={`${styles.formClientInfo} ${isOpened ? "mb-6" : "mb-3"}`}>
       <div
         className={`${styles.title} ${
-          props.isOpened && `text-custom-color-700 font-bold`
-        } labelText p-3 mb-5 w-full flex flex-row items-center`}
+          isOpened && `text-custom-color-700 font-bold`
+        } labelText p-3 ${isOpened ? "mb-5" : "mb-1"} w-full flex flex-row items-center`}
       >
         <TbCircleNumber1 className={`mr-2 text-[1.3rem]`} />
         {language === "en"
           ? formFromClient.en.formTitle
           : formFromClient.ru.formTitle}
       </div>
-      {props.isOpened && (
+      {isOpened && (
         <div id="formClientInfo" className={`${styles.detailsCover}`}>
           <div
             className={`${styles.informDetails} text-dark-gray-color-300 labelText`}

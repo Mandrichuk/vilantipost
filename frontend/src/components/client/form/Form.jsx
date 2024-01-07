@@ -20,9 +20,9 @@ function Form() {
   const orderBox = useSelector((state) => state.orderBox.orderBox);
   const language = useSelector((state) => state.language.language);
   const [openFromForm, setOpenFromForm] = useState(true);
-  const [openToForm, setOpenToForm] = useState(true);
-  const [openShippingForm, setOpenShippingForm] = useState(true);
-  const [openPaymentForm, setOpenPaymentForm] = useState(true);
+  const [openToForm, setOpenToForm] = useState(false);
+  const [openShippingForm, setOpenShippingForm] = useState(false);
+  const [openPaymentForm, setOpenPaymentForm] = useState(false);
 
 
   // useEffect(() => {
