@@ -15,7 +15,10 @@ import FormTo from "./FormTo";
 import ShippingForm from "./ShippingForm";
 import PaymentForm from "./PaymentForm";
 
+
+
 function Form() {
+  const formsClientData = useSelector((state) => state.formsClient.formsData);
   const windowWidth = useWindowWidth();
   const orderBox = useSelector((state) => state.orderBox.orderBox);
   const language = useSelector((state) => state.language.language);
@@ -40,12 +43,8 @@ function Form() {
     });
   }
 
-  // useEffect(() => {
-  //   window.addEventListener("beforeunload");
-  //   return () => {
-  //     window.removeEventListener("beforeunload");
-  //   };
-  // }, []);
+
+  console.log(formsClientData);
 
   return (
     <div

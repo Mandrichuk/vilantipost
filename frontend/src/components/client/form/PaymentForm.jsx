@@ -41,8 +41,6 @@ function PaymentForm(props) {
     }
   }
 
-  console.log(isOpened);
-
   function isFormValid() {
     let isValid = false;
     if (paymentForm.acceptRules) {

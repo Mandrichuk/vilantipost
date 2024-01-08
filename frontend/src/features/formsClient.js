@@ -41,13 +41,18 @@ export const formsClient = createSlice({
 
       switch (type) {
         case "UPDATE_FROM_FORM_DATA":
+          console.log(state.formsData.formFromClient);
           state.formsData.formFromClient = value;
+          break;
         case "UPDATE_TO_FORM_DATA":
           state.formsData.formToClient = value;
+          break;
         case "UPDATE_SHIPPING_FORM_DATA":
           state.formsData.shippingForm = value;
+          break;
         case "UPDATE_PAYMENT_FORM_DATA":
           state.formsData.paymentForm = value;
+          break;
       }
     },
     annulData: (state) => {
