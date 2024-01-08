@@ -38,11 +38,12 @@ export const formsClient = createSlice({
   reducers: {
     setFormData: (state, action) => {
       const { type, value } = action.payload;
+      console.log(value);
 
       switch (type) {
         case "UPDATE_FROM_FORM_DATA":
-          console.log(state.formsData.formFromClient);
-          state.formsData.formFromClient = value;
+          state.formsData.formFromClient = {...value};
+          console.log(JSON.stringify(state));
           break;
         case "UPDATE_TO_FORM_DATA":
           state.formsData.formToClient = value;

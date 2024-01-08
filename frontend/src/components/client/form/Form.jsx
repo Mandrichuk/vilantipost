@@ -43,8 +43,14 @@ function Form() {
     });
   }
 
+  const jsForm = JSON.stringify(formsClientData);
+  const paredForm = JSON.parse(jsForm);
+  console.log(paredForm)
 
-  console.log(formsClientData);
+
+  function sendToBackend() {
+    // formsClientData
+  }
 
   return (
     <div
@@ -98,6 +104,7 @@ function Form() {
           <PaymentForm
             isOpened={toggleOpenForms.openPaymentForm}
             handleChangeActiveForm={handleChangeActiveForm}
+            sendToBackend={sendToBackend}
           />
         </div>
       </div>

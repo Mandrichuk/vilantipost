@@ -30,7 +30,7 @@ function ShippingForm(props) {
     event.preventDefault();
 
     if (isFormValid(adressInput)) {
-      dispatch(setFormData({ type: "UPDATE_FROM_FORM_DATA", value: adressInput }));
+      dispatch(setFormData({ type: "UPDATE_SHIPPING_FORM_DATA", value: {adressInput: adressInput} }));
       props.handleChangeActiveForm("openPaymentForm");
     }
   }

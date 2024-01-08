@@ -38,6 +38,7 @@ function PaymentForm(props) {
 
     if (isFormValid()) {
       dispatch(setFormData({ type: "UPDATE_PAYMENT_FORM_DATA", value: paymentForm }));
+      props.sendToBackend();
     }
   }
 
