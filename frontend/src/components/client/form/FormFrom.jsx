@@ -61,8 +61,7 @@ function FormFrom(props) {
       houseNumber &&
       zipCode &&
       email &&
-      phoneNumber &&
-      phoneNumber.length >= 7
+      phoneNumber
     ) {
       isValid = true;
     }
@@ -83,8 +82,8 @@ function FormFrom(props) {
           ? formFromClient.en.formTitle
           : formFromClient.ru.formTitle}
       </div>
-      {isOpened && (
-        <div id="formClientInfo" className={`${styles.detailsCover}`}>
+
+        <div id="formClientInfo" className={`${styles.detailsCover} ${isOpened ? "open" : "hidden"}`}>
           <div
             className={`${styles.informDetails} text-dark-gray-color-300 labelText`}
           >
@@ -147,7 +146,7 @@ function FormFrom(props) {
             </button>
           </div>
         </div>
-      )}
+
     </form>
   );
 }

@@ -66,8 +66,7 @@ function FormTo(props) {
       houseNumber &&
       zipCode &&
       email &&
-      phoneNumber &&
-      phoneNumber.length >= 7
+      phoneNumber
     ) {
       isValid = true;
     }
@@ -91,8 +90,7 @@ function FormTo(props) {
           : formToClient.ru.formTitle}
       </div>
 
-      {isOpened && (
-        <div id="formClientInfo" className={`${styles.detailsCover}`}>
+        <div id="formClientInfo" className={`${styles.detailsCover} ${isOpened ? "open" : "hidden"}`}>
           <div
             className={`${styles.informDetails} text-dark-gray-color-300 labelText`}
           >
@@ -156,7 +154,7 @@ function FormTo(props) {
             </button>
           </div>
         </div>
-      )}
+
     </form>
   );
 }

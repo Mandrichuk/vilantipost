@@ -19,6 +19,34 @@
   border-radius: 6px;
 }
 
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    max-height: 0;
+  }
+  100% {
+    opacity: 1;
+    max-height: 500px; 
+  }
+}
+
+.detailsCover {
+  overflow: hidden;
+  animation: fadeInOut 0.5s ease-out;
+}
+
+.detailsCover.open {
+  animation: fadeInOut 0.5s ease-in-out;
+}
+
+.detailsCover.hidden {
+  display: none; 
+  opacity: 0;
+  max-height: 0;
+  animation: fadeHidden 0.5s ease-in-out;
+}
+
+
 @media (min-width: 650px) {
   .formClientContainer {
     grid-template-columns: repeat(2, 1fr);

@@ -57,8 +57,8 @@ function ShippingForm(props) {
           ? shippingFromClient.en.formTitle
           : shippingFromClient.ru.formTitle}
       </div>
-      {isOpened && (
-        <div className={`${styles.cover}`}>
+        <div className={`${styles.detailsCover} ${isOpened ? "open" : "hidden"}`}>
+
           <div
             className={`${styles.borderCustomContainer}  ${
               windowWidth < 650 ? "px-3" : `px-5`
@@ -111,7 +111,6 @@ function ShippingForm(props) {
             </button>
           </div>
         </div>
-      )}
     </form>
   );
 }

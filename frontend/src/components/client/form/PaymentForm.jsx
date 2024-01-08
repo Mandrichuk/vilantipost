@@ -38,12 +38,10 @@ function PaymentForm(props) {
 
     if (isFormValid()) {
       dispatch(setFormData({ type: "UPDATE_PAYMENT_FORM_DATA", value: paymentForm }));
-
-      // props.handleOpenToForm();
     }
   }
 
-  console.log()
+  console.log(isOpened);
 
   function isFormValid() {
     let isValid = false;
@@ -70,8 +68,7 @@ function PaymentForm(props) {
           : paymentFormText.ru.formTitle}
       </div>
 
-      {isOpened && (
-        <div className={`${styles.cover}`}>
+        <div className={`${styles.detailsCover} ${isOpened ? "open" : "hidden"}`}>
           <div
             className={`${styles.borderCustomContainer} ${
               windowWidth < 650 ? "px-3" : `px-5`
@@ -177,7 +174,6 @@ function PaymentForm(props) {
             </button>
           </div>
         </div>
-      )}
     </form>
   );
 }
