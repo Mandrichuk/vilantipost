@@ -38,12 +38,10 @@ export const formsClient = createSlice({
   reducers: {
     setFormData: (state, action) => {
       const { type, value } = action.payload;
-      console.log(value);
 
       switch (type) {
         case "UPDATE_FROM_FORM_DATA":
-          state.formsData.formFromClient = {...value};
-          console.log(JSON.stringify(state));
+          state.formsData.formFromClient = value;
           break;
         case "UPDATE_TO_FORM_DATA":
           state.formsData.formToClient = value;
@@ -57,7 +55,7 @@ export const formsClient = createSlice({
       }
     },
     annulData: (state) => {
-      // state.formFromClient = initialStateValue;
+      state.formFromClient = initialStateValue;
     },
   },
 });

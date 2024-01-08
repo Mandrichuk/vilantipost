@@ -43,12 +43,12 @@ function Form() {
     });
   }
 
-  const jsForm = JSON.stringify(formsClientData);
-  const paredForm = JSON.parse(jsForm);
-  console.log(paredForm)
 
 
   function sendToBackend() {
+    const stringifiedForm = JSON.stringify(formsClientData);
+    const paredForm = JSON.parse(stringifiedForm);
+    console.log(paredForm)
     // formsClientData
   }
 
