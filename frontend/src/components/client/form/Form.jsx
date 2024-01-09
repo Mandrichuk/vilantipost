@@ -2,20 +2,15 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import styles from "./form.module.css";
-import PhoneInput from "../../common/PhoneInput";
-import TextInput from "../../common/TextInput";
+import axios from "axios";
 import Sidebar from "../../common/sidebar/Sidebar";
 import { formPage, countries } from "../../../constants/index";
 import useWindowWidth from "../../../utils/useWindowWidth";
-import StaticInput from "../../common/StaticInput";
 import images from "../../../constants/index";
-import isObjNotEmpty from "../../../utils/isObjNotEmpty";
 import FormFrom from "./FormFrom";
 import FormTo from "./FormTo";
 import ShippingForm from "./ShippingForm";
 import PaymentForm from "./PaymentForm";
-
-
 
 function Form() {
   const formsClientData = useSelector((state) => state.formsClient.formsData);
@@ -44,12 +39,22 @@ function Form() {
   }
 
 
-
   function sendToBackend() {
     const stringifiedForm = JSON.stringify(formsClientData);
-    const paredForm = JSON.parse(stringifiedForm);
-    console.log(paredForm)
-    // formsClientData
+    // console.log(stringifiedForm);
+    
+    axios
+      .post("http://127.0.0.1:5000/api/save-form", stringifiedForm, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error("Ошибка при отправке данных на сервер:", error);
+      });
   }
 
   return (
