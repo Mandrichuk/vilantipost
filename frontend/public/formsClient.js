@@ -22,7 +22,7 @@ const initialStateValue = {
     phoneNumber: "",
   },
   shippingForm: {
-    addressInput: "",
+    adressInput: "",
   },
   paymentForm: {
     contactAfter: false,

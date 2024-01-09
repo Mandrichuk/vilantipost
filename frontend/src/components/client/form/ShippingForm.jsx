@@ -16,21 +16,21 @@ function ShippingForm(props) {
   const language = useSelector((state) => state.language.language);
   const shippingFromClient = formPage.shippingForm;
   const [notFullfilledError, setNotFullfilledError] = useState(false);
-  const [adressInput, setAdressInput] = useState("");
+  const [addressInput, setAddressInput] = useState("");
   const adressInputText =
     language === "en"
       ? shippingFromClient.en.adressInput
       : shippingFromClient.ru.adressInput;
 
   function getAdressInput(field, value) {
-    setAdressInput(value);
+    setAddressInput(value);
   }
 
   function submitShippingForm(event) {
     event.preventDefault();
 
-    if (isFormValid(adressInput)) {
-      dispatch(setFormData({ type: "UPDATE_SHIPPING_FORM_DATA", value: {adressInput: adressInput} }));
+    if (isFormValid(addressInput)) {
+      dispatch(setFormData({ type: "UPDATE_SHIPPING_FORM_DATA", value: {addressInput: addressInput} }));
       props.handleChangeActiveForm("openPaymentForm");
     }
   }

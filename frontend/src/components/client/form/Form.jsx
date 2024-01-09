@@ -41,7 +41,6 @@ function Form() {
 
   function sendToBackend() {
     const stringifiedForm = JSON.stringify(formsClientData);
-    // console.log(stringifiedForm);
     
     axios
       .post("http://127.0.0.1:5000/api/save-form", stringifiedForm, {
