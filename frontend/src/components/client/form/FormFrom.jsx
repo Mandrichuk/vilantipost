@@ -35,6 +35,7 @@ function FormFrom(props) {
     phoneNumber: formFromClient.phoneNumber,
   });
 
+  console.log(departureCountry)
 
   const handleFormFromDataChange = (field, value) => {
     setFromFormData((prevData) => ({ ...prevData, [field]: value }));
@@ -44,7 +45,9 @@ function FormFrom(props) {
     event.preventDefault(); 
 
     if (isFormValid(fromFormData)) {
-      dispatch(setFormData({ type: "UPDATE_FROM_FORM_DATA", value: fromFormData }));
+      const fixedFromFormData = { ...fromFormData, country: departureCountry.id };
+
+      dispatch(setFormData({ type: "UPDATE_FROM_FORM_DATA", value: fixedFromFormData }));
       props.handleChangeActiveForm("openToForm");
     }
   }

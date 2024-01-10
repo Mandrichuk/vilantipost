@@ -42,7 +42,9 @@ function FormTo(props) {
     event.preventDefault();
 
     if (isFormValid(toFormData)) {
-      dispatch(setFormData({ type: "UPDATE_TO_FORM_DATA", value: toFormData }));
+      const fixedToFormData = { ...toFormData, country: destinationCountry.id };
+
+      dispatch(setFormData({ type: "UPDATE_TO_FORM_DATA", value: fixedToFormData }));
       props.handleChangeActiveForm("openShippingForm");
     }
   }

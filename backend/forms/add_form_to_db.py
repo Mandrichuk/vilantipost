@@ -36,11 +36,6 @@ def add_form_to_db(formData):
     with sqlite3.connect("forms.db") as connect:
         cursor = connect.cursor()
 
-        # # Convert nested dictionaries to JSON strings
-        # formData['sender_country'] = json.dumps(formData['sender_country'])
-        # formData['recipient_country'] = json.dumps(formData['recipient_country'])
-
-        # Execute the SQL query
         cursor.execute(
             """
             INSERT INTO forms (
@@ -64,7 +59,7 @@ def add_form_to_db(formData):
                 paymentForm_contactAfter,
                 paymentForm_acceptRules
             ) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); 
             """,
             (
                 formData.sender,
