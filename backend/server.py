@@ -23,9 +23,9 @@ def save_form():
         form = form_to_class(data)
         add_form_to_db(form)
 
-        return jsonify(f"success: {data}")
+        return (f"success: {jsonify(data)}")
     except Exception as e:
-        return jsonify(f"error: {str(e)}")
+        return jsonify(f"error {str(e)}")
 
 
 if __name__ == "__main__":

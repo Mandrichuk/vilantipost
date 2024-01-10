@@ -84,4 +84,4 @@ def add_form_to_db(formData):
             ),
         )
 
-    return 0
+    return 1

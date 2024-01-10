@@ -16,11 +16,12 @@ import { setOrderBoxData } from "../../../features/orderBox";
 import { RussiaData } from "../../../constants/index";
 import { annulData } from "../../../features/orderBox";
 import Footer from "../../common/footer/Footer";
-
+import darkTheme from "../../../features/darkTheme";
 
 const HomePage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const darkTheme = useSelector((state) => state.darkTheme.theme);
   const language = useSelector((state) => state.language.language);
   const orderBoxData = useSelector((state) => state.orderBox.orderBox);
   const orderBoxInfo = homePage.orderBox;
@@ -32,6 +33,8 @@ const HomePage = () => {
     weight: 0.5,
   });
   const [inputError, setInputError] = useState(false);
+
+  console.log(darkTheme);
 
   useEffect(() => {
     dispatch(annulData());
@@ -83,11 +86,11 @@ const HomePage = () => {
     <>
       <Sidebar />
       <div
-        className={`${styles.backgroundCover} w-full h-[100vh] flex flex-col items-center  bg-custom-color-50`}
+        className={`${styles.backgroundCover} w-full h-[100vh] flex flex-col items-center  ${darkTheme ? "bg-custom-color-50" : "bg-white"}`}
       >
         <div className={`wrapper`}>
           <div
-            className={`${styles.orderBox} text-custom-color-500 bg-dark-gray-color-500 w-full p-3 rounded-xl shadow-md`}
+            className={`${styles.orderBox} ${darkTheme ? "text-custom-color-500 bg-dark-gray-color-500" : "text-custom-color-800 bg-custom-color-100"} w-full p-3 rounded-xl shadow-md`}
           >
             <div
               className={`${styles.titleContainer} titleText my-3 text-center`}
@@ -165,7 +168,7 @@ const HomePage = () => {
 
               {windowWidth < wideScreen && <div className={`separator my-4 text-white`} />}
               {windowWidth > wideScreen && (
-                <div className={`w-[1px] bg-gray-200 mx-3`} />
+                <div className={`w-[1px] bg-white mx-3`} />
               )}
 
               <div className={`${styles.secondSection} flex-1 `}>
