@@ -79,44 +79,8 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-.importantCustom50 {
-  color: var(--custom-color-50) !important;
-}
-
-.importantCustom100 {
-  color: var(--custom-color-100) !important;
-}
-
-.importantCustom200 {
-  color: var(--custom-color-200) !important;
-}
-
-.importantCustom300 {
-  color: var(--custom-color-300) !important;
-}
-
-.importantCustom400 {
-  color: var(--custom-color-400) !important;
-}
-
-.importantCustom {
-  color: var(--custom-color) !important;
-}
-
-.importantCustom600 {
-  color: var(--custom-color-600) !important;
-}
-
-.importantCustom700 {
-  color: var(--custom-color-700) !important;
-}
-
-.importantCustom800 {
-  color: var(--custom-color-800) !important;
-}
-
-.importantCustom900 {
-  color: var(--custom-color-900) !important;
+.importantFontBold {
+  font-weight: bold !important;
 }
 
 #root {
