@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 const RadioButtons = (props) => {
   const radioOptions = props.arr;
@@ -28,8 +29,11 @@ const RadioButtons = (props) => {
 };
 
 const RadioButton = (props) => {
+  const darkTheme = useSelector((state) => state.darkTheme.theme);
+  console.log(darkTheme)
+
   return (
-    <label className={`radioContainer ${props.selected ? "selected" : ""}`}>
+    <label className={`radioContainer ${props.selected ? "selected" : ""} ${!darkTheme && "light"}`}>
       <input
         className="customRadio"
         type="radio"

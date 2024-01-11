@@ -12,7 +12,6 @@
   --link-color: blue;
   --error-color: #fc3535;
 
-
   --dark-gray-color-50: #6b7483;
   --dark-gray-color-100: #5f6879;
   --dark-gray-color-200: #535b6f;
@@ -24,16 +23,16 @@
   --dark-gray-color-800: #252a36;
   --dark-gray-color-900: #1f232c;
 
-  --custom-color-50: rgb(207, 246, 243);
-  --custom-color-100: rgb(180, 240, 237);
-  --custom-color-200: rgb(153, 233, 230);
-  --custom-color-300: rgb(126, 227, 224);
-  --custom-color-400: rgb(109, 222, 218);
-  --custom-color: rgb(98, 221, 212); /* Original color */
-  --custom-color-600: rgb(87, 195, 187);
-  --custom-color-700: rgb(76, 170, 162);
-  --custom-color-800: rgb(65, 144, 136);
-  --custom-color-900: rgb(54, 119, 111);
+  --custom-color-50: #cff6f3;
+  --custom-color-100: #b4f0ed;
+  --custom-color-200: #99e9e6;
+  --custom-color-300: #7ee3e0;
+  --custom-color-400: #6ddeda;
+  --custom-color: #62ddd4; /* Original color */
+  --custom-color-600: #57c3bb;
+  --custom-color-700: #4caaa2;
+  --custom-color-800: #419088;
+  --custom-color-900: #36776f;
 
   --btn-text: 1rem;
   --border-px: 1px;
@@ -63,7 +62,6 @@ body {
 
 ::-webkit-scrollbar-track {
   background-color: var(--custom-color-300);
-
 }
 
 ::-webkit-scrollbar-thumb {
@@ -76,9 +74,49 @@ body {
   background-color: var(--custom-color-800);
 }
 
-
-label, input[type="checkbox"] {
+label,
+input[type="checkbox"] {
   cursor: pointer;
+}
+
+.importantCustom50 {
+  color: var(--custom-color-50) !important;
+}
+
+.importantCustom100 {
+  color: var(--custom-color-100) !important;
+}
+
+.importantCustom200 {
+  color: var(--custom-color-200) !important;
+}
+
+.importantCustom300 {
+  color: var(--custom-color-300) !important;
+}
+
+.importantCustom400 {
+  color: var(--custom-color-400) !important;
+}
+
+.importantCustom {
+  color: var(--custom-color) !important;
+}
+
+.importantCustom600 {
+  color: var(--custom-color-600) !important;
+}
+
+.importantCustom700 {
+  color: var(--custom-color-700) !important;
+}
+
+.importantCustom800 {
+  color: var(--custom-color-800) !important;
+}
+
+.importantCustom900 {
+  color: var(--custom-color-900) !important;
 }
 
 #root {
@@ -207,6 +245,11 @@ label, input[type="checkbox"] {
   font-weight: bold;
 }
 
+.radioContainer.selected.light {
+  background-color: var(--custom-color-700);
+  box-shadow: 0 0 30px var(--custom-color-700);
+}
+
 .radioContainer::before {
   content: "";
   position: absolute;
@@ -262,7 +305,7 @@ label, input[type="checkbox"] {
 .numberInput {
   color: var(--dark-gray-color-700);
   background-color: var(--custom-color-400);
-} 
+}
 
 .inputIcon {
   color: var(--dark-gray-color-700);
@@ -302,16 +345,13 @@ label, input[type="checkbox"] {
   padding: 10px;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color var(--transition-time) ease-in-out, color var(--transition-time) ease-in-out;
+  transition: background-color var(--transition-time) ease-in-out,
+    color var(--transition-time) ease-in-out;
 }
 
 .darkerButton.unavailable {
   cursor: auto;
   opacity: 0.6;
-}
-
-.darkerButton.unavailable:hover {
-  
 }
 
 .darkerButton {
@@ -330,8 +370,18 @@ label, input[type="checkbox"] {
   background-color: var(--custom-color);
 }
 
+.regularButton.light {
+  color: var(--white-color);
+  background-color: var(--custom-color-700);
+}
+
 .selectedButton {
   background-color: var(--custom-color);
+  color: var(--white-color);
+}
+
+.selectedButton.light {
+  background-color: var(--custom-color-700);
   color: var(--white-color);
 }
 

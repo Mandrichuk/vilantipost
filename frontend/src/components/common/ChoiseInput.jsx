@@ -7,6 +7,7 @@ const ChoiseInput = (props) => {
   const [input, setInput] = useState("");
   const [selectedCountry, setSelectedCountry] = useState({});
   const [isActive, setIsActive] = useState(false);
+  const [isFinalBlur, setIsFinalBlur] = useState(false);
   const [countries, setCountries] = useState(props.arr);
   const customInputContainerRef = useRef(null);
 
@@ -37,6 +38,38 @@ const ChoiseInput = (props) => {
     props.getCountry(selectedCountry);
   }, [selectedCountry]);
 
+  useEffect(() => {
+    let blurTimeout;
+
+    const handleOutsideClick = (e) => {
+      if (
+        customInputContainerRef.current &&
+        !customInputContainerRef.current.contains(e.target) &&
+        !e.target.classList.contains("customUL")
+      ) {
+        // Set isFinalBlur to false to indicate that it's not the final blur yet
+        setIsFinalBlur(false);
+
+        // Clear any existing timeout
+        clearTimeout(blurTimeout);
+
+        // Set a new timeout for 100 milliseconds
+        blurTimeout = setTimeout(() => {
+          // Set isFinalBlur to true after the delay
+          setIsFinalBlur(true);
+          setIsActive(false);
+        }, 100);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+      clearTimeout(blurTimeout); // Clear the timeout on component unmount
+    };
+  }, []);
+
   function handleInputClick() {
     setIsActive(!isActive);
   }
@@ -52,6 +85,9 @@ const ChoiseInput = (props) => {
       language === "en" ? selectedItem.en.name : selectedItem.ru.name;
     setSelectedCountry(selectedItem);
     setInput(selectedName);
+
+    // Set isFinalBlur to true when an item is chosen
+    setIsFinalBlur(true);
     setIsActive(false);
   }
 

@@ -34,7 +34,6 @@ const HomePage = () => {
   });
   const [inputError, setInputError] = useState(false);
 
-  console.log(darkTheme);
 
   useEffect(() => {
     dispatch(annulData());
@@ -111,7 +110,7 @@ const HomePage = () => {
                     }}
                     className={`${
                       formData.fromWhere === "to" ? "selectedButton" : "button"
-                    } flex-1 mb-3`}
+                    } flex-1 mb-3 ${!darkTheme && "light"}`}
                   >
                     {language === "en"
                       ? orderBoxInfo.en.fromWhereInputs[0]
@@ -125,7 +124,7 @@ const HomePage = () => {
                       formData.fromWhere === "from"
                         ? "selectedButton"
                         : "button"
-                    } flex-1 mb-3`}
+                    } flex-1 mb-3 ${!darkTheme && "light"}`}
                   >
                     {language === "en"
                       ? orderBoxInfo.en.fromWhereInputs[1]
@@ -180,7 +179,7 @@ const HomePage = () => {
                   </label>
                   <ImgTitleContainer
                     direction="row"
-                    bgColor="#419088"
+                    bgColor={darkTheme ? "#57c3bb" : "#419088"}
                     shadow={false}
                     title={
                       language === "en"
@@ -221,7 +220,7 @@ const HomePage = () => {
             <div className={`flex flex-row items-center justify-center`}>
               <button
                 onClick={() => submitForm()}
-                className={`flex-1 mb-3 regularButton max-w-[260px]`}
+                className={`flex-1 mb-3 regularButton max-w-[260px] ${!darkTheme && "light"}`}
               >
                 {language === "en"
                   ? orderBoxInfo.en.buttonSubmit
