@@ -401,14 +401,14 @@ export const sidebar = {
     },
     {
       ru: {
-        name: "Настройки",
+        name: "Отследить",
       },
       en: {
-        name: "Settings",
+        name: "Track",
       },
       type: "",
-      icon: "IoIosSettings",
-      link: "/settings",
+      icon: "RiPhoneFindFill",
+      link: "/track-parcel",
       withinSite: true,
     },
     {
@@ -449,7 +449,7 @@ export const sidebar = {
     },
     {
       ru: {
-        name: "Вайбер",
+        name: "WhatsApp",
       },
       en: {
         name: "WhatsApp",

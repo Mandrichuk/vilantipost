@@ -1,7 +1,6 @@
 import React, { useContext, createContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
-  IoIosSettings,
   IoIosArrowForward,
   IoIosArrowBack,
   IoMdHelpCircleOutline,
@@ -20,13 +19,14 @@ import { FaSun } from "react-icons/fa";
 import { IoMoon } from "react-icons/io5";
 import { setLanguage } from "../../../features/language";
 import { setTheme } from "../../../features/darkTheme";
+import { RiPhoneFindFill } from "react-icons/ri";
 
 const SidebarContext = createContext();
 const iconSize = 25;
 const iconMapping = {
   IoHome: <IoHome size={iconSize} />,
   PiPackageFill: <PiPackageFill size={iconSize} />,
-  IoIosSettings: <IoIosSettings size={iconSize} />,
+  RiPhoneFindFill: <RiPhoneFindFill size={iconSize} />,
   FaInstagram: <FaInstagram size={iconSize} />,
   FaLanguage: <FaLanguage size={iconSize} />,
   MdColorLens: <MdColorLens size={iconSize} />,
@@ -287,7 +287,7 @@ export function SidebarItem({ icon, ruText, enText, link, withinSite }) {
             className={` ${
               darkTheme
                 ? "bg-custom-color-700 custom-color-800"
-                : "bg-custom-color-100 custom-color-800"
+                : "bg-custom-color-400 custom-color-800"
             } 
             absolute left-full rounded-md px-2 py-1 ml-6 text-sm
             invisible opacity-20 -translate-x-3 transition-all

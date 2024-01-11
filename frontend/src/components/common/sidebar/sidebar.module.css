@@ -11,24 +11,6 @@
   transform-origin: center;
 }
 
-.toggleButton {
-  padding: 10px;
-  background-color: #ddd;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.toggleButton.on {
-  background-color: #4caf50;
-  color: white;
-}
-
-.toggleButton.off {
-  background-color: #f44336;
-  color: white;
-}
-
 
 @keyframes pulse {
   0% {

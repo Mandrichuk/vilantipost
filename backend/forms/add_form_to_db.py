@@ -7,6 +7,7 @@ with sqlite3.connect("forms.db") as connect:
     cursor.execute(
         """
         CREATE TABLE IF NOT EXISTS forms (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
             sender TEXT,
             sender_country TEXT,
             sender_city TEXT,

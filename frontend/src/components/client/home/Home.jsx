@@ -16,7 +16,6 @@ import { setOrderBoxData } from "../../../features/orderBox";
 import { RussiaData } from "../../../constants/index";
 import { annulData } from "../../../features/orderBox";
 import Footer from "../../common/footer/Footer";
-import darkTheme from "../../../features/darkTheme";
 
 const HomePage = () => {
   const navigate = useNavigate();
