@@ -89,10 +89,10 @@ const HomePage = () => {
       >
         <div className={`wrapper`}>
           <div
-            className={`${styles.orderBox} ${darkTheme ? "text-custom-color-500 bg-dark-gray-color-500" : "text-custom-color-800 bg-custom-color-100"} w-full p-3 rounded-xl shadow-md`}
+            className={`${styles.orderBox} ${darkTheme ? "text-custom-color-600 bg-dark-gray-color-500" : "text-custom-color-800 bg-custom-color-100"} w-full p-3 rounded-xl shadow-md`}
           >
             <div
-              className={`${styles.titleContainer} titleText my-3 text-center`}
+              className={`${styles.titleContainer} titleText my-3 text-center ${darkTheme ? "text-custom-color-400" : "text-custom-color-900"}`}
             >
               {language === "en"
                 ? orderBoxInfo.en.title

@@ -9,7 +9,6 @@ import useWindowWidth from "../../../utils/useWindowWidth";
 import StaticInput from "../../common/StaticInput";
 import {setFormData} from "../../../features/formsClient";
 
-
 function FormFrom(props) {
   const dispatch = useDispatch();
   const isOpened = props.isOpened;
@@ -34,8 +33,6 @@ function FormFrom(props) {
     email: formFromClient.email,
     phoneNumber: formFromClient.phoneNumber,
   });
-
-  console.log(departureCountry)
 
   const handleFormFromDataChange = (field, value) => {
     setFromFormData((prevData) => ({ ...prevData, [field]: value }));
@@ -75,16 +72,18 @@ function FormFrom(props) {
 
   return (
     <form className={`${styles.formClientInfo} ${isOpened ? "mb-6" : "mb-3"}`}>
-      <div
-        className={`${styles.title} ${
-          isOpened && `text-custom-color-700 font-bold`
-        } labelText p-3 ${isOpened ? "mb-5" : "mb-1"} w-full flex flex-row items-center`}
-      >
-        <TbCircleNumber1 className={`mr-2 text-[1.3rem]`} />
-        {language === "en"
-          ? formFromClient.en.formTitle
-          : formFromClient.ru.formTitle}
-      </div>
+      {windowWidth < 1560 && (
+        <div
+          className={`${styles.title} ${
+            isOpened && `text-custom-color-700 font-bold`
+          } labelText p-3 ${isOpened ? "mb-5" : "mb-1"} w-full flex flex-row items-center`}
+        >
+          <TbCircleNumber1 className={`mr-2 text-[1.3rem]`} />
+          {language === "en"
+            ? formFromClient.en.formTitle
+            : formFromClient.ru.formTitle}
+        </div>
+      )}
 
         <div id="formClientInfo" className={`${styles.detailsCover} ${isOpened ? "open" : "hidden"}`}>
           <div

@@ -292,6 +292,7 @@ input[type="checkbox"] {
 }
 
 .customInput {
+  font-weight: normal;
   color: var(--dark-gray-color-700);
   background-color: var(--white-color);
 }
@@ -409,6 +410,7 @@ input[type="checkbox"] {
   border: var(--border-px) solid var(--custom-color-200);
   outline: none;
   font-size: 1rem;
+  font-weight: normal;
   background-color: var(--custom-color-100);
   appearance: none;
   -webkit-appearance: none;
@@ -422,6 +424,7 @@ input[type="checkbox"] {
   padding: 10px;
   pointer-events: none;
   font-size: var(--btn-text);
+  font-weight: normal;
   transition: var(--transition-time);
   color: var(--extra-color-hover);
 }

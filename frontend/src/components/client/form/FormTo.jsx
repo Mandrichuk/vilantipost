@@ -44,7 +44,9 @@ function FormTo(props) {
     if (isFormValid(toFormData)) {
       const fixedToFormData = { ...toFormData, country: destinationCountry.id };
 
-      dispatch(setFormData({ type: "UPDATE_TO_FORM_DATA", value: fixedToFormData }));
+      dispatch(
+        setFormData({ type: "UPDATE_TO_FORM_DATA", value: fixedToFormData })
+      );
       props.handleChangeActiveForm("openShippingForm");
     }
   }
@@ -79,84 +81,88 @@ function FormTo(props) {
 
   return (
     <form className={`${styles.formClientInfo} ${isOpened ? "mb-6" : "mb-3"}`}>
-      <div
-        className={`${styles.title} ${
-          isOpened && `text-custom-color-700 font-bold`
-        } labelText p-3 ${
-          isOpened ? "mb-5" : "mb-1"
-        } w-full flex flex-row items-center`}
-      >
-        <TbCircleNumber2 className={`mr-2 text-[1.3rem]`} />
-        {language === "en"
-          ? formToClient.en.formTitle
-          : formToClient.ru.formTitle}
-      </div>
+      {windowWidth < 1560 && (
+        <div
+          className={`${styles.title} ${
+            isOpened && `text-custom-color-700 font-bold`
+          } labelText p-3 ${
+            isOpened ? "mb-5" : "mb-1"
+          } w-full flex flex-row items-center`}
+        >
+          <TbCircleNumber2 className={`mr-2 text-[1.3rem]`} />
+          {language === "en"
+            ? formToClient.en.formTitle
+            : formToClient.ru.formTitle}
+        </div>
+      )}
 
-        <div id="formClientInfo" className={`${styles.detailsCover} ${isOpened ? "open" : "hidden"}`}>
-          <div
-            className={`${styles.informDetails} text-dark-gray-color-300 labelText`}
-          >
-            {language === "en"
-              ? formToClient.en.informDetails
-              : formToClient.ru.informDetails}
-          </div>
-          <div
-            className={`${styles.informDetails} font-bold text-custom-color-700 articleText mb-5`}
-          >
-            {language === "en"
-              ? formToClient.en.alertMessage
-              : formToClient.ru.alertMessage}
-          </div>
-          <div className={`${styles.formClientContainer} w-full`}>
-            <StaticInput
-              value={
-                language === "en"
-                  ? formToClient.en.countryName.value
-                  : formToClient.ru.countryName.value
-              }
-              placeholder={
-                language === "en"
-                  ? destinationCountry.en.name
-                  : destinationCountry.ru.name
-              }
-              getValue={handleFormToDataChange}
-            />
-            {textInputsTo.map((item, index) => (
-              <TextInput
-                key={index}
-                {...item}
-                getValue={handleFormToDataChange}
-                error={notFullfilledError}
-              />
-            ))}
-            <PhoneInput
-              arr={countries}
-              field={"phoneNumber"}
-              value={
-                language === "en"
-                  ? formToClient.en.numberInput.value
-                  : formToClient.ru.numberInput.value
-              }
-              initailNumber={destinationCountry}
+      <div
+        id="formClientInfo"
+        className={`${styles.detailsCover} ${isOpened ? "open" : "hidden"}`}
+      >
+        <div
+          className={`${styles.informDetails} text-dark-gray-color-300 labelText`}
+        >
+          {language === "en"
+            ? formToClient.en.informDetails
+            : formToClient.ru.informDetails}
+        </div>
+        <div
+          className={`${styles.informDetails} font-bold text-custom-color-700 articleText mb-5`}
+        >
+          {language === "en"
+            ? formToClient.en.alertMessage
+            : formToClient.ru.alertMessage}
+        </div>
+        <div className={`${styles.formClientContainer} w-full`}>
+          <StaticInput
+            value={
+              language === "en"
+                ? formToClient.en.countryName.value
+                : formToClient.ru.countryName.value
+            }
+            placeholder={
+              language === "en"
+                ? destinationCountry.en.name
+                : destinationCountry.ru.name
+            }
+            getValue={handleFormToDataChange}
+          />
+          {textInputsTo.map((item, index) => (
+            <TextInput
+              key={index}
+              {...item}
               getValue={handleFormToDataChange}
               error={notFullfilledError}
             />
-          </div>
-          <div className={`w-full flex flex-col items-end justify-end mt-7`}>
-            <button
-              onClick={(event) => submitToForm(event)}
-              type="submit"
-              className={`darkerButton ${
-                windowWidth < 650 ? "" : `max-w-[300px]`
-              }`}
-            >
-              {language === "en"
-                ? formToClient.en.submitButton
-                : formToClient.ru.submitButton}
-            </button>
-          </div>
+          ))}
+          <PhoneInput
+            arr={countries}
+            field={"phoneNumber"}
+            value={
+              language === "en"
+                ? formToClient.en.numberInput.value
+                : formToClient.ru.numberInput.value
+            }
+            initailNumber={destinationCountry}
+            getValue={handleFormToDataChange}
+            error={notFullfilledError}
+          />
         </div>
-
+        <div className={`w-full flex flex-col items-end justify-end mt-7`}>
+          <button
+            onClick={(event) => submitToForm(event)}
+            type="submit"
+            className={`darkerButton ${
+              windowWidth < 650 ? "" : `max-w-[300px]`
+            }`}
+          >
+            {language === "en"
+              ? formToClient.en.submitButton
+              : formToClient.ru.submitButton}
+          </button>
+        </div>
+      </div>
     </form>
   );
 }

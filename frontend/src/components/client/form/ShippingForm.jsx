@@ -7,11 +7,9 @@ import { formPage } from "../../../constants/index";
 import TextInput from "../../common/TextInput";
 import { setFormData } from "../../../features/formsClient";
 
-
 function ShippingForm(props) {
   const dispatch = useDispatch();
   const isOpened = props.isOpened;
-  const orderBox = useSelector((state) => state.orderBox.orderBox);
   const windowWidth = useWindowWidth();
   const language = useSelector((state) => state.language.language);
   const shippingFromClient = formPage.shippingForm;
@@ -30,7 +28,12 @@ function ShippingForm(props) {
     event.preventDefault();
 
     if (isFormValid(addressInput)) {
-      dispatch(setFormData({ type: "UPDATE_SHIPPING_FORM_DATA", value: {addressInput: addressInput} }));
+      dispatch(
+        setFormData({
+          type: "UPDATE_SHIPPING_FORM_DATA",
+          value: { addressInput: addressInput },
+        })
+      );
       props.handleChangeActiveForm("openPaymentForm");
     }
   }
@@ -46,71 +49,76 @@ function ShippingForm(props) {
   }
 
   return (
-    <form className={`${styles.shippingFormInfo} ${isOpened ? "mb-6" : "mb-3"}`}>
-      <div
-        className={`${styles.title} ${
-          isOpened && `text-custom-color-700 font-bold`
-        } labelText p-3 ${isOpened ? "mb-5" : "mb-1"} w-full flex flex-row items-center`}
-      >
-        <TbCircleNumber3 className={`mr-2 text-[1.3rem]`} />
-        {language === "en"
-          ? shippingFromClient.en.formTitle
-          : shippingFromClient.ru.formTitle}
-      </div>
-        <div className={`${styles.detailsCover} ${isOpened ? "open" : "hidden"}`}>
-
-          <div
-            className={`${styles.borderCustomContainer}  ${
-              windowWidth < 650 ? "px-3" : `px-5`
-            }`}
-          >
-            <div className={`artileText font-bold mb-3`}>
-              {language === "en"
-                ? shippingFromClient.en.deliveryMethod
-                : shippingFromClient.ru.deliveryMethod}
-            </div>
-            <div className={`flex flex-row items-center`}>
-              <input type="checkbox" checked className={`mr-1`} />
-              {language === "en"
-                ? shippingFromClient.en.deliveryBy
-                : shippingFromClient.ru.deliveryBy}
-            </div>
-            <div>
-              <div className={`separator my-4 text-custom-color-300`} />
-
-              <div
-                className={`flex ${
-                  windowWidth < 650 ? "flex-col" : "flex-row items-center"
-                }  max-w-[700px]`}
-              >
-                <div className={`mr-4 min-w-[260px] articleText`}>
-                  {language === "en"
-                    ? shippingFromClient.en.toInputText
-                    : shippingFromClient.ru.toInputText}
-                </div>
-
-                <TextInput
-                  type={adressInputText.type}
-                  placeholder={adressInputText.placeholder}
-                  getValue={getAdressInput}
-                />
-              </div>
-            </div>
+    <form
+      className={`${styles.shippingFormInfo} ${isOpened ? "mb-6" : "mb-3"}`}
+    >
+      {windowWidth < 1560 && (
+        <div
+          className={`${styles.title} ${
+            isOpened && `text-custom-color-700 font-bold`
+          } labelText p-3 ${
+            isOpened ? "mb-5" : "mb-1"
+          } w-full flex flex-row items-center`}
+        >
+          <TbCircleNumber3 className={`mr-2 text-[1.3rem]`} />
+          {language === "en"
+            ? shippingFromClient.en.formTitle
+            : shippingFromClient.ru.formTitle}
+        </div>
+      )}
+      <div className={`${styles.detailsCover} ${isOpened ? "open" : "hidden"}`}>
+        <div
+          className={`${styles.borderCustomContainer}  ${
+            windowWidth < 650 ? "px-3" : `px-5`
+          }`}
+        >
+          <div className={`artileText font-bold mb-3`}>
+            {language === "en"
+              ? shippingFromClient.en.deliveryMethod
+              : shippingFromClient.ru.deliveryMethod}
           </div>
-          <div className={`w-full flex flex-row items-end justify-end mt-7`}>
-            <button
-              onClick={(event) => submitShippingForm(event)}
-              type="submit"
-              className={`darkerButton ${
-                windowWidth < 650 ? "" : `max-w-[300px]`
-              }`}
+          <div className={`flex flex-row items-center`}>
+            <input type="checkbox" checked className={`mr-1`} />
+            {language === "en"
+              ? shippingFromClient.en.deliveryBy
+              : shippingFromClient.ru.deliveryBy}
+          </div>
+          <div>
+            <div className={`separator my-4 text-custom-color-300`} />
+
+            <div
+              className={`flex ${
+                windowWidth < 650 ? "flex-col" : "flex-row items-center"
+              }  max-w-[700px]`}
             >
-              {language === "en"
-                ? shippingFromClient.en.submitButton
-                : shippingFromClient.ru.submitButton}
-            </button>
+              <div className={`mr-4 min-w-[260px] articleText`}>
+                {language === "en"
+                  ? shippingFromClient.en.toInputText
+                  : shippingFromClient.ru.toInputText}
+              </div>
+
+              <TextInput
+                type={adressInputText.type}
+                placeholder={adressInputText.placeholder}
+                getValue={getAdressInput}
+              />
+            </div>
           </div>
         </div>
+        <div className={`w-full flex flex-row items-end justify-end mt-7`}>
+          <button
+            onClick={(event) => submitShippingForm(event)}
+            type="submit"
+            className={`darkerButton ${
+              windowWidth < 650 ? "" : `max-w-[300px]`
+            }`}
+          >
+            {language === "en"
+              ? shippingFromClient.en.submitButton
+              : shippingFromClient.ru.submitButton}
+          </button>
+        </div>
+      </div>
     </form>
   );
 }
