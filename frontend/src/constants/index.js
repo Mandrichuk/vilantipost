@@ -15,6 +15,9 @@ import walkingPackage from "../assets/lotties/walkingPackage.json";
 
 // icons
 import envelope from "../assets/icons/envelope.png";
+import blackEnvelope from "../assets/icons/blackEnvelope.png";
+import whiteEnvelope from "../assets/icons/whiteEnvelope.png";
+import customEnvelope from "../assets/icons/customEnvelope.png";
 import checked from "../assets/icons/checked.png";
 
 export default {
@@ -27,7 +30,10 @@ export default {
   spinningWorld,
   uploadScreen,
   walkingPackage,
-  envelope,
+  // envelope,
+  blackEnvelope,
+  whiteEnvelope,
+  customEnvelope,
   checked,
 };
 
@@ -94,6 +100,39 @@ export const homePage = {
     },
   },
 };
+
+export const shipmentsPage = {
+  ru: {
+    title: "Ваши отправки",
+    findShipment: "Найти посылку по ID",
+    shipmentDetails: {
+      id: "ID:",
+      status: "Статус",
+      from: "Откуда",
+      to: "Куда",
+      date: "Дата",
+      weight: "Вес",
+      price: `Стоимость ${deliveryPrices.ru.price}`,
+      deliveryAddress: "Адрес доставки",
+    },
+    moreDetailsText: "Доп. детали",
+  },
+  en: {
+    title: "Your shipments",
+    findShipment: "Find shipment by ID",
+    shipmentDetails: {
+      id: "ID:",
+      status: "Status",
+      from: "From",
+      to: "To",
+      date: "Date",
+      weight: "Weight",
+      price: `Price ${deliveryPrices.en.price}`,
+      deliveryAddress: "Delivery address",
+    },
+    moreDetailsText: "More details",
+  },
+}
 
 export const formPage = {
   ru: {
@@ -389,14 +428,14 @@ export const sidebar = {
     },
     {
       ru: {
-        name: "Заказы",
+        name: "Отправки",
       },
       en: {
-        name: "Orders",
+        name: "Shipments",
       },
       type: "alert",
       icon: "PiPackageFill",
-      link: "/orders",
+      link: "/shipments",
       withinSite: true,
     },
     {

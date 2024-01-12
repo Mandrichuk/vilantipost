@@ -18,8 +18,8 @@ function ImgTitleContainer(props) {
 
   return (
     <div style={containerStyles} className="infoContainer text-gray-100">
-      <div className={`h-[50px] mr-4`}>
-        <img src={images.envelope} alt="" className={`w-full h-full object-cover`} />
+      <div className={`h-[35px] mr-4`}>
+        <img src={images.whiteEnvelope} alt="" className={`w-full h-full object-cover`} />
       </div>
       <div className={`flex flex-col`}>
       

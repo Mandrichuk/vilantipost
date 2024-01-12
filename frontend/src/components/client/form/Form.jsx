@@ -93,7 +93,7 @@ function Form() {
 
   return (
     <div
-      className={`${styles.backgroundCover} w-full h-[100vh] flex flex-col items-center  bg-white`}
+      className={`${styles.backgroundCover} w-full flex flex-col items-center bg-white`}
     >
       <Sidebar />
       <div className={`wrapper`}>
@@ -109,8 +109,8 @@ function Form() {
                 className={`bg-[#419088] text-white w-full rounded-md noneRoundedBottom p-5 flex flex-row items-center justify-center mt-[30px]`}
               >
                 <img
-                  className={`max-h-[70px] object-cover mr-5`}
-                  src={images.envelope}
+                  className={`max-h-[45px] object-cover mr-5`}
+                  src={images.whiteEnvelope}
                 />
                 <div className={`h-[70px] flex flex-col justify-center font-bold`}>
                   <div className={`mb-1`}>
@@ -162,7 +162,7 @@ function Form() {
                     >
                       <img
                         className={`max-h-[70px] object-cover mr-8`}
-                        src={images.envelope}
+                        src={images.whiteEnvelope}
                       />
                       <div className={`h-[70px] flex flex-col justify-center font-bold `}>
                         <div className={`mb-1`}>
