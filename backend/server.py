@@ -1,18 +1,29 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import sqlite3
+import pymysql as ms
 
 from forms.class_Form import Form
 from forms.form_to_class import form_to_class
 from forms.add_form_to_db import add_form_to_db
-
+from config import server_connection
 
 app = Flask(__name__)
 CORS(app)
 
+connection = ms.connect(
+    host=server_connection["host"], 
+    port=server_connection["port"], 
+    user=server_connection["user"], 
+    password=server_connection["password"], 
+    database=server_connection["database"]
+)
+
+
+
 
 @app.route("/", methods=["GET"])
 def index():
+    print(server_connection["host"])
     return "FLASK ACTIVE"
 
 
