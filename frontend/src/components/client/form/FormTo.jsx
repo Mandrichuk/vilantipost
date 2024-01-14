@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import styles from "./form.module.css";
 import PhoneInput from "../../common/PhoneInput";
 import TextInput from "../../common/TextInput";
-import Sidebar from "../../common/sidebar/Sidebar";
 import { formPage, countries } from "../../../constants/index";
 import { TbCircleNumber2 } from "react-icons/tb";
 import useWindowWidth from "../../../utils/useWindowWidth";

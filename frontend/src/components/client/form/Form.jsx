@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import styles from "./form.module.css";
-import Sidebar from "../../common/sidebar/Sidebar";
+import Navbar from "../../common/navbar/Navbar";
 import { formPage } from "../../../constants/index";
 import useWindowWidth from "../../../utils/useWindowWidth";
 import images from "../../../constants/index";
@@ -95,7 +95,7 @@ function Form() {
     <div
       className={`${styles.backgroundCover} w-full flex flex-col items-center bg-white`}
     >
-      <Sidebar />
+      <Navbar />
       <div className={`wrapper`}>
         <div className={`${styles.form} w-full`}>
           <div

@@ -7,7 +7,7 @@ import RadioButtons from "../../common/RadioButtons";
 import ChoiseInput from "../../common/ChoiseInput";
 import { countries } from "../../../constants/index";
 import ImgTitleContainer from "../../common/ImgTitleContainer";
-import Sidebar from "../../common/sidebar/Sidebar";
+import Navbar from "../../common/navbar/Navbar";
 import { homePage } from "../../../constants/index";
 import images from "../../../constants/index";
 import { links } from "../../../constants/index";
@@ -29,7 +29,7 @@ const HomePage = () => {
   const [formData, setFormData] = useState({
     fromWhere: "to",
     inputCountry: {},
-    weight: 0.5,
+    weight: 150,
   });
   const [inputError, setInputError] = useState(false);
 
@@ -82,7 +82,7 @@ const HomePage = () => {
 
   return (
     <>
-      <Sidebar />
+      <Navbar />
       <div
         className={`${styles.backgroundCover} w-full h-[100vh] flex flex-col items-center  ${darkTheme ? "bg-custom-color-50" : "bg-white"}`}
       >
@@ -169,7 +169,7 @@ const HomePage = () => {
                 <div className={`w-[1px] bg-white mx-3`} />
               )}
 
-              <div className={`${styles.secondSection} flex-1 `}>
+              <div className={`${styles.secondSection} flex-1`}>
                 <div className={` w-full`}>
                   <label className={`labelText`}>
                     {language === "en"
@@ -200,7 +200,7 @@ const HomePage = () => {
                       ? orderBoxInfo.en.amountInput
                       : orderBoxInfo.ru.amountInput}
                   </label>
-                  <div className={`${styles.choiceGrid} max-w-[350px]`}>
+                  <div className={`${styles.choiceGrid} max-w-[135px]`}>
                     <RadioButtons
                       arr={
                         (language === "en" ? orderBoxInfo.en : orderBoxInfo.ru)

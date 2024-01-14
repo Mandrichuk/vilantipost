@@ -10,8 +10,8 @@ import { FaLanguage, FaViber, FaTelegram } from "react-icons/fa6";
 import { PiPackageFill } from "react-icons/pi";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { MdColorLens } from "react-icons/md";
-import styles from "./sidebar.module.css";
-import { sidebar } from "../../../constants/index";
+import styles from "./navbar.module.css";
+import { navbar } from "../../../constants/index";
 import images from "../../../constants/index";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -21,7 +21,7 @@ import { setLanguage } from "../../../features/language";
 import { setTheme } from "../../../features/darkTheme";
 import { RiPhoneFindFill } from "react-icons/ri";
 
-const SidebarContext = createContext();
+const NavbarContext = createContext();
 const iconSize = 25;
 const iconMapping = {
   IoHome: <IoHome size={iconSize} />,
@@ -102,10 +102,10 @@ export default function Sidebar() {
           )}
         </div>
 
-        <SidebarContext.Provider value={{ expanded }}>
+        <NavbarContext.Provider value={{ expanded }}>
           <ul className="flex-1 px-3">
             <hr className={`my-3`} />
-            {sidebar.nav.map((item, index) => (
+            {navbar.nav.map((item, index) => (
               <SidebarItem
                 key={`sidebar-item-${index}`}
                 icon={item.icon}
@@ -118,7 +118,7 @@ export default function Sidebar() {
 
             <hr className={`my-3`} />
 
-            {sidebar.socials.map((item, index) => (
+            {navbar.socials.map((item, index) => (
               <SidebarItem
                 key={`sidebar-item-${index}`}
                 icon={item.icon}
@@ -129,7 +129,7 @@ export default function Sidebar() {
               />
             ))}
           </ul>
-        </SidebarContext.Provider>
+        </NavbarContext.Provider>
 
         <div className="border-t mx-3 flex p-3 h-[58.4px]">
           <div
@@ -181,7 +181,7 @@ export default function Sidebar() {
 export function SidebarItem({ icon, ruText, enText, link, withinSite }) {
   const darkTheme = useSelector((state) => state.darkTheme.theme);
   const language = useSelector((state) => state.language.language);
-  const { expanded } = useContext(SidebarContext);
+  const { expanded } = useContext(NavbarContext);
   const renderedIcon = iconMapping[icon];
   const dispatch = useDispatch();
   const type = link === window.location.pathname ? "active" : "";

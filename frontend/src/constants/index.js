@@ -69,11 +69,8 @@ export const homePage = {
       },
       amountInput: "Укажите вес документов",
       amountVariants: [
-        { label: "0.5кг", value: 0.5 },
-        { label: "1кг", value: 1 },
-        { label: "1.5кг", value: 1.5 },
-        { label: "2кг", value: 2 },
-        { label: "2.5кг", value: 2.5 },
+        { label: "150г", value: 150 },
+        { label: "300г", value: 300 },
       ],
       buttonSubmit: "Перейти к деталям",
     },
@@ -90,49 +87,13 @@ export const homePage = {
       },
       amountInput: "Specify the weight of the documents",
       amountVariants: [
-        { label: "0.5kg", value: 0.5 },
-        { label: "1kg", value: 1 },
-        { label: "1.5kg", value: 1.5 },
-        { label: "2kg", value: 2 },
-        { label: "2.5kg", value: 2.5 },
+        { label: "150g", value: 150 },
+        { label: "300g", value: 300 },
       ],
       buttonSubmit: "Go to details",
     },
   },
 };
-
-export const shipmentsPage = {
-  ru: {
-    title: "Ваши отправки",
-    findShipment: "Найти посылку по ID",
-    shipmentDetails: {
-      id: "ID:",
-      status: "Статус",
-      from: "Откуда",
-      to: "Куда",
-      date: "Дата",
-      weight: "Вес",
-      price: `Стоимость ${deliveryPrices.ru.price}`,
-      deliveryAddress: "Адрес доставки",
-    },
-    moreDetailsText: "Доп. детали",
-  },
-  en: {
-    title: "Your shipments",
-    findShipment: "Find shipment by ID",
-    shipmentDetails: {
-      id: "ID:",
-      status: "Status",
-      from: "From",
-      to: "To",
-      date: "Date",
-      weight: "Weight",
-      price: `Price ${deliveryPrices.en.price}`,
-      deliveryAddress: "Delivery address",
-    },
-    moreDetailsText: "More details",
-  },
-}
 
 export const formPage = {
   ru: {
@@ -412,7 +373,7 @@ export const formPage = {
   },
 };
 
-export const sidebar = {
+export const navbar = {
   nav: [
     {
       ru: {
@@ -424,18 +385,6 @@ export const sidebar = {
       type: "",
       icon: "IoHome",
       link: "/",
-      withinSite: true,
-    },
-    {
-      ru: {
-        name: "Отправки",
-      },
-      en: {
-        name: "Shipments",
-      },
-      type: "alert",
-      icon: "PiPackageFill",
-      link: "/shipments",
       withinSite: true,
     },
     {
@@ -459,17 +408,6 @@ export const sidebar = {
       },
       type: "",
       icon: "FaLanguage",
-      withinSite: true,
-    },
-    {
-      ru: {
-        name: "Тема",
-      },
-      en: {
-        name: "Theme",
-      },
-      type: "",
-      icon: "MdColorLens",
       withinSite: true,
     },
   ],
@@ -498,30 +436,6 @@ export const sidebar = {
       link: "https://www.whatsapp.com/",
       withinSite: false,
     },
-    {
-      ru: {
-        name: "Инстаграм",
-      },
-      en: {
-        name: "Instagram",
-      },
-      type: "",
-      icon: "FaInstagram",
-      link: "https://www.instagram.com/",
-      withinSite: false,
-    },
-    // {
-    //   ru: {
-    //     name: "Вайбер",
-    //   },
-    //   en: {
-    //     name: "Viber",
-    //   },
-    //   type: "",
-    //   icon: "FaViber",
-    //   link: "https://www.viber.com/",
-    //   withinSite: false,
-    // },
   ],
 };
 
