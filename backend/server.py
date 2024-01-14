@@ -10,33 +10,44 @@ from config import server_connection
 app = Flask(__name__)
 CORS(app)
 
-connection = ms.connect(
-    host=server_connection["host"], 
-    port=server_connection["port"], 
-    user=server_connection["user"], 
-    password=server_connection["password"], 
-    database=server_connection["database"]
-)
 
 
 
 
 @app.route("/", methods=["GET"])
 def index():
-    print(server_connection["host"])
-    return "FLASK ACTIVE"
-
-
-@app.route("/api/save-form", methods=["POST"])
-def save_form():
     try:
-        data = request.get_json()
-        form = form_to_class(data)
-        add_form_to_db(form)
+        connection = ms.connect(
+            host=server_connection["HOST"],
+            port=server_connection["PORT"],
+            user=server_connection["USER"],
+            password=server_connection["PASSW"],
+        )
 
-        return (f"success: {jsonify(data)}")
-    except Exception as e:
-        return jsonify(f"error {str(e)}")
+        with connection.cursor() as cursor:
+            cursor.execute("SHOW DATABASES")
+            databases = [name[0] for name in cursor]
+            response = {"databases": databases}
+
+        return jsonify(response)
+
+    except ms.Error as e:
+        error_message = {"error": f"Error: {e}"}
+        print(error_message)
+        return jsonify(error_message)
+
+
+
+# @app.route("/api/save-form", methods=["POST"])
+# def save_form():
+#     try:
+#         data = request.get_json()
+#         form = form_to_class(data)
+#         add_form_to_db(form)
+
+#         return (f"success: {jsonify(data)}")
+#     except Exception as e:
+#         return jsonify(f"error {str(e)}")
 
 
 if __name__ == "__main__":
