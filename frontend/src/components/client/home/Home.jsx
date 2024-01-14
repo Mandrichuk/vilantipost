@@ -20,7 +20,6 @@ import Footer from "../../common/footer/Footer";
 const HomePage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const darkTheme = useSelector((state) => state.darkTheme.theme);
   const language = useSelector((state) => state.language.language);
   const orderBoxData = useSelector((state) => state.orderBox.orderBox);
   const orderBoxInfo = homePage.orderBox;
@@ -84,14 +83,14 @@ const HomePage = () => {
     <>
       <Navbar />
       <div
-        className={`${styles.backgroundCover} w-full h-[100vh] flex flex-col items-center  ${darkTheme ? "bg-custom-color-50" : "bg-white"}`}
+        className={`${styles.backgroundCover} w-full h-[100vh] flex flex-col items-center bg-custom-color-50`}
       >
         <div className={`wrapper`}>
           <div
-            className={`${styles.orderBox} ${darkTheme ? "text-custom-color-600 bg-dark-gray-color-500" : "text-custom-color-800 bg-custom-color-100"} w-full p-3 rounded-xl shadow-md`}
+            className={`${styles.orderBox} text-custom-color-600 bg-dark-gray-color-500 w-full p-3 rounded-xl shadow-md`}
           >
             <div
-              className={`${styles.titleContainer} titleText my-3 text-center ${darkTheme ? "text-custom-color-400" : "text-custom-color-900"}`}
+              className={`${styles.titleContainer} titleText my-3 text-center text-custom-color-400"`}
             >
               {language === "en"
                 ? orderBoxInfo.en.title
@@ -109,7 +108,7 @@ const HomePage = () => {
                     }}
                     className={`${
                       formData.fromWhere === "to" ? "selectedButton" : "button"
-                    } flex-1 mb-3 ${!darkTheme && "light"}`}
+                    } flex-1 mb-3`}
                   >
                     {language === "en"
                       ? orderBoxInfo.en.fromWhereInputs[0]
@@ -123,7 +122,7 @@ const HomePage = () => {
                       formData.fromWhere === "from"
                         ? "selectedButton"
                         : "button"
-                    } flex-1 mb-3 ${!darkTheme && "light"}`}
+                    } flex-1 mb-3`}
                   >
                     {language === "en"
                       ? orderBoxInfo.en.fromWhereInputs[1]
@@ -178,7 +177,7 @@ const HomePage = () => {
                   </label>
                   <ImgTitleContainer
                     direction="row"
-                    bgColor={darkTheme ? "#57c3bb" : "#419088"}
+                    bgColor={"#57c3bb"}
                     shadow={false}
                     title={
                       language === "en"
@@ -219,7 +218,7 @@ const HomePage = () => {
             <div className={`flex flex-row items-center justify-center`}>
               <button
                 onClick={() => submitForm()}
-                className={`flex-1 mb-3 regularButton max-w-[260px] ${!darkTheme && "light"}`}
+                className={`flex-1 mb-3 regularButton max-w-[260px]`}
               >
                 {language === "en"
                   ? orderBoxInfo.en.buttonSubmit

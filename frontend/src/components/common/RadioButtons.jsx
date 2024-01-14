@@ -29,10 +29,8 @@ const RadioButtons = (props) => {
 };
 
 const RadioButton = (props) => {
-  const darkTheme = useSelector((state) => state.darkTheme.theme);
-
   return (
-    <label className={`radioContainer ${props.selected ? "selected" : ""} ${!darkTheme && "light"}`}>
+    <label className={`radioContainer ${props.selected ? "selected" : ""}`}>
       <input
         className="customRadio"
         type="radio"

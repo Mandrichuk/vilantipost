@@ -18,7 +18,6 @@ import { useDispatch } from "react-redux";
 import { FaSun } from "react-icons/fa";
 import { IoMoon } from "react-icons/io5";
 import { setLanguage } from "../../../features/language";
-import { setTheme } from "../../../features/darkTheme";
 import { RiPhoneFindFill } from "react-icons/ri";
 
 const NavbarContext = createContext();
@@ -38,7 +37,6 @@ const iconMapping = {
 export default function Sidebar() {
   const dispatch = useDispatch();
   const language = useSelector((state) => state.language.language);
-  const darkTheme = useSelector((state) => state.darkTheme.theme);
   const [wideScreen, setWideScreen] = useState(true);
   const [expanded, setExpanded] = useState(wideScreen);
 
@@ -66,9 +64,7 @@ export default function Sidebar() {
   return (
     <aside className={`${styles.sidebar} h-full fixed`}>
       <nav
-        className={`h-full flex flex-col ${
-          darkTheme ? "bg-dark-gray-color-500" : "bg-white"
-        } border-r shadow-sm`}
+        className={`h-full flex flex-col bg-dark-gray-color-500 border-r shadow-sm`}
       >
         <div className="p-4 pb-2 flex justify-between items-center">
           <img
@@ -81,22 +77,12 @@ export default function Sidebar() {
           {!wideScreen && (
             <button
               onClick={() => setExpanded((curr) => !curr)}
-              className={`p-1.5 rounded-lg ${
-                darkTheme
-                  ? "bg-dark-gray-color-300 hover:bg-dark-gray-color-200"
-                  : "bg-gray-50 hover:bg-gray-100"
-              } `}
+              className={`p-1.5 rounded-lg bg-dark-gray-color-300 hover:bg-dark-gray-color-200`}
             >
               {expanded ? (
-                <IoIosArrowBack
-                  size={iconSize}
-                  className={`${darkTheme ? "fill-white" : "fill-black"}`}
-                />
+                <IoIosArrowBack size={iconSize} className={`fill-white`} />
               ) : (
-                <IoIosArrowForward
-                  size={iconSize}
-                  className={`${darkTheme ? "fill-white" : "fill-black"}`}
-                />
+                <IoIosArrowForward size={iconSize} className={`fill-white`} />
               )}
             </button>
           )}
@@ -144,7 +130,7 @@ export default function Sidebar() {
             <div
               className={`leading-4 ${
                 expanded ? "block" : "flex items-center justify-center"
-              } ${darkTheme ? "text-white" : ""}`}
+              } text-white`}
             >
               {expanded ? (
                 <>
@@ -155,9 +141,9 @@ export default function Sidebar() {
                   )}
                   <Link
                     to="/help"
-                    className={`${
-                      darkTheme ? "text-gray-300" : "text-gray-600"
-                    } text-xs`}
+                    className={`
+                      text-gray-300
+                    text-xs`}
                   >
                     /helpme
                   </Link>
@@ -165,9 +151,9 @@ export default function Sidebar() {
               ) : (
                 <IoMdHelpCircleOutline
                   size={iconSize}
-                  className={`${
-                    darkTheme ? "text-white" : "text-gray-600"
-                  } cursor-pointer`}
+                  className={`
+                    text-white
+                  cursor-pointer`}
                 />
               )}
             </div>
@@ -179,7 +165,6 @@ export default function Sidebar() {
 }
 
 export function SidebarItem({ icon, ruText, enText, link, withinSite }) {
-  const darkTheme = useSelector((state) => state.darkTheme.theme);
   const language = useSelector((state) => state.language.language);
   const { expanded } = useContext(NavbarContext);
   const renderedIcon = iconMapping[icon];
@@ -192,9 +177,7 @@ export function SidebarItem({ icon, ruText, enText, link, withinSite }) {
       dispatch(setLanguage("en"));
     }
   };
-  const toggleTheme = () => {
-    dispatch(setTheme());
-  };
+
 
   return (
     <Link to={link} target={withinSite ? "" : "_blank"}>
@@ -202,25 +185,14 @@ export function SidebarItem({ icon, ruText, enText, link, withinSite }) {
         {...(!expanded &&
           ruText === "Язык" &&
           enText === "Language" && { onClick: toggleLanguage })}
-        {...(!expanded &&
-          ruText === "Тема" &&
-          enText === "Theme" && { onClick: toggleTheme })}
         className={`
           relative flex items-center py-2 px-3 my-1
           font-medium rounded-md cursor-pointer
           transition-colors group
           ${
             type === "active"
-              ? `${
-                  darkTheme
-                    ? "bg-gradient-to-tr from-custom-color-500 to-custom-color-300 bg-custom-color-800"
-                    : "bg-gradient-to-tr from-custom-color-200 to-custom-color-100 bg-custom-color-800"
-                }`
-              : `${
-                  darkTheme
-                    ? "hover:bg-custom-color-700 text-white"
-                    : "hover:bg-custom-color-50 text-gray-600"
-                }`
+              ? `${"bg-gradient-to-tr from-custom-color-500 to-custom-color-300 bg-custom-color-800"}`
+              : `${"hover:bg-custom-color-700 text-white"}`
           }
         `}
       >
@@ -253,24 +225,6 @@ export function SidebarItem({ icon, ruText, enText, link, withinSite }) {
             </div>
           )}
 
-          {ruText === "Тема" && enText === "Theme" && (
-            <div className={`h-full flex flex-row items-center`}>
-              <span
-                className={`mr-1 ${
-                  !darkTheme ? "chosenElement" : ""
-                } px-2 py-2`}
-                onClick={() => dispatch(setTheme())}
-              >
-                <FaSun />
-              </span>
-              <span
-                className={`mr-1 ${darkTheme ? "chosenElement" : ""} px-2 py-2`}
-                onClick={() => dispatch(setTheme())}
-              >
-                <IoMoon />
-              </span>
-            </div>
-          )}
         </span>
         {type === "alert" && (
           <div
@@ -284,11 +238,8 @@ export function SidebarItem({ icon, ruText, enText, link, withinSite }) {
 
         {!expanded && (
           <div
-            className={` ${
-              darkTheme
-                ? "bg-custom-color-700 custom-color-800"
-                : "bg-custom-color-400 custom-color-800"
-            } 
+            className={`                 bg-custom-color-700 custom-color-800
+          
             absolute left-full rounded-md px-2 py-1 ml-6 text-sm
             invisible opacity-20 -translate-x-3 transition-all
             group-hover:visible group-hover:opacity-100 group-hover:translate-x-0
