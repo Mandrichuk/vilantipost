@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import pymysql as ms
 
-from forms.class_Form import Form
 from forms.form_to_class import form_to_class
 from forms.add_form_to_db import add_form_to_db
 from config import server_connection
