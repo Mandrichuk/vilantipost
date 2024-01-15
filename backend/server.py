@@ -26,11 +26,12 @@ def index():
         )
 
         with connection.cursor() as cursor:
-            cursor.execute("SHOW DATABASES")
-            databases = [name[0] for name in cursor]
-            response = {"databases": databases}
+            cursor.execute("USE globalpost")
 
-        return jsonify(response)
+            cursor.execute("SELECT * FROM forms")
+            result = cursor.fetchall()
+            print(result)
+            return jsonify(result)
 
     except ms.Error as e:
         error_message = {"error": f"Error: {e}"}
@@ -39,16 +40,16 @@ def index():
 
 
 
-# @app.route("/api/save-form", methods=["POST"])
-# def save_form():
-#     try:
-#         data = request.get_json()
-#         form = form_to_class(data)
-#         add_form_to_db(form)
+@app.route("/api/save-form", methods=["POST"])
+def save_form():
+    try:
+        data = request.get_json()
+        form = form_to_class(data)
+        add_form_to_db(form)
 
-#         return (f"success: {jsonify(data)}")
-#     except Exception as e:
-#         return jsonify(f"error {str(e)}")
+        return (f"success: {jsonify(data)}")
+    except Exception as e:
+        return jsonify(f"error {str(e)}")
 
 
 if __name__ == "__main__":
