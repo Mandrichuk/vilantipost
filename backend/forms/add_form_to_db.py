@@ -1,7 +1,7 @@
 from forms.get_connection import get_connection
-from create_forms_table import create_forms_table
+# from create_forms_table import create_forms_table
 
-create_forms_table()
+# create_forms_table()
 
 def add_form_to_db(formData):
     connection = get_connection()
@@ -30,7 +30,7 @@ def add_form_to_db(formData):
             paymentForm_contactAfter,
             paymentForm_acceptRules
         ) 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); 
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s); 
         """,
         (
             formData.sender,
@@ -54,5 +54,9 @@ def add_form_to_db(formData):
             formData.paymentForm_acceptRules,
         ),
     )
+
+    connection.commit()
+    connection.close()
+
 
     return 

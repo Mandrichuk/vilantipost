@@ -1,4 +1,4 @@
-from forms.get_connection import get_connection
+from get_connection import get_connection
 
 def create_forms_table():
     connection = get_connection()

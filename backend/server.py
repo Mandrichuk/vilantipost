@@ -4,7 +4,7 @@ import pymysql as ms
 
 from forms.form_to_class import form_to_class
 from forms.add_form_to_db import add_form_to_db
-from config import server_connection
+from forms.get_connection import get_connection
 
 app = Flask(__name__)
 CORS(app)
@@ -16,20 +16,12 @@ CORS(app)
 @app.route("/", methods=["GET"])
 def index():
     try:
-        connection = ms.connect(
-            host=server_connection["HOST"],
-            port=server_connection["PORT"],
-            user=server_connection["USER"],
-            password=server_connection["PASSW"],
-            db=server_connection["DB"],
-        )
+        connection = get_connection()
 
         with connection.cursor() as cursor:
             cursor.execute("USE globalpost")
-
             cursor.execute("SELECT * FROM forms")
             result = cursor.fetchall()
-            print(result)
             return jsonify(result)
 
     except ms.Error as e:
