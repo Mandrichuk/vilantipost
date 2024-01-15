@@ -209,11 +209,6 @@ input[type="checkbox"] {
   font-weight: bold;
 }
 
-.radioContainer.selected.light {
-  background-color: var(--custom-color-700);
-  box-shadow: 0 0 30px var(--custom-color-700);
-}
-
 .radioContainer::before {
   content: "";
   position: absolute;
@@ -335,18 +330,8 @@ input[type="checkbox"] {
   background-color: var(--custom-color);
 }
 
-.regularButton.light {
-  color: var(--white-color);
-  background-color: var(--custom-color-700);
-}
-
 .selectedButton {
   background-color: var(--custom-color);
-  color: var(--white-color);
-}
-
-.selectedButton.light {
-  background-color: var(--custom-color-700);
   color: var(--white-color);
 }
 

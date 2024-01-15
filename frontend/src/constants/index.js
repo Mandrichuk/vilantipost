@@ -14,7 +14,6 @@ import uploadScreen from "../assets/lotties/uploadScreen.json";
 import walkingPackage from "../assets/lotties/walkingPackage.json";
 
 // icons
-import envelope from "../assets/icons/envelope.png";
 import blackEnvelope from "../assets/icons/blackEnvelope.png";
 import whiteEnvelope from "../assets/icons/whiteEnvelope.png";
 import customEnvelope from "../assets/icons/customEnvelope.png";
@@ -30,7 +29,6 @@ export default {
   spinningWorld,
   uploadScreen,
   walkingPackage,
-  // envelope,
   blackEnvelope,
   whiteEnvelope,
   customEnvelope,
@@ -52,6 +50,29 @@ export const links = {
   form: "/form",
   orders: "/orders",
   settings: "/settings",
+};
+
+export const trackPage = {
+  ru: {
+    title: "Отследить посылку",
+    input: {
+      value: "Номер посылки",
+      type: "number",
+      placeholder: "123456789",
+      field: "parcelNumber",
+    },
+    buttonSubmit: "Отследить",
+  },
+  en: {
+    title: "Track your parcel",
+    input: {
+      value: "Parcel number",
+      type: "number",
+      placeholder: "123456789",
+      field: "parcelNumber",
+    },
+    buttonSubmit: "Track",
+  },
 };
 
 export const homePage = {

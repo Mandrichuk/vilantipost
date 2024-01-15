@@ -22,6 +22,7 @@ def index():
             port=server_connection["PORT"],
             user=server_connection["USER"],
             password=server_connection["PASSW"],
+            db=server_connection["DB"],
         )
 
         with connection.cursor() as cursor:
