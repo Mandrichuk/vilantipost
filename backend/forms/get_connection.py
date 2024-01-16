@@ -1,5 +1,5 @@
 import pymysql as ms
-from .config import server_connection 
+# from .config import server_connection 
 
 def get_connection():
     try: 

@@ -28,9 +28,10 @@ def add_form_to_db(formData):
             recipient_phoneNumber,
             shippingForm_addressInput,
             paymentForm_contactAfter,
-            paymentForm_acceptRules
+            paymentForm_acceptRules,
+            parcel_fedExNumber
         ) 
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s); 
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s); 
         """,
         (
             formData.sender,
@@ -52,6 +53,7 @@ def add_form_to_db(formData):
             formData.shippingForm_addressInput,
             formData.paymentForm_contactAfter,
             formData.paymentForm_acceptRules,
+            formData.parcel_fedExNumber
         ),
     )
 

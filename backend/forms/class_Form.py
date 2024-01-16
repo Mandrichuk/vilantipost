@@ -20,6 +20,7 @@ class Form:
         shippingForm_addressInput,
         paymentForm_contactAfter,
         paymentForm_acceptRules,
+        fedExNumber
     ):
         self.sender = sender
         self.sender_country = sender_country
@@ -44,6 +45,8 @@ class Form:
         self.paymentForm_contactAfter = paymentForm_contactAfter
         self.paymentForm_acceptRules = paymentForm_acceptRules
 
+        self.parcel_fedExNumber = fedExNumber
+
     def __str__(self):
         return (
             f"Form: sender={self.sender}, sender_country={self.sender_country}, "
@@ -56,5 +59,6 @@ class Form:
             f"recipient_email={self.recipient_email}, recipient_phoneNumber={self.recipient_phoneNumber}, "
             f"shippingForm_addressInput={self.shippingForm_addressInput}, "
             f"paymentForm_contactAfter={self.paymentForm_contactAfter}, "
-            f"paymentForm_acceptRules={self.paymentForm_acceptRules}"
+            f"paymentForm_acceptRules={self.paymentForm_acceptRules}, "
+            f"parcel_fedExNumber={self.parcel_fedExNumber}"
         )

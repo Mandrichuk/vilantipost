@@ -26,9 +26,12 @@ def create_forms_table():
             recipient_phoneNumber TEXT,
             shippingForm_addressInput TEXT,
             paymentForm_contactAfter TEXT,
-            paymentForm_acceptRules TEXT
+            paymentForm_acceptRules TEXT,
+            parcel_fedExNumber TEXT
         );
         """
     )
 
     return 
+
+create_forms_table()

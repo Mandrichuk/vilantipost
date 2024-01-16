@@ -5,6 +5,7 @@ def form_to_class(formData):
     formToClient = formData["formToClient"]
     shippingForm = formData["shippingForm"]
     paymentForm = formData["paymentForm"]
+    fedExNumber = formData["fedExNumber"]
 
     form = Form(
         formFromClient["sender"],
@@ -26,6 +27,7 @@ def form_to_class(formData):
         shippingForm["addressInput"],
         paymentForm["contactAfter"],
         paymentForm["acceptRules"],
+        fedExNumber
     )
     
     return form

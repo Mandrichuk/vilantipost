@@ -1,5 +1,6 @@
-from forms.get_connection import get_connection
+from get_connection import get_connection
 from create_forms_table import create_forms_table
+from get_fedex_number import get_fedex_number
 
 forms_data = [
     {
@@ -22,6 +23,7 @@ forms_data = [
         "shippingForm_addressInput": "Red Square, Moscow",
         "paymentForm_contactAfter": True,
         "paymentForm_acceptRules": True,
+        "fedExNumber": get_fedex_number()
     },
     {
         "sender": "Eva Müller",
@@ -43,6 +45,7 @@ forms_data = [
         "shippingForm_addressInput": "123 Griboedova Canal Embankment, Saint Petersburg",
         "paymentForm_contactAfter": False,
         "paymentForm_acceptRules": True,
+        "fedExNumber": get_fedex_number()
     },
     {
         "sender": "Ivan Petrov",
@@ -64,6 +67,7 @@ forms_data = [
         "shippingForm_addressInput": "456 High St, Anothercity",
         "paymentForm_contactAfter": False,
         "paymentForm_acceptRules": True,
+        "fedExNumber": get_fedex_number()
     },
     {
         "sender": "Alexei Ivanov",
@@ -85,6 +89,7 @@ forms_data = [
         "shippingForm_addressInput": "123 Plaça de Catalunya, Barcelona",
         "paymentForm_contactAfter": True,
         "paymentForm_acceptRules": False,
+        "fedExNumber": get_fedex_number()
     },
     {
         "sender": "David Miller",
@@ -106,6 +111,7 @@ forms_data = [
         "shippingForm_addressInput": "789 Winter Palace, Saint Petersburg",
         "paymentForm_contactAfter": True,
         "paymentForm_acceptRules": False,
+        "fedExNumber": get_fedex_number()
     },
     {
         "sender": "Olga Ivanova",
@@ -127,6 +133,7 @@ forms_data = [
         "shippingForm_addressInput": "789 Viktualienmarkt, Munich",
         "paymentForm_contactAfter": True,
         "paymentForm_acceptRules": True,
+        "fedExNumber": get_fedex_number()
     },
     {
         "sender": "Dmitry Petrov",
@@ -148,6 +155,7 @@ forms_data = [
         "shippingForm_addressInput": "303 Karl Marx Avenue, Novosibirsk",
         "paymentForm_contactAfter": False,
         "paymentForm_acceptRules": True,
+        "fedExNumber": get_fedex_number()
     },
     {
         "sender": "Ivan Ivanov",
@@ -169,6 +177,7 @@ forms_data = [
         "shippingForm_addressInput": "505 Kremlin Street, Kazan",
         "paymentForm_contactAfter": True,
         "paymentForm_acceptRules": False,
+        "fedExNumber": get_fedex_number()
     },
     {
         "sender": "Sophie Müller",
@@ -190,6 +199,7 @@ forms_data = [
         "shippingForm_addressInput": "Red Square, Moscow",
         "paymentForm_contactAfter": True,
         "paymentForm_acceptRules": True,
+        "fedExNumber": get_fedex_number()
     },
     {
         "sender": "Elena Petrova",
@@ -211,6 +221,7 @@ forms_data = [
         "shippingForm_addressInput": "Plaça de Catalunya, Barcelona",
         "paymentForm_contactAfter": False,
         "paymentForm_acceptRules": True,
+    "fedExNumber": get_fedex_number()
     }
 ]
 
@@ -247,9 +258,10 @@ def add_data():
                     recipient_phoneNumber,
                     shippingForm_addressInput,
                     paymentForm_contactAfter,
-                    paymentForm_acceptRules
+                    paymentForm_acceptRules,
+                    parcel_fedExNumber
                 )
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
                 """,
                 (
                     formData["sender"],
@@ -271,6 +283,7 @@ def add_data():
                     formData["shippingForm_addressInput"],
                     formData["paymentForm_contactAfter"],
                     formData["paymentForm_acceptRules"],
+                    formData["fedExNumber"],
                 ),
             )
 

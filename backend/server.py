@@ -5,12 +5,10 @@ import pymysql as ms
 from forms.form_to_class import form_to_class
 from forms.add_form_to_db import add_form_to_db
 from forms.get_connection import get_connection
+from forms.get_fedex_number import get_fedex_number
 
 app = Flask(__name__)
 CORS(app)
-
-
-
 
 
 @app.route("/", methods=["GET"])
@@ -35,6 +33,7 @@ def index():
 def save_form():
     try:
         data = request.get_json()
+        data["fedExNumber"] = get_fedex_number()
         form = form_to_class(data)
         add_form_to_db(form)
 
