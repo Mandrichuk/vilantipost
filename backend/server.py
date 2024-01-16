@@ -29,7 +29,7 @@ def index():
 
 
 
-@app.route("/api/save-form", methods=["POST"])
+@app.route("/api/save-form-to-db", methods=["POST"])
 def save_form():
     try:
         data = request.get_json()
@@ -40,6 +40,29 @@ def save_form():
         return (f"success: {jsonify(data)}")
     except Exception as e:
         return jsonify(f"error {str(e)}")
+
+
+
+
+@app.route("/api/track-parcel/<fedExNumber>", methods=["GET"])
+def get_form_by_fedex(fedExNumber):
+    print(fedExNumber)
+    return f"success: {fedExNumber}"
+    # try:
+    #     fedex_number = request.args.get("fedexNumber")
+    #     connection = get_connection()
+
+    #     with connection.cursor() as cursor:
+    #         cursor.execute("USE globalpost")
+    #         cursor.execute(f"SELECT * FROM forms WHERE fedExNumber = '{fedex_number}'")
+    #         result = cursor.fetchall()
+    #         print(result)
+    #         return jsonify(result)
+
+    # except ms.Error as e:
+    #     error_message = {"error": f"Error: {e}"}
+    #     print(error_message)
+    #     return jsonify(error_message)
 
 
 if __name__ == "__main__":

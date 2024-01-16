@@ -78,7 +78,7 @@ function Form() {
     const stringifiedForm = JSON.stringify(formsClientData);
 
     axios
-      .post("http://127.0.0.1:5000/api/save-form", stringifiedForm, {
+      .post("http://127.0.0.1:5000/api/save-form-to-db", stringifiedForm, {
         headers: {
           "Content-Type": "application/json",
         },

@@ -17,7 +17,7 @@ function App() {
       <Routes>
         <Route path="*" element={<Navigate to="/" />} />
         <Route path="/" element={<Home />} />
-        <Route path="/track-parcel" element={<Track />} />
+        <Route path="/track-parcel/*" element={<Track />} />
 
 
         {isObjNotEmpty(orderBox.departure) &&
