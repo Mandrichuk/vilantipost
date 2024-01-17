@@ -48,7 +48,7 @@ export const deliveryPrices = {
 export const links = {
   home: "/",
   form: "/form",
-  orders: "/orders",
+  trackParcel: "/track-parcel",
   settings: "/settings",
 };
 
@@ -62,6 +62,7 @@ export const trackPage = {
       field: "parcelNumber",
     },
     buttonSubmit: "Отследить",
+    foundParcelText: "Посылка по номеру: ",
   },
   en: {
     title: "Track your parcel",
@@ -72,6 +73,7 @@ export const trackPage = {
       field: "parcelNumber",
     },
     buttonSubmit: "Track",
+    foundParcelText: "Parcel by number: ",
   },
 };
 

@@ -6,6 +6,7 @@ from forms.form_to_class import form_to_class
 from forms.add_form_to_db import add_form_to_db
 from forms.get_connection import get_connection
 from forms.get_fedex_number import get_fedex_number
+from forms.get_values_to_keys import get_values_to_keys
 
 app = Flask(__name__)
 CORS(app)
@@ -46,23 +47,22 @@ def save_form():
 
 @app.route("/api/track-parcel/<fedExNumber>", methods=["GET"])
 def get_form_by_fedex(fedExNumber):
-    print(fedExNumber)
-    return f"success: {fedExNumber}"
-    # try:
-    #     fedex_number = request.args.get("fedexNumber")
-    #     connection = get_connection()
+    try:
+        fedex_number = fedExNumber
+        connection = get_connection()
 
-    #     with connection.cursor() as cursor:
-    #         cursor.execute("USE globalpost")
-    #         cursor.execute(f"SELECT * FROM forms WHERE fedExNumber = '{fedex_number}'")
-    #         result = cursor.fetchall()
-    #         print(result)
-    #         return jsonify(result)
+        with connection.cursor() as cursor:
+            cursor.execute("USE globalpost")
+            cursor.execute(f"SELECT * FROM forms WHERE parcel_fedExNumber = '{fedex_number}'")
+            result = cursor.fetchone()
+            obj_result = get_values_to_keys(result)
+            print(obj_result)
+            return jsonify(obj_result)
 
-    # except ms.Error as e:
-    #     error_message = {"error": f"Error: {e}"}
-    #     print(error_message)
-    #     return jsonify(error_message)
+    except ms.Error as e:
+        error_message = {"error": f"Error: {e}"}
+        print(error_message)
+        return jsonify(error_message)
 
 
 if __name__ == "__main__":

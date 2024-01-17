@@ -7,35 +7,50 @@ import useWindowWidth from "../../../utils/useWindowWidth";
 import Footer from "../../common/footer/Footer";
 import { trackPage } from "../../../constants/index";
 import TextInput from "../../common/TextInput";
+import { useNavigate } from "react-router-dom";
+import { links } from "../../../constants/index";
 
 const Track = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const language = useSelector((state) => state.language.language);
   const trackPageText = language === "en" ? trackPage.en : trackPage.ru;
   const windowWidth = useWindowWidth();
+  const [windowPath, setWindowPath] = useState(
+    window.location.pathname.split("/").slice(2).join("/")
+  );
   const [trackNumber, setTrackNumber] = useState("");
   const [buttonSubmit, setButtonSubmit] = useState(false);
   const [data, setData] = useState("");
 
-
   function trackNumberHandleChange(field, value) {
     setTrackNumber(value);
+  }
+
+  function pathHandleChange(event) {
+    event.preventDefault();
+    navigate(`${links.trackParcel}/${trackNumber}`);
+    handleRefresh();
   }
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://127.0.0.1:5000/api/track-parcel/${trackNumber}`
+          `http://127.0.0.1:5000/api/track-parcel/${windowPath}`
         );
-        setData(response.data.message);
+        setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
 
     fetchData();
-  }, [buttonSubmit]);
+  }, []);
+
+  const handleRefresh = () => {
+    window.location.reload();
+  };
 
   console.log(data);
 
@@ -54,18 +69,29 @@ const Track = () => {
           >
             <TextInput
               placeholder={trackPageText.input.placeholder}
-              value={trackPageText.input.value}
               field={trackPageText.input.field}
               type={trackPageText.input.type}
               getValue={trackNumberHandleChange}
             />
             <button
               className={`darkerButton`}
-              onClick={() => setButtonSubmit((prevValue) => !prevValue)}
+              onClick={(event) => pathHandleChange(event)}
             >
               {trackPageText.buttonSubmit}
             </button>
           </div>
+          
+          
+          {data &&
+          
+          <div className={`${styles.parcelFoundContainer} w-full flex-col items-center justify-start my-[30px]`}>
+            <div className={`${styles.foundParcelText} labelText`}>
+              {trackPageText.foundParcelText}
+            </div>
+          
+          </div>
+}
+
         </div>
       </div>
       <Footer />
