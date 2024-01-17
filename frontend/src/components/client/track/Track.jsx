@@ -20,7 +20,6 @@ const Track = () => {
     window.location.pathname.split("/").slice(2).join("/")
   );
   const [trackNumber, setTrackNumber] = useState("");
-  const [buttonSubmit, setButtonSubmit] = useState(false);
   const [data, setData] = useState("");
 
   function trackNumberHandleChange(field, value) {
@@ -46,7 +45,7 @@ const Track = () => {
     };
 
     fetchData();
-  }, []);
+  }, [windowPath]);
 
   const handleRefresh = () => {
     window.location.reload();
@@ -80,18 +79,38 @@ const Track = () => {
               {trackPageText.buttonSubmit}
             </button>
           </div>
-          
-          
-          {data &&
-          
-          <div className={`${styles.parcelFoundContainer} w-full flex-col items-center justify-start my-[30px]`}>
-            <div className={`${styles.foundParcelText} labelText`}>
-              {trackPageText.foundParcelText}
-            </div>
-          
-          </div>
-}
 
+          {data && (
+            <div
+              className={`${styles.parcelFoundContainer} w-full flex-col items-center justify-start my-[30px]`}
+            >
+              <div
+                className={`${styles.foundParcelText} labelText flex flex-row items-center`}
+              >
+                {trackPageText.foundParcelText}#{windowPath}
+              </div>
+              <p className={`articleText`}>
+                {trackPageText.parcelData.sender}&nbsp;
+                {data.sender}
+              </p>
+              <p className={`articleText`}>
+                {trackPageText.parcelData.sender_country}&nbsp;
+                {data.sender_country}
+              </p>
+              <p className={`articleText`}>
+                {trackPageText.parcelData.recipient}&nbsp;
+                {data.recipient}
+              </p>
+              <p className={`articleText`}>
+                {trackPageText.parcelData.recipient_country}&nbsp;
+                {data.recipient_country}
+              </p>
+              <p className={`articleText`}>
+                {trackPageText.parcelData.delivery_adress}&nbsp;
+                {data.shippingForm_address}
+              </p>
+            </div>
+          )}
         </div>
       </div>
       <Footer />

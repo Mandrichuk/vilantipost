@@ -55,9 +55,12 @@ def get_form_by_fedex(fedExNumber):
             cursor.execute("USE globalpost")
             cursor.execute(f"SELECT * FROM forms WHERE parcel_fedExNumber = '{fedex_number}'")
             result = cursor.fetchone()
-            obj_result = get_values_to_keys(result)
-            print(obj_result)
-            return jsonify(obj_result)
+
+            if result is not None:
+                obj_result = get_values_to_keys(result)
+                return jsonify(obj_result)
+            else:
+                print("No results found")
 
     except ms.Error as e:
         error_message = {"error": f"Error: {e}"}

@@ -1,7 +1,8 @@
 import pymysql as ms
-# from .config import server_connection 
+from config import server_connection 
 
 def get_connection():
+    print(server_connection)
     try: 
         connection = ms.connect(
             host="localhost",

@@ -63,6 +63,15 @@ export const trackPage = {
     },
     buttonSubmit: "Отследить",
     foundParcelText: "Посылка по номеру: ",
+    parcelData: {
+      sender: "Отправитель:",
+      recipient: "Получатель:",
+      sender_country: "Страна отправителя:",
+      recipient_country: "Страна получателя:",
+      sender_city: "Город отправителя:",
+      recipient_city: "Город получателя:",
+      delivery_adress: "Адрес доставки:",
+    },
   },
   en: {
     title: "Track your parcel",
@@ -74,6 +83,15 @@ export const trackPage = {
     },
     buttonSubmit: "Track",
     foundParcelText: "Parcel by number: ",
+    parcelData: {
+      sender: "Sender:",
+      recipient: "Recipient:",
+      sender_country: "Sender country:",
+      recipient_country: "Recipient country:",
+      sender_city: "Sender city:",
+      recipient_city: "Recipient city:",
+      delivery_adress: "Delivery address:",
+    }
   },
 };
 
