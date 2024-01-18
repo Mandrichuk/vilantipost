@@ -3,10 +3,12 @@ from flask_cors import CORS
 import pymysql as ms
 
 from get_connection import get_connection
+from get_hashed_value import get_hashed_value
 from forms.form_to_class import form_to_class
 from forms.add_form_to_db import add_form_to_db
 from forms.get_fedex_number import get_fedex_number
 from forms.get_values_to_keys import get_values_to_keys
+from admin.is_valid_login_data import is_valid_login_data
 
 app = Flask(__name__)
 CORS(app)
@@ -68,10 +70,22 @@ def get_form_by_fedex(fedExNumber):
         return jsonify(error_message)
 
 
-@app.route("/api/admin/login", methods=["GET"])
+@app.route("/api/admin-login", methods=["POST"])
 def admin_login():
+    try: 
+        data = request.get_json()
+        login = data["loginInput"]
+        password = get_hashed_value((data["passwordInput"]))
+        validity = is_valid_login_data(login, password)
+
+        return jsonify({"status": validity})
     
-    return (f"success")
+    
+    except Exception as e:
+        error_message = {"error": f"Error: {e}"}
+        print(error_message)
+        return jsonify(f"error {str(e)}")
+
 
 if __name__ == "__main__":
     app.run(debug=True)

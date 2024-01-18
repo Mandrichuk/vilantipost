@@ -51,8 +51,6 @@ const Track = () => {
     window.location.reload();
   };
 
-  console.log(data);
-
   return (
     <>
       <Navbar />

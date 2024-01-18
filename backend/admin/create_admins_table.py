@@ -7,7 +7,7 @@ def create_forms_table():
   cursor.execute("""
   CREATE TABLE IF NOT EXISTS admins (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    login TEXT UNIQUE,
+    login TEXT,
     password TEXT 
   );
   """)

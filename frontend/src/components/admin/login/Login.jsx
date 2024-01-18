@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import styles from "./login.module.css";
@@ -19,22 +19,37 @@ function Login() {
 
     let isValid = isFormValid(loginInputs);
     if (isValid) {
-      axios
-        .post("http://127.0.0.1:5000/api/admin/login", JSON.stringify(loginInputs))
-        .then((response) => {
-          console.log(response.data);
-        })
-        .catch(error => {
-          console.log(error)
-        });
-
+      sendToBackend();
+      setLoginInputs({
+        loginInput: "",
+        passwordInput: "",
+      });
     }
   }
 
-  function loginInputHandleChange(field, value) {
-    setLoginInputs(prevLoginInputs => ({ ...prevLoginInputs, [field]: value }));
+  function sendToBackend() {
+    const stringifiedForm = JSON.stringify(loginInputs);
+
+    axios
+      .post("http://127.0.0.1:5000/api/admin-login", stringifiedForm, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error("Ошибка при отправке данных на сервер:", error);
+      });
   }
 
+  function loginInputHandleChange(field, value) {
+    setLoginInputs((prevLoginInputs) => ({
+      ...prevLoginInputs,
+      [field]: value,
+    }));
+  }
 
   function isFormValid(form) {
     const { loginInput, passwordInput } = form;
@@ -44,9 +59,8 @@ function Login() {
     }
     return false;
   }
-  
 
-  return ( 
+  return (
     <div
       className={`${styles.backgroundCover} w-full flex flex-col items-center bg-white`}
     >
