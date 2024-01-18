@@ -2,9 +2,9 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import pymysql as ms
 
+from get_connection import get_connection
 from forms.form_to_class import form_to_class
 from forms.add_form_to_db import add_form_to_db
-from forms.get_connection import get_connection
 from forms.get_fedex_number import get_fedex_number
 from forms.get_values_to_keys import get_values_to_keys
 
@@ -67,6 +67,11 @@ def get_form_by_fedex(fedExNumber):
         print(error_message)
         return jsonify(error_message)
 
+
+@app.route("/api/admin/login", methods=["GET"])
+def admin_login():
+    
+    return (f"success")
 
 if __name__ == "__main__":
     app.run(debug=True)
