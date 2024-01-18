@@ -52,6 +52,41 @@ export const links = {
   settings: "/settings",
 };
 
+export const adminLoginPage = {
+  ru: {
+    titleText: "Авторизация администратора",
+    loginInput: {
+      value: "Логин",
+      type: "text",
+      placeholder: "admin",
+      field: "loginInput",
+    },
+    passwordInput: {
+      value: "Пароль",
+      type: "text",
+      placeholder: "123123",
+      field: "passwordInput",
+    },
+    submitButton: "Войти",
+  },
+  en: {
+    titleText: "Admin login",
+    loginInput: {
+      value: "Login",
+      type: "text",
+      placeholder: "admin",
+      field: "loginInput",
+    },
+    passwordInput: {
+      value: "Password",
+      type: "text",
+      placeholder: "123123",
+      field: "passwordInput",
+    },
+    submitButton: "Login",
+  },
+};
+
 export const trackPage = {
   ru: {
     title: "Отследить посылку",
@@ -91,7 +126,7 @@ export const trackPage = {
       sender_city: "Sender city:",
       recipient_city: "Recipient city:",
       delivery_adress: "Delivery address:",
-    }
+    },
   },
 };
 
