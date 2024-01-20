@@ -141,13 +141,10 @@ export const homePage = {
       youSend: {
         label: "Вы отправляете",
         name: "Документы",
-        article: "вес от 0.5кг до 2.5кг",
+        article: "вес от 0.5гм до 2.5гм",
       },
       amountInput: "Укажите вес документов",
-      amountVariants: [
-        { label: "150г", value: 150 },
-        { label: "300г", value: 300 },
-      ],
+      units: "гм",
       buttonSubmit: "Перейти к деталям",
     },
     en: {
@@ -159,13 +156,10 @@ export const homePage = {
       youSend: {
         label: "You send",
         name: "Documents",
-        article: "weight from 0.5kg to 2.5kg",
+        article: "weight from 0.5g to 2.5g",
       },
       amountInput: "Specify the weight of the documents",
-      amountVariants: [
-        { label: "150g", value: 150 },
-        { label: "300g", value: 300 },
-      ],
+      units: "g",
       buttonSubmit: "Go to details",
     },
   },

@@ -16,6 +16,8 @@ import { setOrderBoxData } from "../../../features/orderBox";
 import { RussiaData } from "../../../constants/index";
 import { annulData } from "../../../features/orderBox";
 import Footer from "../../common/footer/Footer";
+import Slider from "../../common/Slider";
+
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -79,6 +81,12 @@ const HomePage = () => {
     setFormData((prevData) => ({ ...prevData, weight: value }));
   }
 
+  function getWeightValue(weight) {
+    setFormData((prevData) => ({ ...prevData, weight: weight }));
+  }
+
+  console.log(formData)
+
   return (
     <>
       <Navbar />
@@ -133,7 +141,7 @@ const HomePage = () => {
                 <div className={`${styles.fromToInputs}`}>
                   {formData.fromWhere === "to" ? (
                     <div className={`mb-4`}>
-                      <div className={`labelText`}>
+                      <div className={`labelText mb-2`}>
                         {language === "en"
                           ? orderBoxInfo.en.fromInput
                           : orderBoxInfo.ru.fromInput}
@@ -175,6 +183,7 @@ const HomePage = () => {
                       ? orderBoxInfo.en.youSend.label
                       : orderBoxInfo.ru.youSend.label}
                   </label>
+                  <div className={`mt-2`}>
                   <ImgTitleContainer
                     direction="row"
                     bgColor={"#57c3bb"}
@@ -191,6 +200,7 @@ const HomePage = () => {
                     }
                     img={images.envelope}
                   />
+                  </div>
                 </div>
 
                 <div className={`${styles.weightChoice}} w-full mt-4`}>
@@ -199,15 +209,8 @@ const HomePage = () => {
                       ? orderBoxInfo.en.amountInput
                       : orderBoxInfo.ru.amountInput}
                   </label>
-                  <div className={`${styles.choiceGrid} max-w-[135px]`}>
-                    <RadioButtons
-                      arr={
-                        (language === "en" ? orderBoxInfo.en : orderBoxInfo.ru)
-                          ?.amountVariants || []
-                      }
-                      getData={getWeight}
-                      startValue={formData.weight}
-                    />
+                  <div className={`${styles.choiceGrid} w-full mt-2`}>
+                    <Slider minValue={150} maxValue={300} units={language === "en" ? orderBoxInfo.en.units : orderBoxInfo.ru.units} getData={getWeightValue}/>
                   </div>
                 </div>
               </div>

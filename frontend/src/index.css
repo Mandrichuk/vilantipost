@@ -407,6 +407,73 @@ input[type="checkbox"] {
   text-overflow: ellipsis;
 }
 
+.sliderCont {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.slider {
+  --slider-height: 15px;
+  position: relative;
+  width: 80%;
+  height: var(--slider-height);
+  border-radius: 20px;
+  background-color: var(--custom-color-100);
+}
+
+.slider input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: var(--slider-height);
+  -webkit-appearance: none;
+  background-color: transparent;
+  z-index: 30;
+}
+
+.slider input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: calc(var(--slider-height) * 1.25);
+  height: calc(var(--slider-height) * 1.25);
+  border-radius: 999px;
+  background-color: var(--white-color);
+  border: 2px solid var(--custom-color-800);
+  cursor: pointer;
+}
+
+.slider progress {
+  -webkit-appearance: none;
+  width: 100%;
+  height: var(--slider-height);
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.slider progress::-webkit-progress-bar {
+  background-color: var(--custom-color-600);
+}
+
+.slider progress::-webkit-progress-value {
+  background-color: var(--custom-color-600);
+}
+
+.sliderValue {
+  width: 28px;
+  height: var(--slider-height);
+  margin-left: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+
+
 @media (min-width: 500px) {
   :root {
     --btn-text: 1rem;
@@ -423,6 +490,11 @@ input[type="checkbox"] {
   .radioContainer {
     width: 60px;
   }
+
+  .slider {
+    width: 86%;
+  }
+
 }
 
 @media (min-width: 800px) {
