@@ -52,7 +52,7 @@ function PhoneInput(props) {
   function handleInputBlur() {
     setTimeout(() => {
       setIsActive(false);
-    }, 150);
+    }, 200);
   }
 
   function handleNumberInputChange(e) {

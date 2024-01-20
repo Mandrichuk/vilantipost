@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux"; 
+import { useSelector, useDispatch } from "react-redux";
 import styles from "./home.module.css";
 import RadioButtons from "../../common/RadioButtons";
 import ChoiseInput from "../../common/ChoiseInput";
@@ -18,7 +18,6 @@ import { annulData } from "../../../features/orderBox";
 import Footer from "../../common/footer/Footer";
 import Slider from "../../common/Slider";
 
-
 const HomePage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -34,7 +33,6 @@ const HomePage = () => {
   });
   const [inputError, setInputError] = useState(false);
 
-
   useEffect(() => {
     dispatch(annulData());
   }, []);
@@ -42,13 +40,15 @@ const HomePage = () => {
   function submitForm() {
     const formValid = isFormValid(formData);
     if (formValid) {
-      const departure = formData.fromWhere === "from" ? RussiaData : formData.inputCountry;
-      const destination = formData.fromWhere === "to" ? RussiaData : formData.inputCountry;
+      const departure =
+        formData.fromWhere === "from" ? RussiaData : formData.inputCountry;
+      const destination =
+        formData.fromWhere === "to" ? RussiaData : formData.inputCountry;
       const newOrderBoxData = {
         departure: departure,
         destination: destination,
         weight: formData.weight,
-      }
+      };
       dispatch(setOrderBoxData(newOrderBoxData));
       navigate(links.form);
     } else {
@@ -77,25 +77,19 @@ const HomePage = () => {
     setFormData((prevData) => ({ ...prevData, inputCountry: value }));
   }
 
-  function getWeight(value) {
-    setFormData((prevData) => ({ ...prevData, weight: value }));
-  }
-
   function getWeightValue(weight) {
     setFormData((prevData) => ({ ...prevData, weight: weight }));
   }
 
-  console.log(formData)
-
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div
-        className={`${styles.backgroundCover} w-full h-[100vh] flex flex-col items-center bg-custom-color-50`}
+        className={`${styles.backgroundCover} w-full flex flex-col items-center bg-custom-color-50`}
       >
         <div className={`wrapper`}>
           <div
-            className={`${styles.orderBox} text-custom-color-600 bg-dark-gray-color-500 w-full p-3 rounded-xl shadow-md`}
+            className={`${styles.orderBox} text-custom-color-600 bg-dark-gray-color-500 w-full p-3 rounded-md shadow-xl`}
           >
             <div
               className={`${styles.titleContainer} titleText my-3 text-center text-custom-color-400"`}
@@ -150,7 +144,11 @@ const HomePage = () => {
                         arr={countries}
                         getCountry={getInputCountry}
                         error={inputError}
-                        errorMessage={language === "en" ? orderBoxInfo.en.errorMessage : orderBoxInfo.ru.errorMessage}
+                        errorMessage={
+                          language === "en"
+                            ? orderBoxInfo.en.errorMessage
+                            : orderBoxInfo.ru.errorMessage
+                        }
                       />
                     </div>
                   ) : (
@@ -164,14 +162,20 @@ const HomePage = () => {
                         arr={countries}
                         getCountry={getInputCountry}
                         error={inputError}
-                        errorMessage={language === "en" ? orderBoxInfo.en.errorMessage : orderBoxInfo.ru.errorMessage}
+                        errorMessage={
+                          language === "en"
+                            ? orderBoxInfo.en.errorMessage
+                            : orderBoxInfo.ru.errorMessage
+                        }
                       />
                     </div>
                   )}
                 </div>
               </div>
 
-              {windowWidth < wideScreen && <div className={`separator my-4 text-white`} />}
+              {windowWidth < wideScreen && (
+                <div className={`separator my-4 text-white`} />
+              )}
               {windowWidth > wideScreen && (
                 <div className={`w-[1px] bg-white mx-3`} />
               )}
@@ -184,22 +188,22 @@ const HomePage = () => {
                       : orderBoxInfo.ru.youSend.label}
                   </label>
                   <div className={`mt-2`}>
-                  <ImgTitleContainer
-                    direction="row"
-                    bgColor={"#57c3bb"}
-                    shadow={false}
-                    title={
-                      language === "en"
-                        ? orderBoxInfo.en.youSend.name
-                        : orderBoxInfo.ru.youSend.name
-                    }
-                    article={
-                      language === "en"
-                        ? orderBoxInfo.en.youSend.article
-                        : orderBoxInfo.ru.youSend.article
-                    }
-                    img={images.envelope}
-                  />
+                    <ImgTitleContainer
+                      direction="row"
+                      bgColor={"#57c3bb"}
+                      shadow={false}
+                      title={
+                        language === "en"
+                          ? orderBoxInfo.en.youSend.name
+                          : orderBoxInfo.ru.youSend.name
+                      }
+                      article={
+                        language === "en"
+                          ? orderBoxInfo.en.youSend.article
+                          : orderBoxInfo.ru.youSend.article
+                      }
+                      img={images.envelope}
+                    />
                   </div>
                 </div>
 
@@ -210,7 +214,16 @@ const HomePage = () => {
                       : orderBoxInfo.ru.amountInput}
                   </label>
                   <div className={`${styles.choiceGrid} w-full mt-2`}>
-                    <Slider minValue={150} maxValue={300} units={language === "en" ? orderBoxInfo.en.units : orderBoxInfo.ru.units} getData={getWeightValue}/>
+                    <Slider
+                      minValue={150}
+                      maxValue={300}
+                      units={
+                        language === "en"
+                          ? orderBoxInfo.en.units
+                          : orderBoxInfo.ru.units
+                      }
+                      getData={getWeightValue}
+                    />
                   </div>
                 </div>
               </div>

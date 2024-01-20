@@ -84,13 +84,7 @@ input[type="checkbox"] {
 }
 
 #root {
-  --navbar-width: 73px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: calc(100% - var(--navbar-width));
-  margin-left: var(--navbar-width);
+  width: 100%;
 }
 
 .wrapper {
@@ -98,9 +92,9 @@ input[type="checkbox"] {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 96%;
-  margin-top: 20px;
-  margin-bottom: 40px;
+  width: 95%;
+  margin-top: 30px;
+  margin-bottom: 30px;
   max-width: 1450px;
 }
 
@@ -484,7 +478,7 @@ input[type="checkbox"] {
   }
 
   .wrapper {
-    width: 96%;
+    width: 92%;
   }
 
   .radioContainer {
@@ -499,7 +493,7 @@ input[type="checkbox"] {
 
 @media (min-width: 800px) {
   .wrapper {
-    width: 90%;
+    width: 86%;
   }
 
   .titleText {
@@ -518,6 +512,6 @@ input[type="checkbox"] {
 
 @media (min-width: 1200px) {
   .wrapper {
-    width: 86%;
+    width: 80%;
   }
 }

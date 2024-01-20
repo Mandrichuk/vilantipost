@@ -47,18 +47,14 @@ const ChoiseInput = (props) => {
         !customInputContainerRef.current.contains(e.target) &&
         !e.target.classList.contains("customUL")
       ) {
-        // Set isFinalBlur to false to indicate that it's not the final blur yet
         setIsFinalBlur(false);
 
-        // Clear any existing timeout
         clearTimeout(blurTimeout);
 
-        // Set a new timeout for 100 milliseconds
         blurTimeout = setTimeout(() => {
-          // Set isFinalBlur to true after the delay
           setIsFinalBlur(true);
           setIsActive(false);
-        }, 100);
+        }, 200);
       }
     };
 
