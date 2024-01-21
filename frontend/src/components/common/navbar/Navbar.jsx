@@ -44,10 +44,10 @@ function FullScreenNavbar(props) {
     <div className={`${styles.fullScreenNavbar}`}>
       <div className={`${styles.navbar} bg-white py-4 px-6  w-full h-[100vh]`}>
         <div className={`flex flex-row items-center justify-between h-[30px]`}>
-          <div className={`text-[2.4rem]`}>
+          <div className={`text-[3rem]`}>
             <IoClose
               onClick={props.handleFullScreenNav}
-              className={`bg-gray-200 text-custom-color-800 rounded-md cursor-pointer ${styles.navIcon}`}
+              className={` text-custom-color-900 rounded-md cursor-pointer ${styles.navIcon}`}
             />
           </div>
           <div>name</div>

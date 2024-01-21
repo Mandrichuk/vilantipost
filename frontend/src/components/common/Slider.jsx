@@ -6,11 +6,33 @@ function Slider(props) {
     maxValue: props?.maxValue || 100,
   };
   const [sliderValue, setSliderValue] = useState(values.minValue);
+  const [fullRounded, setFullRounded] = useState(false);
+  const [sliderNoBar, setSliderNoBar] = useState(false);
+  const [inputNoLeft, setInputNoLeft] = useState(false);
+
 
   const handleSliderChange = (event) => {
     const newValue = parseInt(event.target.value, 10);
     setSliderValue(newValue);
   };
+
+  useEffect(() => {
+    const fullRoundedDistinction = values.maxValue - sliderValue;
+    const sliderBarDistinction = sliderValue - values.minValue;
+    
+    if (fullRoundedDistinction < 25) {
+      setFullRounded(true);
+    } else {
+      setFullRounded(false);
+    }
+
+    if (sliderBarDistinction < 2) {
+      setSliderNoBar(true);
+    } else {
+      setSliderNoBar(false);
+    }
+
+  }, [sliderValue]);
 
   useEffect(() => {
     props.getData(sliderValue);
@@ -25,7 +47,7 @@ function Slider(props) {
 
   return (
     <div className={`sliderCont`}>
-      <div className="slider">
+      <div className={`slider ${fullRounded && "sliderFullRounded sliderNoLeft"} ${sliderNoBar && "sliderNoBar"}`}>
         <input
           type="range"
           min={values.minValue}
