@@ -1,25 +1,14 @@
-.sidebar {
+.fullScreenNavbar {
   position: fixed;
+  background: white;
   top: 0;
   left: 0;
+  width: 70%;
+  height: 100%;
   z-index: 999;
 }
 
-.alertIndicator {
-  transform: scale(1);
-  animation: pulse 1s infinite;
-  transform-origin: center;
+.navbar {
+  z-index: 19999;
 }
 
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}

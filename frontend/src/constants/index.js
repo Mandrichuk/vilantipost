@@ -19,6 +19,7 @@ import whiteEnvelope from "../assets/icons/whiteEnvelope.png";
 import customEnvelope from "../assets/icons/customEnvelope.png";
 import checked from "../assets/icons/checked.png";
 
+
 export default {
   logo,
   fullLogo,
@@ -141,7 +142,7 @@ export const homePage = {
       youSend: {
         label: "Вы отправляете",
         name: "Документы",
-        article: "вес от 0.5гм до 2.5гм",
+        article: "вес от 150гм до 300гм",
       },
       amountInput: "Укажите вес документов",
       units: "гм",
@@ -156,7 +157,7 @@ export const homePage = {
       youSend: {
         label: "You send",
         name: "Documents",
-        article: "weight from 0.5g to 2.5g",
+        article: "weight from 150g to 300g",
       },
       amountInput: "Specify the weight of the documents",
       units: "g",

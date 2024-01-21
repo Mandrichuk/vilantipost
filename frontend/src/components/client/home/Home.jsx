@@ -83,7 +83,7 @@ const HomePage = () => {
 
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <div
         className={`${styles.backgroundCover} w-full flex flex-col items-center bg-custom-color-50`}
       >
@@ -153,7 +153,7 @@ const HomePage = () => {
                     </div>
                   ) : (
                     <div>
-                      <div className={`labelText`}>
+                      <div className={`labelText mb-2`}>
                         {language === "en"
                           ? orderBoxInfo.en.toInput
                           : orderBoxInfo.ru.toInput}
