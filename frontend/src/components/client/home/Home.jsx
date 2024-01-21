@@ -83,7 +83,7 @@ const HomePage = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar customColor={true} bottomBorder={true} />
       <div
         className={`${styles.backgroundCover} w-full flex flex-col items-center bg-custom-color-50`}
       >

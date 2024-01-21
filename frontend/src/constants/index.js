@@ -1,6 +1,4 @@
 // Logos
-import logo from "../assets/logos/logo.png";
-import fullLogo from "../assets/logos/fullLogo.png";
 
 // Graphics
 import MapInPhone from "../assets/graphics/MapInPhone.jpg";
@@ -18,11 +16,10 @@ import blackEnvelope from "../assets/icons/blackEnvelope.png";
 import whiteEnvelope from "../assets/icons/whiteEnvelope.png";
 import customEnvelope from "../assets/icons/customEnvelope.png";
 import checked from "../assets/icons/checked.png";
+import hamburgerMenu from "../assets/icons/hamburger_menu.png";
 
 
 export default {
-  logo,
-  fullLogo,
   MapInPhone,
   PeopleDeal,
   MapLocation,
@@ -34,6 +31,7 @@ export default {
   whiteEnvelope,
   customEnvelope,
   checked,
+  hamburgerMenu,
 };
 
 export const deliveryPrices = {
@@ -456,6 +454,18 @@ export const navbar = {
       type: "",
       icon: "IoHome",
       link: "/",
+      withinSite: true,
+    },
+    {
+      ru: {
+        name: "Про нас",
+      },
+      en: {
+        name: "About",
+      },
+      type: "",
+      icon: "FaInfoCircle",
+      link: "/about",
       withinSite: true,
     },
     {
