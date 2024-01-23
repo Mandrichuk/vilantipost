@@ -17,6 +17,8 @@ import { RussiaData } from "../../../constants/index";
 import { annulData } from "../../../features/orderBox";
 import Footer from "../../common/footer/Footer";
 import Slider from "../../common/Slider";
+import PopularServices from "./PopularServices";
+
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -244,9 +246,14 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className={`wrapper`}>dddd</div>
+      
+      <div className={`w-full flex flex-col justify-center items-center`}>
+        <div className={`wrapper`}>
+          <PopularServices />
+        </div>
+      </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
