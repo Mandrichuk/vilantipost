@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --mutual-width: 96%;
   --input-width: 100px;
@@ -54,6 +55,11 @@ body {
   justify-content: center;
   color: var(--dark-gray-color-600);
 }
+
+.slick-track {
+  width: 96%;
+}
+
 /* 
 ::-webkit-scrollbar {
   width: 12px;

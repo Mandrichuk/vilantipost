@@ -18,6 +18,8 @@ import { annulData } from "../../../features/orderBox";
 import Footer from "../../common/footer/Footer";
 import Slider from "../../common/Slider";
 import PopularServices from "./PopularServices";
+import Posters from "./Posters";
+import Reviews from "./Reviews";
 
 
 const HomePage = () => {
@@ -90,6 +92,7 @@ const HomePage = () => {
         className={`${styles.backgroundCover} w-full flex flex-col items-center bg-custom-color-50`}
       >
         <div className={`wrapper`}>
+          <Posters />
           <div
             className={`${styles.orderBox} text-custom-color-600 bg-dark-gray-color-500 w-full p-3 rounded-md shadow-xl`}
           >
@@ -250,6 +253,7 @@ const HomePage = () => {
       <div className={`w-full flex flex-col justify-center items-center`}>
         <div className={`wrapper`}>
           <PopularServices />
+          <Reviews />
         </div>
       </div>
 

@@ -18,6 +18,21 @@ import customEnvelope from "../assets/icons/customEnvelope.png";
 import checked from "../assets/icons/checked.png";
 import hamburgerMenu from "../assets/icons/hamburger_menu.png";
 
+// flags
+import SlovakFlag from "../assets/flags/SlovakFlag.png";
+
+// ratings
+import rating0 from "../assets/ratings/rating-0.png";
+import rating05 from "../assets/ratings/rating-05.png";
+import rating10 from "../assets/ratings/rating-10.png";
+import rating15 from "../assets/ratings/rating-15.png";
+import rating20 from "../assets/ratings/rating-20.png";
+import rating25 from "../assets/ratings/rating-25.png";
+import rating30 from "../assets/ratings/rating-30.png";
+import rating35 from "../assets/ratings/rating-35.png";
+import rating40 from "../assets/ratings/rating-40.png";
+import rating45 from "../assets/ratings/rating-45.png";
+import rating50 from "../assets/ratings/rating-50.png";
 
 export default {
   MapInPhone,
@@ -32,6 +47,18 @@ export default {
   customEnvelope,
   checked,
   hamburgerMenu,
+  SlovakFlag,
+  rating0,
+  rating05,
+  rating10,
+  rating15,
+  rating20,
+  rating25,
+  rating30,
+  rating35,
+  rating40,
+  rating45,
+  rating50,
 };
 
 export const deliveryPrices = {
