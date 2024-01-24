@@ -12,48 +12,42 @@ import { useSelector } from "react-redux";
 
 function PopularServices() {
   const language = useSelector((state) => state.language.language);
-  // const popularServicesText = language === "en" ? homePage.en.popularServices : homePage.ru.popularServices;
+  const popularServicesText = language === "en" ? homePage.popularServices.en : homePage.popularServices.ru;
   const windowWidth = useWindowWidth();
   const [slidesToShow, setSlidesToShow] = useState(2.1);
 
 
-  console.log(language)
+  console.log(popularServicesText)
 
   const settings = {
-    infinite: true,
-    speed: 500,
+    infinite: false,
+    speed: 400,
     slidesToShow: slidesToShow,
     swipeToSlide: true,
     draggable: true,
-    lazyLoad: "ondemand",
     arrows: false,
   };
 
 
   useEffect(() => {
     if (windowWidth < 750) {
-      setSlidesToShow(2.05);
+      setSlidesToShow(2.08);
     } 
     if (windowWidth > 750) {
-      setSlidesToShow(3.05);
+      setSlidesToShow(3.08);
     }
     if (windowWidth > 1250) {
-      setSlidesToShow(4.05);
+      setSlidesToShow(4.08);
     }
   }, [windowWidth]);
 
   return (
     <div className={`${styles.popularServices} w-full items-center mt-6`}>
-      <div className={`titleText mb-4`}>Popular choices</div>
+      <div className={`titleText mb-4`}>{popularServicesText.titleText}</div>
       <Slider {...settings}>
-        <Service />
-        <Service />
-        <Service />
-        <Service />
-        <Service />
-        <Service />
-        <Service />
-        <Service />
+        {popularServicesText.services.map((service, index) => (
+          <Service key={`service-${index}`} {...service} />
+        ))}
       </Slider>
     </div>
   );
@@ -64,30 +58,28 @@ function Service(props) {
     <div className="service-wrapper" style={{ margin: "0 4px" }}>
       <Link
         // to="/form"
-        className={`${styles.service} items-center bg-red-100 max-w-[200px] h-[250px] rounded-lg overflow-hidden cursor-pointer`}
+        className={`${styles.service} items-center bg-red-100 max-w-[200px] h-[250px] rounded-lg overflow-hidden`}
       >
         <div
-          className={`${styles.serviceImgContainer} flex flex-col items-centere justify-center h-[75%] border-[0.5px] border-gray-200`}
+          className={`${styles.serviceImgContainer} flex flex-col items-centere justify-center h-[75%] border-[2px] border-gray-200`}
         >
           <img
-            alt=""
-            src={images.SlovakFlag}
+            alt="countryImage"
+            src={props.toCountryImg}
             className={`w-full h-full object-cover`}
           />
         </div>
 
         <div className={`px-2 py-2`}>
           <div className={`aritcleText flex flex-row items-center`}>
-            {/* {props.fromCountryName} */}
-            {/* - */}
-            {/* {props.toCountryName} */}
-            Croatia - Russia
+            {props.fromCountryName}
+            -
+            {props.toCountryName}
           </div>
           <p
             className={`labelText whitespace-no-wrap overflow-hidden text-ellipsis`}
           >
             {props.deliveryTime}
-            Доставка: 5 дней
           </p>
         </div>
       </Link>

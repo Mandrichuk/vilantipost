@@ -220,10 +220,10 @@ export const homePage = {
           deliveryTime: "Доставка: 5 дня",
         },
         {
-          toCountryImg: RussianFlag,
-          fromCountryImg: ItalianFlag,
-          toCountryName: "Россия",
-          fromCountryName: "Италия",
+          toCountryImg: ItalianFlag,
+          fromCountryImg: RussianFlag,
+          toCountryName: "Италия",
+          fromCountryName: "Россия",
           deliveryTime: "Доставка: 4 дня",
         },
         {
@@ -232,6 +232,13 @@ export const homePage = {
           toCountryName: "Германия",
           fromCountryName: "Росия",
           deliveryTime: "Доставка: 3 дня",
+        },
+        {
+          toCountryImg: SpainFlag,
+          fromCountryImg: RussianFlag,
+          toCountryName: "Испания",
+          fromCountryName: "Россия",
+          deliveryTime: "Доставка: 6 дней",
         },
       ],
     },
@@ -250,13 +257,13 @@ export const homePage = {
           fromCountryImg: RussianFlag,
           toCountryName: "Chech",
           fromCountryName: "Russia",
-          deliveryTime:  "Delivery: 5 days",
+          deliveryTime: "Delivery: 5 days",
         },
         {
-          toCountryImg: RussianFlag,
-          fromCountryImg: ItalianFlag,
-          toCountryName: "Russia",
-          fromCountryName: "Italy",
+          toCountryImg: ItalianFlag,
+          fromCountryImg: RussianFlag,
+          toCountryName: "Italy",
+          fromCountryName: "Russia",
           deliveryTime: "Delivery: 4 days",
         },
         {
@@ -266,9 +273,85 @@ export const homePage = {
           fromCountryName: "Russia",
           deliveryTime: "Delivery: 3 days",
         },
+        {
+          toCountryImg: SpainFlag,
+          fromCountryImg: RussianFlag,
+          toCountryName: "Spain",
+          fromCountryName: "Russia",
+          deliveryTime: "Delivery: 6 days",
+        },
       ],
     },
   },
+  Reviews: {
+    ru: {
+      titleText: "Отзывы клиентов",
+      articleText: "Почитайте, что наши клиенты думают о нас!",
+      translateBtn: "перевести",
+    },
+    en: {
+      titleText: "Clients' reviews",
+      articleText: "Take a look what our clients say about us!",
+      translateBtn: "translate",
+    },
+  },
+  reviews: [
+    {
+      name: "Виктория",
+      originalReview: {comment: "Все очень понравилось. Всем рекомендую!", lang: "ru"},
+      translatedReview: "Everything was very good. I recommend it to everyone.",
+      date: "08.01.2024",
+      rating: 5,
+    },
+    {
+      name: "George",
+      originalReview: {comment: "Nice service! Sent a few evelopes to my client and it was delivered in 5 days", lang: "en"},
+      translatedReview:
+        "Хороший сервис! Отправил несколько электронных писем к клиенту и его доставили за 5 дней",
+      date: "13.02.2024",
+      rating: 4.5,
+    },
+    {
+      name: "Алексей",
+      originalReview: {comment: "Отличная работа! Все было выполнено быстро и качественно.", lang: "ru"},
+      translatedReview:
+        "Great job! Everything was done quickly and efficiently.",
+      date: "15.03.2023",
+      rating: 5,
+    },
+    {
+      name: "Sophia",
+      originalReview: {comment: "Very professional team and services. Highly recommended.", lang: "en"},
+      translatedReview:
+        "Очень профессиональная команда и сервис. Настоятельно рекомендую.",
+      date: "22.06.2023",
+      rating: 5,
+    },
+    {
+      name: "Игнат",
+      originalReview: {comment: "Быстрее, чем я ожидал! Отправил документы в понедельник, и они были там уже в четверг.", lang: "ru"},
+      translatedReview:
+        "Faster than I expected! Sent the documents on Monday, and they were there by Thursday.",
+      date: "10.07.2023",
+      rating: 4,
+    },
+    {
+      name: "Emily",
+      originalReview: {comment:  "I'm impressed with how efficient the service is. Will use again.", lang: "en"},
+      translatedReview:
+        "Я впечатлена, насколько эффективен сервис. Буду использовать снова.",
+      date: "05.11.2023",
+      rating: 4.5,
+    },
+    {
+      name: "Михаил",
+      originalReview: {comment: "Все дошло в целости и сохранности, и главное - вовремя. Спасибо!", lang: "ru"},
+      translatedReview:
+        "Everything arrived intact and, most importantly, on time. Thank you!",
+      date: "21.12.2023",
+      rating: 4,
+    },
+  ],
 };
 
 export const formPage = {

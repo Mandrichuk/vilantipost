@@ -93,7 +93,7 @@ const HomePage = () => {
         <div className={`wrapper ${styles.orderContainer} ${windowWidth > 1000 && "my-2"}`}>
           <Poster />
           <div
-            className={`${styles.orderBox}  ${windowWidth < 1200 ? "flex-1" : "flex-[0.75]"}  text-custom-color-600 bg-dark-gray-color-500 w-full p-5 rounded-lg shadow-xl`}
+            className={`${styles.orderBox}  ${windowWidth < 1200 ? "flex-1" : "flex-[0.75]"}  text-custom-color-600 bg-dark-gray-color-500 w-full p-6 rounded-lg shadow-xl`}
           >
             <div
               className={`${styles.titleContainer} titleText my-3 text-center text-custom-color-400"`}
@@ -138,7 +138,7 @@ const HomePage = () => {
 
                 <div className={`${styles.fromToInputs}`}>
                   {formData.fromWhere === "to" ? (
-                    <div className={`mb-4`}>
+                    <div className={`mb-1`}>
                       <div className={`labelText mb-2`}>
                         {language === "en"
                           ? orderBoxInfo.en.fromInput
@@ -156,7 +156,7 @@ const HomePage = () => {
                       />
                     </div>
                   ) : (
-                    <div>
+                    <div className={`mb-1`}>
                       <div className={`labelText mb-2`}>
                         {language === "en"
                           ? orderBoxInfo.en.toInput
@@ -238,7 +238,7 @@ const HomePage = () => {
             <div className={`flex flex-row items-center justify-center`}>
               <button
                 onClick={() => submitForm()}
-                className={`flex-1 mb-3 regularButton max-w-[260px]`}
+                className={`flex-1 mb-3 regularButton`}
               >
                 {language === "en"
                   ? orderBoxInfo.en.buttonSubmit
