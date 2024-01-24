@@ -56,10 +56,6 @@ body {
   color: var(--dark-gray-color-600);
 }
 
-.slick-track {
-  width: 96%;
-}
-
 /* 
 ::-webkit-scrollbar {
   width: 12px;
@@ -527,7 +523,7 @@ input[type="checkbox"] {
 
 @media (min-width: 800px) {
   .wrapper {
-    width: 86%;
+    width: 90%;
   }
 
   .titleText {

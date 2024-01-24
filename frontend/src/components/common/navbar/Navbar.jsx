@@ -39,7 +39,7 @@ function Navbar(props) {
   return (
     <div className={`${styles.navbarCover} w-full ${fullScreenNav && "overlay"}`}>
       <div
-        className={`${styles.navbar} py-3 px-6 w-full ${
+        className={`${styles.navbar} ${props.bottomShadow && `${styles.bottomShadow}`}  py-3 px-6 w-full ${
           props.customColor ? "bg-custom-color-50" : "bg-white"
         }`}
       >

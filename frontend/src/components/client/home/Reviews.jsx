@@ -14,16 +14,21 @@ function Reviews() {
   const settings = {
     speed: 500,
     slidesToShow: slidesToShow,
-    slidesToScroll: 1,
+    swipeToSlide: true,
     draggable: true,
+    arrows: false,
     lazyLoad: "ondemand",
   };
 
   useEffect(() => {
-    if (windowWidth < 800) {
+    if (windowWidth < 750) {
       setSlidesToShow(1.03);
-    } else {
-      setSlidesToShow(2.02);
+    } 
+    if (windowWidth > 750) {
+      setSlidesToShow(2.03);
+    }
+    if (windowWidth > 1250) {
+      setSlidesToShow(3.03);
     }
   }, [windowWidth]);
 
@@ -32,6 +37,9 @@ function Reviews() {
       <div className={`titleText mt-4`}>Clients' rewiews</div>
       <div className={`articleText mb-4 text-gray-400`}>Take a look what our clients say about us!</div>
       <Slider {...settings}>
+        <Review />
+        <Review />
+        <Review />
         <Review />
         <Review />
         <Review />

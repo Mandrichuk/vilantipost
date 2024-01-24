@@ -6,26 +6,39 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import useWindowWidth from "../../../utils/useWindowWidth";
+import { homePage } from "../../../constants/index";
+import { useSelector } from "react-redux";
+
 
 function PopularServices() {
+  const language = useSelector((state) => state.language.language);
+  // const popularServicesText = language === "en" ? homePage.en.popularServices : homePage.ru.popularServices;
   const windowWidth = useWindowWidth();
   const [slidesToShow, setSlidesToShow] = useState(2.1);
+
+
+  console.log(language)
 
   const settings = {
     infinite: true,
     speed: 500,
     slidesToShow: slidesToShow,
-    slidesToScroll: 1,
+    swipeToSlide: true,
     draggable: true,
     lazyLoad: "ondemand",
+    arrows: false,
   };
 
 
   useEffect(() => {
-    if (windowWidth < 1000) {
+    if (windowWidth < 750) {
       setSlidesToShow(2.05);
-    } else {
+    } 
+    if (windowWidth > 750) {
       setSlidesToShow(3.05);
+    }
+    if (windowWidth > 1250) {
+      setSlidesToShow(4.05);
     }
   }, [windowWidth]);
 
@@ -48,7 +61,7 @@ function PopularServices() {
 
 function Service(props) {
   return (
-    <div className="service-wrapper" style={{ margin: "0 8px" }}>
+    <div className="service-wrapper" style={{ margin: "0 4px" }}>
       <Link
         // to="/form"
         className={`${styles.service} items-center bg-red-100 max-w-[200px] h-[250px] rounded-lg overflow-hidden cursor-pointer`}

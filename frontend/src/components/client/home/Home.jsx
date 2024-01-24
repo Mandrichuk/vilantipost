@@ -18,9 +18,8 @@ import { annulData } from "../../../features/orderBox";
 import Footer from "../../common/footer/Footer";
 import Slider from "../../common/Slider";
 import PopularServices from "./PopularServices";
-import Posters from "./Posters";
+import Poster from "./Poster";
 import Reviews from "./Reviews";
-
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -87,14 +86,14 @@ const HomePage = () => {
 
   return (
     <>
-      <Navbar customColor={true} bottomBorder={true} />
+      <Navbar customColor={true} bottomShadow={false} />
       <div
         className={`${styles.backgroundCover} w-full flex flex-col items-center bg-custom-color-50`}
       >
-        <div className={`wrapper`}>
-          <Posters />
+        <div className={`wrapper ${styles.orderContainer} ${windowWidth > 1000 && "my-2"}`}>
+          <Poster />
           <div
-            className={`${styles.orderBox} text-custom-color-600 bg-dark-gray-color-500 w-full p-3 rounded-md shadow-xl`}
+            className={`${styles.orderBox}  ${windowWidth < 1200 ? "flex-1" : "flex-[0.75]"}  text-custom-color-600 bg-dark-gray-color-500 w-full p-5 rounded-lg shadow-xl`}
           >
             <div
               className={`${styles.titleContainer} titleText my-3 text-center text-custom-color-400"`}
@@ -249,7 +248,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      
+
       <div className={`w-full flex flex-col justify-center items-center`}>
         <div className={`wrapper`}>
           <PopularServices />

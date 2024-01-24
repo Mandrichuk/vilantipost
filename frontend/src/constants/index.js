@@ -20,6 +20,12 @@ import hamburgerMenu from "../assets/icons/hamburger_menu.png";
 
 // flags
 import SlovakFlag from "../assets/flags/SlovakFlag.png";
+import AustrianFlag from "../assets/flags/AustrianFlag.png";
+import ChechFlag from "../assets/flags/ChechFlag.png";
+import GermanyFlag from "../assets/flags/GermanyFlag.png";
+import ItalianFlag from "../assets/flags/ItalianFlag.png";
+import RussianFlag from "../assets/flags/RussianFlag.png";
+import SpainFlag from "../assets/flags/SpainFlag.png";
 
 // ratings
 import rating0 from "../assets/ratings/rating-0.png";
@@ -48,6 +54,12 @@ export default {
   checked,
   hamburgerMenu,
   SlovakFlag,
+  AustrianFlag,
+  ChechFlag,
+  GermanyFlag,
+  ItalianFlag,
+  RussianFlag,
+  SpainFlag,
   rating0,
   rating05,
   rating10,
@@ -187,6 +199,74 @@ export const homePage = {
       amountInput: "Specify the weight of the documents",
       units: "g",
       buttonSubmit: "Go to details",
+    },
+  },
+  popularServices: {
+    ru: {
+      titleText: "Популярные отправки сейчас",
+      services: [
+        {
+          toCountryImg: SlovakFlag,
+          fromCountryImg: AustrianFlag,
+          fromCountryName: "Россия",
+          toCountryName: "Словакия",
+          deliveryTime: "Доставка: 5 дней",
+        },
+        {
+          toCountryImg: ChechFlag,
+          fromCountryImg: RussianFlag,
+          toCountryName: "Чехия",
+          fromCountryName: "Россия",
+          deliveryTime: "Доставка: 5 дня",
+        },
+        {
+          toCountryImg: RussianFlag,
+          fromCountryImg: ItalianFlag,
+          toCountryName: "Россия",
+          fromCountryName: "Италия",
+          deliveryTime: "Доставка: 4 дня",
+        },
+        {
+          toCountryImg: GermanyFlag,
+          fromCountryImg: RussianFlag,
+          toCountryName: "Германия",
+          fromCountryName: "Росия",
+          deliveryTime: "Доставка: 3 дня",
+        },
+      ],
+    },
+    en: {
+      titleText: "Popular shippings now",
+      services: [
+        {
+          toCountryImg: SlovakFlag,
+          fromCountryImg: AustrianFlag,
+          fromCountryName: "Russia",
+          toCountryName: "Slovakia",
+          deliveryTime: "Доставка: 5 дней",
+        },
+        {
+          toCountryImg: ChechFlag,
+          fromCountryImg: RussianFlag,
+          toCountryName: "Chech",
+          fromCountryName: "Russia",
+          deliveryTime:  "Delivery: 5 days",
+        },
+        {
+          toCountryImg: RussianFlag,
+          fromCountryImg: ItalianFlag,
+          toCountryName: "Russia",
+          fromCountryName: "Italy",
+          deliveryTime: "Delivery: 4 days",
+        },
+        {
+          toCountryImg: GermanyFlag,
+          fromCountryImg: RussianFlag,
+          toCountryName: "Germany",
+          fromCountryName: "Russia",
+          deliveryTime: "Delivery: 3 days",
+        },
+      ],
     },
   },
 };
