@@ -16,9 +16,6 @@ function PopularServices() {
   const windowWidth = useWindowWidth();
   const [slidesToShow, setSlidesToShow] = useState(2.1);
 
-
-  console.log(popularServicesText)
-
   const settings = {
     infinite: false,
     speed: 400,

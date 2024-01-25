@@ -41,6 +41,22 @@ function Reviews() {
   return (
     <div className={`${styles.Reviews} w-full items-center my-6`}>
       <div className={`titleText mt-4`}>{reviewsText.titleText}</div>
+
+      <div
+        className={`p-3 gb-red-500 flex flex-col items-center justify-center w-full relative`}
+      >
+        <img
+          src={images.peopleRating}
+          alt="peopleRating"
+          className={`object-cover opacity-[1] h-[300px]`}
+        />
+        <Link
+          to="/"
+          className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl max-w-[250px] bloatedButton`}
+        >
+        </Link>
+      </div>
+
       <div className={`articleText mb-4 text-gray-400`}>
         {reviewsText.articleText}
       </div>
@@ -59,7 +75,9 @@ function Review(props) {
   const reviewsText =
     language === "en" ? homePage.Reviews.en : homePage.Reviews.ru;
 
-  console.log(props.originalReview.lang)
+  function translatedReviewHandler() {
+    setTranslatedReview(!translatedReview);
+  }
 
   return (
     <div className="service-wrapper" style={{ margin: "0 8px" }}>
@@ -75,7 +93,9 @@ function Review(props) {
           >
             <div className={`flex flex-row items-baseline`}>
               <div className={`aritcleText font-bold pl-2`}>{props.name}</div>
-              <div className={`text-[0.8rem] text-gray-400 pl-2`}>{props.date}</div>
+              <div className={`text-[0.8rem] text-gray-400 pl-2`}>
+                {props.date}
+              </div>
             </div>
           </div>
           <div className={`w-[80px] object-cover pr-2`}>
@@ -89,11 +109,20 @@ function Review(props) {
 
         <div className={`px-3`}>
           <div className={`aritcleText flex flex-row items-center`}>
-            {props.originalReview.comment}
+            {translatedReview
+              ? props.translatedReview
+              : props.originalReview.comment}
           </div>
         </div>
         {language !== props.originalReview.lang && (
-          <div className={`absolute bottom-2 right-5 linkText`}>{reviewsText.translateBtn}</div>
+          <div
+            onClick={translatedReviewHandler}
+            className={`absolute bottom-2 right-5 underlinedText`}
+          >
+            {translatedReview
+              ? reviewsText.originalBtn
+              : reviewsText.translateBtn}
+          </div>
         )}
       </div>
     </div>

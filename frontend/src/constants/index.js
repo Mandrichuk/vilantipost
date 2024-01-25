@@ -1,9 +1,8 @@
 // Logos
 
 // Graphics
-import MapInPhone from "../assets/graphics/MapInPhone.jpg";
-import PeopleDeal from "../assets/graphics/PeopleDeal.jpg";
-import MapLocation from "../assets/graphics/MapLocation.jpg";
+import mobilePoster from "../assets/graphics/mobilePoster.jpg";
+import peopleRating from "../assets/graphics/peopleRatings.jpg";
 
 // Lotties
 import question from "../assets/lotties/question.json";
@@ -41,9 +40,8 @@ import rating45 from "../assets/ratings/rating-45.png";
 import rating50 from "../assets/ratings/rating-50.png";
 
 export default {
-  MapInPhone,
-  PeopleDeal,
-  MapLocation,
+  mobilePoster,
+  peopleRating,
   question,
   spinningWorld,
   uploadScreen,
@@ -186,8 +184,8 @@ export const homePage = {
       buttonSubmit: "Перейти к деталям",
     },
     en: {
-      title: "Send your documents to/from Russia!",
-      fromWhereInputs: ["To Russia", "From Russia"],
+      title: "Send your documents to/from Ukraine!",
+      fromWhereInputs: ["To Ukraine", "From Ukraine"],
       fromInput: "From which country you send",
       toInput: "To which country you send",
       errorMessage: "*Select country from the popup list!",
@@ -288,24 +286,33 @@ export const homePage = {
       titleText: "Отзывы клиентов",
       articleText: "Почитайте, что наши клиенты думают о нас!",
       translateBtn: "перевести",
+      originalBtn: "показать оригинал",
     },
     en: {
       titleText: "Clients' reviews",
       articleText: "Take a look what our clients say about us!",
       translateBtn: "translate",
+      originalBtn: "show original",
     },
   },
   reviews: [
     {
       name: "Виктория",
-      originalReview: {comment: "Все очень понравилось. Всем рекомендую!", lang: "ru"},
+      originalReview: {
+        comment: "Все очень понравилось. Всем рекомендую!",
+        lang: "ru",
+      },
       translatedReview: "Everything was very good. I recommend it to everyone.",
       date: "08.01.2024",
       rating: 5,
     },
     {
       name: "George",
-      originalReview: {comment: "Nice service! Sent a few evelopes to my client and it was delivered in 5 days", lang: "en"},
+      originalReview: {
+        comment:
+          "Nice service! Sent a few evelopes to my client and it was delivered in 5 days",
+        lang: "en",
+      },
       translatedReview:
         "Хороший сервис! Отправил несколько электронных писем к клиенту и его доставили за 5 дней",
       date: "13.02.2024",
@@ -313,7 +320,10 @@ export const homePage = {
     },
     {
       name: "Алексей",
-      originalReview: {comment: "Отличная работа! Все было выполнено быстро и качественно.", lang: "ru"},
+      originalReview: {
+        comment: "Отличная работа! Все было выполнено быстро и качественно.",
+        lang: "ru",
+      },
       translatedReview:
         "Great job! Everything was done quickly and efficiently.",
       date: "15.03.2023",
@@ -321,7 +331,10 @@ export const homePage = {
     },
     {
       name: "Sophia",
-      originalReview: {comment: "Very professional team and services. Highly recommended.", lang: "en"},
+      originalReview: {
+        comment: "Very professional team and services. Highly recommended.",
+        lang: "en",
+      },
       translatedReview:
         "Очень профессиональная команда и сервис. Настоятельно рекомендую.",
       date: "22.06.2023",
@@ -329,7 +342,11 @@ export const homePage = {
     },
     {
       name: "Игнат",
-      originalReview: {comment: "Быстрее, чем я ожидал! Отправил документы в понедельник, и они были там уже в четверг.", lang: "ru"},
+      originalReview: {
+        comment:
+          "Быстрее, чем я ожидал! Отправил документы в понедельник, и они были там уже в четверг.",
+        lang: "ru",
+      },
       translatedReview:
         "Faster than I expected! Sent the documents on Monday, and they were there by Thursday.",
       date: "10.07.2023",
@@ -337,7 +354,11 @@ export const homePage = {
     },
     {
       name: "Emily",
-      originalReview: {comment:  "I'm impressed with how efficient the service is. Will use again.", lang: "en"},
+      originalReview: {
+        comment:
+          "I'm impressed with how efficient the service is. Will use again.",
+        lang: "en",
+      },
       translatedReview:
         "Я впечатлена, насколько эффективен сервис. Буду использовать снова.",
       date: "05.11.2023",
@@ -345,7 +366,11 @@ export const homePage = {
     },
     {
       name: "Михаил",
-      originalReview: {comment: "Все дошло в целости и сохранности, и главное - вовремя. Спасибо!", lang: "ru"},
+      originalReview: {
+        comment:
+          "Все дошло в целости и сохранности, и главное - вовремя. Спасибо!",
+        lang: "ru",
+      },
       translatedReview:
         "Everything arrived intact and, most importantly, on time. Thank you!",
       date: "21.12.2023",

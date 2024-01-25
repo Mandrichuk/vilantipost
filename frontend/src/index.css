@@ -12,6 +12,7 @@
   --white-color: white;
   --link-color: blue;
   --error-color: #fc3535;
+  --underlined-text-color: rgb(151, 151, 151);
 
   --dark-gray-color-50: #6b7483;
   --dark-gray-color-100: #5f6879;
@@ -45,6 +46,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen";
+  scroll-behavior: smooth;
 }
 
 body {
@@ -151,6 +153,13 @@ input[type="checkbox"] {
 
 .tinyText {
   font-size: 0.7rem;
+}
+
+.underlinedText {
+  font-size: 0.9rem;
+  color: var(--underlined-text-color);
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .noMargin {

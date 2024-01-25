@@ -20,6 +20,7 @@ import Slider from "../../common/Slider";
 import PopularServices from "./PopularServices";
 import Poster from "./Poster";
 import Reviews from "./Reviews";
+import DeliveryProcesses from "./DeliveryProcesses";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -93,6 +94,7 @@ const HomePage = () => {
         <div className={`wrapper ${styles.orderContainer} ${windowWidth > 1000 && "my-2"}`}>
           <Poster />
           <div
+            id={`orderBox`}
             className={`${styles.orderBox}  ${windowWidth < 1200 ? "flex-1" : "flex-[0.75]"}  text-custom-color-600 bg-dark-gray-color-500 w-full p-6 rounded-lg shadow-xl`}
           >
             <div
@@ -253,6 +255,7 @@ const HomePage = () => {
         <div className={`wrapper`}>
           <PopularServices />
           <Reviews />
+          <DeliveryProcesses />
         </div>
       </div>
 

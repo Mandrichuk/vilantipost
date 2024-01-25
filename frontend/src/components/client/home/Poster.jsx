@@ -9,20 +9,20 @@ import useWindowWidth from "../../../utils/useWindowWidth";
 
 function Poster(props) {
   const windowWidth = useWindowWidth();
+  const currentPoster = images.mobilePoster;
 
   return (
-    <div className={`${styles.poster} w-full ${
+    <div className={`${styles.poster} w-full  ${(windowWidth < 500 &&  windowWidth <  1000) ? "h-[130px]" : "h-[200px]"} ${
         windowWidth > 1000 ? "h-[690px] mr-4 flex-1" : "h-[140px] mb-4"
       } shadow-lg`}>
-    <div
-      // to="/form"
+    <a
+      href="#orderBox"
       className={`${
         styles.service
-      } bg-custom-color-100 rounded-lg h-full w-full cursor-pointer flex flex-col items-center justify-center `}
+      } bg-custom-color-100 rounded-lg h-full w-full cursor-pointer flex flex-col items-center justify-center overflow-hidden`}
     >
-      {/* <img  alt="" src={images.poster} className={`w-full h-full rounded-lg object-cover`}/> */}
-      <div className={`titleText`}>Fast and Secure delivery!</div>
-    </div>
+      <img  alt="poster" src={currentPoster} className={` rounded-lg`}/>
+    </a>
     </div>
   );
 }
