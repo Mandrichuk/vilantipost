@@ -10,6 +10,10 @@
   transition: height 500ms ease;
 }
 
+.stageIcon {
+  transition: background-color 500ms ease;
+}
+
 @media (min-width: 650px) {
   .orderBox {
     padding: 20px;

@@ -20,13 +20,24 @@ function DeliveryProcesses() {
   // const deliveryProcessesText = language === "en" ? homePage.deliveryProcesses.en : homePage.deliveryProcesses.ru;
   const windowWidth = useWindowWidth();
   const [currentProgress, setCurrentProgress] = useState(0);
+  const progressFillerHeight = `${currentProgress * 25}%`;
+  const stages = [
+    { name: "Заполнение формы", icon: TbCircleNumber1, value: 0 },
+    { name: "Отправка на склад", icon: TbCircleNumber2, value: 1 },
+    { name: "Доставка в ЕС", icon: TbCircleNumber3, value: 2 },
+    { name: "Доставка курьером", icon: TbCircleNumber4, value: 3 },
+    { name: "Получение", icon: TbCircleNumber5, value: 4 },
+  ];
 
   function handlePointChange(currentPoint) {
     setCurrentProgress(currentPoint);
   }
 
-  const progressFillerHeight = `${currentProgress * 25}%`;
-  console.log(progressFillerHeight);
+  function isStagePassed(value) {
+    if (currentProgress >= value) {
+      return true;
+    }
+  }
 
   return (
     <div className={`${styles.deliveryProcesses} w-full my-6`}>
@@ -39,30 +50,18 @@ function DeliveryProcesses() {
             className={`h-full w-[10px] bg-custom-color-700 mr-6 rounded-full relative flex flex-col justify-between items-center`}
           >
             <div
-              className={`${styles.progressFiller} w-[10px] bg-custom-color-900 mr-6 rounded-full absolute inset-0`}
+              className={`${styles.progressFiller} w-[10px] bg-custom-color-800 mr-6 rounded-full absolute inset-0`}
               style={{ height: progressFillerHeight }}
             />
 
-            <TbCircleNumber1
-              onClick={() => handlePointChange(0)}
-              className={`bg-custom-color-700 rounded-full text-white text-[2rem] z-20 cursor-pointer`}
-            />
-            <TbCircleNumber2
-              onClick={() => handlePointChange(1)}
-              className={`bg-custom-color-700 rounded-full text-white text-[2rem] z-20 cursor-pointer`}
-            />
-            <TbCircleNumber3
-              onClick={() => handlePointChange(2)}
-              className={`bg-custom-color-700 rounded-full text-white text-[2rem] z-20 cursor-pointer`}
-            />
-            <TbCircleNumber4
-              onClick={() => handlePointChange(3)}
-              className={`bg-custom-color-700 rounded-full text-white text-[2rem] z-20 cursor-pointer`}
-            />
-            <TbCircleNumber5
-              onClick={() => handlePointChange(4)}
-              className={`bg-custom-color-700 rounded-full text-white text-[2rem] z-20 cursor-pointer`}
-            />
+            {stages.map((stage, index) => (
+              <div key={`stage-${index}`} className={`z-20`}>
+                <stage.icon
+                  onClick={() => handlePointChange(stage.value)}
+                  className={`${styles.stageIcon} ${isStagePassed(stage.value) ? "bg-custom-color-800 text-white" : "bg-custom-color-700 text-gray-300"} rounded-full text-[2rem] cursor-pointer`}
+                />
+              </div>
+            ))}
           </div>
 
           <DeliveryProcess />
