@@ -11,11 +11,13 @@ import { useSelector } from "react-redux";
 
 function Reviews() {
   const language = useSelector((state) => state.language.language);
-  const reviewsArr = homePage.reviews;
+  const reviewsArr = homePage.Reviews.reviews;
   const reviewsText =
     language === "en" ? homePage.Reviews.en : homePage.Reviews.ru;
   const windowWidth = useWindowWidth();
   const [slidesToShow, setSlidesToShow] = useState(2.1);
+
+
 
   const settings = {
     infinite: false,
@@ -39,11 +41,11 @@ function Reviews() {
   }, [windowWidth]);
 
   return (
-    <div className={`${styles.Reviews} w-full items-center my-6`}>
-      <div className={`titleText mt-4`}>{reviewsText.titleText}</div>
+    <div className={`${styles.Reviews} w-full items-center sectionMargin`}>
+      <div className={`titleText`}>{reviewsText.titleText}</div>
 
       <div
-        className={`p-3 gb-red-500 flex flex-col items-center justify-center w-full relative`}
+        className={`p-3 flex flex-col items-center justify-center w-full relative`}
       >
         <img
           src={images.peopleRating}
@@ -57,7 +59,7 @@ function Reviews() {
         </Link>
       </div>
 
-      <div className={`articleText mb-4 text-gray-400`}>
+      <div className={`articleText mb-2 mx-2 text-gray-400`}>
         {reviewsText.articleText}
       </div>
       <Slider {...settings}>

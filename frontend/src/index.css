@@ -58,6 +58,10 @@ body {
   color: var(--dark-gray-color-600);
 }
 
+.sectionMargin {
+  margin: 20px 0;
+}
+
 /* 
 ::-webkit-scrollbar {
   width: 12px;

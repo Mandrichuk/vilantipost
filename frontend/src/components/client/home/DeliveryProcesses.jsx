@@ -14,6 +14,8 @@ import {
   TbCircleNumber4,
   TbCircleNumber5,
 } from "react-icons/tb";
+import { motion } from "framer-motion";
+import { motions } from "../../../constants/index";
 
 function DeliveryProcesses() {
   const language = useSelector((state) => state.language.language);
@@ -21,7 +23,9 @@ function DeliveryProcesses() {
   const windowWidth = useWindowWidth();
   const [currentProgress, setCurrentProgress] = useState(0);
   const progressFillerHeight = `${currentProgress * 25}%`;
-  const stages = [
+  const stages = language === "en" ? homePage.deliveryProcesses.en.steps : homePage.deliveryProcesses.ru.steps;
+
+  const numberStages = [
     { name: "Заполнение формы", icon: TbCircleNumber1, value: 0 },
     { name: "Отправка на склад", icon: TbCircleNumber2, value: 1 },
     { name: "Доставка в ЕС", icon: TbCircleNumber3, value: 2 },
@@ -38,13 +42,14 @@ function DeliveryProcesses() {
       return true;
     }
   }
+  
 
   return (
-    <div className={`${styles.deliveryProcesses} w-full my-6`}>
+    <div className={`${styles.deliveryProcesses} w-full sectionMargin`}>
       <div className={`titleText`}>
         Процесс отправки
         <div
-          className={`w-full flex flex-row items-center justify-between p-3 h-[500px]`}
+          className={`w-full flex flex-row items-center justify-between p-3 h-[550px]`}
         >
           <div
             className={`h-full w-[10px] bg-custom-color-700 mr-6 rounded-full relative flex flex-col justify-between items-center`}
@@ -54,17 +59,25 @@ function DeliveryProcesses() {
               style={{ height: progressFillerHeight }}
             />
 
-            {stages.map((stage, index) => (
-              <div key={`stage-${index}`} className={`z-20`}>
+            {numberStages.map((stage, index) => (
+              <motion.div
+                whileTap={motions.whileTap}
+                key={`stage-${index}`}
+                className={`z-20`}
+              >
                 <stage.icon
                   onClick={() => handlePointChange(stage.value)}
-                  className={`${styles.stageIcon} ${isStagePassed(stage.value) ? "bg-custom-color-800 text-white" : "bg-custom-color-700 text-gray-300"} rounded-full text-[2rem] cursor-pointer`}
+                  className={`${styles.stageIcon} ${
+                    isStagePassed(stage.value)
+                      ? "bg-custom-color-800 text-white"
+                      : "bg-custom-color-700 text-gray-300"
+                  } rounded-full text-[2rem] cursor-pointer`}
                 />
-              </div>
+              </motion.div>
             ))}
           </div>
 
-          <DeliveryProcess />
+          <DeliveryProcess {...stages[currentProgress]} />
         </div>
       </div>
     </div>
@@ -72,7 +85,29 @@ function DeliveryProcesses() {
 }
 
 function DeliveryProcess(props) {
-  return <div className={`flex-1 bg-red-300 h-full rounded-lg p-4`}>d</div>;
+  return (
+    <div className={`flex-1 bg-gray-50 rounded-sm h-full p-4`}>
+      <div
+        className={`${styles.imgTitleContainer} w-full flex flex-row items-center justify-start`}
+      >
+        <img
+          src={images.peopleRating}
+          alt=""
+          className={`w-[100px] h-[100px] object-cover rounded-sm`}
+        />
+        <div className={`flex flex-col ml-4`}>
+          <div className={`labelText text-custom-color-600`}>{props.stepNumber}</div>
+          <div className={`titleText`}>{props.title}</div>
+        </div>
+      </div>
+      <div className={`mt-2 labelText`}>
+        {props.label}
+      </div>
+      <div className={`${styles.normalText} articleText mt-4`}>
+        {props.article}
+      </div>
+    </div>
+  );
 }
 
 export default DeliveryProcesses;

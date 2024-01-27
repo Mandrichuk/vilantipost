@@ -8,11 +8,7 @@ import { navbar } from "../../../constants/index";
 import { useSelector } from "react-redux";
 import styles from "./navbar.module.css";
 import useWindowWidth from "../../../utils/useWindowWidth";
-
-const sidebarVariants = {
-  open: { x: 0 },
-  closed: { x: "-100%" },
-};
+import { motions } from "../../../constants/index";
 
 function Navbar(props) {
   const windowWidth = useWindowWidth();
@@ -60,7 +56,7 @@ function Navbar(props) {
                 initial="closed"
                 animate="open"
                 exit="closed"
-                variants={sidebarVariants}
+                variants={motions.sidebarVariants}
                 transition={{ duration: 0.3 }}
                 className={`${styles.fullScreenNavbar}`}
               >
@@ -72,7 +68,7 @@ function Navbar(props) {
                   >
                     <div />
                     <div className={`text-[2.4rem]`}>
-                      <motion.div whileTap={{ scale: 0.8 }}>
+                      <motion.div whileTap={motions.whileTap}>
                         <IoClose
                           onClick={handleFullScreenNav}
                           className={` text-custom-color-900 rounded-md cursor-pointer ${styles.navIcon}`}

@@ -5,7 +5,7 @@ function Slider(props) {
     minValue: props?.minValue || 0,
     maxValue: props?.maxValue || 100,
   };
-  const [sliderValue, setSliderValue] = useState(values.minValue);
+  const [sliderValue, setSliderValue] = useState(props.initialValue ? props.initialValue : values.minValue);
   const [fullRounded, setFullRounded] = useState(false);
   const [sliderNoBar, setSliderNoBar] = useState(false);
   const [inputNoLeft, setInputNoLeft] = useState(false);
@@ -35,7 +35,7 @@ function Slider(props) {
   }, [sliderValue]);
 
   useEffect(() => {
-    props.getData(sliderValue);
+    props.getData("", sliderValue);
   }, [sliderValue]);
 
   const calculateProgressWidth = () => {

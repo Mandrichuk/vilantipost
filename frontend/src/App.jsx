@@ -8,6 +8,7 @@ import Form from "./components/client/form/Form";
 import isObjNotEmpty from "./utils/isObjNotEmpty";
 import ScrollToTop from "./components/common/ScrollToTop";
 import Track from "./components/client/track/Track";
+import Payment from "./components/client/payment/Payment";
 
 // admin
 import Login from "./components/admin/login/Login";
@@ -26,6 +27,7 @@ function App() {
         <Route path="*" element={<Navigate to="/" />} />
         <Route path="/" element={<Home />} />
         <Route path="/track-parcel/*" element={<Track />} />
+        <Route path="/payment" element={<Payment />} />
 
         {isObjNotEmpty(orderBox.departure) &&
           isObjNotEmpty(orderBox.destination) && (

@@ -1,5 +1,7 @@
 import { countries } from "../constants";
 
-export const countryById = (id) => {
+function countryById(id) {
   return countries.find((country) => country.id === id);
 }
+
+export default countryById;

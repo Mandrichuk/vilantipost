@@ -71,6 +71,14 @@ export default {
   rating50,
 };
 
+export const motions = {
+  whileTap: { scale: 0.8 },
+  sidebarVariants: {
+    open: { x: 0 },
+    closed: { x: "-100%" },
+  },
+};
+
 export const deliveryPrices = {
   value: 5000,
   ru: {
@@ -167,6 +175,24 @@ export const trackPage = {
 };
 
 export const homePage = {
+  trackPackage: {
+    ru: {
+      labelText: "Отследите посылку за номером",
+      trackInput: {
+        type: "text",
+        placeholder: "123456789",
+        field: "parcelNumber",
+      },
+    },
+    en: {
+      labelText: "Track your parcel by a number",
+      trackInput: {
+        type: "text",
+        placeholder: "123456789",
+        field: "parcelNumber",
+      },
+    },
+  },
   orderBox: {
     ru: {
       title: "Отправьте свои документы в/из России!",
@@ -205,16 +231,18 @@ export const homePage = {
       services: [
         {
           toCountryImg: SlovakFlag,
-          fromCountryImg: AustrianFlag,
+          fromCountryImg: RussianFlag,
           fromCountryName: "Россия",
           toCountryName: "Словакия",
-          deliveryTime: "Доставка: 5 дней",
+          countryToId: 4,
+          deliveryTime: "Доставка: 7 дней",
         },
         {
           toCountryImg: ChechFlag,
           fromCountryImg: RussianFlag,
           toCountryName: "Чехия",
           fromCountryName: "Россия",
+          countryToId: 75,
           deliveryTime: "Доставка: 5 дня",
         },
         {
@@ -222,13 +250,15 @@ export const homePage = {
           fromCountryImg: RussianFlag,
           toCountryName: "Италия",
           fromCountryName: "Россия",
+          countryToId: 89,
           deliveryTime: "Доставка: 4 дня",
         },
         {
           toCountryImg: GermanyFlag,
           fromCountryImg: RussianFlag,
           toCountryName: "Германия",
-          fromCountryName: "Росия",
+          fromCountryName: "Россия",
+          countryToId: 86,
           deliveryTime: "Доставка: 3 дня",
         },
         {
@@ -236,6 +266,7 @@ export const homePage = {
           fromCountryImg: RussianFlag,
           toCountryName: "Испания",
           fromCountryName: "Россия",
+          countryToId: 95,
           deliveryTime: "Доставка: 6 дней",
         },
       ],
@@ -245,16 +276,18 @@ export const homePage = {
       services: [
         {
           toCountryImg: SlovakFlag,
-          fromCountryImg: AustrianFlag,
+          fromCountryImg: RussianFlag,
           fromCountryName: "Russia",
           toCountryName: "Slovakia",
-          deliveryTime: "Доставка: 5 дней",
+          countryToId: 4,
+          deliveryTime: "Delivery: 7 days",
         },
         {
           toCountryImg: ChechFlag,
           fromCountryImg: RussianFlag,
           toCountryName: "Chech",
           fromCountryName: "Russia",
+          countryToId: 75,
           deliveryTime: "Delivery: 5 days",
         },
         {
@@ -262,6 +295,7 @@ export const homePage = {
           fromCountryImg: RussianFlag,
           toCountryName: "Italy",
           fromCountryName: "Russia",
+          countryToId: 89,
           deliveryTime: "Delivery: 4 days",
         },
         {
@@ -269,6 +303,7 @@ export const homePage = {
           fromCountryImg: RussianFlag,
           toCountryName: "Germany",
           fromCountryName: "Russia",
+          countryToId: 86,
           deliveryTime: "Delivery: 3 days",
         },
         {
@@ -276,6 +311,7 @@ export const homePage = {
           fromCountryImg: RussianFlag,
           toCountryName: "Spain",
           fromCountryName: "Russia",
+          countryToId: 95,
           deliveryTime: "Delivery: 6 days",
         },
       ],
@@ -294,89 +330,182 @@ export const homePage = {
       translateBtn: "translate",
       originalBtn: "show original",
     },
+    reviews: [
+      {
+        name: "Виктория",
+        originalReview: {
+          comment: "Все очень понравилось. Всем рекомендую!",
+          lang: "ru",
+        },
+        translatedReview:
+          "Everything was very good. I recommend it to everyone.",
+        date: "08.01.2024",
+        rating: 5,
+      },
+      {
+        name: "George",
+        originalReview: {
+          comment:
+            "Nice service! Sent a few evelopes to my client and it was delivered in 5 days",
+          lang: "en",
+        },
+        translatedReview:
+          "Хороший сервис! Отправил несколько электронных писем к клиенту и его доставили за 5 дней",
+        date: "13.02.2024",
+        rating: 4.5,
+      },
+      {
+        name: "Алексей",
+        originalReview: {
+          comment: "Отличная работа! Все было выполнено быстро и качественно.",
+          lang: "ru",
+        },
+        translatedReview:
+          "Great job! Everything was done quickly and efficiently.",
+        date: "15.03.2023",
+        rating: 5,
+      },
+      {
+        name: "Sophia",
+        originalReview: {
+          comment: "Very professional team and services. Highly recommended.",
+          lang: "en",
+        },
+        translatedReview:
+          "Очень профессиональная команда и сервис. Настоятельно рекомендую.",
+        date: "22.06.2023",
+        rating: 5,
+      },
+      {
+        name: "Игнат",
+        originalReview: {
+          comment:
+            "Быстрее, чем я ожидал! Отправил документы в понедельник, и они были там уже в четверг.",
+          lang: "ru",
+        },
+        translatedReview:
+          "Faster than I expected! Sent the documents on Monday, and they were there by Thursday.",
+        date: "10.07.2023",
+        rating: 4,
+      },
+      {
+        name: "Emily",
+        originalReview: {
+          comment:
+            "I'm impressed with how efficient the service is. Will use again.",
+          lang: "en",
+        },
+        translatedReview:
+          "Я впечатлена, насколько эффективен сервис. Буду использовать снова.",
+        date: "05.11.2023",
+        rating: 4.5,
+      },
+      {
+        name: "Михаил",
+        originalReview: {
+          comment:
+            "Все дошло в целости и сохранности, и главное - вовремя. Спасибо!",
+          lang: "ru",
+        },
+        translatedReview:
+          "Everything arrived intact and, most importantly, on time. Thank you!",
+        date: "21.12.2023",
+        rating: 4,
+      },
+    ],
   },
-  reviews: [
-    {
-      name: "Виктория",
-      originalReview: {
-        comment: "Все очень понравилось. Всем рекомендую!",
-        lang: "ru",
+  deliveryProcesses: {
+    ru: {
+      titleText: "Процесс доставки",
+      steps: {
+        0: {
+          image: "sdf",
+          stepNumber: "Шаг 1",
+          title: "Заполнение формы",
+          label: "Заполните форму на сайте и оплатите доставку",
+          article:
+            "Заполните все необходимые данные в форме, после чего оплатите доставку и ожидайте FedEx накладную на указанный email",
+        },
+        1: {
+          image: "sdf",
+          stepNumber: "Шаг 2",
+          title: "Отправка на РФ склад",
+          label: "Отправляйте нам ваши документь",
+          article:
+            "После заполнения формы отправляйте нам ваши документы в отдел по адресу: `АДРЕС`. Далее мы проверим документы на валидность и отправим вам документы по указанному адресу.",
+        },
+        2: {
+          image: "sdf",
+          stepNumber: "Шаг 3",
+          title: "Перевоз посылки в ЕС",
+          label: "Доставка на склад Словакии",
+          article:
+            "Затем, мы доставим ваши документы в отдел Словакии. С Братиславы мы отправляем посылку за указаным адресом из вашей формы.",
+        },
+        3: {
+          image: "sdf",
+          stepNumber: "Шаг 4",
+          title: "Доставка курьером",
+          label: "Курьер доставит по адресу из формы",
+          article:
+            "К выбранному вами адресу курьер доставит ваши документы. Как вы встретитесь с курьером, покажите ему FedEx накладную, которая пришла вам на почту.",
+        },
+        4: {
+          image: "sdf",
+          stepNumber: "Шаг 5",
+          title: "Получение",
+          label: "Все сложное позади!",
+          article:
+            "Супер! У вас все получилось. Спасибо за пользование нашим сервисом!",
+        },
       },
-      translatedReview: "Everything was very good. I recommend it to everyone.",
-      date: "08.01.2024",
-      rating: 5,
     },
-    {
-      name: "George",
-      originalReview: {
-        comment:
-          "Nice service! Sent a few evelopes to my client and it was delivered in 5 days",
-        lang: "en",
+    en: {
+      titleText: "Delivery process",
+      steps: {
+        0: {
+          image: "sdf",
+          stepNumber: "Step 1",
+          title: "Filling the form",
+          label: "Fill in the form on the site and pay for delivery",
+          article:
+            "Fill in all the necessary information in the form, then pay for delivery and wait for FedEx invoice on the specified email",
+        },
+        1: {
+          image: "sdf",
+          stepNumber: "Step 2",
+          title: "Sending to the Moskow",
+          label: "Send us your documents",
+          article:
+            "After filling the form, send us your documents to the warehouse address: `ADDRESS`. Then we will check the documents for validity and send them to you.",
+        },
+        2: {
+          image: "sdf",
+          stepNumber: "Step 3",
+          title: "Delivery to the Slovakia",
+          label: "Delivery to the warehouse of Slovakia",
+          article:
+            "Then, we will deliver your documents to the Slovakian warehouse. We will send the package to the specified address from your form.",
+        },
+        3: {
+          image: "sdf",
+          stepNumber: "Step 4",
+          title: "Delivery by courier",
+          label: "The courier will deliver the address from the form",
+          article:
+            "At the specified address, the courier will deliver your documents. When you meet the courier, show him the FedEx invoice that was sent to you.",
+        },
+        4: {
+          image: "sdf",
+          stepNumber: "Step 5",
+          title: "Pickup",
+          label: "All the complicated ahead!",
+          article:
+            "Super! You have everything done. Thank you for using our service!",
+        },
       },
-      translatedReview:
-        "Хороший сервис! Отправил несколько электронных писем к клиенту и его доставили за 5 дней",
-      date: "13.02.2024",
-      rating: 4.5,
     },
-    {
-      name: "Алексей",
-      originalReview: {
-        comment: "Отличная работа! Все было выполнено быстро и качественно.",
-        lang: "ru",
-      },
-      translatedReview:
-        "Great job! Everything was done quickly and efficiently.",
-      date: "15.03.2023",
-      rating: 5,
-    },
-    {
-      name: "Sophia",
-      originalReview: {
-        comment: "Very professional team and services. Highly recommended.",
-        lang: "en",
-      },
-      translatedReview:
-        "Очень профессиональная команда и сервис. Настоятельно рекомендую.",
-      date: "22.06.2023",
-      rating: 5,
-    },
-    {
-      name: "Игнат",
-      originalReview: {
-        comment:
-          "Быстрее, чем я ожидал! Отправил документы в понедельник, и они были там уже в четверг.",
-        lang: "ru",
-      },
-      translatedReview:
-        "Faster than I expected! Sent the documents on Monday, and they were there by Thursday.",
-      date: "10.07.2023",
-      rating: 4,
-    },
-    {
-      name: "Emily",
-      originalReview: {
-        comment:
-          "I'm impressed with how efficient the service is. Will use again.",
-        lang: "en",
-      },
-      translatedReview:
-        "Я впечатлена, насколько эффективен сервис. Буду использовать снова.",
-      date: "05.11.2023",
-      rating: 4.5,
-    },
-    {
-      name: "Михаил",
-      originalReview: {
-        comment:
-          "Все дошло в целости и сохранности, и главное - вовремя. Спасибо!",
-        lang: "ru",
-      },
-      translatedReview:
-        "Everything arrived intact and, most importantly, on time. Thank you!",
-      date: "21.12.2023",
-      rating: 4,
-    },
-  ],
+  },
 };
 
 export const formPage = {
@@ -1206,6 +1335,71 @@ export const countries = [
     exampleNumber: "xx yyyyyyy",
   },
   {
+    id: 86,
+    ru: {
+      name: "Германия",
+    },
+    en: {
+      name: "Germany",
+    },
+    code: "DE",
+    number: "+49",
+    flag: "🇩🇪",
+    exampleNumber: "01512 xxxxxxx",
+  },
+  {
+    id: 87,
+    ru: {
+      name: "Греция",
+    },
+    en: {
+      name: "Greece",
+    },
+    code: "GR",
+    number: "+30",
+    flag: "🇬🇷",
+    exampleNumber: "69x xxx xxxx",
+  },
+  {
+    id: 88,
+    ru: {
+      name: "Ирландия",
+    },
+    en: {
+      name: "Ireland",
+    },
+    code: "IE",
+    number: "+353",
+    flag: "🇮🇪",
+    exampleNumber: "08x xxx xxxx",
+  },
+  {
+    id: 95,
+    ru: {
+      name: "Испания",
+    },
+    en: {
+      name: "Spain",
+    },
+    code: "ES",
+    number: "+34",
+    flag: "🇪🇸",
+    exampleNumber: "6xx-xxx-xxx",
+  },
+  {
+    id: 89,
+    ru: {
+      name: "Италия",
+    },
+    en: {
+      name: "Italy",
+    },
+    code: "IT",
+    number: "+39",
+    flag: "🇮🇹",
+    exampleNumber: "3xx xxx xxxx",
+  },
+  {
     id: 37,
     ru: {
       name: "Сейшельские острова",
@@ -1360,6 +1554,32 @@ export const countries = [
     number: "+232",
     flag: "🇸🇱",
     exampleNumber: "xx yyyyyy",
+  },
+  {
+    id: 90,
+    ru: {
+      name: "Латвия",
+    },
+    en: {
+      name: "Latvia",
+    },
+    code: "LV",
+    number: "+371",
+    flag: "🇱🇻",
+    exampleNumber: "2xxx xxxx",
+  },
+  {
+    id: 84,
+    ru: {
+      name: "Дания",
+    },
+    en: {
+      name: "Denmark",
+    },
+    code: "DK",
+    number: "+45",
+    flag: "🇩🇰",
+    exampleNumber: "20-xx-xx-xx",
   },
   {
     id: 49,
@@ -1648,6 +1868,19 @@ export const countries = [
     exampleNumber: "xx xx xx xx",
   },
   {
+    id: 94,
+    ru: {
+      name: "Нидерланды",
+    },
+    en: {
+      name: "Netherlands",
+    },
+    code: "NL",
+    number: "+31",
+    flag: "🇳🇱",
+    exampleNumber: "6 xxxx xxxx",
+  },
+  {
     id: 71,
     ru: {
       name: "Французская Полинезия",
@@ -1726,6 +1959,19 @@ export const countries = [
     exampleNumber: "9 xxxx xxxx",
   },
   {
+    id: 83,
+    ru: {
+      name: "Кипр",
+    },
+    en: {
+      name: "Cyprus",
+    },
+    code: "CY",
+    number: "+357",
+    flag: "🇨🇾",
+    exampleNumber: "99-xxxxxx",
+  },
+  {
     id: 77,
     ru: {
       name: "Черногория",
@@ -1802,5 +2048,18 @@ export const countries = [
     number: "+81",
     flag: "🇯🇵",
     exampleNumber: "080-xxxx-xxxx",
+  },
+  {
+    id: 85,
+    ru: {
+      name: "Эстония",
+    },
+    en: {
+      name: "Estonia",
+    },
+    code: "EE",
+    number: "+372",
+    flag: "🇪🇪",
+    exampleNumber: "5xxx xxxx",
   },
 ];
