@@ -31,7 +31,7 @@ function Form() {
         en: formPage.formFromClient.en.formTitle,
       },
       isActive: toggleOpenForms.openFromForm,
-      icon: "TbCircleNumber1"
+      IconComponent: TbCircleNumber1
     },
     {
       title: {
@@ -39,7 +39,7 @@ function Form() {
         en: formPage.formToClient.en.formTitle,
       },
       isActive: toggleOpenForms.openToForm,
-      icon: "TbCircleNumber2"
+      IconComponent: TbCircleNumber2
     },
     {
       title: {
@@ -47,7 +47,7 @@ function Form() {
         en: formPage.shippingForm.en.formTitle,
       },
       isActive: toggleOpenForms.openShippingForm,
-      icon: "TbCircleNumber3"
+      IconComponent: TbCircleNumber3
     },
     {
       title: {
@@ -55,7 +55,7 @@ function Form() {
         en: formPage.paymentForm.en.formTitle,
       },
       isActive: toggleOpenForms.openPaymentForm,
-      icon: "TbCircleNumber"
+      IconComponent: TbCircleNumber4
     },
   ];
 
@@ -188,7 +188,7 @@ function Form() {
                             item.isActive && `text-custom-color-700 font-bold`
                           } labelText p-3 mb-3 w-full flex flex-row items-center`}
                         >
-                          <TbCircleNumber1 className={`mr-2 text-[1.3rem]`} />
+                          <item.IconComponent className={`mr-2 text-[1.3rem]`} />
                           {language === "en" ? item.title.en : item.title.ru}
                         </div>
                       ))}

@@ -15,7 +15,6 @@ import countryById from "../../../utils/countryById";
 import { setOrderBoxData } from "../../../features/orderBox";
 import { links } from "../../../constants/index";
 
-
 function PopularServices() {
   const dispatch = useDispatch();
   const language = useSelector((state) => state.language.language);
@@ -62,10 +61,13 @@ function PopularServices() {
 }
 
 function Service(props) {
-  const orderBoxData = useSelector((state) => state.orderBox.orderBox);
+  const language = useSelector((state) => state.language.language);
+  const popularServicesText =
+    language === "en"
+      ? homePage.popularServices.en
+      : homePage.popularServices.ru;
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const language = useSelector((state) => state.language.language);
   const [formData, setFormData] = useState({
     departure: RussiaData,
     destination: countryById(props.countryToId),
@@ -73,11 +75,10 @@ function Service(props) {
   });
 
   function submitForm() {
-    console.log("ehhe")
+    console.log("ehhe");
     dispatch(setOrderBoxData(formData));
     navigate("/track-parcel");
   }
-
 
   return (
     <div className="service-wrapper" style={{ margin: "0 4px" }}>
@@ -103,7 +104,13 @@ function Service(props) {
           >
             {props.deliveryTime}
           </p>
-          <Link to="/form" onClick={() => submitForm()} className={`underlinedText`}>Выбрать</Link>
+          <Link
+            to="/form"
+            onClick={() => submitForm()}
+            className={`underlinedText`}
+          >
+            {popularServicesText.chooseText}
+          </Link>
         </div>
       </Link>
     </div>

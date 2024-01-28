@@ -15,6 +15,7 @@ import { RussiaData } from "../../../constants/index";
 import { annulData } from "../../../features/orderBox";
 import Slider from "../../common/Slider";
 import Poster from "./Poster";
+import TrackParcel from "./TrackParcel";
 import TextInput from "../../common/TextInput";
 import { BiSolidBinoculars } from "react-icons/bi";
 import { motion } from "framer-motion";
@@ -29,7 +30,6 @@ const HomePage = () => {
   const trackPackage =
     language === "en" ? homePage.trackPackage.en : homePage.trackPackage.ru;
   const wideScreen = 650;
-  const [packageNumber, setPackageNumber] = useState("");
 
   const windowWidth = useWindowWidth();
   const [formData, setFormData] = useState({
@@ -87,10 +87,6 @@ const HomePage = () => {
     setFormData((prevData) => ({ ...prevData, weight: weight }));
   }
 
-  function getPackageNumber(field, value) {
-    setPackageNumber(value);
-  }
-
   return (
     <>
       <div
@@ -101,31 +97,22 @@ const HomePage = () => {
             windowWidth > 1000 && "my-2"
           }`}
         >
-          <Poster />
-
-          <div className={`w-full mb-10`}>
-            <div className={`articleText mb-1`}>{trackPackage.labelText}</div>
-            <div className={`relative`}>
-              <TextInput
-                getValue={getPackageNumber}
-                placeholder={trackPackage.trackInput.placeholder}
-                field={trackPackage.trackInput.field}
-              />
-              <button
-                type="submit"
-                className={`px-3 py-[5px] bg-dark-gray-color-500 rounded-md absolute right-[-1px] top-0`}
-              >
-                <motion.div whileTap={motions.whileTap}>
-                  <BiSolidBinoculars className={`text-white text-[2rem] `} />
-                </motion.div>
-              </button>
+          {windowWidth >= 1000 ? (
+            <div className={`flex-1 h-[680px] mr-5`}>
+              <TrackParcel />
+              <Poster />
             </div>
-          </div>
+          ) : (
+            <div className={`flex-1`}>
+              <Poster />
+              <TrackParcel />
+            </div>
+          )}
 
           <div
             id={`orderBox`}
             className={`${styles.orderBox}  ${
-              windowWidth < 1200 ? "flex-1" : "flex-[0.75]"
+              windowWidth < 1200 ? "flex-1" : "flex-[0.85]"
             }  text-custom-color-600 bg-dark-gray-color-500 w-full ${
               windowWidth > 400 ? "p-6" : "p-3"
             } rounded-lg shadow-xl`}

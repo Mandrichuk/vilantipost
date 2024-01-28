@@ -4,25 +4,48 @@ import images from "../../../constants/index";
 import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
 import useWindowWidth from "../../../utils/useWindowWidth";
+
 
 function Poster(props) {
   const windowWidth = useWindowWidth();
-  const currentPoster = images.mobilePoster;
+  let [currentPoster, setCurrentPoster] = useState(images.mobilePoster);
+
+  console.log(currentPoster);
+  useEffect(() => {
+
+    if (windowWidth <= 625) {
+      setCurrentPoster(images.mobilePoster);
+    }
+    if (windowWidth > 625 && windowWidth <= 1000) {
+      setCurrentPoster(images.tabletPoster);
+    }
+    if (windowWidth > 1000 && windowWidth <= 1500) {
+      setCurrentPoster(images.laptopPoster);
+    }
+    if (windowWidth > 1500) {
+      setCurrentPoster(images.pcPoster);
+    }
+  }, [windowWidth]);
 
   return (
-    <div className={`${styles.poster} w-full  ${(windowWidth < 500 &&  windowWidth <  1000) ? "h-[130px]" : "h-[200px]"} ${
-        windowWidth > 1000 ? "h-[690px] mr-4 flex-1" : "h-[140px] mb-4"
-      } shadow-lg`}>
-    <a
-      href="#orderBox"
-      className={`${
-        styles.service
-      } bg-custom-color-100 rounded-lg h-full w-full cursor-pointer flex flex-col items-center justify-center overflow-hidden`}
+    <div
+      className={`${styles.poster} w-full  ${
+        windowWidth < 500 && windowWidth < 1000 ? "h-[130px]" : "h-[200px]"
+      } ${
+        windowWidth >= 1000 ? "h-[587px] mr-4 flex-1" : "h-[140px] mb-4"
+      } shadow-lg`}
     >
-      <img  alt="poster" src={currentPoster} className={` rounded-lg`}/>
-    </a>
+      <a
+        href="#orderBox"
+        className={`${styles.service} bg-custom-color-100 rounded-lg h-full w-full cursor-pointer flex flex-col items-center justify-center overflow-hidden`}
+      >
+        <img
+          alt="poster"
+          src={currentPoster}
+          className={`w-full object-cover ${windowWidth >= 1000 && "h-full"}`}
+        />
+      </a>
     </div>
   );
 }

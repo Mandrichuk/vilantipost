@@ -1,8 +1,24 @@
+import {
+  TbCircleNumber1,
+  TbCircleNumber2,
+  TbCircleNumber3,
+  TbCircleNumber4,
+  TbCircleNumber5,
+} from "react-icons/tb";
+
 // Logos
 
 // Graphics
 import mobilePoster from "../assets/graphics/mobilePoster.jpg";
+import pcPoster from "../assets/graphics/pcPoster.jpg";
 import peopleRating from "../assets/graphics/peopleRatings.jpg";
+import DeliveryToPerson from "../assets/graphics/DeliveryToPerson.jpg";
+import courierDelivery from "../assets/graphics/courierDelivery.png";
+import worldDelivery from "../assets/graphics/worldDelivery.jpg";
+import sendToStock from "../assets/graphics/sendToStock.jpg";
+import fullFillForm from "../assets/graphics/fullFillForm.jpg";
+import tabletPoster from "../assets/graphics/tabletPoster.jpg";
+import laptopPoster from "../assets/graphics/laptopPoster.jpg";
 
 // Lotties
 import question from "../assets/lotties/question.json";
@@ -41,6 +57,9 @@ import rating50 from "../assets/ratings/rating-50.png";
 
 export default {
   mobilePoster,
+  pcPoster,
+  tabletPoster,
+  laptopPoster,
   peopleRating,
   question,
   spinningWorld,
@@ -228,6 +247,7 @@ export const homePage = {
   popularServices: {
     ru: {
       titleText: "Популярные отправки сейчас",
+      chooseText: "Выберать",
       services: [
         {
           toCountryImg: SlovakFlag,
@@ -273,6 +293,7 @@ export const homePage = {
     },
     en: {
       titleText: "Popular shippings now",
+      chooseText: "Choose",
       services: [
         {
           toCountryImg: SlovakFlag,
@@ -417,17 +438,18 @@ export const homePage = {
   deliveryProcesses: {
     ru: {
       titleText: "Процесс доставки",
+      stepText: "Шаг",
       steps: {
         0: {
-          image: "sdf",
-          stepNumber: "Шаг 1",
+          image: fullFillForm,
+          stepNumber: "Шаг 1",  
           title: "Заполнение формы",
           label: "Заполните форму на сайте и оплатите доставку",
           article:
             "Заполните все необходимые данные в форме, после чего оплатите доставку и ожидайте FedEx накладную на указанный email",
         },
         1: {
-          image: "sdf",
+          image: sendToStock,
           stepNumber: "Шаг 2",
           title: "Отправка на РФ склад",
           label: "Отправляйте нам ваши документь",
@@ -435,7 +457,7 @@ export const homePage = {
             "После заполнения формы отправляйте нам ваши документы в отдел по адресу: `АДРЕС`. Далее мы проверим документы на валидность и отправим вам документы по указанному адресу.",
         },
         2: {
-          image: "sdf",
+          image: worldDelivery,
           stepNumber: "Шаг 3",
           title: "Перевоз посылки в ЕС",
           label: "Доставка на склад Словакии",
@@ -443,7 +465,7 @@ export const homePage = {
             "Затем, мы доставим ваши документы в отдел Словакии. С Братиславы мы отправляем посылку за указаным адресом из вашей формы.",
         },
         3: {
-          image: "sdf",
+          image: courierDelivery,
           stepNumber: "Шаг 4",
           title: "Доставка курьером",
           label: "Курьер доставит по адресу из формы",
@@ -451,7 +473,7 @@ export const homePage = {
             "К выбранному вами адресу курьер доставит ваши документы. Как вы встретитесь с курьером, покажите ему FedEx накладную, которая пришла вам на почту.",
         },
         4: {
-          image: "sdf",
+          image: DeliveryToPerson,
           stepNumber: "Шаг 5",
           title: "Получение",
           label: "Все сложное позади!",
@@ -462,9 +484,10 @@ export const homePage = {
     },
     en: {
       titleText: "Delivery process",
+      stepText: "Step",
       steps: {
         0: {
-          image: "sdf",
+          image: fullFillForm,
           stepNumber: "Step 1",
           title: "Filling the form",
           label: "Fill in the form on the site and pay for delivery",
@@ -472,23 +495,23 @@ export const homePage = {
             "Fill in all the necessary information in the form, then pay for delivery and wait for FedEx invoice on the specified email",
         },
         1: {
-          image: "sdf",
+          image: sendToStock,
           stepNumber: "Step 2",
-          title: "Sending to the Moskow",
+          title: "Sending to Moskow",
           label: "Send us your documents",
           article:
             "After filling the form, send us your documents to the warehouse address: `ADDRESS`. Then we will check the documents for validity and send them to you.",
         },
         2: {
-          image: "sdf",
+          image: worldDelivery,
           stepNumber: "Step 3",
-          title: "Delivery to the Slovakia",
+          title: "Delivery to Slovakia",
           label: "Delivery to the warehouse of Slovakia",
           article:
             "Then, we will deliver your documents to the Slovakian warehouse. We will send the package to the specified address from your form.",
         },
         3: {
-          image: "sdf",
+          image: courierDelivery,
           stepNumber: "Step 4",
           title: "Delivery by courier",
           label: "The courier will deliver the address from the form",
@@ -496,7 +519,7 @@ export const homePage = {
             "At the specified address, the courier will deliver your documents. When you meet the courier, show him the FedEx invoice that was sent to you.",
         },
         4: {
-          image: "sdf",
+          image: DeliveryToPerson,
           stepNumber: "Step 5",
           title: "Pickup",
           label: "All the complicated ahead!",
@@ -505,6 +528,13 @@ export const homePage = {
         },
       },
     },
+    numberStages: [
+    { name: {en: "Fullfilling the form", ru: "Заполнение формы"}, icon: TbCircleNumber1, value: 0 },
+    { name: {en: "Sending to warehouse", ru: "Отправка на склад"}, icon: TbCircleNumber2, value: 1 },
+    { name: {en: "Delivery to the EU", ru: "Доставка в ЕС"}, icon: TbCircleNumber3, value: 2 },
+    { name: {en: "Delivery by a courier", ru: "Доставка курьером"}, icon: TbCircleNumber4, value: 3 },
+    { name: {en: "Receiving", ru: "Получение"}, icon: TbCircleNumber5, value: 4 },
+  ],
   },
 };
 

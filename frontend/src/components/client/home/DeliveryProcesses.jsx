@@ -19,19 +19,18 @@ import { motions } from "../../../constants/index";
 
 function DeliveryProcesses() {
   const language = useSelector((state) => state.language.language);
-  // const deliveryProcessesText = language === "en" ? homePage.deliveryProcesses.en : homePage.deliveryProcesses.ru;
+  const deliveryProcessesText =
+    language === "en"
+      ? homePage.deliveryProcesses.en
+      : homePage.deliveryProcesses.ru;
   const windowWidth = useWindowWidth();
   const [currentProgress, setCurrentProgress] = useState(0);
   const progressFillerHeight = `${currentProgress * 25}%`;
-  const stages = language === "en" ? homePage.deliveryProcesses.en.steps : homePage.deliveryProcesses.ru.steps;
-
-  const numberStages = [
-    { name: "Заполнение формы", icon: TbCircleNumber1, value: 0 },
-    { name: "Отправка на склад", icon: TbCircleNumber2, value: 1 },
-    { name: "Доставка в ЕС", icon: TbCircleNumber3, value: 2 },
-    { name: "Доставка курьером", icon: TbCircleNumber4, value: 3 },
-    { name: "Получение", icon: TbCircleNumber5, value: 4 },
-  ];
+  const stages =
+    language === "en"
+      ? homePage.deliveryProcesses.en.steps
+      : homePage.deliveryProcesses.ru.steps;
+  const numberStages = homePage.deliveryProcesses.numberStages;
 
   function handlePointChange(currentPoint) {
     setCurrentProgress(currentPoint);
@@ -42,15 +41,19 @@ function DeliveryProcesses() {
       return true;
     }
   }
-  
 
   return (
     <div className={`${styles.deliveryProcesses} w-full sectionMargin`}>
       <div className={`titleText`}>
-        Процесс отправки
+        {deliveryProcessesText.titleText}
         <div
           className={`w-full flex flex-row items-center justify-between p-3 h-[550px]`}
         >
+          {windowWidth > 1000 && (
+            <div className={`mr-10 text-[7rem] h-full text-custom-color-600`}>
+              {deliveryProcessesText.stepText} {currentProgress + 1}
+            </div>
+          )}
           <div
             className={`h-full w-[10px] bg-custom-color-700 mr-6 rounded-full relative flex flex-col justify-between items-center`}
           >
@@ -63,7 +66,7 @@ function DeliveryProcesses() {
               <motion.div
                 whileTap={motions.whileTap}
                 key={`stage-${index}`}
-                className={`z-20`}
+                className={`z-20 relative`}
               >
                 <stage.icon
                   onClick={() => handlePointChange(stage.value)}
@@ -71,8 +74,15 @@ function DeliveryProcesses() {
                     isStagePassed(stage.value)
                       ? "bg-custom-color-800 text-white"
                       : "bg-custom-color-700 text-gray-300"
-                  } rounded-full text-[2rem] cursor-pointer`}
+                  } rounded-full text-[2rem] cursor-pointer ${styles.stepIcon}`}
                 />
+                {windowWidth > 650 && (
+                  <div
+                    className={`w-full flex flex-row items-center justify-center text-white p-2 px-4 bg-custom-color-800 rounded-lg absolute top-[2px] left-[45px] min-w-[150px] text-align text-[0.8rem] transition-all opacity-0 ${styles.hoverLabel}`}
+                  >
+                    {language === "en" ? stage.name.en : stage.name.ru}
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>
@@ -85,24 +95,28 @@ function DeliveryProcesses() {
 }
 
 function DeliveryProcess(props) {
+  const windowWidth = useWindowWidth();
+
   return (
     <div className={`flex-1 bg-gray-50 rounded-sm h-full p-4`}>
       <div
         className={`${styles.imgTitleContainer} w-full flex flex-row items-center justify-start`}
       >
         <img
-          src={images.peopleRating}
+          src={props.image}
           alt=""
           className={`w-[100px] h-[100px] object-cover rounded-sm`}
         />
         <div className={`flex flex-col ml-4`}>
-          <div className={`labelText text-custom-color-600`}>{props.stepNumber}</div>
+          {windowWidth < 1000 && (
+            <div className={`labelText text-custom-color-600`}>
+              {props.stepNumber}
+            </div>
+          )}
           <div className={`titleText`}>{props.title}</div>
         </div>
       </div>
-      <div className={`mt-2 labelText`}>
-        {props.label}
-      </div>
+      <div className={`mt-2 labelText`}>{props.label}</div>
       <div className={`${styles.normalText} articleText mt-4`}>
         {props.article}
       </div>

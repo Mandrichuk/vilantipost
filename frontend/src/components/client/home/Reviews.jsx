@@ -17,8 +17,6 @@ function Reviews() {
   const windowWidth = useWindowWidth();
   const [slidesToShow, setSlidesToShow] = useState(2.1);
 
-
-
   const settings = {
     infinite: false,
     speed: 400,
@@ -44,29 +42,30 @@ function Reviews() {
     <div className={`${styles.Reviews} w-full items-center sectionMargin`}>
       <div className={`titleText`}>{reviewsText.titleText}</div>
 
-      <div
-        className={`p-3 flex flex-col items-center justify-center w-full relative`}
-      >
-        <img
-          src={images.peopleRating}
-          alt="peopleRating"
-          className={`object-cover opacity-[1] h-[300px]`}
-        />
-        <Link
-          to="/"
-          className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl max-w-[250px] bloatedButton`}
+      <div className={``}>
+        <div
+          className={`p-3 flex flex-col items-center justify-center w-full relative`}
         >
-        </Link>
-      </div>
+          <img
+            src={images.peopleRating}
+            alt="peopleRating"
+            className={`object-cover opacity-[1] h-[300px]`}
+          />
+          <Link
+            to="/"
+            className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl max-w-[250px] bloatedButton`}
+          ></Link>
+        </div>
 
-      <div className={`articleText mb-2 mx-2 text-gray-400`}>
-        {reviewsText.articleText}
+        <div className={`articleText mb-2 mx-2 text-gray-400`}>
+          {reviewsText.articleText}
+        </div>
+        <Slider {...settings}>
+          {reviewsArr.map((review, index) => (
+            <Review key={index} {...review} />
+          ))}
+        </Slider>
       </div>
-      <Slider {...settings}>
-        {reviewsArr.map((review, index) => (
-          <Review key={index} {...review} />
-        ))}
-      </Slider>
     </div>
   );
 }

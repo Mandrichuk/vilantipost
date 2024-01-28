@@ -6,6 +6,9 @@
   margin: 5px 0 30px 0;
 }
 
+.stepIcon:hover + .hoverLabel {
+  opacity: 1;
+}
 .progressFiller {
   transition: height 500ms ease;
 }
