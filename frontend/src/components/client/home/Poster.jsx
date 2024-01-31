@@ -11,30 +11,20 @@ function Poster(props) {
   const windowWidth = useWindowWidth();
   let [currentPoster, setCurrentPoster] = useState(images.mobilePoster);
 
-  console.log(currentPoster);
+
   useEffect(() => {
 
-    if (windowWidth <= 625) {
+    if (windowWidth < 1300) {
       setCurrentPoster(images.mobilePoster);
     }
-    if (windowWidth > 625 && windowWidth <= 1000) {
-      setCurrentPoster(images.tabletPoster);
-    }
-    if (windowWidth > 1000 && windowWidth <= 1500) {
-      setCurrentPoster(images.laptopPoster);
-    }
-    if (windowWidth > 1500) {
+    if (windowWidth >= 1300) {
       setCurrentPoster(images.pcPoster);
     }
   }, [windowWidth]);
 
   return (
     <div
-      className={`${styles.poster} w-full  ${
-        windowWidth < 500 && windowWidth < 1000 ? "h-[130px]" : "h-[200px]"
-      } ${
-        windowWidth >= 1000 ? "h-[587px] mr-4 flex-1" : "h-[140px] mb-4"
-      } shadow-lg`}
+      className={`${styles.poster} w-full relative top-0 left-0 ${windowWidth < 1300 ?"pt-[35%]" : "h-[585px]"} overflow-hidden  shadow-lg rounded-md`}
     >
       <a
         href="#orderBox"
@@ -43,7 +33,7 @@ function Poster(props) {
         <img
           alt="poster"
           src={currentPoster}
-          className={`w-full object-cover ${windowWidth >= 1000 && "h-full"}`}
+          className={`w-full ${windowWidth >= 1300 && "h-full"} absolute top-0 left-0 w-full h-full object-cover`}
         />
       </a>
     </div>

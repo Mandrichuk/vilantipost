@@ -59,7 +59,7 @@ body {
 }
 
 .sectionMargin {
-  margin: 20px 0;
+  margin: 35px 0;
 }
 
 /* 
@@ -132,6 +132,11 @@ input[type="checkbox"] {
 
 .labelText {
   font-size: 1.1rem;
+}
+
+.containerTitleText {
+  font-size: 2.3rem;
+  font-weight: bold;
 }
 
 .articleText,
@@ -541,6 +546,10 @@ input[type="checkbox"] {
 
   .titleText {
     font-size: 2.4rem;
+  }
+
+  .sectionMargin {
+    margin: 45px 0;
   }
 
   .labelText {

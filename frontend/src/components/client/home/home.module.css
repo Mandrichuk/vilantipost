@@ -21,6 +21,16 @@
   font-weight: 500;
 }
 
+.goodsContainer {
+  border: 1px solid rgb(246, 246, 246);
+}
+
+.goodsContainer:hover {
+  /* box-shadow: 0 0 30px rgba(109, 222, 218, 0.4); */
+  background-color: var(--custom-color-50);
+  transform: scale(1.03);
+}
+
 @media (min-width: 650px) {
   .orderBox {
     padding: 20px;
@@ -31,7 +41,16 @@
   }
 }
 
-@media (min-width: 1000px) { 
+@media (min-width: 1000px) {
+  .goodsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1300px) {
+  .goodsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
   .orderContainer {
     flex-direction: row;
   }

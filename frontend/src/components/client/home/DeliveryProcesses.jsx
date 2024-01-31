@@ -44,7 +44,7 @@ function DeliveryProcesses() {
 
   return (
     <div className={`${styles.deliveryProcesses} w-full sectionMargin`}>
-      <div className={`titleText`}>
+      <div className={`containerTitleText`}>
         {deliveryProcessesText.titleText}
         <div
           className={`w-full flex flex-row items-center justify-between p-3 h-[550px]`}

@@ -16,9 +16,13 @@ import DeliveryToPerson from "../assets/graphics/DeliveryToPerson.jpg";
 import courierDelivery from "../assets/graphics/courierDelivery.png";
 import worldDelivery from "../assets/graphics/worldDelivery.jpg";
 import sendToStock from "../assets/graphics/sendToStock.jpg";
-import fullFillForm from "../assets/graphics/fullFillForm.jpg";
-import tabletPoster from "../assets/graphics/tabletPoster.jpg";
-import laptopPoster from "../assets/graphics/laptopPoster.jpg";
+import fullFillForm from "../assets/graphics/fullFillForm.png";
+import deliveryBox from "../assets/graphics/deliveryBox.jpg";
+import passport from "../assets/graphics/passport.png";
+import money from "../assets/graphics/money.png";
+import personalDocuments from "../assets/graphics/personalDocuments.png";
+import flashDrive from "../assets/graphics/flashDrive.png";
+import creditCard from "../assets/graphics/creditCard.png";
 
 // Lotties
 import question from "../assets/lotties/question.json";
@@ -58,16 +62,20 @@ import rating50 from "../assets/ratings/rating-50.png";
 export default {
   mobilePoster,
   pcPoster,
-  tabletPoster,
-  laptopPoster,
   peopleRating,
   question,
+  deliveryBox,
   spinningWorld,
   uploadScreen,
   walkingPackage,
   blackEnvelope,
   whiteEnvelope,
   customEnvelope,
+  passport,
+  money,
+  personalDocuments,
+  flashDrive,
+  creditCard,
   checked,
   hamburgerMenu,
   SlovakFlag,
@@ -442,7 +450,7 @@ export const homePage = {
       steps: {
         0: {
           image: fullFillForm,
-          stepNumber: "Шаг 1",  
+          stepNumber: "Шаг 1",
           title: "Заполнение формы",
           label: "Заполните форму на сайте и оплатите доставку",
           article:
@@ -529,12 +537,126 @@ export const homePage = {
       },
     },
     numberStages: [
-    { name: {en: "Fullfilling the form", ru: "Заполнение формы"}, icon: TbCircleNumber1, value: 0 },
-    { name: {en: "Sending to warehouse", ru: "Отправка на склад"}, icon: TbCircleNumber2, value: 1 },
-    { name: {en: "Delivery to the EU", ru: "Доставка в ЕС"}, icon: TbCircleNumber3, value: 2 },
-    { name: {en: "Delivery by a courier", ru: "Доставка курьером"}, icon: TbCircleNumber4, value: 3 },
-    { name: {en: "Receiving", ru: "Получение"}, icon: TbCircleNumber5, value: 4 },
-  ],
+      {
+        name: { en: "Fullfilling the form", ru: "Заполнение формы" },
+        icon: TbCircleNumber1,
+        value: 0,
+      },
+      {
+        name: { en: "Sending to warehouse", ru: "Отправка на склад" },
+        icon: TbCircleNumber2,
+        value: 1,
+      },
+      {
+        name: { en: "Delivery to the EU", ru: "Доставка в ЕС" },
+        icon: TbCircleNumber3,
+        value: 2,
+      },
+      {
+        name: { en: "Delivery by a courier", ru: "Доставка курьером" },
+        icon: TbCircleNumber4,
+        value: 3,
+      },
+      {
+        name: { en: "Receiving", ru: "Получение" },
+        icon: TbCircleNumber5,
+        value: 4,
+      },
+    ],
+  },
+  trackParcel: {
+    ru: {
+      title: "Отследить посылку",
+      input: {
+        value: "Номер посылки",
+        type: "number",
+        placeholder: "123456789",
+        field: "parcelNumber",
+      },
+      buttonSubmit: "Отследить",
+      foundParcelText: "Посылка по номеру: ",
+      parcelData: {
+        sender: "Отправитель:",
+        recipient: "Получатель:",
+        sender_country: "Страна отправителя:",
+        recipient_country: "Страна получателя:",
+        sender_city: "Город отправителя:",
+        recipient_city: "Город получателя:",
+        delivery_adress: "Адрес доставки:",
+      },
+    },
+    en: {
+      title: "Track your parcel",
+      input: {
+        value: "Parcel number",
+        type: "number",
+        placeholder: "123456789",
+        field: "parcelNumber",
+      },
+      buttonSubmit: "Track",
+      foundParcelText: "Parcel by number: ",
+      parcelData: {
+        sender: "Sender:",
+        recipient: "Recipient:",
+        sender_country: "Sender country:",
+        recipient_country: "Recipient country:",
+        sender_city: "Sender city:",
+        recipient_city: "Recipient city:",
+        delivery_adress: "Delivery address:",
+      },
+    },
+  },
+  prohibitedGoods: {
+    ru: {
+      titleText: "Запрещенные грузы",
+      goods: [
+        {
+          name: "Паспорта",
+          image: passport,
+        },
+        {
+          name: "Банковские карты",
+          image: creditCard,
+        },
+        {
+          name: "Деньги",
+          image: money,
+        },
+        {
+          name: "Крипто-ключи",
+          image: flashDrive,
+        },
+        {
+          name: "Документы подтверждающие личность",
+          image: personalDocuments,
+        },
+      ],
+    },
+    en: {
+      titleText: "Prohibited goods",
+      goods: [
+        {
+          name: "Passports",
+          image: passport,
+        },
+        {
+          name: "Bank cards",
+          image: creditCard,
+        },
+        {
+          name: "Money",
+          image: money,
+        },
+        {
+          name: "Crypto keys",
+          image: flashDrive,
+        },
+        {
+          name: "Identity documents",
+          image: personalDocuments,
+        },
+      ],
+    },
   },
 };
 

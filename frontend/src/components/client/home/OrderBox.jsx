@@ -15,7 +15,7 @@ import { RussiaData } from "../../../constants/index";
 import { annulData } from "../../../features/orderBox";
 import Slider from "../../common/Slider";
 import Poster from "./Poster";
-import TrackParcel from "./TrackParcel";
+import TrackParcelInput from "./TrackParcelInput";
 import TextInput from "../../common/TextInput";
 import { BiSolidBinoculars } from "react-icons/bi";
 import { motion } from "framer-motion";
@@ -94,28 +94,28 @@ const HomePage = () => {
       >
         <div
           className={`wrapper ${styles.orderContainer} ${
-            windowWidth > 1000 && "my-2"
+            windowWidth > 1300 && "my-2"
           }`}
         >
-          {windowWidth >= 1000 ? (
+          {windowWidth >= 1300 ? (
             <div className={`flex-1 h-[680px] mr-5`}>
-              <TrackParcel />
+              <TrackParcelInput />
               <Poster />
             </div>
           ) : (
-            <div className={`flex-1`}>
+            <div className={`w-full flex flex-col justify-center`}>
               <Poster />
-              <TrackParcel />
+              <TrackParcelInput />
             </div>
           )}
 
           <div
             id={`orderBox`}
             className={`${styles.orderBox}  ${
-              windowWidth < 1200 ? "flex-1" : "flex-[0.85]"
+              windowWidth < 1300 ? "flex-1" : "flex-[0.85]"
             }  text-custom-color-600 bg-dark-gray-color-500 w-full ${
               windowWidth > 400 ? "p-6" : "p-3"
-            } rounded-lg shadow-xl`}
+            } rounded-lg shadow-xl max-w-[750px]`}
           >
             <div
               className={`${styles.titleContainer} titleText my-3 text-center text-custom-color-400"`}

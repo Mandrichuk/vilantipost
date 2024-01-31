@@ -50,7 +50,7 @@ function PopularServices() {
     <div
       className={`${styles.popularServices} w-full items-center sectionMargin`}
     >
-      <div className={`titleText mb-4`}>{popularServicesText.titleText}</div>
+      <div className={`containerTitleText mb-4`}>{popularServicesText.titleText}</div>
       <Slider {...settings}>
         {popularServicesText.services.map((service, index) => (
           <Service key={`service-${index}`} {...service} />

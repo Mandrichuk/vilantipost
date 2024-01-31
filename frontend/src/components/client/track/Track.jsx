@@ -58,7 +58,7 @@ const Track = () => {
         className={`${styles.backgroundCover} w-full h-[100vh] flex flex-col items-center`}
       >
         <div className={`wrapper`}>
-          <div className={`titleText`}>{trackPageText.title}</div>
+          <div className={`containerTitleText`}>{trackPageText.title}</div>
           <div
             className={`${styles.trackInputs} mt-[30px] w-full flex ${
               windowWidth < 650 ? "flex-col" : "flex-row"

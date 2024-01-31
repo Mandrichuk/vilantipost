@@ -8,6 +8,9 @@ import PopularServices from "./PopularServices";
 import Reviews from "./Reviews";
 import DeliveryProcesses from "./DeliveryProcesses";
 import OrderBox from "./OrderBox";
+import TrackParcel from "./TrackParcel";
+import ProhibitedGoods from "./ProhibitedGoods";
+
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -23,6 +26,8 @@ const HomePage = () => {
         <div className={`wrapper`}>
           <PopularServices />
           <DeliveryProcesses />
+          <ProhibitedGoods />
+          <TrackParcel />
           <Reviews />
         </div>
       </div>
