@@ -58,6 +58,7 @@ function TrackParcel() {
           getValue={getPackageNumber}
           placeholder={trackPackage.trackInput.placeholder}
           field={trackPackage.trackInput.field}
+          whiteInputBox={true}
         />
         <button
           type="submit"

@@ -13,7 +13,7 @@ function TextInput(props) {
   }, [input]);
 
   return (
-    <div className={`inputBox ${props.marginTop ? "" : "noMargin"} w-full`}>
+    <div className={`${props.whiteInputBox && "whiteInputBox"} inputBox ${props.marginTop ? "" : "noMargin"} w-full`}>
       <input
         type={props.type}
         placeholder={props.placeholder}
