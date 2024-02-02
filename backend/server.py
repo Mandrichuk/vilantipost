@@ -32,6 +32,8 @@ def index():
 
 
 
+
+
 @app.route("/api/save-form-to-db", methods=["POST"])
 def save_form():
     try:
@@ -85,6 +87,24 @@ def admin_login():
         error_message = {"error": f"Error: {e}"}
         print(error_message)
         return jsonify(f"error {str(e)}")
+
+
+app.route("/api/get-all-forms")
+def get_all_forms():
+    try:
+        connection = get_connection()
+
+        with connection.cursor() as cursor:
+            cursor.execute("USE globalpost")
+            cursor.execute("SELECT * FROM forms")
+            result = cursor.fetchall()
+            return jsonify(result)
+
+    except ms.Error as e:
+        error_message = {"error": f"Error: {e}"}
+        print(error_message)
+        return jsonify(error_message)
+    
 
 
 if __name__ == "__main__":

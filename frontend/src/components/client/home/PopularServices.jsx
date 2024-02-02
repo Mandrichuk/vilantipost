@@ -13,7 +13,8 @@ import { useNavigate } from "react-router-dom";
 import { RussiaData } from "../../../constants/index";
 import countryById from "../../../utils/countryById";
 import { setOrderBoxData } from "../../../features/orderBox";
-import { links } from "../../../constants/index";
+import { navId } from "../../../constants/index";
+
 
 function PopularServices() {
   const dispatch = useDispatch();
@@ -50,7 +51,7 @@ function PopularServices() {
     <div
       className={`${styles.popularServices} w-full items-center sectionMargin`}
     >
-      <div className={`containerTitleText mb-4`}>{popularServicesText.titleText}</div>
+      <div id={navId.popularServices} className={`containerTitleText mb-4`}>{popularServicesText.titleText}</div>
       <Slider {...settings}>
         {popularServicesText.services.map((service, index) => (
           <Service key={`service-${index}`} {...service} />

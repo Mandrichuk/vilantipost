@@ -10,7 +10,7 @@ import DeliveryProcesses from "./DeliveryProcesses";
 import OrderBox from "./OrderBox";
 import TrackParcel from "./TrackParcel";
 import ProhibitedGoods from "./ProhibitedGoods";
-
+import Footer from "../../common/footer/Footer";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -32,7 +32,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

@@ -10,6 +10,7 @@ import { BiSolidBinoculars } from "react-icons/bi";
 import { motion } from "framer-motion";
 import { motions } from "../../../constants/index";
 import images from "../../../constants/index";
+import { navId } from "../../../constants/index";
 
 function TrackParcel() {
   const navigate = useNavigate();
@@ -47,7 +48,7 @@ function TrackParcel() {
 
   return (
     <div className={`w-full flex flex-col justify-center sectionMargin`}>
-      <div className={`containerTitleText`}>Track parcel</div>
+      <div id={navId.trackParcel} className={`containerTitleText`}>Track parcel</div>
 
       <div className={`articleText mb-1`}>
         Enter the <span className={`text-purple-600 font-bold`}>Fed</span>

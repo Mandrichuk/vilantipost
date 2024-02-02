@@ -16,10 +16,8 @@ import { annulData } from "../../../features/orderBox";
 import Slider from "../../common/Slider";
 import Poster from "./Poster";
 import TrackParcelInput from "./TrackParcelInput";
-import TextInput from "../../common/TextInput";
-import { BiSolidBinoculars } from "react-icons/bi";
-import { motion } from "framer-motion";
-import { motions } from "../../../constants/index";
+import { navId } from "../../../constants/index";
+
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -110,7 +108,7 @@ const HomePage = () => {
           )}
 
           <div
-            id={`orderBox`}
+            id={navId.form}
             className={`${styles.orderBox}  ${
               windowWidth < 1300 ? "flex-1" : "flex-[0.85]"
             }  text-custom-color-600 bg-dark-gray-color-500 w-full ${

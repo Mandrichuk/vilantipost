@@ -32,6 +32,8 @@ function Navbar(props) {
     }
   }, [windowWidth]);
 
+  console.log(navbar.nav.ru)
+
   return (
     <div className={`${styles.navbarCover} w-full ${fullScreenNav && "overlay"}`}>
       <div
@@ -76,10 +78,13 @@ function Navbar(props) {
                       </motion.div>
                     </div>
                   </div>
-                  <div className={`w-full h-full mt-6 px-3`}>
-                    {navbar.nav.map((item, index) => (
+                  <div className={`w-full h-[50vh] mt-6 px-3 flex flex-col items-center text-center`}>
+                    <div className={`text-[2.4rem] font-bold mb-10`}>Быстрый поиск</div>
+                    <div className={`grid gap-7`}>
+                    {navbar.nav.ru.map((item, index) => (
                       <NavList {...item} key={index} />
                     ))}
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -93,12 +98,13 @@ function Navbar(props) {
 
 function NavList(props) {
   const language = useSelector((state) => state.language.language);
+  console.log(props)
   return (
     <Link to={props.link}>
       <div
-        className={`w-full bg-custom-color-50 rounded-md px-3 py-[8px] shadow-md labelText my-3 transition-all hover:text-custom-color-700`}
+        className={`w-full transition-all hover:text-custom-color-700`}
       >
-        <h1>{language === "en" ? props.en.name : props.ru.name}</h1>
+        <h1 className={`text-[1.8rem]`}>{props.name}</h1>
       </div>
     </Link>
   );

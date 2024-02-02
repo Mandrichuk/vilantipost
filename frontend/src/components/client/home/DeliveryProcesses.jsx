@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./home.module.css";
-import images from "../../../constants/index";
+import images, { navId } from "../../../constants/index";
 import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -44,13 +44,13 @@ function DeliveryProcesses() {
 
   return (
     <div className={`${styles.deliveryProcesses} w-full sectionMargin`}>
-      <div className={`containerTitleText`}>
+      <div id={navId.deliveryProcesses} className={`containerTitleText`}>
         {deliveryProcessesText.titleText}
         <div
           className={`w-full flex flex-row items-center justify-between p-3 h-[550px]`}
         >
           {windowWidth > 1000 && (
-            <div className={`mr-10 text-[7rem] h-full text-custom-color-600`}>
+            <div className={`mr-10 text-[7rem] h-full text-custom-color-600 ${windowWidth > 1300 && "mr-[100px]" }`}>
               {deliveryProcessesText.stepText} {currentProgress + 1}
             </div>
           )}
@@ -58,7 +58,7 @@ function DeliveryProcesses() {
             className={`h-full w-[10px] bg-custom-color-700 mr-6 rounded-full relative flex flex-col justify-between items-center`}
           >
             <div
-              className={`${styles.progressFiller} w-[10px] bg-custom-color-800 mr-6 rounded-full absolute inset-0`}
+              className={`${styles.progressFiller} w-[10px]  bg-custom-color-800 mr-6 rounded-full absolute inset-0`}
               style={{ height: progressFillerHeight }}
             />
 
@@ -98,7 +98,7 @@ function DeliveryProcess(props) {
   const windowWidth = useWindowWidth();
 
   return (
-    <div className={`flex-1 bg-gray-50 rounded-sm h-full p-4`}>
+    <div className={`${windowWidth > 1300 && "ml-[100px]"} flex-1 bg-gray-50 rounded-sm h-full p-4`}>
       <div
         className={`${styles.imgTitleContainer} w-full flex flex-row items-center justify-start`}
       >

@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --mutual-width: 96%;
   --input-width: 100px;
@@ -376,8 +375,26 @@ input[type="checkbox"] {
   margin-top: 10px;
 }
 
+.textArea {
+  min-height: 150px;
+  max-height: 500px;
+  color: var(--dark-gray-color-600);
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 3px;
+  border: var(--border-px) solid var(--custom-color-200);
+  outline: none;
+  font-size: 1rem;
+  font-weight: normal;
+  background-color: var(--custom-color-100);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+}
 
 .inputBox input {
+  color: var(--dark-gray-color-600);
   width: 100%;
   padding: 8px 10px;
   border-radius: 3px;
@@ -393,7 +410,7 @@ input[type="checkbox"] {
 }
 
 .whiteInputBox input {
-  background-color: rgb(240, 240, 240) !important;
+  background-color: rgb(254, 254, 254) !important;
   border: var(--border-px) solid rgb(218, 218, 218) !important;
 }
 
@@ -424,6 +441,7 @@ input[type="checkbox"] {
   letter-spacing: 0.1em;
   background: var(--custom-color);
   color: var(--white-color);
+  border-radius: 2px;
 }
 
 .inputBox input:valid ~ span,
@@ -524,9 +542,6 @@ input[type="checkbox"] {
   font-weight: bold;
 }
 
-
-
-
 @media (min-width: 500px) {
   :root {
     --btn-text: 1rem;
@@ -547,7 +562,6 @@ input[type="checkbox"] {
   .slider {
     width: 86%;
   }
-
 }
 
 @media (min-width: 800px) {

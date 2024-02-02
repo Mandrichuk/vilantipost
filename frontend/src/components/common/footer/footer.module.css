@@ -1,0 +1,9 @@
+.cover {
+  margin: 50px 0;
+}
+
+@media (min-width: 950px) {
+  .cover {
+    flex-direction: row;
+  }
+}

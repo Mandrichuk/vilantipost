@@ -123,6 +123,13 @@ export const links = {
   settings: "/settings",
 };
 
+export const navId = {
+  form: "form",
+  popularServices: "popular-services",
+  deliveryProcesses: "delivery-processes",
+  trackParcel: "track-parcel",
+};
+
 export const adminLoginPage = {
   ru: {
     titleText: "Авторизация администратора",
@@ -237,8 +244,8 @@ export const homePage = {
       buttonSubmit: "Перейти к деталям",
     },
     en: {
-      title: "Send your documents to/from Ukraine!",
-      fromWhereInputs: ["To Ukraine", "From Ukraine"],
+      title: "Send your documents to/from Russia!",
+      fromWhereInputs: ["To Russia", "From Russia"],
       fromInput: "From which country you send",
       toInput: "To which country you send",
       errorMessage: "*Select country from the popup list!",
@@ -938,56 +945,152 @@ export const formPage = {
   },
 };
 
+export const footer = {
+  ru: {
+    emailUs: {
+      articleText: "Всегда готовы помочь вам с любым вопросом",
+      questionText: "Появились вопросы?",
+      contactUs: "Свяжитесь с нами!",
+      nameInput: {
+        value: "Ваше имя",
+        placeholder: "Введите ваше имя",
+        type: "text",
+        field: "emailName",
+      },
+      emailInput: {
+        value: "Ваш email",
+        placeholder: "Введите ваш email",
+        type: "email",
+        field: "email",
+      },
+      messageInput: {
+        value: "Ваш вопрос",
+        placeholder: "Введите ваш вопрос",
+        type: "text",
+        field: "message",
+      },
+      submitButton: "Отправить",
+    },
+    nav: [
+      {
+        name: "Заполненить форму",
+        link: "/#form",
+        withinSite: true,
+      },
+      {
+        name: "Популярные доставки",
+        link: "/#popular-services",
+        withinSite: true,
+      },
+      {
+        name: "Процесс доставки",
+        link: "/#delivery-processes",
+        withinSite: true,
+      },
+      {
+        name: "Отследить посылку",
+        link: "/#track-parcel",
+        withinSite: true,
+      },
+    ],
+  },
+  en: {
+    emailUs: {
+      articleText: "Always ready to help you with any question",
+      questionText: "Have a question?",
+      contactUs: "Contact us!",
+      nameInput: {
+        value: "Your name",
+        placeholder: "Enter your name",
+        type: "text",
+        field: "emailName",
+      },
+      emailInput: {
+        value: "Your email",
+        placeholder: "Enter your email",
+        type: "email",
+        field: "email",
+      },
+      messageInput: {
+        value: "Your question",
+        placeholder: "Enter your question",
+        type: "text",
+        field: "message",
+      },
+      submitButton: "Send",
+    },
+    nav: [
+      {
+        name: "Fill the form",
+        link: "/#form",
+        withinSite: true,
+      },
+      {
+        name: "Popular deliveries",
+        link: "/#popular-services",
+        withinSite: true,
+      },
+      {
+        name: "Delivery process",
+        link: "/#delivery-processes",
+        withinSite: true,
+      },
+      {
+        name: "Track parcel",
+        link: "/#track-parcel",
+        withinSite: true,
+      },
+    ],
+  },
+};
+
 export const navbar = {
-  nav: [
-    {
-      ru: {
-        name: "Главная",
+  nav: {
+    ru: [
+     {
+        name: "Заполненить форму",
+        link: "/#fullFillForm",
+        withinSite: true,
       },
-      en: {
-        name: "Home",
+      {
+        name: "Популярные доставки",
+        link: "/#popularShippings",
+        withinSite: true,
       },
-      type: "",
-      icon: "IoHome",
-      link: "/",
-      withinSite: true,
-    },
-    {
-      ru: {
-        name: "Про нас",
+      {
+        name: "Процесс доставки",
+        link: "/#deliveryProcesses",
+        withinSite: true,
       },
-      en: {
-        name: "About",
+      {
+        name: "Отследить посылку",
+        link: "/#trackParcel",
+        withinSite: true,
       },
-      type: "",
-      icon: "FaInfoCircle",
-      link: "/about",
-      withinSite: true,
-    },
-    {
-      ru: {
-        name: "Отследить",
+    ],
+    en: [
+       {
+        name: "Fill the form",
+        link: "/#fullFillForm",
+        withinSite: true,
       },
-      en: {
-        name: "Track",
+      {
+        name: "Popular deliveries",
+        link: "/#popularShippings",
+        withinSite: true,
       },
-      type: "",
-      icon: "RiPhoneFindFill",
-      link: "/track-parcel",
-      withinSite: true,
-    },
-    {
-      ru: {
-        name: "Язык",
+      {
+        name: "Delivery process",
+        link: "/#deliveryProcesses",
+        withinSite: true,
       },
-      en: {
-        name: "Language",
+      {
+        name: "Track parcel",
+        link: "/#trackParcel",
+        withinSite: true,
       },
-      type: "",
-      icon: "FaLanguage",
-      withinSite: true,
-    },
-  ],
+    ],
+  },
   socials: [
     {
       ru: {
