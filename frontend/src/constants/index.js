@@ -98,6 +98,11 @@ export default {
   rating50,
 };
 
+export const domens = {
+  backend: "http://127.0.0.1:5000/",
+  frontend: "http://localhost:3000/",
+}
+
 export const motions = {
   whileTap: { scale: 0.8 },
   sidebarVariants: {

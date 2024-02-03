@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import pymysql as ms
+import logging
 
 from get_connection import get_connection
 from get_hashed_value import get_hashed_value
@@ -9,6 +10,15 @@ from forms.add_form_to_db import add_form_to_db
 from forms.get_fedex_number import get_fedex_number
 from forms.get_values_to_keys import get_values_to_keys
 from admin.is_valid_login_data import is_valid_login_data
+
+
+logging.basicConfig(level=logging.ERROR,
+                    format='%(asctime)s - %(levelname)s - %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S',
+                    filename='logs.log',
+                    filemode='a'
+                    )
+
 
 app = Flask(__name__)
 CORS(app)
@@ -32,8 +42,6 @@ def index():
 
 
 
-
-
 @app.route("/api/save-form-to-db", methods=["POST"])
 def save_form():
     try:
@@ -41,10 +49,10 @@ def save_form():
         data["fedExNumber"] = get_fedex_number()
         form = form_to_class(data)
         add_form_to_db(form)
-
-        return (f"success: {jsonify(data)}")
+        return jsonify(data), 200
     except Exception as e:
-        return jsonify(f"error {str(e)}")
+        logging.error(e)
+        return jsonify(f"error {str(e)}"), 500
 
 
 
@@ -63,12 +71,10 @@ def get_form_by_fedex(fedExNumber):
             if result is not None:
                 obj_result = get_values_to_keys(result)
                 return jsonify(obj_result)
-            else:
-                print("No results found")
 
     except ms.Error as e:
         error_message = {"error": f"Error: {e}"}
-        print(error_message)
+        logging.error(e)
         return jsonify(error_message)
 
 
@@ -85,11 +91,11 @@ def admin_login():
     
     except Exception as e:
         error_message = {"error": f"Error: {e}"}
-        print(error_message)
-        return jsonify(f"error {str(e)}")
+        logging.error(e)
+        return jsonify(error_message)
 
 
-app.route("/api/get-all-forms")
+@app.route("/api/get-all-forms", methods=["GET"])
 def get_all_forms():
     try:
         connection = get_connection()

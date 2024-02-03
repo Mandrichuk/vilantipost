@@ -5,7 +5,6 @@ import { TbCircleNumber4 } from "react-icons/tb";
 import useWindowWidth from "../../../utils/useWindowWidth";
 import { formPage } from "../../../constants/index";
 import { setFormData } from "../../../features/formsClient";
-import { loadStripe } from "@stripe/stripe-js";
 
 function PaymentForm(props) {
   const dispatch = useDispatch();
@@ -54,30 +53,6 @@ function PaymentForm(props) {
     return isValid;
   }
 
-  const makePayment = async () => {
-    const stripe = await loadStripe(
-      "pk_test_51OQ6tgHJ7Lg8p1yn8ItZcWpblIjGUeZdeWDUdVAaFIezfSvSwj9dZQGW2QhkcpO9Uw9MPddzVsJHy7p0ZUADKSxt0056k3Kv9H"
-    );
-
-    const body = {
-      orderBox: orderBox,
-    };
-
-    const headers = {
-      "Content-Type": "application/json",
-    };
-
-    const response = await fetch("http://127.0.0.1:5000/api/create-payment-intent", {
-      method: "POST",
-      headers: headers,
-      body: JSON.stringify(body),
-    });
-
-    const session = await response.json();
-    const result = stripe.redirectToCheckout({
-      sessionId: session.id,
-    });
-  };
 
   return (
     <form className={`${styles.paymentFormInfo} ${isOpened ? "mb-6" : "mb-3"}`}>
@@ -187,7 +162,6 @@ function PaymentForm(props) {
           <button
             onClick={(event) => {
               submitPaymentForm(event);
-              makePayment();
             }}
             type="submit"
             className={`darkerButton ${btnAvailable ? "" : "unavailable"} ${

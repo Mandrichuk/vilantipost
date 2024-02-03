@@ -12,6 +12,7 @@ import FormTo from "./FormTo";
 import ShippingForm from "./ShippingForm";
 import PaymentForm from "./PaymentForm";
 import { TbCircleNumber1, TbCircleNumber2, TbCircleNumber3, TbCircleNumber4 } from "react-icons/tb";
+import { domens } from "../../../constants/index";
 
 function Form() {
   const formsClientData = useSelector((state) => state.formsClient.formsData);
@@ -78,7 +79,7 @@ function Form() {
     const stringifiedForm = JSON.stringify(formsClientData);
 
     axios
-      .post("http://127.0.0.1:5000/api/save-form-to-db", stringifiedForm, {
+      .post(`${domens.backend}api/save-form-to-db`, stringifiedForm, {
         headers: {
           "Content-Type": "application/json",
         },

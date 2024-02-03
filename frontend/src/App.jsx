@@ -2,17 +2,19 @@ import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-// client
-import Home from "./components/client/home/Home";
-import Form from "./components/client/form/Form";
-import isObjNotEmpty from "./utils/isObjNotEmpty";
+// common
 import ScrollToTop from "./components/common/ScrollToTop";
-import Track from "./components/client/track/Track";
-import Payment from "./components/client/payment/Payment";
+
+// client
+import ClientHome from "./components/client/home/Home";
+import ClientForm from "./components/client/form/Form";
+import isObjNotEmpty from "./utils/isObjNotEmpty";
+import ClientTrack from "./components/client/track/Track";
+import ClientPayment from "./components/client/payment/Payment";
 
 // admin
-import Login from "./components/admin/login/Login";
-
+import AdminLogin from "./components/admin/login/Login";
+import AdminHome from "./components/admin/home/Home";
 
 function App() {
   const orderBox = useSelector((state) => state.orderBox.orderBox);
@@ -25,18 +27,19 @@ function App() {
 
         {/* client */}
         <Route path="*" element={<Navigate to="/" />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/track-parcel/*" element={<Track />} />
-        <Route path="/payment" element={<Payment />} />
+        <Route path="/" element={<ClientHome />} />
+        <Route path="/track-parcel/*" element={<ClientTrack />} />
+        <Route path="/payment" element={<ClientPayment />} />
 
         {isObjNotEmpty(orderBox.departure) &&
           isObjNotEmpty(orderBox.destination) && (
-            <Route path="/form" element={<Form />} />
+            <Route path="/form" element={<ClientForm />} />
           )}
 
 
         {/* admin */}
-        <Route path="/admin/login" element={<Login />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/*" element={<AdminHome />} />
 
       </Routes>
     </BrowserRouter>
