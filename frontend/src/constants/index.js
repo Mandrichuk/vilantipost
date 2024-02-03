@@ -12,10 +12,10 @@ import {
 import mobilePoster from "../assets/graphics/mobilePoster.jpg";
 import pcPoster from "../assets/graphics/pcPoster.jpg";
 import peopleRating from "../assets/graphics/peopleRatings.jpg";
-import DeliveryToPerson from "../assets/graphics/DeliveryToPerson.jpg";
+import DeliveryToPerson from "../assets/graphics/DeliveryToPerson.png";
 import courierDelivery from "../assets/graphics/courierDelivery.png";
-import worldDelivery from "../assets/graphics/worldDelivery.jpg";
-import sendToStock from "../assets/graphics/sendToStock.jpg";
+import worldDelivery from "../assets/graphics/worldDelivery.png";
+import sendToStock from "../assets/graphics/sendToStock.png";
 import fullFillForm from "../assets/graphics/fullFillForm.png";
 import deliveryBox from "../assets/graphics/deliveryBox.jpg";
 import passport from "../assets/graphics/passport.png";
