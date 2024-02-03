@@ -13,14 +13,6 @@ function Footer() {
   const windowWidth = useWindowWidth();
   const footerData = language === "en" ? footer.en : footer.ru;
   const emailUsData = footerData.emailUs;
-  // const footerData = [
-  //   "Fullfill form",
-  //   "Popular shippings ",
-  //   "Delivery process",
-  //   "Track parcel",
-  // ];
-
-  console.log(emailUsData);
 
   return (
     <div

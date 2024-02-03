@@ -26,7 +26,7 @@ function TrackParcel() {
   }
 
   return (
-    <div className={`w-full flex flex-col justify-center items-center`}>
+    <a href="#track-parcel" className={`w-full flex flex-col justify-center items-center`}>
       <div className={`flex-1 w-full max-w-[750px] ${windowWidth < 1300 ? "mb-10 mt-2" : "mb-5"}`}>
         <div className={`articleText mb-1`}>{trackPackage.labelText}</div>
         <div className={`relative`}>
@@ -36,7 +36,6 @@ function TrackParcel() {
             field={trackPackage.trackInput.field}
           />
           <button
-            type="submit"
             className={`px-3 py-[5px] bg-dark-gray-color-500 rounded-md absolute right-[-1px] top-0`}
           >
             <motion.div whileTap={motions.whileTap}>
@@ -45,7 +44,7 @@ function TrackParcel() {
           </button>
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 

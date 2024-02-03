@@ -96,3 +96,15 @@
 2024-02-03 13:09:44 - INFO -  * Restarting with stat
 2024-02-03 13:09:44 - WARNING -  * Debugger is active!
 2024-02-03 13:09:44 - INFO -  * Debugger PIN: 144-811-370
+2024-02-03 13:09:46 - INFO - 127.0.0.1 - - [03/Feb/2024 13:09:46] "GET /api/get-all-forms HTTP/1.1" 200 -
+2024-02-03 13:23:58 - INFO - 127.0.0.1 - - [03/Feb/2024 13:23:58] "GET /api/get-all-forms HTTP/1.1" 200 -
+2024-02-03 13:24:00 - INFO - 127.0.0.1 - - [03/Feb/2024 13:24:00] "GET /api/get-all-forms HTTP/1.1" 200 -
+2024-02-03 13:36:41 - INFO - 127.0.0.1 - - [03/Feb/2024 13:36:41] "GET /api/get-all-forms HTTP/1.1" 200 -
+2024-02-03 13:38:19 - INFO - 127.0.0.1 - - [03/Feb/2024 13:38:19] "GET /api/get-all-forms HTTP/1.1" 200 -
+2024-02-03 13:38:21 - INFO - 127.0.0.1 - - [03/Feb/2024 13:38:21] "GET /api/get-all-forms HTTP/1.1" 200 -
+2024-02-03 13:38:21 - INFO - 127.0.0.1 - - [03/Feb/2024 13:38:21] "GET /api/get-all-forms HTTP/1.1" 200 -
+2024-02-03 13:40:52 - INFO - 127.0.0.1 - - [03/Feb/2024 13:40:52] "GET /api/get-all-forms HTTP/1.1" 200 -
+2024-02-03 13:40:55 - INFO - 127.0.0.1 - - [03/Feb/2024 13:40:55] "GET /api/get-all-forms HTTP/1.1" 200 -
+2024-02-03 13:41:12 - INFO - 127.0.0.1 - - [03/Feb/2024 13:41:12] "GET /api/get-all-forms HTTP/1.1" 200 -
+2024-02-03 13:41:18 - INFO - 127.0.0.1 - - [03/Feb/2024 13:41:18] "GET /api/get-all-forms HTTP/1.1" 200 -
+2024-02-03 13:41:18 - INFO - 127.0.0.1 - - [03/Feb/2024 13:41:18] "GET /api/get-all-forms HTTP/1.1" 200 -
