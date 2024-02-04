@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { footerData } from "../../../constants/index";
 import styles from "./footer.module.css";
 import TextInput from "../TextInput";
@@ -7,19 +7,54 @@ import { Link } from "react-router-dom";
 import useWindowWidth from "../../../utils/useWindowWidth";
 import { footer } from "../../../constants/index";
 import { useSelector } from "react-redux";
+import emailjs from "@emailjs/browser";
 
 function Footer() {
   const language = useSelector((state) => state.language.language);
   const windowWidth = useWindowWidth();
   const footerData = language === "en" ? footer.en : footer.ru;
   const emailUsData = footerData.emailUs;
+  const form = useRef();
+  const [emailData, setEmailData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        form.current,
+        "YOUR_PUBLIC_KEY"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
+  function getName(field, value) {
+    setEmailData({
+      ...emailData,
+      [field]: value,
+    });
+  }
+
+  console.log(emailData);
   return (
     <div
       className={`${styles.footer} flex flex-col justify-end items-center w-full bg-custom-color-700 mt-[100px]`}
     >
       <div className={`wrapper ${styles.cover} min-h-[400px]`}>
-      
         <div
           className={`flex-1 text-white flex flex-col items-center justify-center w-full px-8 max-w-[550px] 
           ${windowWidth < 950 ? "min-w-[400px]" : "min-w-[550px]"}`}
@@ -29,9 +64,13 @@ function Footer() {
           </div>
           <div className={`labelText`}>{emailUsData.questionText}</div>
           <div className={`labelText`}>{emailUsData.contactUs}</div>
-          <div className={`mt-6 w-full grid gap-[20px]`}>
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className={`mt-6 w-full grid gap-[20px]`}
+          >
             <TextInput
-              getValue={() => console.log("ehllo")}
+              getValue={() => getName()}
               placeholder={emailUsData.nameInput.placeholder}
               value={emailUsData.nameInput.value}
               field={emailUsData.nameInput.field}
@@ -49,7 +88,7 @@ function Footer() {
               placeholder={emailUsData.messageInput.placeholder}
               field={emailUsData.messageInput.field}
             />
-          </div>
+          </form>
           <button className={`regularButton`}>Send</button>
         </div>
 
@@ -57,7 +96,9 @@ function Footer() {
           <div className={`bg-gray-300 h-[1px] w-full my-10`} />
         ) : (
           <div
-            className={`bg-gray-300 h-[470px] ${windowWidth < 1100 ? "ml-10" : "ml-[7rem]"} w-[1px] my-10`}
+            className={`bg-gray-300 h-[470px] ${
+              windowWidth < 1100 ? "ml-10" : "ml-[7rem]"
+            } w-[1px] my-10`}
           />
         )}
         <div

@@ -10,7 +10,6 @@ import ClientHome from "./components/client/home/Home";
 import ClientForm from "./components/client/form/Form";
 import isObjNotEmpty from "./utils/isObjNotEmpty";
 import ClientTrack from "./components/client/track/Track";
-import ClientPayment from "./components/client/payment/Payment";
 
 // admin
 import AdminLogin from "./components/admin/login/Login";
@@ -29,7 +28,6 @@ function App() {
         <Route path="*" element={<Navigate to="/" />} />
         <Route path="/" element={<ClientHome />} />
         <Route path="/track-parcel/*" element={<ClientTrack />} />
-        <Route path="/payment" element={<ClientPayment />} />
 
         {isObjNotEmpty(orderBox.departure) &&
           isObjNotEmpty(orderBox.destination) && (

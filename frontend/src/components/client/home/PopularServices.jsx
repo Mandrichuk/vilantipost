@@ -76,7 +76,6 @@ function Service(props) {
   });
 
   function submitForm() {
-    console.log("ehhe");
     dispatch(setOrderBoxData(formData));
     navigate("/track-parcel");
   }

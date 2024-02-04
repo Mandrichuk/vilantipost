@@ -28,7 +28,6 @@ function TrackParcel() {
     setPackageNumber(value);
   }
 
-  // console.log(packageData);
 
   const fetchData = async () => {
     setPackageData(null);

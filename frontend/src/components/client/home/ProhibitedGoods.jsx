@@ -22,8 +22,6 @@ function ProhibitedGoods() {
       ? homePage.prohibitedGoods.en
       : homePage.prohibitedGoods.ru;
 
-  console.log(prohibtedGoodsText);
-
   return (
     <>
       <div
