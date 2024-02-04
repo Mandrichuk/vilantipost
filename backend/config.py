@@ -5,3 +5,8 @@ server_connection = {
     "PASSW": "root",
     "DB": "globalpost",
 }
+
+email_sender_data = {
+    "sender_email": "andrew.mandrichuk2007@gmail.com",
+    "key": "aqpt ytcc jyqt kbji",
+}

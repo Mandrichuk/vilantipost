@@ -32,7 +32,6 @@ function Navbar(props) {
     }
   }, [windowWidth]);
 
-  console.log(navbar.nav.ru)
 
   return (
     <div className={`${styles.navbarCover} w-full ${fullScreenNav && "overlay"}`}>
@@ -98,7 +97,6 @@ function Navbar(props) {
 
 function NavList(props) {
   const language = useSelector((state) => state.language.language);
-  console.log(props)
   return (
     <Link to={props.link}>
       <div

@@ -10,7 +10,7 @@ from forms.add_form_to_db import add_form_to_db
 from forms.get_fedex_number import get_fedex_number
 from forms.get_values_to_keys import get_values_to_keys
 from admin.is_valid_login_data import is_valid_login_data
-
+from emails.send_email import send_email
 
 logging.basicConfig(level=logging.ERROR,
                     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -108,9 +108,23 @@ def get_all_forms():
 
     except ms.Error as e:
         error_message = {"error": f"Error: {e}"}
-        print(error_message)
+        logging.error(e)
         return jsonify(error_message)
     
+
+@app.route("/api/send-email", methods=["POST"])
+def send_email_route():
+    try:
+        data = request.get_json()
+        print(data["email"], data["emailName"], data["message"])
+        status = send_email(data["email"], data["emailName"], data["message"])
+        print(status)
+        return jsonify(data), 200
+    except Exception as e:
+        error_message = {"error": f"Error: {e}"}
+        logging.error(e)
+        return jsonify(error_message)
+
 
 
 if __name__ == "__main__":

@@ -4,7 +4,10 @@ import onlyEnLetters from "../../utils/onlyEnLetters";
 function TextInput(props) {
   const [input, setInput] = useState("");
   function handleChange(e) {
-    let inputValue = onlyEnLetters(e.target.value);
+    let inputValue = e.target.value;
+    if (!props.allowLanguages) {
+      inputValue = onlyEnLetters(inputValue);
+    }
     setInput(inputValue);
   }
 

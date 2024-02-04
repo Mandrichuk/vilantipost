@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 import useWindowWidth from "../../../utils/useWindowWidth";
 import { footer } from "../../../constants/index";
 import { useSelector } from "react-redux";
-import emailjs from "@emailjs/browser";
+import axios from "axios";
+import { domens } from "../../../constants";
 
 function Footer() {
   const language = useSelector((state) => state.language.language);
@@ -16,40 +17,28 @@ function Footer() {
   const emailUsData = footerData.emailUs;
   const form = useRef();
   const [emailData, setEmailData] = useState({
-    name: "",
+    emailName: "",
     email: "",
     message: "",
   });
 
-
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        form.current,
-        "YOUR_PUBLIC_KEY"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    console.log("sent to backend")
+    try {
+      const response = await axios.post(`${domens.backend}/api/send-email`, emailData);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-  function getName(field, value) {
+  function getDataFromForm(field, value) {
     setEmailData({
       ...emailData,
       [field]: value,
     });
   }
 
-  console.log(emailData);
   return (
     <div
       className={`${styles.footer} flex flex-col justify-end items-center w-full bg-custom-color-700 mt-[100px]`}
@@ -70,26 +59,31 @@ function Footer() {
             className={`mt-6 w-full grid gap-[20px]`}
           >
             <TextInput
-              getValue={() => getName()}
+              getValue={getDataFromForm}
               placeholder={emailUsData.nameInput.placeholder}
               value={emailUsData.nameInput.value}
               field={emailUsData.nameInput.field}
               type={emailUsData.nameInput.type}
+              allowLanguages={true}
             />
             <TextInput
-              getValue={() => console.log("ehllo")}
+              getValue={getDataFromForm}
               placeholder={emailUsData.emailInput.placeholder}
               value={emailUsData.emailInput.value}
               field={emailUsData.emailInput.field}
               type={emailUsData.emailInput.type}
+              allowLanguages={true}
             />
             <TextArea
-              getValue={() => console.log("ehllo")}
+              getValue={getDataFromForm}
               placeholder={emailUsData.messageInput.placeholder}
               field={emailUsData.messageInput.field}
+              allowLanguages={true}
             />
           </form>
-          <button className={`regularButton`}>Send</button>
+          <button onClick={sendEmail} className={`regularButton`}>
+            Send
+          </button>
         </div>
 
         {windowWidth < 950 ? (
