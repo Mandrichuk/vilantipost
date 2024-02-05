@@ -18,6 +18,8 @@ function TrackParcel() {
   const language = useSelector((state) => state.language.language);
   const trackPackage =
     language === "en" ? homePage.trackPackage.en : homePage.trackPackage.ru;
+  const trackParcelText =
+    language === "en" ? homePage.trackParcel.en : homePage.trackParcel.ru;
   const wideScreen = 650;
   const [packageNumber, setPackageNumber] = useState("");
   const windowWidth = useWindowWidth();
@@ -47,11 +49,11 @@ function TrackParcel() {
 
   return (
     <div className={`w-full flex flex-col justify-center sectionMargin`}>
-      <div id={navId.trackParcel} className={`containerTitleText`}>Track parcel</div>
+      <div id={navId.trackParcel} className={`containerTitleText`}>{trackParcelText.titleText}</div>
 
       <div className={`articleText mb-1`}>
-        Enter the <span className={`text-purple-600 font-bold`}>Fed</span>
-        <span className={`text-orange-600 font-bold`}>Ex</span> package number
+        {trackParcelText.firstArticleText} <span className={`text-purple-600 font-bold`}>Fed</span>
+        <span className={`text-orange-600 font-bold`}>Ex</span> {trackParcelText.secondArticleText}
       </div>
       <div className={`relative mt-4`}>
         <TextInput
@@ -59,6 +61,7 @@ function TrackParcel() {
           placeholder={trackPackage.trackInput.placeholder}
           field={trackPackage.trackInput.field}
           whiteInputBox={true}
+          error={notFoundError}
         />
         <button
           type="submit"
@@ -72,7 +75,7 @@ function TrackParcel() {
       </div>
 
       {notFoundError && (
-        <div className={`text-red-500 tinyText`}>Package is not found</div>
+        <div className={`text-red-500 tinyText`}>{trackParcelText.notFound}</div>
       )}
 
       <div className={`bg-gray-50 p-6 w-full rounded-sm mt-4`}>
@@ -87,17 +90,18 @@ function TrackParcel() {
 
           <div>
             <div className={`labelText text-dark-gray-color-100`}>
-              Package data
+              {trackParcelText.packageData.packageData}
             </div>
-            <div className={`titleText`}>Number: {fedExNumber}</div>
+            <div className={`titleText`}>{trackParcelText.packageData.packageNumber} {fedExNumber}</div>
           </div>
         </div>
 
-        <div className={`flex flex-col articleText`}>
-          <p className={`text-gray-500`}>Sender: <span className={`text-black font-bold`}>{packageData && packageData.sender}</span></p>
-          <p className={`text-gray-500`}>Recipient: <span className={`text-black font-bold`}>{packageData && packageData.recipient}</span></p>
-          <p className={`text-gray-500`}>Country from: <span className={`text-black font-bold`}>{packageData && packageData.sender_country}</span></p>
-          <p className={`text-gray-500`}>Country to: <span className={`text-black font-bold`}>{packageData && packageData.recipient_country}</span></p>
+        <div className={`flex flex-col articleText text-gray-500`}>
+          <p>{trackParcelText.packageData.sender}<span className={`ml-3 text-black font-bold`}>{packageData && packageData.sender}</span></p>
+          <p>{trackParcelText.packageData.recipient}<span className={`ml-3 text-black font-bold`}>{packageData && packageData.recipient}</span></p>
+          <p>{trackParcelText.packageData.sender_country}<span className={`ml-3 text-black font-bold`}>{packageData && packageData.sender_country}</span></p>
+          <p>{trackParcelText.packageData.recipient_country}<span className={`ml-3 text-black font-bold`}>{packageData && packageData.recipient_country}</span></p>
+          {/* <p>{trackParcelText.packageData.status}<span className={`ml-3 text-black font-bold`}>{packageData && packageData.status}</span>!!!</p> */}
         </div>
       </div>
     </div>

@@ -643,3 +643,10 @@
 2024-02-04 22:04:00 - INFO -  * Restarting with stat
 2024-02-04 22:04:00 - WARNING -  * Debugger is active!
 2024-02-04 22:04:00 - INFO -  * Debugger PIN: 144-811-370
+2024-02-04 22:07:10 - INFO - 127.0.0.1 - - [04/Feb/2024 22:07:10] "OPTIONS /api/send-email HTTP/1.1" 200 -
+2024-02-04 22:07:15 - ERROR - {'sdfsdf': (553, b'5.1.3 The recipient address <sdfsdf> is not a valid RFC 5321 address. For\n5.1.3 more information, go to\n5.1.3  https://support.google.com/a/answer/3221692 and review RFC 5321\n5.1.3 specifications. j14-20020a5d604e000000b0033ae7d768b2sm1397814wrt.117 - gsmtp')}
+2024-02-04 22:07:15 - INFO - 127.0.0.1 - - [04/Feb/2024 22:07:15] "POST /api/send-email HTTP/1.1" 200 -
+2024-02-04 22:07:15 - ERROR - {'sdfsdf': (553, b'5.1.3 The recipient address <sdfsdf> is not a valid RFC 5321 address. For\n5.1.3 more information, go to\n5.1.3  https://support.google.com/a/answer/3221692 and review RFC 5321\n5.1.3 specifications. fc19-20020a05600c525300b0040fbba734f3sm6657884wmb.34 - gsmtp')}
+2024-02-04 22:07:15 - INFO - 127.0.0.1 - - [04/Feb/2024 22:07:15] "POST /api/send-email HTTP/1.1" 200 -
+2024-02-04 22:07:15 - ERROR - {'sdfsdf': (553, b'5.1.3 The recipient address <sdfsdf> is not a valid RFC 5321 address. For\n5.1.3 more information, go to\n5.1.3  https://support.google.com/a/answer/3221692 and review RFC 5321\n5.1.3 specifications. f9-20020a05600c4e8900b0040f035bebfcsm6676593wmq.12 - gsmtp')}
+2024-02-04 22:07:15 - INFO - 127.0.0.1 - - [04/Feb/2024 22:07:15] "POST /api/send-email HTTP/1.1" 200 -

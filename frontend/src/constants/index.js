@@ -268,7 +268,7 @@ export const homePage = {
   },
   popularServices: {
     ru: {
-      titleText: "Популярные отправки сейчас",
+      titleText: "Популярные отправки",
       chooseText: "Выберать",
       services: [
         {
@@ -306,7 +306,7 @@ export const homePage = {
       ],
     },
     en: {
-      titleText: "Popular shippings now",
+      titleText: "Popular shippings",
       chooseText: "Choose",
       services: [
         {
@@ -654,6 +654,44 @@ export const homePage = {
           image: personalDocuments,
         },
       ],
+    },
+  },
+  trackParcel: {
+    ru: {
+      titleText: "Отследить посылку",
+      firstArticleText: "Введите",
+      secondArticleText: "номер посылки",
+      notFound: "Посылка не найдена",
+      packageData: {
+        packageData: "Данные посылки",
+        packageNumber: "Номер:",
+        sender: "Отправитель:",
+        recipient: "Получатель:",
+        sender_country: "Страна отправителя:",
+        recipient_country: "Страна получателя:",
+        sender_city: "Город отправителя:",
+        recipient_city: "Город получателя:",
+        delivery_adress: "Адрес доставки:",
+        status: "Статус:",
+      },
+    },
+    en: {
+      titleText: "Track your parcel",
+      firstArticleText: "Enter then",
+      secondArticleText: "parcel number",
+      notFound: "Parcel not found",
+      packageData: {
+        packageData: "Package data",
+        packageNumber: "Number:",
+        sender: "Sender:",
+        recipient: "Recipient:",
+        sender_country: "Sender country:",
+        recipient_country: "Recipient country:",
+        sender_city: "Sender city:",
+        recipient_city: "Recipient city:",
+        delivery_adress: "Delivery address:",
+        status: "Status:"
+      },
     },
   },
 };

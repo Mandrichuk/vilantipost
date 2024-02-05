@@ -4,12 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { homePage } from "../../../constants/index";
 import useWindowWidth from "../../../utils/useWindowWidth";
-import TextInput from "../../common/TextInput";
-import { BiSolidBinoculars } from "react-icons/bi";
-import { motion } from "framer-motion";
-import { motions } from "../../../constants/index";
 import styles from "./home.module.css";
-import images from "../../../constants/index";
+
 
 function ProhibitedGoods() {
   const navigate = useNavigate();
@@ -27,7 +23,7 @@ function ProhibitedGoods() {
       <div
         className={`${styles.backgroundCover} w-full flex flex-col mb-[20px] sectionMargin`}
       >
-        <div className={`containerTitleText`}>Prohibited goods</div>
+        <div className={`containerTitleText`}>{prohibtedGoodsText.titleText}</div>
 
         <div
           className={`${styles.goodsGrid} w-full grid grid-cols-1 gap-3 mt-3`}

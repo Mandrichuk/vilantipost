@@ -205,6 +205,17 @@ input[type="checkbox"] {
   width: 100%;
 }
 
+
+.whiteInputBox input {
+  background-color: rgb(254, 254, 254) !important;
+  border: var(--border-px) solid rgb(218, 218, 218) !important;
+}
+
+.whiteInputBox input:valid,
+.whiteInputBox input:focus {
+  border: var(--border-px) solid var(--dark-gray-color-300) !important;
+}
+
 .errorBorder {
   border: var(--border-px) solid var(--error-color) !important;
 }
@@ -407,16 +418,6 @@ input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   outline: none;
-}
-
-.whiteInputBox input {
-  background-color: rgb(254, 254, 254) !important;
-  border: var(--border-px) solid rgb(218, 218, 218) !important;
-}
-
-.whiteInputBox input:valid,
-.whiteInputBox input:focus {
-  border: var(--border-px) solid var(--dark-gray-color-300) !important;
 }
 
 .inputBox span {
