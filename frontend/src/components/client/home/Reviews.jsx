@@ -24,6 +24,9 @@ function Reviews() {
     swipeToSlide: true,
     draggable: true,
     arrows: false,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
   };
 
   useEffect(() => {
@@ -33,7 +36,7 @@ function Reviews() {
     if (windowWidth > 750) {
       setSlidesToShow(2.05);
     }
-    if (windowWidth > 1250) {
+    if (windowWidth > 1400) {
       setSlidesToShow(3.05);
     }
   }, [windowWidth]);

@@ -11,11 +11,12 @@ import axios from "axios";
 import { domens } from "../../../constants";
 
 function Footer() {
+  const form = useRef();
   const language = useSelector((state) => state.language.language);
   const windowWidth = useWindowWidth();
   const footerData = language === "en" ? footer.en : footer.ru;
   const emailUsData = footerData.emailUs;
-  const form = useRef();
+  const [error, setError] = useState(false);
   const [emailData, setEmailData] = useState({
     emailName: "",
     email: "",
@@ -24,9 +25,17 @@ function Footer() {
 
   const sendEmail = async (e) => {
     e.preventDefault();
-    console.log("sent to backend")
+
+
+    if (!isValid()) {
+      return;
+    }
+
     try {
-      const response = await axios.post(`${domens.backend}/api/send-email`, emailData);
+      const response = await axios.post(
+        `${domens.backend}/api/send-email`,
+        emailData
+      );
     } catch (error) {
       console.error(error);
     }
@@ -37,6 +46,15 @@ function Footer() {
       ...emailData,
       [field]: value,
     });
+  }
+
+  function isValid() {
+    let isValid = false;
+    if (emailData.emailName && emailData.email && emailData.message) {
+      isValid = true;
+    }
+    setError(!isValid);
+    return isValid;
   }
 
   return (
@@ -65,6 +83,7 @@ function Footer() {
               field={emailUsData.nameInput.field}
               type={emailUsData.nameInput.type}
               allowLanguages={true}
+              error={error}
             />
             <TextInput
               getValue={getDataFromForm}
@@ -73,12 +92,14 @@ function Footer() {
               field={emailUsData.emailInput.field}
               type={emailUsData.emailInput.type}
               allowLanguages={true}
+              error={error}
             />
             <TextArea
               getValue={getDataFromForm}
               placeholder={emailUsData.messageInput.placeholder}
               field={emailUsData.messageInput.field}
               allowLanguages={true}
+              error={error}
             />
           </form>
           <button onClick={sendEmail} className={`regularButton`}>

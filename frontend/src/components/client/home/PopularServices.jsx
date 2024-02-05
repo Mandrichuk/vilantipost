@@ -33,6 +33,7 @@ function PopularServices() {
     swipeToSlide: true,
     draggable: true,
     arrows: false,
+    infinite: true,
   };
 
   useEffect(() => {
@@ -82,8 +83,8 @@ function Service(props) {
 
   return (
     <div className="service-wrapper" style={{ margin: "0 4px" }}>
-      <Link
-        className={`${styles.service} items-center  max-w-[200px] h-[250px] rounded-lg overflow-hidden cursor-auto`}
+      <div
+        className={`${styles.service} items-center  rounded-lg overflow-hidden cursor-auto`}
       >
         <div
           className={`${styles.serviceImgContainer} flex flex-col items-centere justify-center h-[75%] border-[2px] border-gray-200`}
@@ -112,7 +113,7 @@ function Service(props) {
             {popularServicesText.chooseText}
           </Link>
         </div>
-      </Link>
+      </div>
     </div>
   );
 }

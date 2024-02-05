@@ -75,13 +75,15 @@ function TrackParcel() {
         <div className={`text-red-500 tinyText`}>Package is not found</div>
       )}
 
-      <div className={`bg-gray-50 p-4 w-full rounded-sm mt-4`}>
+      <div className={`bg-gray-50 p-6 w-full rounded-sm mt-4`}>
         <div className={`flex flex-row mb-5`}>
+          <div className={`w-[70px] h-[70px] mr-6 mb-2`}>
           <img
             src={images.deliveryBox}
             alt=""
-            className={`w-[100px] h-[100px] mr-4`}
+            className={`object-cover`}
           />
+          </div>
 
           <div>
             <div className={`labelText text-dark-gray-color-100`}>

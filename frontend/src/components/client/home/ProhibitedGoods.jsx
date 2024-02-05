@@ -35,15 +35,20 @@ function ProhibitedGoods() {
           {prohibtedGoodsText.goods.map((item, index) => (
             <div
               key={`goods-items-${index}`}
-              className={`${styles.goodsContainer} rounded-md w-full max-h-[230px] shadow-md px-6 py-1 flex flex-row items-center transition-all`}
+              className={`${
+                styles.goodsContainer
+              } rounded-md w-full shadow-md px-6 py-1 flex ${
+                windowWidth < 800 ? "flex-row" : "flex-col"
+              } items-center transition-all`}
             >
               <div
-                className={`${styles.goodsImgContainer} h-[80px] w-[80px] flex flex-row items-center`}
+                className={`${styles.goodsImgContainer} 
+                  flex flex-row items-center justify-center  h-[110px] w-[110px]`}
               >
                 <img
                   src={item.image}
                   alt=""
-                  className={`object-cover transition-all`}
+                  className={`w-full object-cover transition-all`}
                 />
               </div>
               <div

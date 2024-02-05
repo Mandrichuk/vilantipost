@@ -7,13 +7,6 @@ import "slick-carousel/slick/slick-theme.css";
 import useWindowWidth from "../../../utils/useWindowWidth";
 import { homePage } from "../../../constants/index";
 import { useSelector } from "react-redux";
-import {
-  TbCircleNumber1,
-  TbCircleNumber2,
-  TbCircleNumber3,
-  TbCircleNumber4,
-  TbCircleNumber5,
-} from "react-icons/tb";
 import { motion } from "framer-motion";
 import { motions } from "../../../constants/index";
 
@@ -78,7 +71,7 @@ function DeliveryProcesses() {
                 />
                 {windowWidth > 650 && (
                   <div
-                    className={`w-full flex flex-row items-center justify-center text-white p-2 px-4 bg-custom-color-800 rounded-lg absolute top-[2px] left-[45px] min-w-[150px] text-align text-[0.8rem] transition-all opacity-0 ${styles.hoverLabel}`}
+                    className={`w-full flex flex-row items-center justify-center text-white p-2 px-4 bg-custom-color-800 rounded-lg absolute top-[2px] left-[45px] min-w-[150px] flex-1 text-align text-[0.8rem] transition-all opacity-0 ${styles.hoverLabel}`}
                   >
                     {language === "en" ? stage.name.en : stage.name.ru}
                   </div>
@@ -98,14 +91,14 @@ function DeliveryProcess(props) {
   const windowWidth = useWindowWidth();
 
   return (
-    <div className={`${windowWidth > 1300 && "ml-[100px]"} flex-1 bg-gray-50 rounded-sm h-full p-4`}>
+    <div className={`${windowWidth > 1300 && "ml-[10px]"} flex-1 bg-gray-50 rounded-sm h-full p-4`}>
       <div
         className={`${styles.imgTitleContainer} w-full flex flex-row items-center justify-start`}
       >
         <img
           src={props.image}
           alt=""
-          className={`w-[100px] h-[100px] object-cover rounded-sm`}
+          className={`w-[110px] h-[110px] object-cover rounded-sm`}
         />
         <div className={`flex flex-col ml-4`}>
           {windowWidth < 1000 && (
@@ -113,11 +106,11 @@ function DeliveryProcess(props) {
               {props.stepNumber}
             </div>
           )}
-          <div className={`titleText`}>{props.title}</div>
+          <div className={`text-[1.8rem]`}>{props.title}</div>
         </div>
       </div>
       <div className={`mt-2 labelText`}>{props.label}</div>
-      <div className={`${styles.normalText} articleText mt-4`}>
+      <div className={`articleText font-normal mt-4`}>
         {props.article}
       </div>
     </div>

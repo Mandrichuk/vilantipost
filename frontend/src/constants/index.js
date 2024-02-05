@@ -17,7 +17,7 @@ import courierDelivery from "../assets/graphics/courierDelivery.png";
 import worldDelivery from "../assets/graphics/worldDelivery.png";
 import sendToStock from "../assets/graphics/sendToStock.png";
 import fullFillForm from "../assets/graphics/fullFillForm.png";
-import deliveryBox from "../assets/graphics/deliveryBox.jpg";
+import deliveryBox from "../assets/graphics/deliveryBox.png";
 import passport from "../assets/graphics/passport.png";
 import money from "../assets/graphics/money.png";
 import personalDocuments from "../assets/graphics/personalDocuments.png";
@@ -45,6 +45,7 @@ import GermanyFlag from "../assets/flags/GermanyFlag.png";
 import ItalianFlag from "../assets/flags/ItalianFlag.png";
 import RussianFlag from "../assets/flags/RussianFlag.png";
 import SpainFlag from "../assets/flags/SpainFlag.png";
+import UnitedKingdomFlag from "../assets/flags/UnitedKingdomFlag.jpg";
 
 // ratings
 import rating0 from "../assets/ratings/rating-0.png";
@@ -85,6 +86,7 @@ export default {
   ItalianFlag,
   RussianFlag,
   SpainFlag,
+  UnitedKingdomFlag,
   rating0,
   rating05,
   rating10,
@@ -294,14 +296,6 @@ export const homePage = {
           deliveryTime: "Доставка: 4 дня",
         },
         {
-          toCountryImg: GermanyFlag,
-          fromCountryImg: RussianFlag,
-          toCountryName: "Германия",
-          fromCountryName: "Россия",
-          countryToId: 86,
-          deliveryTime: "Доставка: 3 дня",
-        },
-        {
           toCountryImg: SpainFlag,
           fromCountryImg: RussianFlag,
           toCountryName: "Испания",
@@ -338,14 +332,6 @@ export const homePage = {
           fromCountryName: "Russia",
           countryToId: 89,
           deliveryTime: "Delivery: 4 days",
-        },
-        {
-          toCountryImg: GermanyFlag,
-          fromCountryImg: RussianFlag,
-          toCountryName: "Germany",
-          fromCountryName: "Russia",
-          countryToId: 86,
-          deliveryTime: "Delivery: 3 days",
         },
         {
           toCountryImg: SpainFlag,

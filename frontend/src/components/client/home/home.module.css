@@ -26,9 +26,9 @@
 }
 
 .goodsContainer:hover {
-  /* box-shadow: 0 0 30px rgba(109, 222, 218, 0.4); */
   background-color: var(--custom-color-50);
-  transform: scale(1.03);
+  border: 1px solid var(--custom-color-100);
+  transform: scale(1.01);
 }
 
 @media (min-width: 650px) {
@@ -41,21 +41,48 @@
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 800px) {
   .goodsGrid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .goodsImgContainer {
+    height: 140px;
+    width: 140px;
+  }
+
+  .goodsName {
+    font-size: 1.5rem;
+  }
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1050px) {
   .goodsGrid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .goodsImgContainer {
+    height: 180px;
+    width: 180px;
+  }
+}
+@media (min-width: 1300px) {
   .orderContainer {
     flex-direction: row;
   }
 
   .deliveryInputs {
     flex-direction: column;
+  }
+}
+
+@media (min-width: 1400px) {
+  .goodsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .goodsImgContainer {
+    height: 200px;
+    width: 200px;
   }
 }
