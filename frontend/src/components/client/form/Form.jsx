@@ -11,10 +11,19 @@ import FormFrom from "./FormFrom";
 import FormTo from "./FormTo";
 import ShippingForm from "./ShippingForm";
 import PaymentForm from "./PaymentForm";
-import { TbCircleNumber1, TbCircleNumber2, TbCircleNumber3, TbCircleNumber4 } from "react-icons/tb";
+import {
+  TbCircleNumber1,
+  TbCircleNumber2,
+  TbCircleNumber3,
+  TbCircleNumber4,
+} from "react-icons/tb";
 import { domens } from "../../../constants/index";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { notifySuccess } from "../../../constants/index";
 
 function Form() {
+  const navigate = useNavigate();
   const formsClientData = useSelector((state) => state.formsClient.formsData);
   const windowWidth = useWindowWidth();
   const orderBox = useSelector((state) => state.orderBox.orderBox);
@@ -32,7 +41,7 @@ function Form() {
         en: formPage.formFromClient.en.formTitle,
       },
       isActive: toggleOpenForms.openFromForm,
-      IconComponent: TbCircleNumber1
+      IconComponent: TbCircleNumber1,
     },
     {
       title: {
@@ -40,7 +49,7 @@ function Form() {
         en: formPage.formToClient.en.formTitle,
       },
       isActive: toggleOpenForms.openToForm,
-      IconComponent: TbCircleNumber2
+      IconComponent: TbCircleNumber2,
     },
     {
       title: {
@@ -48,7 +57,7 @@ function Form() {
         en: formPage.shippingForm.en.formTitle,
       },
       isActive: toggleOpenForms.openShippingForm,
-      IconComponent: TbCircleNumber3
+      IconComponent: TbCircleNumber3,
     },
     {
       title: {
@@ -56,10 +65,9 @@ function Form() {
         en: formPage.paymentForm.en.formTitle,
       },
       isActive: toggleOpenForms.openPaymentForm,
-      IconComponent: TbCircleNumber4
+      IconComponent: TbCircleNumber4,
     },
   ];
-
 
   function handleChangeActiveForm(currentActiveForm) {
     const initialValue = {
@@ -90,118 +98,129 @@ function Form() {
       .catch((error) => {
         console.error("Ошибка при отправке данных на сервер:", error);
       });
+
+    navigate("/");
   }
 
   return (
-    <div
-      className={`${styles.backgroundCover} w-full flex flex-col items-center bg-white`}
-    >
-      <Navbar />
-      <div className={`wrapper`}>
-        <div className={`${styles.form} w-full`}>
-          <div
-            className={`${styles.formIntroduction} w-full flex flex-col items-center justify-center text-[1rem]`}
-          >
-            <div className={`titleText font-bold`}>
-              {language === "en" ? formPage.en.title : formPage.ru.title}
-            </div>
-            {windowWidth < 1560 && (
-              <div
-                className={`bg-[#419088] text-white w-full rounded-md noneRoundedBottom p-5 flex flex-row items-center justify-center mt-[30px]`}
-              >
-                <img
-                  className={`max-h-[45px] object-cover mr-5`}
-                  src={images.whiteEnvelope}
-                />
-                <div className={`h-[70px] flex flex-col justify-center font-bold`}>
-                  <div className={`mb-1`}>
-                    {language === "en"
-                      ? formPage.en.envelopeText
-                      : formPage.ru.envelopeText}
-                    ({orderBox.weight}
-                    {language === "en" ? "kg" : "кг"})
-                  </div>
-                  <div>
-                    {language === "en"
-                      ? formPage.en.totalPrice
-                      : formPage.ru.totalPrice}
+    <>
+      <div
+        className={`${styles.backgroundCover} w-full flex flex-col items-center bg-white`}
+      >
+        <Navbar />
+        <div className={`wrapper`}>
+          <div className={`${styles.form} w-full`}>
+            <div
+              className={`${styles.formIntroduction} w-full flex flex-col items-center justify-center text-[1rem]`}
+            >
+              <div className={`titleText font-bold`}>
+                {language === "en" ? formPage.en.title : formPage.ru.title}
+              </div>
+              {windowWidth < 1560 && (
+                <div
+                  className={`bg-[#419088] text-white w-full rounded-md noneRoundedBottom p-5 flex flex-row items-center justify-center mt-[30px]`}
+                >
+                  <img
+                    className={`max-h-[45px] object-cover mr-5`}
+                    src={images.whiteEnvelope}
+                  />
+                  <div
+                    className={`h-[70px] flex flex-col justify-center font-bold`}
+                  >
+                    <div className={`mb-1`}>
+                      {language === "en"
+                        ? formPage.en.envelopeText
+                        : formPage.ru.envelopeText}
+                      ({orderBox.weight}
+                      {language === "en" ? "kg" : "кг"})
+                    </div>
+                    <div>
+                      {language === "en"
+                        ? formPage.en.totalPrice
+                        : formPage.ru.totalPrice}
+                    </div>
                   </div>
                 </div>
-              </div>
-            )}
+              )}
 
-            <div
-              className={`flex ${
-                windowWidth < 1560 ? "flex-col" : "flex-row mt-[30px]"
-              } w-full`}
-            >
-              <div className={`flex-1 w-full`}>
-                <FormFrom
-                  isOpened={toggleOpenForms.openFromForm}
-                  handleChangeActiveForm={handleChangeActiveForm}
-                />
-                <FormTo
-                  isOpened={toggleOpenForms.openToForm}
-                  handleChangeActiveForm={handleChangeActiveForm}
-                />
-                <ShippingForm
-                  isOpened={toggleOpenForms.openShippingForm}
-                  handleChangeActiveForm={handleChangeActiveForm}
-                />
-                <PaymentForm
-                  isOpened={toggleOpenForms.openPaymentForm}
-                  handleChangeActiveForm={handleChangeActiveForm}
-                  sendToBackend={sendToBackend}
-                />
-              </div>
+              <div
+                className={`flex ${
+                  windowWidth < 1560 ? "flex-col" : "flex-row mt-[30px]"
+                } w-full`}
+              >
+                <div className={`flex-1 w-full`}>
+                  <FormFrom
+                    isOpened={toggleOpenForms.openFromForm}
+                    handleChangeActiveForm={handleChangeActiveForm}
+                  />
+                  <FormTo
+                    isOpened={toggleOpenForms.openToForm}
+                    handleChangeActiveForm={handleChangeActiveForm}
+                  />
+                  <ShippingForm
+                    isOpened={toggleOpenForms.openShippingForm}
+                    handleChangeActiveForm={handleChangeActiveForm}
+                  />
+                  <PaymentForm
+                    isOpened={toggleOpenForms.openPaymentForm}
+                    handleChangeActiveForm={handleChangeActiveForm}
+                    sendToBackend={sendToBackend}
+                  />
+                </div>
 
-              {windowWidth > 1560 && (
-                <>
-                  <div className={`flex flex-col ml-7 flex-[0.5]`}>
-                    <div
-                      className={`bg-[#419088] text-white w-full rounded-md noneRoundedBottom p-5 flex flex-row items-center justify-center `}
-                    >
-                      <img
-                        className={`max-h-[70px] object-cover mr-8`}
-                        src={images.whiteEnvelope}
-                      />
-                      <div className={`h-[70px] flex flex-col justify-center font-bold `}>
-                        <div className={`mb-1`}>
-                          {language === "en"
-                            ? formPage.en.envelopeText
-                            : formPage.ru.envelopeText}
-                          ({orderBox.weight}
-                          {language === "en" ? "kg" : "кг"})
-                        </div>
-                        <div>
-                          {language === "en"
-                            ? formPage.en.totalPrice
-                            : formPage.ru.totalPrice}
+                {windowWidth > 1560 && (
+                  <>
+                    <div className={`flex flex-col ml-7 flex-[0.5]`}>
+                      <div
+                        className={`bg-[#419088] text-white w-full rounded-md noneRoundedBottom p-5 flex flex-row items-center justify-center `}
+                      >
+                        <img
+                          className={`max-h-[70px] object-cover mr-8`}
+                          src={images.whiteEnvelope}
+                        />
+                        <div
+                          className={`h-[70px] flex flex-col justify-center font-bold `}
+                        >
+                          <div className={`mb-1`}>
+                            {language === "en"
+                              ? formPage.en.envelopeText
+                              : formPage.ru.envelopeText}
+                            ({orderBox.weight}
+                            {language === "en" ? "kg" : "кг"})
+                          </div>
+                          <div>
+                            {language === "en"
+                              ? formPage.en.totalPrice
+                              : formPage.ru.totalPrice}
+                          </div>
                         </div>
                       </div>
-                    </div>
 
-                    <div>
-                      {blockResults.map((item, index) => (
-                        <div
-                          key={index}
-                          className={`${styles.title} ${
-                            item.isActive && `text-custom-color-700 font-bold`
-                          } labelText p-3 mb-3 w-full flex flex-row items-center`}
-                        >
-                          <item.IconComponent className={`mr-2 text-[1.3rem]`} />
-                          {language === "en" ? item.title.en : item.title.ru}
-                        </div>
-                      ))}
+                      <div>
+                        {blockResults.map((item, index) => (
+                          <div
+                            key={index}
+                            className={`${styles.title} ${
+                              item.isActive && `text-custom-color-700 font-bold`
+                            } labelText p-3 mb-3 w-full flex flex-row items-center`}
+                          >
+                            <item.IconComponent
+                              className={`mr-2 text-[1.3rem]`}
+                            />
+                            {language === "en" ? item.title.en : item.title.ru}
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                </>
-              )}
+                  </>
+                )}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <ToastContainer />
+    </>
   );
 }
 

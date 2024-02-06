@@ -1,3 +1,6 @@
+import {ToastContainer, toast} from "react-toastify"; 
+import "react-toastify/dist/ReactToastify.css";
+
 import {
   TbCircleNumber1,
   TbCircleNumber2,
@@ -59,6 +62,34 @@ import rating35 from "../assets/ratings/rating-35.png";
 import rating40 from "../assets/ratings/rating-40.png";
 import rating45 from "../assets/ratings/rating-45.png";
 import rating50 from "../assets/ratings/rating-50.png";
+
+
+export const notifySuccess = () => {
+  if (!toast.isActive("success")) {
+    toast.success("Thanks for your order!", {
+      toastId: "success",
+      position: "top-right",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+    });
+  }
+};
+
+export const notifyError = () => {
+  if (!toast.isActive("success")) {
+    toast.success("Thanks for your order!", {
+      toastId: "success",
+      position: "top-right",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+    });
+  }
+};
+
 
 export default {
   mobilePoster,
@@ -303,6 +334,22 @@ export const homePage = {
           countryToId: 95,
           deliveryTime: "Доставка: 6 дней",
         },
+        {
+          toCountryImg: ItalianFlag,
+          fromCountryImg: RussianFlag,
+          toCountryName: "Италия",
+          fromCountryName: "Россия",
+          countryToId: 89,
+          deliveryTime: "Доставка: 4 дня",
+        },
+        {
+          toCountryImg: SpainFlag,
+          fromCountryImg: RussianFlag,
+          toCountryName: "Испания",
+          fromCountryName: "Россия",
+          countryToId: 95,
+          deliveryTime: "Доставка: 6 дней",
+        },
       ],
     },
     en: {
@@ -324,6 +371,22 @@ export const homePage = {
           fromCountryName: "Russia",
           countryToId: 75,
           deliveryTime: "Delivery: 5 days",
+        },
+        {
+          toCountryImg: ItalianFlag,
+          fromCountryImg: RussianFlag,
+          toCountryName: "Italy",
+          fromCountryName: "Russia",
+          countryToId: 89,
+          deliveryTime: "Delivery: 4 days",
+        },
+        {
+          toCountryImg: SpainFlag,
+          fromCountryImg: RussianFlag,
+          toCountryName: "Spain",
+          fromCountryName: "Russia",
+          countryToId: 95,
+          deliveryTime: "Delivery: 6 days",
         },
         {
           toCountryImg: ItalianFlag,
@@ -690,7 +753,7 @@ export const homePage = {
         sender_city: "Sender city:",
         recipient_city: "Recipient city:",
         delivery_adress: "Delivery address:",
-        status: "Status:"
+        status: "Status:",
       },
     },
   },

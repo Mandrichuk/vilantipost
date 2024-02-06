@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const initialStateValue = "en";
+export const initialStateValue = "ru";
 
 export const languageSlice = createSlice({
   name: 'language',

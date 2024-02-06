@@ -9,6 +9,7 @@ import useWindowWidth from "../../../utils/useWindowWidth";
 import { homePage } from "../../../constants/index";
 import { useSelector } from "react-redux";
 
+
 function Reviews() {
   const language = useSelector((state) => state.language.language);
   const reviewsArr = homePage.Reviews.reviews;
@@ -24,8 +25,6 @@ function Reviews() {
     swipeToSlide: true,
     draggable: true,
     arrows: false,
-    autoplay: true,
-    autoplaySpeed: 3000,
     pauseOnHover: true,
   };
 
@@ -51,7 +50,7 @@ function Reviews() {
         <img
           src={images.peopleRating}
           alt="peopleRating"
-          className={`object-cover opacity-[1] h-[300px]`}
+          className={`object-cover opacity-[1] ${windowWidth > 800 ? "w-[450px]" : "h-[300px]"}`}
         />
         <Link
           to="/"
@@ -72,6 +71,7 @@ function Reviews() {
 }
 
 function Review(props) {
+  const windowWidth = useWindowWidth();
   const language = useSelector((state) => state.language.language);
   const [translatedReview, setTranslatedReview] = useState(false);
   const reviewsText =

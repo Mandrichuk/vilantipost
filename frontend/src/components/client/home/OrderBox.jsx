@@ -17,7 +17,7 @@ import Slider from "../../common/Slider";
 import Poster from "./Poster";
 import TrackParcelInput from "./TrackParcelInput";
 import { navId } from "../../../constants/index";
-
+import { notifySuccess } from "../../../constants/index";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -258,7 +258,9 @@ const HomePage = () => {
 
             <div className={`flex flex-row items-center justify-center`}>
               <button
-                onClick={() => submitForm()}
+                onClick={() => {
+                  submitForm();
+                }}
                 className={`flex-1 mb-3 regularButton`}
               >
                 {language === "en"
@@ -269,6 +271,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      {/* <ToastContainer /> */}
     </>
   );
 };

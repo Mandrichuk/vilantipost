@@ -48,7 +48,7 @@ function ProhibitedGoods() {
                 />
               </div>
               <div
-                className={`${styles.goodsName} labelText font-bold mt-4 ml-[30px] mb-3`}
+                className={`${styles.goodsName} labelText font-bold ${windowWidth < 800 && "ml-[30px]"} mt-4 mb-3`}
               >
                 {item.name}
               </div>

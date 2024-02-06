@@ -6,6 +6,7 @@ import useWindowWidth from "../../../utils/useWindowWidth";
 import { formPage } from "../../../constants/index";
 import { setFormData } from "../../../features/formsClient";
 
+
 function PaymentForm(props) {
   const dispatch = useDispatch();
   const isOpened = props.isOpened;
@@ -55,6 +56,7 @@ function PaymentForm(props) {
 
 
   return (
+  <>
     <form className={`${styles.paymentFormInfo} ${isOpened ? "mb-6" : "mb-3"}`}>
       {windowWidth < 1560 && (
         <div
@@ -175,6 +177,7 @@ function PaymentForm(props) {
         </div>
       </div>
     </form>
+    </>
   );
 }
 
