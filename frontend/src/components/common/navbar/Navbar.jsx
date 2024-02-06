@@ -8,10 +8,10 @@ import { navbar } from "../../../constants/index";
 import { useSelector } from "react-redux";
 import styles from "./navbar.module.css";
 import useWindowWidth from "../../../utils/useWindowWidth";
-import { motions } from "../../../constants/index";
 import images from "../../../constants/index";
 import { useDispatch } from "react-redux";
 import { setLanguage } from "../../../features/language";
+import { motions } from "../../../constants/index";
 
 function Navbar(props) {
   const dispatch = useDispatch();
@@ -37,18 +37,35 @@ function Navbar(props) {
           className={`flex flex-row items-center justify-between h-[30px] text-custom-color-900`}
         >
           <div className={`flex flex-row items-center justify-center`}>
-            <div
+
+
+            <motion.div
+              whileTap={motions.whileTap}
               onClick={() => dispatch(setLanguage("ru"))}
               className={`text-[1.5rem] font-bold h-[27px] w-[35px] rounded-md bg-custom-color-900 overflow-hidden cursor-pointer`}
             >
-              <img src={images.RussianFlag} alt="logo" className={`w-full h-full`}/>
-            </div>
-            <div
+              <img
+                src={images.RussianFlag}
+                alt="logo"
+                className={`w-full h-full`}
+              />
+            </motion.div>
+
+            
+            <motion.div
+             whileTap={motions.whileTap}
               onClick={() => dispatch(setLanguage("en"))}
               className={`ml-2 text-[1.5rem] font-bold h-[27px] w-[35px] rounded-md bg-custom-color-900 overflow-hidden cursor-pointer`}
             >
-              <img src={images.UnitedKingdomFlag} alt="logo" className={`w-full h-full`}/>
-            </div>
+              <img
+                src={images.UnitedKingdomFlag}
+                alt="logo"
+                className={`w-full h-full`}
+              />
+            </motion.div>
+
+
+
           </div>
           <Link to="/" className={`flex flex-row items-center justify-center`}>
             <FaRegPaperPlane className={`text-[2rem] ml-3`} />
