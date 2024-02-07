@@ -1,4 +1,4 @@
-import {ToastContainer, toast} from "react-toastify"; 
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import {
@@ -28,17 +28,15 @@ import flashDrive from "../assets/graphics/flashDrive.png";
 import creditCard from "../assets/graphics/creditCard.png";
 
 // Lotties
-import question from "../assets/lotties/question.json";
-import spinningWorld from "../assets/lotties/spinningWorld.json";
-import uploadScreen from "../assets/lotties/uploadScreen.json";
-import walkingPackage from "../assets/lotties/walkingPackage.json";
+import animatedMessage from "../assets/lotties/animatedMessage.json";
 
 // icons
 import blackEnvelope from "../assets/icons/blackEnvelope.png";
 import whiteEnvelope from "../assets/icons/whiteEnvelope.png";
 import customEnvelope from "../assets/icons/customEnvelope.png";
-import checked from "../assets/icons/checked.png";
-import hamburgerMenu from "../assets/icons/hamburger_menu.png";
+import facebookIcon from "../assets/icons/facebookIcon.png";
+import instagramIcon from "../assets/icons/instagramIcon.jpg";
+import telegramIcon from "../assets/icons/telegramIcon.png";
 
 // flags
 import SlovakFlag from "../assets/flags/SlovakFlag.png";
@@ -62,7 +60,6 @@ import rating35 from "../assets/ratings/rating-35.png";
 import rating40 from "../assets/ratings/rating-40.png";
 import rating45 from "../assets/ratings/rating-45.png";
 import rating50 from "../assets/ratings/rating-50.png";
-
 
 export const notifySuccess = () => {
   if (!toast.isActive("success")) {
@@ -90,26 +87,23 @@ export const notifyError = () => {
   }
 };
 
-
 export default {
+  facebookIcon,
+  instagramIcon,
+  telegramIcon,
   mobilePoster,
   pcPoster,
   peopleRating,
-  question,
-  deliveryBox,
-  spinningWorld,
-  uploadScreen,
-  walkingPackage,
   blackEnvelope,
   whiteEnvelope,
   customEnvelope,
   passport,
   money,
+  deliveryBox,
+  animatedMessage,
   personalDocuments,
   flashDrive,
   creditCard,
-  checked,
-  hamburgerMenu,
   SlovakFlag,
   AustrianFlag,
   ChechFlag,
@@ -130,6 +124,12 @@ export default {
   rating45,
   rating50,
 };
+
+export const sosialMedias = [
+  {link: "https://www.facebook.com/", icon: facebookIcon, name: "Facebook"},
+  {link: "https://www.instagram.com/", icon: instagramIcon, name: "Instagram"},
+  {link: "https://web.telegram.org/z/", icon: telegramIcon, name: "Telegram"},  
+];
 
 export const domens = {
   backend: "http://127.0.0.1:5000/",

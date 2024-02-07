@@ -59,7 +59,7 @@ function DeliveryProcesses() {
               <motion.div
                 whileTap={motions.whileTap}
                 key={`stage-${index}`}
-                className={`z-20 relative`}
+                className={`z-10 relative`}
               >
                 <stage.icon
                   onClick={() => handlePointChange(stage.value)}

@@ -61,26 +61,6 @@ body {
   margin: 35px 0;
 }
 
-/* 
-::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: var(--custom-color-300);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--custom-color-900);
-  border-radius: 2px;
-  transition: all var(--transition-time);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: var(--custom-color-800);
-} */
-
 label,
 input[type="checkbox"] {
   cursor: pointer;
@@ -204,7 +184,6 @@ input[type="checkbox"] {
   height: 150px !important;
   width: 100%;
 }
-
 
 .whiteInputBox input {
   background-color: rgb(254, 254, 254) !important;
@@ -543,6 +522,12 @@ input[type="checkbox"] {
   font-weight: bold;
 }
 
+.contactUsButton {
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 999;
+}
+
 @media (min-width: 500px) {
   :root {
     --btn-text: 1rem;
@@ -586,10 +571,28 @@ input[type="checkbox"] {
   .linkText {
     font-size: 1.1rem;
   }
+
+  .contactUsButton {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
 }
 
 @media (min-width: 1200px) {
   .wrapper {
     width: 80%;
   }
+
+  .contactUsButton {
+    bottom: 2.5rem;
+    right: 2.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contactUsButton {
+    bottom: 2,5rem;
+    right: 3rem;
+  }
+
 }
