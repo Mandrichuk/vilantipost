@@ -1,0 +1,36 @@
+.contactUsButton {
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 999;
+}
+
+.aiSupport {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.aiSupportInput {
+  color: var(--dark-gray-color-600);
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: normal;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+}
+
+.hideScrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hideScrollbar {
+    scrollbar-width: none;
+}
+
+.hideScrollbar {
+    -ms-overflow-style: none;
+}

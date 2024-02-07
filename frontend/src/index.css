@@ -522,12 +522,6 @@ input[type="checkbox"] {
   font-weight: bold;
 }
 
-.contactUsButton {
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 999;
-}
-
 @media (min-width: 500px) {
   :root {
     --btn-text: 1rem;

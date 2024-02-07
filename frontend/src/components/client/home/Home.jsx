@@ -15,7 +15,7 @@ import { usePreviousURL } from "../../../utils/HIstoryContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { notifySuccess } from "../../../constants";
-import ContactUsButton from "../../common/ContactUsButton";
+import ContactUsButton from "../../common/AiSupport/AiSupport";
 
 const HomePage = () => {
   const { history} = usePreviousURL();

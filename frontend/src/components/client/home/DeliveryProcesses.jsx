@@ -43,7 +43,7 @@ function DeliveryProcesses() {
           className={`w-full flex flex-row items-center justify-between p-3 h-[550px]`}
         >
           {windowWidth > 1000 && (
-            <div className={`mr-10 text-[7rem] h-full text-custom-color-600 ${windowWidth > 1300 && "mr-[100px]" }`}>
+            <div className={`mr-10 text-[7rem] h-full text-custom-color-600 ${windowWidth > 1300 && "mr-[100px]"}`}>
               {deliveryProcessesText.stepText} {currentProgress + 1}
             </div>
           )}
