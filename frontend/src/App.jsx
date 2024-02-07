@@ -1,6 +1,13 @@
 import React, { useEffect } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import { HistoryProvider, usePreviousURL } from "./utils/HIstoryContext";
 
 // common
 import ScrollToTop from "./components/common/ScrollToTop";
@@ -15,15 +22,30 @@ import ClientTrack from "./components/client/track/Track";
 import AdminLogin from "./components/admin/login/Login";
 import AdminHome from "./components/admin/home/Home";
 
+function AppWrapper() {
+  return (
+    <Router>
+      <HistoryProvider>
+        <App />
+      </HistoryProvider>
+    </Router>
+  );
+}
+
 function App() {
   const orderBox = useSelector((state) => state.orderBox.orderBox);
 
-  
+  const { updateHistory } = usePreviousURL();
+  let location = useLocation();
+
+  useEffect(() => {
+    updateHistory(location.pathname);
+  }, [location]);
+
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
       <Routes>
-
         {/* client */}
         <Route path="*" element={<Navigate to="/" />} />
         <Route path="/" element={<ClientHome />} />
@@ -34,14 +56,12 @@ function App() {
             <Route path="/form" element={<ClientForm />} />
           )}
 
-
         {/* admin */}
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/*" element={<AdminHome />} />
-
       </Routes>
-    </BrowserRouter>
+    </>
   );
 }
 
-export default App;
+export default AppWrapper;

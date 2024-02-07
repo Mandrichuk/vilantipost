@@ -11,12 +11,14 @@ import OrderBox from "./OrderBox";
 import TrackParcel from "./TrackParcel";
 import ProhibitedGoods from "./ProhibitedGoods";
 import Footer from "../../common/footer/Footer";
+import { usePreviousURL } from "../../../utils/HIstoryContext";
 
 const HomePage = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const language = useSelector((state) => state.language.language);
+  const { history} = usePreviousURL();
+  const previousURL = history.length > 1 ? history[history.length - 2] : null;
 
+
+  console.log(previousURL)
   return (
     <>
       <Navbar customColor={true} bottomShadow={false} />
