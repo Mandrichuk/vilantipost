@@ -12,6 +12,10 @@ import TrackParcel from "./TrackParcel";
 import ProhibitedGoods from "./ProhibitedGoods";
 import Footer from "../../common/footer/Footer";
 import { usePreviousURL } from "../../../utils/HIstoryContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { notifySuccess } from "../../../constants";
+import ContactUsButton from "../../common/ContactUsButton";
 
 const HomePage = () => {
   const { history} = usePreviousURL();
@@ -19,6 +23,12 @@ const HomePage = () => {
 
 
   console.log(previousURL)
+  useEffect(() => {
+    if (previousURL === "/form") {
+      notifySuccess();
+    }
+  }, [previousURL])
+
   return (
     <>
       <Navbar customColor={true} bottomShadow={false} />
@@ -35,6 +45,8 @@ const HomePage = () => {
       </div>
 
       <Footer />
+      <ContactUsButton />
+      <ToastContainer />
     </>
   );
 };
