@@ -37,7 +37,7 @@ function ContactUsButton() {
 
       <div
         onClick={toggleMessangersHandle}
-        className={` h-[60px] w-[60px]  bg-custom-color-900 text-white rounded-lg mt-2`}
+        className={` h-[60px] w-[60px]  bg-custom-color-900 text-white rounded-lg mt-2 cursor-pointer`}
       >
         <div className={`w-full h-full p-2.5`}>
           <Lottie lottieRef={ref} options={defaultOptions} />
@@ -200,7 +200,7 @@ function AutoResizedTextArea(props) {
   return (
     <>
       <div
-        className={`flex flex-row items-end px-2.5  relative py-2.5 max-w-[350px]`}
+        className={`flex flex-row items-end px-2.5 relative py-2.5 max-w-[350px]`}
       >
         <textarea
           className={`${styles.aiSupportInput} w-full resize-none h-[40px] text-[1rem] p-1 max-h-[270px]`}

@@ -1,3 +1,6 @@
+from dataclasses import dataclass
+
+@dataclass
 class Form:
     def __init__(
         self,

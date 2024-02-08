@@ -1,3 +1,6 @@
+from dataclasses import dataclass
+
+@dataclass
 class Admin:
     def __init__(
         self,

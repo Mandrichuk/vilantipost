@@ -25,6 +25,8 @@ app = Flask(__name__)
 CORS(app)
 
 
+
+
 @app.route("/", methods=["GET"])
 def index():
     try:
@@ -37,9 +39,8 @@ def index():
             return jsonify(result)
 
     except ms.Error as e:
-        error_message = {"error": f"Error: {e}"}
-        print(error_message)
-        return jsonify(error_message)
+        print(e)
+        return jsonify(e)
 
 
 
@@ -53,7 +54,7 @@ def save_form():
         return jsonify(data), 200
     except Exception as e:
         logging.error(e)
-        return jsonify(f"error {str(e)}"), 500
+        return jsonify(e), 500
 
 
 
