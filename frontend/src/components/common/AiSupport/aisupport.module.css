@@ -34,3 +34,18 @@
 .hideScrollbar {
     -ms-overflow-style: none;
 }
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+}
+
+.AiTriangle {
+  border-top: 8px solid rgb(229 231 235); 
+}
+
+.HumanTriangle {
+  border-top: 8px solid #7ee3e0; 
+}

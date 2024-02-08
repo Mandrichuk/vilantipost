@@ -704,3 +704,421 @@
 2024-02-05 23:03:35 - INFO - 127.0.0.1 - - [05/Feb/2024 23:03:35] "[33mGET /api/track-parcel/ HTTP/1.1[0m" 404 -
 2024-02-05 23:03:35 - INFO - 127.0.0.1 - - [05/Feb/2024 23:03:35] "[33mGET /api/track-parcel/ HTTP/1.1[0m" 404 -
 2024-02-05 23:03:36 - INFO - 127.0.0.1 - - [05/Feb/2024 23:03:36] "[33mGET /api/track-parcel/ HTTP/1.1[0m" 404 -
+2024-02-06 16:23:43 - INFO - 127.0.0.1 - - [06/Feb/2024 16:23:43] "OPTIONS /api/send-email HTTP/1.1" 200 -
+2024-02-06 16:23:49 - INFO - 127.0.0.1 - - [06/Feb/2024 16:23:49] "POST /api/send-email HTTP/1.1" 200 -
+2024-02-06 16:23:49 - INFO - 127.0.0.1 - - [06/Feb/2024 16:23:49] "POST /api/send-email HTTP/1.1" 200 -
+2024-02-06 16:23:53 - INFO - 127.0.0.1 - - [06/Feb/2024 16:23:53] "POST /api/send-email HTTP/1.1" 200 -
+2024-02-06 16:26:04 - INFO - 127.0.0.1 - - [06/Feb/2024 16:26:04] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-06 16:26:04 - INFO - 127.0.0.1 - - [06/Feb/2024 16:26:04] "POST /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-06 16:30:17 - INFO - 127.0.0.1 - - [06/Feb/2024 16:30:17] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-06 16:30:17 - INFO - 127.0.0.1 - - [06/Feb/2024 16:30:17] "POST /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-06 16:32:43 - INFO - 127.0.0.1 - - [06/Feb/2024 16:32:43] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-06 16:32:43 - INFO - 127.0.0.1 - - [06/Feb/2024 16:32:43] "POST /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-06 16:32:51 - INFO - 127.0.0.1 - - [06/Feb/2024 16:32:51] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-06 16:32:51 - INFO - 127.0.0.1 - - [06/Feb/2024 16:32:51] "POST /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-06 16:33:28 - INFO - 127.0.0.1 - - [06/Feb/2024 16:33:28] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-06 16:33:28 - INFO - 127.0.0.1 - - [06/Feb/2024 16:33:28] "POST /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-06 16:34:48 - INFO - 127.0.0.1 - - [06/Feb/2024 16:34:48] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-06 16:34:48 - INFO - 127.0.0.1 - - [06/Feb/2024 16:34:48] "POST /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-06 17:46:41 - INFO - 127.0.0.1 - - [06/Feb/2024 17:46:41] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-06 17:46:41 - INFO - 127.0.0.1 - - [06/Feb/2024 17:46:41] "POST /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-07 11:01:50 - INFO - 127.0.0.1 - - [07/Feb/2024 11:01:50] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-07 11:01:50 - INFO - 127.0.0.1 - - [07/Feb/2024 11:01:50] "POST /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-08 10:47:41 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-08 10:47:41 - INFO - [33mPress CTRL+C to quit[0m
+2024-02-08 10:47:41 - INFO -  * Restarting with stat
+2024-02-08 10:47:41 - WARNING -  * Debugger is active!
+2024-02-08 10:47:41 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 10:59:14 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 10:59:14 - INFO -  * Restarting with stat
+2024-02-08 10:59:15 - WARNING -  * Debugger is active!
+2024-02-08 10:59:15 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 10:59:20 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 10:59:20 - INFO -  * Restarting with stat
+2024-02-08 10:59:20 - WARNING -  * Debugger is active!
+2024-02-08 10:59:20 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 10:59:32 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 10:59:32 - INFO -  * Restarting with stat
+2024-02-08 10:59:32 - WARNING -  * Debugger is active!
+2024-02-08 10:59:32 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 10:59:38 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 10:59:38 - INFO -  * Restarting with stat
+2024-02-08 10:59:38 - WARNING -  * Debugger is active!
+2024-02-08 10:59:38 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 10:59:40 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 10:59:40 - INFO -  * Restarting with stat
+2024-02-08 10:59:41 - WARNING -  * Debugger is active!
+2024-02-08 10:59:41 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 10:59:44 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 10:59:44 - INFO -  * Restarting with stat
+2024-02-08 10:59:44 - WARNING -  * Debugger is active!
+2024-02-08 10:59:44 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 10:59:45 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 10:59:45 - INFO -  * Restarting with stat
+2024-02-08 10:59:45 - WARNING -  * Debugger is active!
+2024-02-08 10:59:45 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:00:02 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:00:02 - INFO -  * Restarting with stat
+2024-02-08 11:00:03 - WARNING -  * Debugger is active!
+2024-02-08 11:00:03 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:00:55 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:00:55 - INFO -  * Restarting with stat
+2024-02-08 11:00:55 - WARNING -  * Debugger is active!
+2024-02-08 11:00:55 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:00:56 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:00:56 - INFO -  * Restarting with stat
+2024-02-08 11:00:56 - WARNING -  * Debugger is active!
+2024-02-08 11:00:56 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:02:43 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:02:43 - INFO -  * Restarting with stat
+2024-02-08 11:02:43 - WARNING -  * Debugger is active!
+2024-02-08 11:02:43 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:02:44 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:02:44 - INFO -  * Restarting with stat
+2024-02-08 11:02:44 - WARNING -  * Debugger is active!
+2024-02-08 11:02:44 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:02:48 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:02:48 - INFO -  * Restarting with stat
+2024-02-08 11:02:49 - WARNING -  * Debugger is active!
+2024-02-08 11:02:49 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:02:52 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:02:52 - INFO -  * Restarting with stat
+2024-02-08 11:02:52 - WARNING -  * Debugger is active!
+2024-02-08 11:02:52 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:02:56 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:02:56 - INFO -  * Restarting with stat
+2024-02-08 11:02:56 - WARNING -  * Debugger is active!
+2024-02-08 11:02:56 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:02:58 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:02:58 - INFO -  * Restarting with stat
+2024-02-08 11:02:58 - WARNING -  * Debugger is active!
+2024-02-08 11:02:58 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:04:20 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:04:20 - INFO -  * Restarting with stat
+2024-02-08 11:04:20 - WARNING -  * Debugger is active!
+2024-02-08 11:04:20 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:04:25 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:04:25 - INFO -  * Restarting with stat
+2024-02-08 11:04:25 - WARNING -  * Debugger is active!
+2024-02-08 11:04:25 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:04:33 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:04:33 - INFO -  * Restarting with stat
+2024-02-08 11:04:33 - WARNING -  * Debugger is active!
+2024-02-08 11:04:33 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:04:37 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:04:37 - INFO -  * Restarting with stat
+2024-02-08 11:04:38 - WARNING -  * Debugger is active!
+2024-02-08 11:04:38 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:04:39 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:04:39 - INFO -  * Restarting with stat
+2024-02-08 11:04:39 - WARNING -  * Debugger is active!
+2024-02-08 11:04:39 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:04:41 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:04:41 - INFO -  * Restarting with stat
+2024-02-08 11:04:41 - WARNING -  * Debugger is active!
+2024-02-08 11:04:41 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:04:43 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:04:43 - INFO -  * Restarting with stat
+2024-02-08 11:04:43 - WARNING -  * Debugger is active!
+2024-02-08 11:04:43 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:04:46 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:04:46 - INFO -  * Restarting with stat
+2024-02-08 11:04:47 - WARNING -  * Debugger is active!
+2024-02-08 11:04:47 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:04:54 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:04:54 - INFO -  * Restarting with stat
+2024-02-08 11:04:54 - WARNING -  * Debugger is active!
+2024-02-08 11:04:54 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:04:55 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:04:55 - INFO -  * Restarting with stat
+2024-02-08 11:04:55 - WARNING -  * Debugger is active!
+2024-02-08 11:04:55 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:04:57 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:04:57 - INFO -  * Restarting with stat
+2024-02-08 11:04:58 - WARNING -  * Debugger is active!
+2024-02-08 11:04:58 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:05:03 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:05:03 - INFO -  * Restarting with stat
+2024-02-08 11:05:03 - WARNING -  * Debugger is active!
+2024-02-08 11:05:03 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:05:06 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:05:06 - INFO -  * Restarting with stat
+2024-02-08 11:05:06 - WARNING -  * Debugger is active!
+2024-02-08 11:05:06 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:05:12 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:05:12 - INFO -  * Restarting with stat
+2024-02-08 11:05:12 - WARNING -  * Debugger is active!
+2024-02-08 11:05:12 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:05:19 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:05:19 - INFO -  * Restarting with stat
+2024-02-08 11:05:20 - WARNING -  * Debugger is active!
+2024-02-08 11:05:20 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:05:22 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:05:22 - INFO -  * Restarting with stat
+2024-02-08 11:05:22 - WARNING -  * Debugger is active!
+2024-02-08 11:05:22 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:05:23 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:05:23 - INFO -  * Restarting with stat
+2024-02-08 11:05:23 - WARNING -  * Debugger is active!
+2024-02-08 11:05:23 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:05:25 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:05:25 - INFO -  * Restarting with stat
+2024-02-08 11:05:25 - WARNING -  * Debugger is active!
+2024-02-08 11:05:25 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:05:33 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:05:33 - INFO -  * Restarting with stat
+2024-02-08 11:05:34 - WARNING -  * Debugger is active!
+2024-02-08 11:05:34 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:05:36 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:05:36 - INFO -  * Restarting with stat
+2024-02-08 11:05:36 - WARNING -  * Debugger is active!
+2024-02-08 11:05:36 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:05:41 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:05:41 - INFO -  * Restarting with stat
+2024-02-08 11:05:41 - WARNING -  * Debugger is active!
+2024-02-08 11:05:41 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:05:42 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:05:42 - INFO -  * Restarting with stat
+2024-02-08 11:05:43 - WARNING -  * Debugger is active!
+2024-02-08 11:05:43 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:05:48 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:05:48 - INFO -  * Restarting with stat
+2024-02-08 11:05:48 - WARNING -  * Debugger is active!
+2024-02-08 11:05:48 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:05:49 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:05:49 - INFO -  * Restarting with stat
+2024-02-08 11:05:49 - WARNING -  * Debugger is active!
+2024-02-08 11:05:49 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:05:56 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:05:56 - INFO -  * Restarting with stat
+2024-02-08 11:05:56 - WARNING -  * Debugger is active!
+2024-02-08 11:05:56 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:06:03 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:06:03 - INFO -  * Restarting with stat
+2024-02-08 11:06:04 - WARNING -  * Debugger is active!
+2024-02-08 11:06:04 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:06:05 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:06:05 - INFO -  * Restarting with stat
+2024-02-08 11:06:05 - WARNING -  * Debugger is active!
+2024-02-08 11:06:05 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:06:07 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:06:07 - INFO -  * Restarting with stat
+2024-02-08 11:06:07 - WARNING -  * Debugger is active!
+2024-02-08 11:06:07 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:06:14 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:06:14 - INFO -  * Restarting with stat
+2024-02-08 11:06:14 - WARNING -  * Debugger is active!
+2024-02-08 11:06:14 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:06:15 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:06:16 - INFO -  * Restarting with stat
+2024-02-08 11:06:16 - WARNING -  * Debugger is active!
+2024-02-08 11:06:16 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:06:18 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:06:18 - INFO -  * Restarting with stat
+2024-02-08 11:06:18 - WARNING -  * Debugger is active!
+2024-02-08 11:06:18 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:06:20 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:06:20 - INFO -  * Restarting with stat
+2024-02-08 11:06:20 - WARNING -  * Debugger is active!
+2024-02-08 11:06:20 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:06:21 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:06:21 - INFO -  * Restarting with stat
+2024-02-08 11:06:22 - WARNING -  * Debugger is active!
+2024-02-08 11:06:22 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:06:33 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:06:33 - INFO -  * Restarting with stat
+2024-02-08 11:06:33 - WARNING -  * Debugger is active!
+2024-02-08 11:06:33 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:06:40 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:06:40 - INFO -  * Restarting with stat
+2024-02-08 11:06:40 - WARNING -  * Debugger is active!
+2024-02-08 11:06:40 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:06:42 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:06:42 - INFO -  * Restarting with stat
+2024-02-08 11:06:42 - WARNING -  * Debugger is active!
+2024-02-08 11:06:42 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:09:05 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:09:05 - INFO -  * Restarting with stat
+2024-02-08 11:09:05 - WARNING -  * Debugger is active!
+2024-02-08 11:09:05 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:09:14 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:09:14 - INFO -  * Restarting with stat
+2024-02-08 11:09:14 - WARNING -  * Debugger is active!
+2024-02-08 11:09:14 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:09:29 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:09:29 - INFO -  * Restarting with stat
+2024-02-08 11:09:29 - WARNING -  * Debugger is active!
+2024-02-08 11:09:29 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:10:24 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:10:24 - INFO -  * Restarting with stat
+2024-02-08 11:10:24 - WARNING -  * Debugger is active!
+2024-02-08 11:10:24 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:12:49 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:12:49 - INFO -  * Restarting with stat
+2024-02-08 11:12:49 - WARNING -  * Debugger is active!
+2024-02-08 11:12:49 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:16:06 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:16:06 - INFO -  * Restarting with stat
+2024-02-08 11:16:07 - WARNING -  * Debugger is active!
+2024-02-08 11:16:07 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:21:51 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:21:51 - INFO -  * Restarting with stat
+2024-02-08 11:21:52 - WARNING -  * Debugger is active!
+2024-02-08 11:21:52 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:21:56 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:21:56 - INFO -  * Restarting with stat
+2024-02-08 11:21:56 - WARNING -  * Debugger is active!
+2024-02-08 11:21:56 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:22:00 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:22:00 - INFO -  * Restarting with stat
+2024-02-08 11:22:00 - WARNING -  * Debugger is active!
+2024-02-08 11:22:00 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:22:04 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:22:04 - INFO -  * Restarting with stat
+2024-02-08 11:22:04 - WARNING -  * Debugger is active!
+2024-02-08 11:22:04 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:22:10 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:22:10 - INFO -  * Restarting with stat
+2024-02-08 11:22:10 - WARNING -  * Debugger is active!
+2024-02-08 11:22:10 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:22:25 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:22:25 - INFO -  * Restarting with stat
+2024-02-08 11:22:25 - WARNING -  * Debugger is active!
+2024-02-08 11:22:25 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:22:27 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:22:27 - INFO -  * Restarting with stat
+2024-02-08 11:22:27 - WARNING -  * Debugger is active!
+2024-02-08 11:22:27 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:28:22 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:28:22 - INFO -  * Restarting with stat
+2024-02-08 11:28:22 - WARNING -  * Debugger is active!
+2024-02-08 11:28:22 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:28:34 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:28:34 - INFO -  * Restarting with stat
+2024-02-08 11:28:34 - WARNING -  * Debugger is active!
+2024-02-08 11:28:34 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 11:32:41 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 11:32:41 - INFO -  * Restarting with stat
+2024-02-08 11:32:41 - WARNING -  * Debugger is active!
+2024-02-08 11:32:41 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 12:08:06 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 12:08:06 - INFO -  * Restarting with stat
+2024-02-08 12:08:06 - WARNING -  * Debugger is active!
+2024-02-08 12:08:06 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 12:08:21 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 12:08:21 - INFO -  * Restarting with stat
+2024-02-08 12:08:21 - WARNING -  * Debugger is active!
+2024-02-08 12:08:21 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 12:08:33 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 12:08:33 - INFO -  * Restarting with stat
+2024-02-08 12:08:34 - WARNING -  * Debugger is active!
+2024-02-08 12:08:34 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 12:09:40 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 12:09:40 - INFO -  * Restarting with stat
+2024-02-08 12:09:40 - WARNING -  * Debugger is active!
+2024-02-08 12:09:40 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 12:09:42 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 12:09:42 - INFO -  * Restarting with stat
+2024-02-08 12:09:42 - WARNING -  * Debugger is active!
+2024-02-08 12:09:42 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 12:10:04 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 12:10:04 - INFO -  * Restarting with stat
+2024-02-08 12:10:04 - WARNING -  * Debugger is active!
+2024-02-08 12:10:04 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 12:10:06 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 12:10:06 - INFO -  * Restarting with stat
+2024-02-08 12:10:06 - WARNING -  * Debugger is active!
+2024-02-08 12:10:06 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 12:11:56 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 12:11:56 - INFO -  * Restarting with stat
+2024-02-08 12:11:57 - WARNING -  * Debugger is active!
+2024-02-08 12:11:57 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 12:12:00 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 12:12:00 - INFO -  * Restarting with stat
+2024-02-08 12:12:00 - WARNING -  * Debugger is active!
+2024-02-08 12:12:00 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 12:12:02 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 12:12:02 - INFO -  * Restarting with stat
+2024-02-08 12:12:02 - WARNING -  * Debugger is active!
+2024-02-08 12:12:02 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 12:12:07 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 12:12:07 - INFO -  * Restarting with stat
+2024-02-08 12:12:08 - WARNING -  * Debugger is active!
+2024-02-08 12:12:08 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 12:12:14 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 12:12:14 - INFO -  * Restarting with stat
+2024-02-08 12:12:14 - WARNING -  * Debugger is active!
+2024-02-08 12:12:14 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 12:12:15 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 12:12:15 - INFO -  * Restarting with stat
+2024-02-08 12:12:15 - WARNING -  * Debugger is active!
+2024-02-08 12:12:15 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 12:12:21 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 12:12:21 - INFO -  * Restarting with stat
+2024-02-08 12:12:21 - WARNING -  * Debugger is active!
+2024-02-08 12:12:21 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 12:12:24 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 12:12:24 - INFO -  * Restarting with stat
+2024-02-08 12:12:25 - WARNING -  * Debugger is active!
+2024-02-08 12:12:25 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 12:12:27 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\AI_support\\ChatGPT_support.py', reloading
+2024-02-08 12:12:27 - INFO -  * Restarting with stat
+2024-02-08 12:12:27 - WARNING -  * Debugger is active!
+2024-02-08 12:12:27 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 12:13:06 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-08 12:13:06 - INFO -  * Restarting with stat
+2024-02-08 12:37:55 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-08 12:37:55 - INFO - [33mPress CTRL+C to quit[0m
+2024-02-08 12:37:55 - INFO -  * Restarting with stat
+2024-02-08 12:37:56 - WARNING -  * Debugger is active!
+2024-02-08 12:37:56 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 12:38:03 - INFO - 127.0.0.1 - - [08/Feb/2024 12:38:03] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:38:03 - INFO - 127.0.0.1 - - [08/Feb/2024 12:38:03] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:38:08 - INFO - 127.0.0.1 - - [08/Feb/2024 12:38:08] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:38:08 - INFO - 127.0.0.1 - - [08/Feb/2024 12:38:08] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:38:09 - INFO - 127.0.0.1 - - [08/Feb/2024 12:38:09] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:38:09 - INFO - 127.0.0.1 - - [08/Feb/2024 12:38:09] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:38:14 - INFO - 127.0.0.1 - - [08/Feb/2024 12:38:14] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:38:14 - INFO - 127.0.0.1 - - [08/Feb/2024 12:38:14] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:38:19 - INFO - 127.0.0.1 - - [08/Feb/2024 12:38:19] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:38:19 - INFO - 127.0.0.1 - - [08/Feb/2024 12:38:19] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:38:20 - INFO - 127.0.0.1 - - [08/Feb/2024 12:38:20] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:38:22 - INFO - 127.0.0.1 - - [08/Feb/2024 12:38:22] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:38:22 - INFO - 127.0.0.1 - - [08/Feb/2024 12:38:22] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:38:25 - INFO - 127.0.0.1 - - [08/Feb/2024 12:38:25] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:38:25 - INFO - 127.0.0.1 - - [08/Feb/2024 12:38:25] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:38:26 - INFO - 127.0.0.1 - - [08/Feb/2024 12:38:26] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:29 - INFO - 127.0.0.1 - - [08/Feb/2024 12:39:29] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:29 - INFO - 127.0.0.1 - - [08/Feb/2024 12:39:29] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:31 - INFO - 127.0.0.1 - - [08/Feb/2024 12:39:31] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:33 - INFO - 127.0.0.1 - - [08/Feb/2024 12:39:33] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:34 - INFO - 127.0.0.1 - - [08/Feb/2024 12:39:34] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:34 - INFO - 127.0.0.1 - - [08/Feb/2024 12:39:34] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:34 - INFO - 127.0.0.1 - - [08/Feb/2024 12:39:34] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:35 - INFO - 127.0.0.1 - - [08/Feb/2024 12:39:35] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:36 - INFO - 127.0.0.1 - - [08/Feb/2024 12:39:36] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:39 - INFO - 127.0.0.1 - - [08/Feb/2024 12:39:39] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:39 - INFO - 127.0.0.1 - - [08/Feb/2024 12:39:39] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:39 - INFO - 127.0.0.1 - - [08/Feb/2024 12:39:39] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:40 - INFO - 127.0.0.1 - - [08/Feb/2024 12:39:40] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:40 - INFO - 127.0.0.1 - - [08/Feb/2024 12:39:40] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:40 - INFO - 127.0.0.1 - - [08/Feb/2024 12:39:40] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:40 - INFO - 127.0.0.1 - - [08/Feb/2024 12:39:40] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:41 - INFO - 127.0.0.1 - - [08/Feb/2024 12:39:41] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:41 - INFO - 127.0.0.1 - - [08/Feb/2024 12:39:41] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:41 - INFO - 127.0.0.1 - - [08/Feb/2024 12:39:41] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:41 - INFO - 127.0.0.1 - - [08/Feb/2024 12:39:41] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:41 - INFO - 127.0.0.1 - - [08/Feb/2024 12:39:41] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:42 - INFO - 127.0.0.1 - - [08/Feb/2024 12:39:42] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:39:57 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-08 12:39:57 - INFO -  * Restarting with stat
+2024-02-08 12:39:57 - WARNING -  * Debugger is active!
+2024-02-08 12:39:57 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 12:40:02 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-08 12:40:02 - INFO -  * Restarting with stat
+2024-02-08 12:40:03 - WARNING -  * Debugger is active!
+2024-02-08 12:40:03 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 12:40:03 - INFO - 127.0.0.1 - - [08/Feb/2024 12:40:03] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-08 12:40:03 - INFO - 127.0.0.1 - - [08/Feb/2024 12:40:03] "POST /api/chatbot HTTP/1.1" 200 -

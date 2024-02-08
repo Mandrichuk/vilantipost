@@ -11,6 +11,7 @@ from forms.get_fedex_number import get_fedex_number
 from forms.get_values_to_keys import get_values_to_keys
 from admin.is_valid_login_data import is_valid_login_data
 from emails.send_email import send_email
+from ChatGPT_support.ChatGPT_support import ChatGPT_support
 
 logging.basicConfig(level=logging.ERROR,
                     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -125,7 +126,11 @@ def send_email_route():
         logging.error(e)
         return jsonify(error_message)
 
-
+@app.route("/api/chatbot", methods=["POST"])
+def ai_support():
+    data = request.get_json()
+    print(data)
+    return ChatGPT_support(data["message"])
 
 if __name__ == "__main__":
     app.run(debug=True)
