@@ -1,4 +1,4 @@
-from forms.class_Form import Form
+from classes.Form import Form
 
 def form_to_class(formData):
     formFromClient = formData["formFromClient"]

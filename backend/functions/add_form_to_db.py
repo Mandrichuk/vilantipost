@@ -1,7 +1,4 @@
 from get_connection import get_connection
-# from create_forms_table import create_forms_table
-
-# create_forms_table()
 
 def add_form_to_db(formData):
     connection = get_connection()

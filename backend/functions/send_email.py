@@ -1,5 +1,4 @@
 import smtplib
-# from config import sender_email
 
 sender_email = "andrew.mandrichuk2007@gmail.com"
 key = "aqpt ytcc jyqt kbji"

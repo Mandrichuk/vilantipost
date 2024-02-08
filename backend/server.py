@@ -4,14 +4,14 @@ import pymysql as ms
 import logging
 
 from get_connection import get_connection
-from get_hashed_value import get_hashed_value
-from forms.form_to_class import form_to_class
-from forms.add_form_to_db import add_form_to_db
-from forms.get_fedex_number import get_fedex_number
-from forms.get_values_to_keys import get_values_to_keys
-from admin.is_valid_login_data import is_valid_login_data
-from emails.send_email import send_email
-from ChatGPT_support.ChatGPT_support import ChatGPT_support
+from functions.get_hashed_value import get_hashed_value
+from functions.form_to_class import form_to_class
+from functions.add_form_to_db import add_form_to_db
+from functions.get_fedex_number import get_fedex_number
+from functions.get_values_to_keys import get_values_to_keys
+from functions.is_valid_login_data import is_valid_login_data
+from functions.send_email import send_email
+from functions.ChatGPT_support import ChatGPT_support
 
 logging.basicConfig(level=logging.ERROR,
                     format='%(asctime)s - %(levelname)s - %(message)s',
