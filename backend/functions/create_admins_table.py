@@ -1,6 +1,6 @@
 from get_connection import get_connection 
 
-def create_forms_table():
+def create_admins_table():
   connection = get_connection()
   cursor = connection.cursor()
 

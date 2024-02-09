@@ -1387,3 +1387,477 @@
 2024-02-08 22:45:23 - INFO -  * Restarting with stat
 2024-02-08 22:45:23 - WARNING -  * Debugger is active!
 2024-02-08 22:45:23 - INFO -  * Debugger PIN: 144-811-370
+2024-02-08 22:45:25 - INFO - 127.0.0.1 - - [08/Feb/2024 22:45:25] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-08 22:45:25 - INFO - 127.0.0.1 - - [08/Feb/2024 22:45:25] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 22:45:30 - INFO - 127.0.0.1 - - [08/Feb/2024 22:45:30] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-08 22:45:30 - INFO - 127.0.0.1 - - [08/Feb/2024 22:45:30] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 22:45:34 - INFO - 127.0.0.1 - - [08/Feb/2024 22:45:34] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 22:45:35 - INFO - 127.0.0.1 - - [08/Feb/2024 22:45:35] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-08 22:45:37 - INFO - 127.0.0.1 - - [08/Feb/2024 22:45:37] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-08 22:45:37 - INFO - 127.0.0.1 - - [08/Feb/2024 22:45:37] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-09 16:32:55 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\classes\\Form.py', reloading
+2024-02-09 16:32:55 - INFO -  * Restarting with stat
+2024-02-09 16:36:24 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-09 16:36:24 - INFO - [33mPress CTRL+C to quit[0m
+2024-02-09 16:36:24 - INFO -  * Restarting with stat
+2024-02-09 16:36:25 - WARNING -  * Debugger is active!
+2024-02-09 16:36:25 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 16:37:38 - INFO - 127.0.0.1 - - [09/Feb/2024 16:37:38] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 16:37:38 - ERROR - module 'classes.Form' has no attribute 'fort_to_class'
+2024-02-09 16:37:38 - INFO - 127.0.0.1 - - [09/Feb/2024 16:37:38] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 16:38:01 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 16:38:01 - INFO -  * Restarting with stat
+2024-02-09 16:38:01 - WARNING -  * Debugger is active!
+2024-02-09 16:38:01 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 16:38:05 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 16:38:05 - INFO -  * Restarting with stat
+2024-02-09 16:38:05 - WARNING -  * Debugger is active!
+2024-02-09 16:38:05 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 16:38:07 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 16:38:07 - INFO -  * Restarting with stat
+2024-02-09 16:38:07 - WARNING -  * Debugger is active!
+2024-02-09 16:38:07 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 16:38:18 - INFO - 127.0.0.1 - - [09/Feb/2024 16:38:18] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 16:38:18 - INFO - 127.0.0.1 - - [09/Feb/2024 16:38:18] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 16:38:28 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 16:38:28 - INFO -  * Restarting with stat
+2024-02-09 16:38:29 - WARNING -  * Debugger is active!
+2024-02-09 16:38:29 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 16:38:29 - INFO - 127.0.0.1 - - [09/Feb/2024 16:38:29] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 16:38:32 - INFO - 127.0.0.1 - - [09/Feb/2024 16:38:32] "POST /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 16:38:32 - INFO - 127.0.0.1 - - [09/Feb/2024 16:38:32] "POST /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 16:38:42 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 16:38:42 - INFO -  * Restarting with stat
+2024-02-09 16:38:42 - WARNING -  * Debugger is active!
+2024-02-09 16:38:42 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 16:38:45 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 16:38:45 - INFO -  * Restarting with stat
+2024-02-09 16:38:45 - WARNING -  * Debugger is active!
+2024-02-09 16:38:45 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 16:38:46 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 16:38:47 - INFO -  * Restarting with stat
+2024-02-09 16:38:47 - WARNING -  * Debugger is active!
+2024-02-09 16:38:47 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 16:38:49 - INFO - 127.0.0.1 - - [09/Feb/2024 16:38:49] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 16:38:49 - ERROR - module 'classes.Form' has no attribute 'fort_to_class'
+2024-02-09 16:38:49 - INFO - 127.0.0.1 - - [09/Feb/2024 16:38:49] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 16:39:30 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 16:39:30 - INFO -  * Restarting with stat
+2024-02-09 16:39:31 - WARNING -  * Debugger is active!
+2024-02-09 16:39:31 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 16:39:34 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 16:39:34 - INFO -  * Restarting with stat
+2024-02-09 16:39:35 - WARNING -  * Debugger is active!
+2024-02-09 16:39:35 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 16:39:41 - INFO - 127.0.0.1 - - [09/Feb/2024 16:39:41] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 16:39:41 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 16:39:41 - INFO - 127.0.0.1 - - [09/Feb/2024 16:39:41] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 16:40:10 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\classes\\Form.py', reloading
+2024-02-09 16:40:10 - INFO -  * Restarting with stat
+2024-02-09 16:40:11 - WARNING -  * Debugger is active!
+2024-02-09 16:40:11 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 16:40:44 - INFO - 127.0.0.1 - - [09/Feb/2024 16:40:44] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 16:40:44 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 16:40:44 - INFO - 127.0.0.1 - - [09/Feb/2024 16:40:44] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 16:41:00 - INFO - 127.0.0.1 - - [09/Feb/2024 16:41:00] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 16:41:00 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 16:41:00 - INFO - 127.0.0.1 - - [09/Feb/2024 16:41:00] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 16:41:46 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\classes\\Form.py', reloading
+2024-02-09 16:41:46 - INFO -  * Restarting with stat
+2024-02-09 16:41:46 - WARNING -  * Debugger is active!
+2024-02-09 16:41:46 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 16:42:14 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 16:42:14 - INFO -  * Restarting with stat
+2024-02-09 16:42:14 - WARNING -  * Debugger is active!
+2024-02-09 16:42:14 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 16:42:17 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 16:42:17 - INFO -  * Restarting with stat
+2024-02-09 16:42:17 - WARNING -  * Debugger is active!
+2024-02-09 16:42:17 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 16:42:19 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 16:42:19 - INFO -  * Restarting with stat
+2024-02-09 16:42:20 - WARNING -  * Debugger is active!
+2024-02-09 16:42:20 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 16:42:20 - INFO - 127.0.0.1 - - [09/Feb/2024 16:42:20] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 16:42:20 - INFO - 127.0.0.1 - - [09/Feb/2024 16:42:20] "POST /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 16:42:37 - INFO - 127.0.0.1 - - [09/Feb/2024 16:42:37] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 16:42:37 - INFO - 127.0.0.1 - - [09/Feb/2024 16:42:37] "POST /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 16:43:47 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 16:43:47 - INFO -  * Restarting with stat
+2024-02-09 16:43:47 - WARNING -  * Debugger is active!
+2024-02-09 16:43:47 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:39:03 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\classes\\Form.py', reloading
+2024-02-09 21:39:03 - INFO -  * Restarting with stat
+2024-02-09 21:44:17 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-09 21:44:17 - INFO - [33mPress CTRL+C to quit[0m
+2024-02-09 21:44:17 - INFO -  * Restarting with stat
+2024-02-09 21:44:17 - WARNING -  * Debugger is active!
+2024-02-09 21:44:17 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:44:18 - INFO - 127.0.0.1 - - [09/Feb/2024 21:44:18] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:44:18 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:44:18 - INFO - 127.0.0.1 - - [09/Feb/2024 21:44:18] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:44:20 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:44:20 - INFO - 127.0.0.1 - - [09/Feb/2024 21:44:20] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:44:20 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:44:20 - INFO - 127.0.0.1 - - [09/Feb/2024 21:44:20] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:44:21 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:44:21 - INFO - 127.0.0.1 - - [09/Feb/2024 21:44:21] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:44:25 - INFO - 127.0.0.1 - - [09/Feb/2024 21:44:25] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:44:25 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:44:25 - INFO - 127.0.0.1 - - [09/Feb/2024 21:44:25] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:44:26 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:44:26 - INFO - 127.0.0.1 - - [09/Feb/2024 21:44:26] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:44:30 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:44:30 - INFO - 127.0.0.1 - - [09/Feb/2024 21:44:30] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:44:31 - INFO - 127.0.0.1 - - [09/Feb/2024 21:44:31] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:44:31 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:44:31 - INFO - 127.0.0.1 - - [09/Feb/2024 21:44:31] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:44:56 - INFO - 127.0.0.1 - - [09/Feb/2024 21:44:56] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:44:56 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:44:56 - INFO - 127.0.0.1 - - [09/Feb/2024 21:44:56] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:45:11 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 21:45:11 - INFO -  * Restarting with stat
+2024-02-09 21:47:13 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-09 21:47:13 - INFO - [33mPress CTRL+C to quit[0m
+2024-02-09 21:47:13 - INFO -  * Restarting with stat
+2024-02-09 21:47:14 - WARNING -  * Debugger is active!
+2024-02-09 21:47:14 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:47:15 - INFO - 127.0.0.1 - - [09/Feb/2024 21:47:15] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:47:15 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:47:15 - INFO - 127.0.0.1 - - [09/Feb/2024 21:47:15] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:48:00 - INFO - 127.0.0.1 - - [09/Feb/2024 21:48:00] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:48:00 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:48:00 - INFO - 127.0.0.1 - - [09/Feb/2024 21:48:00] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:48:20 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 21:48:20 - INFO -  * Restarting with stat
+2024-02-09 21:48:21 - WARNING -  * Debugger is active!
+2024-02-09 21:48:21 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:48:22 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 21:48:22 - INFO -  * Restarting with stat
+2024-02-09 21:48:23 - WARNING -  * Debugger is active!
+2024-02-09 21:48:23 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:48:23 - INFO - 127.0.0.1 - - [09/Feb/2024 21:48:23] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:48:23 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:48:23 - INFO - 127.0.0.1 - - [09/Feb/2024 21:48:23] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:49:20 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-09 21:49:20 - INFO - [33mPress CTRL+C to quit[0m
+2024-02-09 21:49:20 - INFO -  * Restarting with stat
+2024-02-09 21:49:21 - WARNING -  * Debugger is active!
+2024-02-09 21:49:21 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:49:28 - INFO - 127.0.0.1 - - [09/Feb/2024 21:49:28] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:49:28 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:49:28 - INFO - 127.0.0.1 - - [09/Feb/2024 21:49:28] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:50:07 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 21:50:07 - INFO -  * Restarting with stat
+2024-02-09 21:50:08 - WARNING -  * Debugger is active!
+2024-02-09 21:50:08 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:51:03 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-09 21:51:03 - INFO - [33mPress CTRL+C to quit[0m
+2024-02-09 21:51:03 - INFO -  * Restarting with stat
+2024-02-09 21:51:04 - WARNING -  * Debugger is active!
+2024-02-09 21:51:04 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:51:10 - INFO - 127.0.0.1 - - [09/Feb/2024 21:51:10] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:51:10 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:51:10 - INFO - 127.0.0.1 - - [09/Feb/2024 21:51:10] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:52:22 - INFO - 127.0.0.1 - - [09/Feb/2024 21:52:22] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:52:22 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:52:22 - INFO - 127.0.0.1 - - [09/Feb/2024 21:52:22] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:52:25 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:52:25 - INFO - 127.0.0.1 - - [09/Feb/2024 21:52:25] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:52:48 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 21:52:49 - INFO -  * Restarting with stat
+2024-02-09 21:52:49 - WARNING -  * Debugger is active!
+2024-02-09 21:52:49 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:52:54 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 21:52:55 - INFO -  * Restarting with stat
+2024-02-09 21:53:11 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-09 21:53:11 - INFO - [33mPress CTRL+C to quit[0m
+2024-02-09 21:53:11 - INFO -  * Restarting with stat
+2024-02-09 21:53:11 - WARNING -  * Debugger is active!
+2024-02-09 21:53:11 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:53:13 - INFO - 127.0.0.1 - - [09/Feb/2024 21:53:13] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:53:13 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:53:13 - INFO - 127.0.0.1 - - [09/Feb/2024 21:53:13] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:53:38 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 21:53:38 - INFO -  * Restarting with stat
+2024-02-09 21:53:38 - WARNING -  * Debugger is active!
+2024-02-09 21:53:38 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:53:48 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 21:53:48 - INFO -  * Restarting with stat
+2024-02-09 21:53:49 - WARNING -  * Debugger is active!
+2024-02-09 21:53:49 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:53:49 - INFO - 127.0.0.1 - - [09/Feb/2024 21:53:49] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:53:49 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:53:49 - INFO - 127.0.0.1 - - [09/Feb/2024 21:53:49] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:53:56 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 21:53:56 - INFO -  * Restarting with stat
+2024-02-09 21:53:57 - WARNING -  * Debugger is active!
+2024-02-09 21:53:57 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:54:01 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 21:54:01 - INFO -  * Restarting with stat
+2024-02-09 21:54:02 - WARNING -  * Debugger is active!
+2024-02-09 21:54:02 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:54:03 - INFO - 127.0.0.1 - - [09/Feb/2024 21:54:03] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:54:03 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:54:03 - INFO - 127.0.0.1 - - [09/Feb/2024 21:54:03] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:54:27 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 21:54:27 - INFO -  * Restarting with stat
+2024-02-09 21:54:28 - WARNING -  * Debugger is active!
+2024-02-09 21:54:28 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:54:29 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 21:54:29 - INFO -  * Restarting with stat
+2024-02-09 21:54:29 - WARNING -  * Debugger is active!
+2024-02-09 21:54:29 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:54:32 - INFO - 127.0.0.1 - - [09/Feb/2024 21:54:32] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:54:32 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:54:32 - INFO - 127.0.0.1 - - [09/Feb/2024 21:54:32] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:54:32 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:54:32 - INFO - 127.0.0.1 - - [09/Feb/2024 21:54:32] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:54:45 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 21:54:45 - INFO -  * Restarting with stat
+2024-02-09 21:54:46 - WARNING -  * Debugger is active!
+2024-02-09 21:54:46 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:54:47 - INFO - 127.0.0.1 - - [09/Feb/2024 21:54:47] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:54:47 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:54:47 - INFO - 127.0.0.1 - - [09/Feb/2024 21:54:47] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:54:57 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 21:54:57 - INFO -  * Restarting with stat
+2024-02-09 21:54:57 - WARNING -  * Debugger is active!
+2024-02-09 21:54:57 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:55:02 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 21:55:02 - INFO -  * Restarting with stat
+2024-02-09 21:55:07 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-09 21:55:07 - INFO - [33mPress CTRL+C to quit[0m
+2024-02-09 21:55:07 - INFO -  * Restarting with stat
+2024-02-09 21:55:08 - WARNING -  * Debugger is active!
+2024-02-09 21:55:08 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:55:11 - INFO - 127.0.0.1 - - [09/Feb/2024 21:55:11] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:55:11 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:55:11 - INFO - 127.0.0.1 - - [09/Feb/2024 21:55:11] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:55:42 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\classes\\Form.py', reloading
+2024-02-09 21:55:42 - INFO -  * Restarting with stat
+2024-02-09 21:55:42 - WARNING -  * Debugger is active!
+2024-02-09 21:55:42 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:55:45 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\classes\\Form.py', reloading
+2024-02-09 21:55:45 - INFO -  * Restarting with stat
+2024-02-09 21:55:46 - WARNING -  * Debugger is active!
+2024-02-09 21:55:46 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:55:48 - INFO - 127.0.0.1 - - [09/Feb/2024 21:55:48] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:55:48 - ERROR - module 'classes.Form' has no attribute 'form_to_class'
+2024-02-09 21:55:48 - INFO - 127.0.0.1 - - [09/Feb/2024 21:55:48] "[35m[1mPOST /api/save-form-to-db HTTP/1.1[0m" 500 -
+2024-02-09 21:56:56 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\classes\\Form.py', reloading
+2024-02-09 21:56:56 - INFO -  * Restarting with stat
+2024-02-09 21:56:56 - WARNING -  * Debugger is active!
+2024-02-09 21:56:56 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:57:57 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 21:57:57 - INFO -  * Restarting with stat
+2024-02-09 21:58:15 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-09 21:58:15 - INFO - [33mPress CTRL+C to quit[0m
+2024-02-09 21:58:15 - INFO -  * Restarting with stat
+2024-02-09 21:58:16 - WARNING -  * Debugger is active!
+2024-02-09 21:58:16 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:58:16 - INFO - 127.0.0.1 - - [09/Feb/2024 21:58:16] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:58:16 - INFO - 127.0.0.1 - - [09/Feb/2024 21:58:16] "POST /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:58:23 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\classes\\Form.py', reloading
+2024-02-09 21:58:23 - INFO -  * Restarting with stat
+2024-02-09 21:58:24 - WARNING -  * Debugger is active!
+2024-02-09 21:58:24 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:58:27 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 21:58:27 - INFO -  * Restarting with stat
+2024-02-09 21:58:28 - WARNING -  * Debugger is active!
+2024-02-09 21:58:28 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:58:33 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 21:58:33 - INFO -  * Restarting with stat
+2024-02-09 21:58:34 - WARNING -  * Debugger is active!
+2024-02-09 21:58:34 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:58:42 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 21:58:43 - INFO -  * Restarting with stat
+2024-02-09 21:58:43 - WARNING -  * Debugger is active!
+2024-02-09 21:58:43 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:59:00 - INFO - 127.0.0.1 - - [09/Feb/2024 21:59:00] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:59:00 - INFO - 127.0.0.1 - - [09/Feb/2024 21:59:00] "POST /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:59:00 - INFO - 127.0.0.1 - - [09/Feb/2024 21:59:00] "POST /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:59:21 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 21:59:21 - INFO -  * Restarting with stat
+2024-02-09 21:59:22 - WARNING -  * Debugger is active!
+2024-02-09 21:59:22 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:59:33 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 21:59:33 - INFO -  * Restarting with stat
+2024-02-09 21:59:34 - WARNING -  * Debugger is active!
+2024-02-09 21:59:34 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 21:59:48 - INFO - 127.0.0.1 - - [09/Feb/2024 21:59:48] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 21:59:48 - INFO - 127.0.0.1 - - [09/Feb/2024 21:59:48] "POST /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 22:02:18 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:02:18 - INFO -  * Restarting with stat
+2024-02-09 22:02:18 - WARNING -  * Debugger is active!
+2024-02-09 22:02:18 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:02:25 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:02:25 - INFO -  * Restarting with stat
+2024-02-09 22:02:25 - WARNING -  * Debugger is active!
+2024-02-09 22:02:25 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:02:36 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:02:36 - INFO -  * Restarting with stat
+2024-02-09 22:02:37 - WARNING -  * Debugger is active!
+2024-02-09 22:02:37 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:02:42 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:02:42 - INFO -  * Restarting with stat
+2024-02-09 22:02:43 - WARNING -  * Debugger is active!
+2024-02-09 22:02:43 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:02:49 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:02:49 - INFO -  * Restarting with stat
+2024-02-09 22:02:50 - WARNING -  * Debugger is active!
+2024-02-09 22:02:50 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:02:57 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:02:57 - INFO -  * Restarting with stat
+2024-02-09 22:02:58 - WARNING -  * Debugger is active!
+2024-02-09 22:02:58 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:03:11 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:03:11 - INFO -  * Restarting with stat
+2024-02-09 22:03:11 - WARNING -  * Debugger is active!
+2024-02-09 22:03:11 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:03:18 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:03:18 - INFO -  * Restarting with stat
+2024-02-09 22:03:18 - WARNING -  * Debugger is active!
+2024-02-09 22:03:18 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:03:38 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:03:38 - INFO -  * Restarting with stat
+2024-02-09 22:03:39 - WARNING -  * Debugger is active!
+2024-02-09 22:03:39 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:03:45 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:03:45 - INFO -  * Restarting with stat
+2024-02-09 22:03:46 - WARNING -  * Debugger is active!
+2024-02-09 22:03:46 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:03:47 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:03:47 - INFO -  * Restarting with stat
+2024-02-09 22:03:48 - WARNING -  * Debugger is active!
+2024-02-09 22:03:48 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:03:49 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:03:49 - INFO -  * Restarting with stat
+2024-02-09 22:03:50 - WARNING -  * Debugger is active!
+2024-02-09 22:03:50 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:03:51 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:03:51 - INFO -  * Restarting with stat
+2024-02-09 22:03:51 - WARNING -  * Debugger is active!
+2024-02-09 22:03:51 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:03:53 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:03:53 - INFO -  * Restarting with stat
+2024-02-09 22:03:53 - WARNING -  * Debugger is active!
+2024-02-09 22:03:53 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:03:54 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:03:54 - INFO -  * Restarting with stat
+2024-02-09 22:03:55 - WARNING -  * Debugger is active!
+2024-02-09 22:03:55 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:03:56 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:03:56 - INFO -  * Restarting with stat
+2024-02-09 22:03:57 - WARNING -  * Debugger is active!
+2024-02-09 22:03:57 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:03:59 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:03:59 - INFO -  * Restarting with stat
+2024-02-09 22:04:00 - WARNING -  * Debugger is active!
+2024-02-09 22:04:00 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:04:04 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:04:04 - INFO -  * Restarting with stat
+2024-02-09 22:04:05 - WARNING -  * Debugger is active!
+2024-02-09 22:04:05 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:04:06 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:04:06 - INFO -  * Restarting with stat
+2024-02-09 22:04:06 - WARNING -  * Debugger is active!
+2024-02-09 22:04:06 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:04:07 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:04:08 - INFO -  * Restarting with stat
+2024-02-09 22:04:08 - WARNING -  * Debugger is active!
+2024-02-09 22:04:08 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:04:09 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:04:09 - INFO -  * Restarting with stat
+2024-02-09 22:04:10 - WARNING -  * Debugger is active!
+2024-02-09 22:04:10 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:04:12 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:04:12 - INFO -  * Restarting with stat
+2024-02-09 22:04:13 - WARNING -  * Debugger is active!
+2024-02-09 22:04:13 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:04:45 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:04:46 - INFO -  * Restarting with stat
+2024-02-09 22:04:46 - WARNING -  * Debugger is active!
+2024-02-09 22:04:46 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:04:49 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:04:49 - INFO -  * Restarting with stat
+2024-02-09 22:04:50 - WARNING -  * Debugger is active!
+2024-02-09 22:04:50 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:04:52 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:04:52 - INFO -  * Restarting with stat
+2024-02-09 22:04:53 - WARNING -  * Debugger is active!
+2024-02-09 22:04:53 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:04:56 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:04:56 - INFO -  * Restarting with stat
+2024-02-09 22:04:57 - WARNING -  * Debugger is active!
+2024-02-09 22:04:57 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:04:59 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:04:59 - INFO -  * Restarting with stat
+2024-02-09 22:05:00 - WARNING -  * Debugger is active!
+2024-02-09 22:05:00 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:06:30 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:06:30 - INFO -  * Restarting with stat
+2024-02-09 22:06:31 - WARNING -  * Debugger is active!
+2024-02-09 22:06:31 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:07:55 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 22:07:55 - INFO -  * Restarting with stat
+2024-02-09 22:12:36 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-09 22:12:36 - INFO - [33mPress CTRL+C to quit[0m
+2024-02-09 22:12:36 - INFO -  * Restarting with stat
+2024-02-09 22:12:37 - WARNING -  * Debugger is active!
+2024-02-09 22:12:37 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:12:40 - INFO - 127.0.0.1 - - [09/Feb/2024 22:12:40] "OPTIONS /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 22:12:41 - INFO - 127.0.0.1 - - [09/Feb/2024 22:12:41] "POST /api/save-form-to-db HTTP/1.1" 200 -
+2024-02-09 22:12:46 - INFO - 127.0.0.1 - - [09/Feb/2024 22:12:46] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-09 22:12:59 - INFO - 127.0.0.1 - - [09/Feb/2024 22:12:59] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-09 22:13:02 - INFO - 127.0.0.1 - - [09/Feb/2024 22:13:02] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-09 22:13:02 - INFO - 127.0.0.1 - - [09/Feb/2024 22:13:02] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-09 22:13:26 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-09 22:13:26 - INFO -  * Restarting with stat
+2024-02-09 22:13:27 - WARNING -  * Debugger is active!
+2024-02-09 22:13:27 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:14:06 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:14:06 - INFO -  * Restarting with stat
+2024-02-09 22:14:07 - WARNING -  * Debugger is active!
+2024-02-09 22:14:07 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:14:08 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:14:08 - INFO -  * Restarting with stat
+2024-02-09 22:14:09 - WARNING -  * Debugger is active!
+2024-02-09 22:14:09 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:14:10 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:14:10 - INFO -  * Restarting with stat
+2024-02-09 22:14:10 - WARNING -  * Debugger is active!
+2024-02-09 22:14:10 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:14:11 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:14:11 - INFO -  * Restarting with stat
+2024-02-09 22:14:11 - WARNING -  * Debugger is active!
+2024-02-09 22:14:11 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:14:15 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:14:16 - INFO -  * Restarting with stat
+2024-02-09 22:14:16 - WARNING -  * Debugger is active!
+2024-02-09 22:14:16 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:14:18 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:14:18 - INFO -  * Restarting with stat
+2024-02-09 22:14:19 - WARNING -  * Debugger is active!
+2024-02-09 22:14:19 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:14:20 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:14:20 - INFO -  * Restarting with stat
+2024-02-09 22:14:21 - WARNING -  * Debugger is active!
+2024-02-09 22:14:21 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:14:23 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:14:23 - INFO -  * Restarting with stat
+2024-02-09 22:14:24 - WARNING -  * Debugger is active!
+2024-02-09 22:14:24 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:14:25 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-09 22:14:25 - INFO -  * Restarting with stat
+2024-02-09 22:14:25 - WARNING -  * Debugger is active!
+2024-02-09 22:14:25 - INFO -  * Debugger PIN: 144-811-370

@@ -3,15 +3,11 @@ from flask_cors import CORS
 import pymysql as ms
 import logging
 
+from classes.Admin import Admin
+from classes.Form import Form
+
 from get_connection import get_connection
-from functions.get_hashed_value import get_hashed_value
-from functions.form_to_class import form_to_class
-from functions.add_form_to_db import add_form_to_db
-from functions.get_fedex_number import get_fedex_number
-from functions.get_values_to_keys import get_values_to_keys
-from functions.is_valid_login_data import is_valid_login_data
-from functions.send_email import send_email
-from functions.ChatGPT_support import ChatGPT_support
+from functions.functions import get_fedex_number, get_hashed_value, get_values_to_keys, is_valid_login_data, send_email, ChatGPT_support
 
 logging.basicConfig(level=logging.ERROR,
                     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -19,7 +15,6 @@ logging.basicConfig(level=logging.ERROR,
                     filename='logs.log',
                     filemode='a'
                     )
-
 
 app = Flask(__name__)
 CORS(app)
@@ -43,20 +38,17 @@ def index():
         return jsonify(e)
 
 
-
 @app.route("/api/save-form-to-db", methods=["POST"])
 def save_form():
     try:
         data = request.get_json()
         data["fedExNumber"] = get_fedex_number()
-        form = form_to_class(data)
-        add_form_to_db(form)
-        return jsonify(data), 200
+        form = Form.form_to_class(data) 
+        is_adding_succeeded = Form.add_form_to_db(form)
+        return jsonify(is_adding_succeeded, data), 200
     except Exception as e:
         logging.error(e)
-        return jsonify(e), 500
-
-
+        return jsonify({"error": str(e)}), 500
 
 
 @app.route("/api/track-parcel/<fedExNumber>", methods=["GET"])
@@ -127,11 +119,15 @@ def send_email_route():
         logging.error(e)
         return jsonify(error_message)
 
+
 @app.route("/api/chatbot", methods=["POST"])
 def ai_support():
     data = request.get_json()
     print(data)
     return ChatGPT_support(data["message"])
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
