@@ -100,7 +100,7 @@ function AiSupport() {
 
       <div className={`w-full flex flex-col h-full mt-[70px]`}>
         <div
-          className={`flex-1 max-h-[410px] w-full p-2.5 overflow-y-auto overflow-x-hidden ${styles.hideScrollbar}`}
+          className={`flex-1 max-h-[410px] w-full px-2.5 py-5 overflow-y-auto overflow-x-hidden ${styles.hideScrollbar}`}
         >
           <div
             className={`${styles.AiResponse} w-full flex flex-col items-start justify-end my-3 relative`}
@@ -163,7 +163,7 @@ function AiSupport() {
           )}
         </div>
 
-        <div className={`${styles.input} w-full relative bg-white bottom-0`}>
+        <div className={`${styles.input} w-full absolute bg-white bottom-0 h-[40px]`}>
           <AutoResizedTextArea getAIResponse={getAIResponse} />
         </div>
       </div>
@@ -200,10 +200,10 @@ function AutoResizedTextArea(props) {
   return (
     <>
       <div
-        className={`flex flex-row items-end px-2.5 relative py-2.5 max-w-[350px]`}
+        className={`flex flex-row items-end w-full`}
       >
         <textarea
-          className={`${styles.aiSupportInput} w-full resize-none h-[40px] text-[1rem] p-1 max-h-[270px]`}
+          className={`${styles.aiSupportInput} absolute w-full resize-none h-full text-[1rem] left-0 max-h-[100px]`}
           value={text}
           onChange={handleChange}
           style={{ height: "auto", overflowY: "hidden" }}
@@ -212,7 +212,7 @@ function AutoResizedTextArea(props) {
           onKeyDown={handleKeyDown}
         />
       </div>
-      <div className={`absolute right-2.5 bottom-5`}>
+      <div className={`absolute right-2.5 bottom-6`}>
         <IoSend
           onClick={() => {
             {
@@ -223,7 +223,7 @@ function AutoResizedTextArea(props) {
           className={` text-[1.6rem] text-custom-color-900 cursor-pointer h-full relative`}
         />
         <div
-          className={`absolute right-[-17px] bottom-[-18px] tinyText w-[50px] ${
+          className={`absolute ${text.length >= 10 ? "right-[-11px]" : "right-[-17px]"} bottom-[-18px] tinyText w-[50px] ${
             text.length === maxSymbols ? "text-red-500" : "text-gray-400"
           }`}
         >

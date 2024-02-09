@@ -1,6 +1,6 @@
 from get_connection import get_connection
-from backend.functions.create_forms_table import create_forms_table
-from get_fedex_number import get_fedex_number
+from create_forms_table import create_forms_table
+from functions import get_fedex_number
 
 forms_data = [
     {
