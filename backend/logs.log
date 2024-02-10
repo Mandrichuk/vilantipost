@@ -1879,3 +1879,50 @@
 2024-02-09 22:18:41 - INFO -  * Restarting with stat
 2024-02-09 22:18:41 - WARNING -  * Debugger is active!
 2024-02-09 22:18:41 - INFO -  * Debugger PIN: 144-811-370
+2024-02-09 22:22:20 - INFO - 127.0.0.1 - - [09/Feb/2024 22:22:20] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-09 22:22:20 - INFO - 127.0.0.1 - - [09/Feb/2024 22:22:20] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:17:13 - INFO - 127.0.0.1 - - [09/Feb/2024 23:17:13] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:17:13 - INFO - 127.0.0.1 - - [09/Feb/2024 23:17:13] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:17:17 - INFO - 127.0.0.1 - - [09/Feb/2024 23:17:17] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:20:05 - INFO - 127.0.0.1 - - [09/Feb/2024 23:20:05] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:20:05 - INFO - 127.0.0.1 - - [09/Feb/2024 23:20:05] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:26:37 - INFO - 127.0.0.1 - - [09/Feb/2024 23:26:37] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:26:37 - INFO - 127.0.0.1 - - [09/Feb/2024 23:26:37] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:33:55 - INFO - 127.0.0.1 - - [09/Feb/2024 23:33:55] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:33:55 - INFO - 127.0.0.1 - - [09/Feb/2024 23:33:55] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:39:18 - INFO - 127.0.0.1 - - [09/Feb/2024 23:39:18] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:39:18 - INFO - 127.0.0.1 - - [09/Feb/2024 23:39:18] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:39:29 - INFO - 127.0.0.1 - - [09/Feb/2024 23:39:29] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:39:29 - INFO - 127.0.0.1 - - [09/Feb/2024 23:39:29] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:41:27 - INFO - 127.0.0.1 - - [09/Feb/2024 23:41:27] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:41:27 - INFO - 127.0.0.1 - - [09/Feb/2024 23:41:27] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:41:27 - INFO - 127.0.0.1 - - [09/Feb/2024 23:41:27] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:41:30 - INFO - 127.0.0.1 - - [09/Feb/2024 23:41:30] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:50:18 - INFO - 127.0.0.1 - - [09/Feb/2024 23:50:18] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:50:18 - INFO - 127.0.0.1 - - [09/Feb/2024 23:50:18] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:55:36 - INFO - 127.0.0.1 - - [09/Feb/2024 23:55:36] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:55:36 - INFO - 127.0.0.1 - - [09/Feb/2024 23:55:36] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:56:28 - INFO - 127.0.0.1 - - [09/Feb/2024 23:56:28] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-09 23:56:28 - INFO - 127.0.0.1 - - [09/Feb/2024 23:56:28] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-10 12:31:28 - INFO - 127.0.0.1 - - [10/Feb/2024 12:31:28] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-10 12:31:28 - INFO - 127.0.0.1 - - [10/Feb/2024 12:31:28] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-10 12:56:31 - INFO - 127.0.0.1 - - [10/Feb/2024 12:56:31] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-10 12:56:31 - INFO - 127.0.0.1 - - [10/Feb/2024 12:56:31] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-10 12:58:45 - INFO - 127.0.0.1 - - [10/Feb/2024 12:58:45] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-10 12:58:45 - INFO - 127.0.0.1 - - [10/Feb/2024 12:58:45] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-10 12:59:30 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-10 12:59:30 - INFO -  * Restarting with stat
+2024-02-10 13:00:00 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-10 13:00:00 - INFO - [33mPress CTRL+C to quit[0m
+2024-02-10 13:00:00 - INFO -  * Restarting with stat
+2024-02-10 13:00:01 - WARNING -  * Debugger is active!
+2024-02-10 13:00:01 - INFO -  * Debugger PIN: 144-811-370
+2024-02-10 13:00:07 - INFO - 127.0.0.1 - - [10/Feb/2024 13:00:07] "OPTIONS /api/chatbot HTTP/1.1" 200 -
+2024-02-10 13:00:07 - INFO - 127.0.0.1 - - [10/Feb/2024 13:00:07] "POST /api/chatbot HTTP/1.1" 200 -
+2024-02-10 13:05:54 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\server.py', reloading
+2024-02-10 13:05:54 - INFO -  * Restarting with stat
+2024-02-10 13:05:55 - WARNING -  * Debugger is active!
+2024-02-10 13:05:55 - INFO -  * Debugger PIN: 144-811-370
+2024-02-10 13:11:55 - INFO -  * Detected change in 'C:\\Users\\Odessa\\Desktop\\globalpost\\backend\\functions\\functions.py', reloading
+2024-02-10 13:11:55 - INFO -  * Restarting with stat

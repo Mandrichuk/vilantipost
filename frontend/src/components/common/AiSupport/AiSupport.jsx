@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { MdMessage } from "react-icons/md";
 import useWindowWidth from "../../../utils/useWindowWidth";
 import Lottie from "react-lottie";
@@ -64,7 +64,6 @@ function AiSupport() {
         message: userMessage,
       })
       .then((response) => {
-        console.log(response.data);
         setAiResponses((prev) => [
           ...prev,
           { message: response.data, isHumanMessage: false },
@@ -87,7 +86,7 @@ function AiSupport() {
 
   return (
     <div
-      className={`${styles.aiSupport} bg-gray-50 w-[370px] h-[550px] overflow-hidden rounded-lg flex flex-col items-center relative`}
+      className={`${styles.aiSupport} bg-gray-50 w-[370px] h-[570px] overflow-hidden rounded-lg flex flex-col items-center relative`}
     >
       <div
         className={`absolute flex flex-col items-center justify-center border-b-2 bg-custom-color-900 w-full py-3 text-white z-10 top-0`}
@@ -111,7 +110,7 @@ function AiSupport() {
               Support:
             </p>
             <div
-              className={`max-w-[330px] bg-gray-200  px-2.5 py-1.5 rounded-md`}
+              className={`max-w-[330px] bg-gray-200  px-2.5 py-1.5 rounded-md break-words`}
             >
               Hello 👋 today i will be your AI assistant! How can i help you? 🙂
             </div>
@@ -132,7 +131,7 @@ function AiSupport() {
                   You:
                 </p>
                 <div
-                  className={`max-w-[330px] bg-custom-color-300  px-2.5 py-1.5 rounded-md`}
+                  className={`max-w-[330px] bg-custom-color-300  px-2.5 py-1.5 rounded-md break-words`}
                 >
                   {item.message}
                 </div>
@@ -151,7 +150,7 @@ function AiSupport() {
                   Support:
                 </p>
                 <div
-                  className={`max-w-[330px] bg-gray-200  px-2.5 py-1.5 rounded-md`}
+                  className={`max-w-[330px] bg-gray-200  px-2.5 py-1.5 rounded-md break-words`}
                 >
                   {item.message}
                 </div>
@@ -163,7 +162,9 @@ function AiSupport() {
           )}
         </div>
 
-        <div className={`${styles.input} w-full absolute bg-white bottom-0 h-[40px]`}>
+        <div
+          className={`${styles.input} w-full absolute bg-white bottom-0 h-[65px]`}
+        >
           <AutoResizedTextArea getAIResponse={getAIResponse} />
         </div>
       </div>
@@ -199,11 +200,9 @@ function AutoResizedTextArea(props) {
 
   return (
     <>
-      <div
-        className={`flex flex-row items-end w-full`}
-      >
+      <div className={`flex flex-row items-end w-full`}>
         <textarea
-          className={`${styles.aiSupportInput} absolute w-full resize-none h-full text-[1rem] left-0 max-h-[100px]`}
+          className={`${styles.aiSupportInput} absolute w-full resize-none h-full text-[1rem] left-0 bottom-4 max-h-[100px]`}
           value={text}
           onChange={handleChange}
           style={{ height: "auto", overflowY: "hidden" }}
@@ -223,7 +222,9 @@ function AutoResizedTextArea(props) {
           className={` text-[1.6rem] text-custom-color-900 cursor-pointer h-full relative`}
         />
         <div
-          className={`absolute ${text.length >= 10 ? "right-[-11px]" : "right-[-17px]"} bottom-[-18px] tinyText w-[50px] ${
+          className={`absolute ${
+            text.length >= 10 ? "right-[-11px]" : "right-[-17px]"
+          } bottom-[-18px] tinyText w-[50px] ${
             text.length === maxSymbols ? "text-red-500" : "text-gray-400"
           }`}
         >

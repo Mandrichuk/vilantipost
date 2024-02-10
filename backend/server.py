@@ -1,13 +1,14 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, make_response, jsonify
 from flask_cors import CORS
 import pymysql as ms
 import logging
+import uuid
 
 from classes.Admin import Admin
 from classes.Form import Form
 
 from get_connection import get_connection
-from functions.functions import get_fedex_number, get_hashed_value, get_values_to_keys, is_valid_login_data, send_email, ChatGPT_support
+from functions.functions import get_fedex_number, get_hashed_value, get_values_to_keys, is_valid_login_data, send_email, ChatGPT_support, generate_unique_user_id
 
 logging.basicConfig(level=logging.ERROR,
                     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -22,20 +23,16 @@ CORS(app)
 
 
 
-@app.route("/", methods=["GET"])
+@app.route("/")
 def index():
-    try:
-        connection = get_connection()
-
-        with connection.cursor() as cursor:
-            cursor.execute("USE globalpost")
-            cursor.execute("SELECT * FROM forms")
-            result = cursor.fetchall()
-            return jsonify(result)
-
-    except ms.Error as e:
-        print(e)
-        return jsonify(e)
+    user_id = request.cookies.get('user_id')
+    if not user_id:
+        response = make_response("Setting up user-specific cookie")
+        user_id = generate_unique_user_id()
+        response.set_cookie('user_id', user_id, max_age=60*60*24*365) 
+    else:
+        response = make_response(f"Welcome back, your user ID is {user_id}")
+    return response
 
 
 @app.route("/api/save-form-to-db", methods=["POST"])

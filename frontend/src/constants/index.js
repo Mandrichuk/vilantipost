@@ -1227,19 +1227,6 @@ export const RussiaData = {
 
 export const countries = [
   {
-    id: 1,
-    ru: {
-      name: "Украина",
-    },
-    en: {
-      name: "Ukraine",
-    },
-    code: "UA",
-    number: "+380",
-    flag: "🇺🇦",
-    exampleNumber: "xx yyyyyyy",
-  },
-  {
     id: 3,
     ru: {
       name: "Польша",

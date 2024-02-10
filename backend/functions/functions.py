@@ -3,6 +3,10 @@ from get_connection import get_connection
 from random import randint
 from cryptography.hazmat.primitives import hashes
 import smtplib
+import uuid
+
+def generate_unique_user_id():
+    return str(uuid.uuid4())
 
 
 def ChatGPT_support(prompt):

@@ -85,6 +85,11 @@ input[type="checkbox"] {
   max-width: 1450px;
 }
 
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+
 .overlay {
   position: fixed;
   top: 0;
