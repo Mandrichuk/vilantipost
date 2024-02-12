@@ -21,6 +21,7 @@ import ClientTrack from "./components/client/track/Track";
 // admin
 import AdminLogin from "./components/admin/login/Login";
 import AdminHome from "./components/admin/home/Home";
+import AdminEdit from "./components/admin/edit/Edit";
 
 function AppWrapper() {
   return (
@@ -49,7 +50,7 @@ function App() {
         {/* client */}
         <Route path="*" element={<Navigate to="/" />} />
         <Route path="/" element={<ClientHome />} />
-        <Route path="/track-parcel/*" element={<ClientTrack />} />
+        <Route path="/track-parcel/:id" element={<ClientTrack />} />
 
         {isObjNotEmpty(orderBox.departure) &&
           isObjNotEmpty(orderBox.destination) && (
@@ -59,6 +60,7 @@ function App() {
         {/* admin */}
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/*" element={<AdminHome />} />
+        <Route path="/admin/edit/:id" element={<AdminEdit />} />
       </Routes>
     </>
   );

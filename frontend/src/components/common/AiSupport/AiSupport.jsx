@@ -11,6 +11,7 @@ import { IoSend } from "react-icons/io5";
 import TextArea from "../TextArea";
 import axios from "axios";
 import { domens } from "../../../constants";
+import { IoClose } from "react-icons/io5";
 
 function ContactUsButton() {
   const windowWidth = useWindowWidth();
@@ -88,9 +89,13 @@ function AiSupport() {
     <div
       className={`${styles.aiSupport} bg-gray-50 w-[370px] h-[570px] overflow-hidden rounded-lg flex flex-col items-center relative`}
     >
+
       <div
         className={`absolute flex flex-col items-center justify-center border-b-2 bg-custom-color-900 w-full py-3 text-white z-10 top-0`}
       >
+      <div className={`relative w-full`}>
+      <IoClose className={`text-white absolute right-2 top-[-5px] text-[1.5rem] cursor-pointer`}/>
+      </div>
         <div className={`text-[.8rem] text-gray-300 `}>
           Ask any question about our services
         </div>

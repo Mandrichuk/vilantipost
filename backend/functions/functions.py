@@ -5,6 +5,71 @@ from cryptography.hazmat.primitives import hashes
 import smtplib
 import uuid
 
+
+def update_form_db(formId, new_values):
+    print(formId, new_values)
+    connection = get_connection()
+    try:
+        with connection.cursor() as cursor:
+            query = """
+            UPDATE forms
+            SET
+                sender = %s,
+                sender_country = %s,
+                sender_city = %s,
+                sender_street = %s,
+                sender_houseNumber = %s,
+                sender_zipCode = %s,
+                sender_email = %s,
+                sender_phoneNumber = %s,
+                recipient = %s,
+                recipient_country = %s,
+                recipient_city = %s,
+                recipient_street = %s,
+                recipient_houseNumber = %s,
+                recipient_zipCode = %s,
+                recipient_email = %s,
+                recipient_phoneNumber = %s,
+                shippingForm_addressInput = %s,
+                paymentForm_contactAfter = %s,
+                paymentForm_acceptRules = %s,
+                parcel_fedExNumber = %s
+            WHERE id = %s
+            """
+            cursor.execute(query, (
+                new_values['sender'],
+                new_values['sender_country'],
+                new_values['sender_city'],
+                new_values['sender_street'],
+                new_values['sender_houseNumber'],
+                new_values['sender_zipCode'],
+                new_values['sender_email'],
+                new_values['sender_phoneNumber'],
+                new_values['recipient'],
+                new_values['recipient_country'],
+                new_values['recipient_city'],
+                new_values['recipient_street'],
+                new_values['recipient_houseNumber'],
+                new_values['recipient_zipCode'],
+                new_values['recipient_email'],
+                new_values['recipient_phoneNumber'],
+                new_values['shippingForm_address'],
+                new_values['paymentForm_contactAfter'],
+                new_values['paymentForm_acceptRules'],
+                new_values['parcel_fedExNumber'],
+                formId
+            ))
+            connection.commit()
+    except Exception as e:
+        connection.rollback()
+        raise e
+    finally:
+        connection.close()
+
+    return True
+
+
+
 def generate_unique_user_id():
     return str(uuid.uuid4())
 

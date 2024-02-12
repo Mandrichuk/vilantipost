@@ -8,7 +8,7 @@ from classes.Admin import Admin
 from classes.Form import Form
 
 from get_connection import get_connection
-from functions.functions import get_fedex_number, get_hashed_value, get_values_to_keys, is_valid_login_data, send_email, ChatGPT_support, generate_unique_user_id
+from functions.functions import get_fedex_number, get_hashed_value, get_values_to_keys, is_valid_login_data, send_email, ChatGPT_support, generate_unique_user_id, update_form_db
 
 logging.basicConfig(level=logging.ERROR,
                     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -124,7 +124,55 @@ def ai_support():
     return ChatGPT_support(data["message"])
 
 
+@app.route("/api/delete-form-from-db", methods=["POST"])
+def delete_form_from_db():
+    try:
+        data = request.get_json()
+        fedex_number = data["formId"]
+        connection = get_connection()
+
+        with connection.cursor() as cursor:
+            cursor.execute("USE globalpost")
+            cursor.execute(f"DELETE FROM forms WHERE id = '{fedex_number}'")
+            connection.commit()
+            return jsonify({"message": "Form deleted successfully"}), 200
+    except ms.Error as e:
+        error_message = {"error": f"Error: {e}"}
+        logging.error(e)
+        return jsonify(error_message)
+
+
+@app.route("/api/get-form-by-id/<FormId>", methods=["GET"])
+def get_form_by_id(FormId):
+    try:
+        connection = get_connection()
+
+        with connection.cursor() as cursor:
+            cursor.execute("USE globalpost")
+            cursor.execute("SELECT * FROM forms WHERE id = %s", (FormId),)
+            result = cursor.fetchone()
+
+            if result is not None:
+                obj_result = get_values_to_keys(result)
+                return jsonify(obj_result)
+
+    except ms.Error as e:
+        error_message = {"error": f"Error: {e}"}
+        logging.error(e)
+        return jsonify(error_message)
+
+
+@app.route("/api/update-form-in-db", methods=["POST"])
+def update_form_in_db():
+    data = request.get_json()
+    print(data["id"], data)
+    is_updated = update_form_db(data["id"], data)
+    print(is_updated)
+    return jsonify({"status": "success", "message": "Form updated successfully"})
+
+
 
 
 if __name__ == "__main__":
     app.run(debug=True)
+qq

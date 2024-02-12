@@ -66,8 +66,8 @@ export const notifySuccess = () => {
     toast.success("Thanks for your order!", {
       toastId: "success",
       position: "top-right",
-      autoClose: 2500,
-      hideProgressBar: false,
+      autoClose: 2000,
+      hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: true,
     });
@@ -136,6 +136,30 @@ export const domens = {
   frontend: "http://localhost:3000/",
 };
 
+export const formTitles = [
+    "id",
+    "sender",
+    "sender_country",
+    "sender_city",
+    "sender_street",
+    "sender_houseNumber",
+    "sender_zipCode",
+    "sender_email",
+    "sender_phoneNumber",
+    "recipient",
+    "recipient_country",
+    "recipient_city",
+    "recipient_street",
+    "recipient_houseNumber",
+    "recipient_zipCode",
+    "recipient_email",
+    "recipient_phoneNumber",
+    "sender_street",
+    "paymentForm_contactAfter",
+    "paymentForm_acceptRules",
+    "parcel_fedExNumber",
+  ];
+
 export const motions = {
   whileTap: { scale: 0.8 },
   sidebarVariants: {
@@ -157,8 +181,9 @@ export const deliveryPrices = {
 export const links = {
   home: "/",
   form: "/form",
-  trackParcel: "/track-parcel",
-  settings: "/settings",
+  admin: "/admin",
+  adminEdit: "/admin/edit",
+  adminLogin: "/admin/login",
 };
 
 export const navId = {
