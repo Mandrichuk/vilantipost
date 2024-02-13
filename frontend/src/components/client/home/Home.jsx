@@ -16,6 +16,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { notifySuccess } from "../../../constants";
 import ContactUsButton from "../../common/AiSupport/AiSupport";
+import AllowedGoods from "./AllowedGoods";
 
 const HomePage = () => {
   const { history} = usePreviousURL();
@@ -38,6 +39,7 @@ const HomePage = () => {
         <div className={`wrapper`}>
           <PopularServices />
           <DeliveryProcesses />
+          <AllowedGoods />
           <ProhibitedGoods />
           <TrackParcel />
           <Reviews />

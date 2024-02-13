@@ -26,6 +26,8 @@ import money from "../assets/graphics/money.png";
 import personalDocuments from "../assets/graphics/personalDocuments.png";
 import flashDrive from "../assets/graphics/flashDrive.png";
 import creditCard from "../assets/graphics/creditCard.png";
+import documents from "../assets/graphics/documents.png";
+import delivery from "../assets/graphics/delivery.png";
 
 // Lotties
 import animatedMessage from "../assets/lotties/animatedMessage.json";
@@ -34,9 +36,6 @@ import animatedMessage from "../assets/lotties/animatedMessage.json";
 import blackEnvelope from "../assets/icons/blackEnvelope.png";
 import whiteEnvelope from "../assets/icons/whiteEnvelope.png";
 import customEnvelope from "../assets/icons/customEnvelope.png";
-import facebookIcon from "../assets/icons/facebookIcon.png";
-import instagramIcon from "../assets/icons/instagramIcon.jpg";
-import telegramIcon from "../assets/icons/telegramIcon.png";
 
 // flags
 import SlovakFlag from "../assets/flags/SlovakFlag.png";
@@ -88,12 +87,11 @@ export const notifyError = () => {
 };
 
 export default {
-  facebookIcon,
-  instagramIcon,
-  telegramIcon,
   mobilePoster,
   pcPoster,
+  delivery,
   peopleRating,
+  documents,
   blackEnvelope,
   whiteEnvelope,
   customEnvelope,
@@ -125,11 +123,7 @@ export default {
   rating50,
 };
 
-export const sosialMedias = [
-  {link: "https://www.facebook.com/", icon: facebookIcon, name: "Facebook"},
-  {link: "https://www.instagram.com/", icon: instagramIcon, name: "Instagram"},
-  {link: "https://web.telegram.org/z/", icon: telegramIcon, name: "Telegram"},  
-];
+
 
 export const domens = {
   backend: "http://127.0.0.1:5000/",

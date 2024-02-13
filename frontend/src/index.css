@@ -70,6 +70,17 @@ input[type="checkbox"] {
   font-weight: bold !important;
 }
 
+li {
+  list-style-type: none; 
+}
+
+li::before {
+    color: var(--custom-color-800);
+    content: '•'; 
+    font-size: 1.7rem;
+    margin-right: 10px;
+  }
+
 #root {
   width: 100%;
 }
