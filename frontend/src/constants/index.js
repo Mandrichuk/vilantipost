@@ -46,6 +46,10 @@ import ItalianFlag from "../assets/flags/ItalianFlag.png";
 import RussianFlag from "../assets/flags/RussianFlag.png";
 import SpainFlag from "../assets/flags/SpainFlag.png";
 import UnitedKingdomFlag from "../assets/flags/UnitedKingdomFlag.jpg";
+import FranceFlag from "../assets/flags/FranceFlag.png";
+import PolandFlag from "../assets/flags/PolandFlag.png";
+import SwedenFlag from "../assets/flags/SwedenFlag.png";
+import TurkeyFlag from "../assets/flags/TurkeyFlag.png";
 
 // ratings
 import rating0 from "../assets/ratings/rating-0.png";
@@ -110,6 +114,10 @@ export default {
   RussianFlag,
   SpainFlag,
   UnitedKingdomFlag,
+  FranceFlag,
+  PolandFlag,
+  SwedenFlag,
+  TurkeyFlag,
   rating0,
   rating05,
   rating10,
@@ -123,36 +131,34 @@ export default {
   rating50,
 };
 
-
-
 export const domens = {
   backend: "http://127.0.0.1:5000/",
   frontend: "http://localhost:3000/",
 };
 
 export const formTitles = [
-    "id",
-    "sender",
-    "sender_country",
-    "sender_city",
-    "sender_street",
-    "sender_houseNumber",
-    "sender_zipCode",
-    "sender_email",
-    "sender_phoneNumber",
-    "recipient",
-    "recipient_country",
-    "recipient_city",
-    "recipient_street",
-    "recipient_houseNumber",
-    "recipient_zipCode",
-    "recipient_email",
-    "recipient_phoneNumber",
-    "sender_street",
-    "paymentForm_contactAfter",
-    "paymentForm_acceptRules",
-    "parcel_fedExNumber",
-  ];
+  "id",
+  "sender",
+  "sender_country",
+  "sender_city",
+  "sender_street",
+  "sender_houseNumber",
+  "sender_zipCode",
+  "sender_email",
+  "sender_phoneNumber",
+  "recipient",
+  "recipient_country",
+  "recipient_city",
+  "recipient_street",
+  "recipient_houseNumber",
+  "recipient_zipCode",
+  "recipient_email",
+  "recipient_phoneNumber",
+  "sender_street",
+  "paymentForm_contactAfter",
+  "paymentForm_acceptRules",
+  "parcel_fedExNumber",
+];
 
 export const motions = {
   whileTap: { scale: 0.8 },
@@ -319,11 +325,10 @@ export const homePage = {
   popularServices: {
     ru: {
       titleText: "Популярные отправки",
-      chooseText: "Выберать",
+      chooseText: "Выбрать",
       services: [
         {
           toCountryImg: SlovakFlag,
-          fromCountryImg: RussianFlag,
           fromCountryName: "Россия",
           toCountryName: "Словакия",
           countryToId: 4,
@@ -331,7 +336,6 @@ export const homePage = {
         },
         {
           toCountryImg: ChechFlag,
-          fromCountryImg: RussianFlag,
           toCountryName: "Чехия",
           fromCountryName: "Россия",
           countryToId: 75,
@@ -339,7 +343,6 @@ export const homePage = {
         },
         {
           toCountryImg: ItalianFlag,
-          fromCountryImg: RussianFlag,
           toCountryName: "Италия",
           fromCountryName: "Россия",
           countryToId: 89,
@@ -347,7 +350,6 @@ export const homePage = {
         },
         {
           toCountryImg: SpainFlag,
-          fromCountryImg: RussianFlag,
           toCountryName: "Испания",
           fromCountryName: "Россия",
           countryToId: 95,
@@ -355,7 +357,6 @@ export const homePage = {
         },
         {
           toCountryImg: ItalianFlag,
-          fromCountryImg: RussianFlag,
           toCountryName: "Италия",
           fromCountryName: "Россия",
           countryToId: 89,
@@ -363,11 +364,38 @@ export const homePage = {
         },
         {
           toCountryImg: SpainFlag,
-          fromCountryImg: RussianFlag,
           toCountryName: "Испания",
           fromCountryName: "Россия",
           countryToId: 95,
           deliveryTime: "Доставка: 6 дней",
+        },
+        {
+          toCountryImg: FranceFlag,
+          toCountryName: "Франция",
+          fromCountryName: "Россия",
+          countryToId: 69,
+          deliveryTime: "Доставка: 6 дней",
+        },
+        {
+          toCountryImg: PolandFlag,
+          toCountryName: "Польша",
+          fromCountryName: "Россия",
+          countryToId: 3,
+          deliveryTime: "Доставка: 7 дней",
+        },
+        {
+          toCountryImg: SwedenFlag,
+          toCountryName: "Швеция",
+          fromCountryName: "Россия",
+          countryToId: 79,
+          deliveryTime: "Доставка: 7 дней",
+        },
+        {
+          toCountryImg: TurkeyFlag,
+          toCountryName: "Турция",
+          fromCountryName: "Россия",
+          countryToId: 59,
+          deliveryTime: "Доставка: 7 дней",
         },
       ],
     },
@@ -377,7 +405,6 @@ export const homePage = {
       services: [
         {
           toCountryImg: SlovakFlag,
-          fromCountryImg: RussianFlag,
           fromCountryName: "Russia",
           toCountryName: "Slovakia",
           countryToId: 4,
@@ -385,7 +412,6 @@ export const homePage = {
         },
         {
           toCountryImg: ChechFlag,
-          fromCountryImg: RussianFlag,
           toCountryName: "Chech",
           fromCountryName: "Russia",
           countryToId: 75,
@@ -393,7 +419,6 @@ export const homePage = {
         },
         {
           toCountryImg: ItalianFlag,
-          fromCountryImg: RussianFlag,
           toCountryName: "Italy",
           fromCountryName: "Russia",
           countryToId: 89,
@@ -401,7 +426,6 @@ export const homePage = {
         },
         {
           toCountryImg: SpainFlag,
-          fromCountryImg: RussianFlag,
           toCountryName: "Spain",
           fromCountryName: "Russia",
           countryToId: 95,
@@ -409,7 +433,6 @@ export const homePage = {
         },
         {
           toCountryImg: ItalianFlag,
-          fromCountryImg: RussianFlag,
           toCountryName: "Italy",
           fromCountryName: "Russia",
           countryToId: 89,
@@ -417,12 +440,39 @@ export const homePage = {
         },
         {
           toCountryImg: SpainFlag,
-          fromCountryImg: RussianFlag,
           toCountryName: "Spain",
           fromCountryName: "Russia",
           countryToId: 95,
           deliveryTime: "Delivery: 6 days",
         },
+        {
+          toCountryImg: FranceFlag,
+          toCountryName: "France",
+          fromCountryName: "Russia",
+          countryToId: 69,
+          deliveryTime: "Delivery: 6 days",
+        },
+        {
+          toCountryImg: PolandFlag,
+          toCountryName: "Poland",
+          fromCountryName: "Russia",
+          countryToId: 3,
+          deliveryTime: "Delivery: 7 days",
+        },
+        {
+          toCountryImg: SwedenFlag,
+          toCountryName: "Sweden",
+          fromCountryName: "Russia",
+          countryToId: 79,
+          deliveryTime: "Delivery: 7 days",
+        },
+        {
+          toCountryImg: TurkeyFlag,
+          toCountryName: "Turkey",
+          fromCountryName: "Russia",
+          countryToId: 59,
+          deliveryTime: "Delivery: 7 days",
+        }
       ],
     },
   },
@@ -691,10 +741,6 @@ export const homePage = {
       titleText: "Запрещенные грузы",
       goods: [
         {
-          name: "Паспорта",
-          image: passport,
-        },
-        {
           name: "Банковские карты",
           image: creditCard,
         },
@@ -707,7 +753,7 @@ export const homePage = {
           image: flashDrive,
         },
         {
-          name: "Документы подтверждающие личность",
+          name: "Водительские права",
           image: personalDocuments,
         },
       ],
@@ -715,10 +761,6 @@ export const homePage = {
     en: {
       titleText: "Prohibited goods",
       goods: [
-        {
-          name: "Passports",
-          image: passport,
-        },
         {
           name: "Bank cards",
           image: creditCard,
@@ -732,7 +774,7 @@ export const homePage = {
           image: flashDrive,
         },
         {
-          name: "Identity documents",
+          name: "Driver's licenses",
           image: personalDocuments,
         },
       ],
@@ -774,6 +816,61 @@ export const homePage = {
         delivery_adress: "Delivery address:",
         status: "Status:",
       },
+    },
+  },
+  allowedGoods: {
+    ru: {
+      titleText: "Какие грузы мы доставляем?",
+      goods: [
+        {
+          title: "Документы для офисной работы:",
+          article: "Приглашения, конверты, корреспонденция",
+        },
+        {
+          title: "Юридические документы:",
+          article: "Договоры, контракты, претензии, доверенности",
+        },
+        {
+          title: "Финансовые документы:",
+          article:
+            "Бухгалтерские и нотариальные документы, счета, отчеты, акты",
+        },
+        {
+          title: " Личные документы:",
+          article:
+            "Паспорта, визы, свидетельства о разводе, о рождении детей, дипломы",
+        },
+        {
+          title: "Прочие документы:",
+          article: "Сертификаты, свидетельства, документы с апостилем",
+        },
+      ],
+    },
+    en: {
+      titleText: "What do we deliver?",
+      goods: [
+        {
+          title: "Office documents:",
+          article: "Invitations, contracts, correspondence",
+        },
+        {
+          title: "Legal documents:",
+          article: "Contracts, agreements, complaints, licenses",
+        },
+        {
+          title: "Financial documents:",
+          article: "Accounts, invoices, reports, statements",
+        },
+        {
+          title: "Personal documents:",
+          article:
+            "Passports, visas, birth certificates, certificates of marriage",
+        },
+        {
+          title: "Other documents:",
+          article: "Certificates, stamps, documents with apostrophe",
+        },
+      ],
     },
   },
 };

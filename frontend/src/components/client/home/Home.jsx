@@ -22,8 +22,6 @@ const HomePage = () => {
   const { history} = usePreviousURL();
   const previousURL = history.length > 1 ? history[history.length - 2] : null;
 
-
-  console.log(previousURL)
   useEffect(() => {
     if (previousURL === "/form") {
       notifySuccess();

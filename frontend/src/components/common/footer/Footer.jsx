@@ -59,7 +59,7 @@ function Footer() {
 
   return (
     <div
-      className={`${styles.footer} flex flex-col justify-end items-center w-full bg-custom-color-700 mt-[100px]`}
+      className={`${styles.footer} flex flex-col justify-end items-center w-full bg-custom-color-700 sectionMargin`}
     >
       <div className={`wrapper ${styles.cover} min-h-[400px]`}>
         <div

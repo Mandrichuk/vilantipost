@@ -32,6 +32,19 @@
   transform: scale(1.01);
 }
 
+.gradientContainer {
+  background-image: linear-gradient(
+    to bottom,
+    var(--custom-color-800),
+    var(--custom-color-700),
+    var(--custom-color-400)
+  );
+}
+
+.deliveryImg {
+  max-width: 300px;
+}
+
 @media (min-width: 650px) {
   .orderBox {
     padding: 20px;
@@ -39,6 +52,9 @@
 
   .deliveryInputs {
     flex-direction: row;
+  }
+  .deliveryImg {
+    max-width: 350px;
   }
 }
 
@@ -68,6 +84,10 @@
   }
 }
 @media (min-width: 1300px) {
+    .deliveryImg {
+    max-width: 400px;
+  }
+
   .orderContainer {
     flex-direction: row;
   }

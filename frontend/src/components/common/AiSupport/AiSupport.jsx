@@ -34,7 +34,9 @@ function ContactUsButton() {
     <div
       className={`${styles.contactUsButton} fixed flex flex-col items-end justify-end`}
     >
-      {messangersOpened && <AiSupport />}
+      {messangersOpened && (
+        <AiSupport toggleMessangersHandle={toggleMessangersHandle} />
+      )}
 
       <div
         onClick={toggleMessangersHandle}
@@ -48,7 +50,7 @@ function ContactUsButton() {
   );
 }
 
-function AiSupport() {
+function AiSupport(props) {
   const windowWidth = useWindowWidth();
   const [userMessages, setUserMessages] = useState([]);
   const [AiResponses, setAiResponses] = useState([]);
@@ -89,13 +91,15 @@ function AiSupport() {
     <div
       className={`${styles.aiSupport} bg-gray-50 w-[370px] h-[570px] overflow-hidden rounded-lg flex flex-col items-center relative`}
     >
-
       <div
         className={`absolute flex flex-col items-center justify-center border-b-2 bg-custom-color-900 w-full py-3 text-white z-10 top-0`}
       >
-      <div className={`relative w-full`}>
-      <IoClose className={`text-white absolute right-2 top-[-5px] text-[1.5rem] cursor-pointer`}/>
-      </div>
+        <div className={`relative w-full`}>
+          <IoClose
+            onClick={props.toggleMessangersHandle}
+            className={`text-white absolute right-2 top-[-5px] text-[1.5rem] cursor-pointer`}
+          />
+        </div>
         <div className={`text-[.8rem] text-gray-300 `}>
           Ask any question about our services
         </div>
@@ -120,7 +124,7 @@ function AiSupport() {
               Hello 👋 today i will be your AI assistant! How can i help you? 🙂
             </div>
             <div
-              class={`${styles.triangle} ${styles.AiTriangle} absolute left-2 bottom-[-7px]`}
+              className={`${styles.triangle} ${styles.AiTriangle} absolute left-2 bottom-[-7px]`}
             />
           </div>
 
@@ -141,7 +145,7 @@ function AiSupport() {
                   {item.message}
                 </div>
                 <div
-                  class={`${styles.triangle} ${styles.HumanTriangle} absolute right-2 bottom-[-7px]`}
+                  className={`${styles.triangle} ${styles.HumanTriangle} absolute right-2 bottom-[-7px]`}
                 />
               </div>
             ) : (
@@ -160,7 +164,7 @@ function AiSupport() {
                   {item.message}
                 </div>
                 <div
-                  class={`${styles.triangle} ${styles.AiTriangle} absolute left-2 bottom-[-7px]`}
+                  className={`${styles.triangle} ${styles.AiTriangle} absolute left-2 bottom-[-7px]`}
                 />
               </div>
             )

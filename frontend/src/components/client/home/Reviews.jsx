@@ -50,7 +50,7 @@ function Reviews() {
         <img
           src={images.peopleRating}
           alt="peopleRating"
-          className={`object-cover opacity-[1] ${windowWidth > 800 ? "w-[450px]" : "h-[300px]"}`}
+          className={`object-cover opacity-[1] ${windowWidth > 800 ? "w-[450px]" : "w-[350px]"}`}
         />
         <Link
           to="/"

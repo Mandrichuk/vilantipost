@@ -35,6 +35,8 @@ function DeliveryProcesses() {
     }
   }
 
+  // console.log(currentProgress)
+
   return (
     <div className={`${styles.deliveryProcesses} w-full sectionMargin`}>
       <div id={navId.deliveryProcesses} className={`containerTitleText`}>
@@ -43,7 +45,11 @@ function DeliveryProcesses() {
           className={`w-full flex flex-row items-center justify-between p-3 h-[550px]`}
         >
           {windowWidth > 1000 && (
-            <div className={`mr-10 text-[7rem] h-full text-custom-color-600 ${windowWidth > 1300 && "mr-[100px]"}`}>
+            <div
+              className={`mr-10 text-[7rem] h-full text-custom-color-600 ${
+                windowWidth > 1300 && "mr-[100px]"
+              }`}
+            >
               {deliveryProcessesText.stepText} {currentProgress + 1}
             </div>
           )}
@@ -59,7 +65,9 @@ function DeliveryProcesses() {
               <motion.div
                 whileTap={motions.whileTap}
                 key={`stage-${index}`}
-                className={`z-10 relative`}
+                className={`z-10 relative ${
+                  stage.value === currentProgress + 1 ? "pulseAnimation" : ""
+                }`}
               >
                 <stage.icon
                   onClick={() => handlePointChange(stage.value)}
@@ -91,7 +99,11 @@ function DeliveryProcess(props) {
   const windowWidth = useWindowWidth();
 
   return (
-    <div className={`${windowWidth > 1300 && "ml-[10px]"} flex-1 bg-gray-50 rounded-sm h-full p-4`}>
+    <div
+      className={`${
+        windowWidth > 1300 && "ml-[10px]"
+      } flex-1 bg-gray-50 rounded-sm h-full p-4`}
+    >
       <div
         className={`${styles.imgTitleContainer} w-full flex flex-row items-center justify-start`}
       >
@@ -110,9 +122,7 @@ function DeliveryProcess(props) {
         </div>
       </div>
       <div className={`mt-2 labelText`}>{props.label}</div>
-      <div className={`articleText font-normal mt-4`}>
-        {props.article}
-      </div>
+      <div className={`articleText font-normal mt-4`}>{props.article}</div>
     </div>
   );
 }
