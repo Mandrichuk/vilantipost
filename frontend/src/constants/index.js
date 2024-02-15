@@ -342,13 +342,6 @@ export const homePage = {
           deliveryTime: "Доставка: 5 дня",
         },
         {
-          toCountryImg: ItalianFlag,
-          toCountryName: "Италия",
-          fromCountryName: "Россия",
-          countryToId: 89,
-          deliveryTime: "Доставка: 4 дня",
-        },
-        {
           toCountryImg: SpainFlag,
           toCountryName: "Испания",
           fromCountryName: "Россия",
@@ -361,13 +354,6 @@ export const homePage = {
           fromCountryName: "Россия",
           countryToId: 89,
           deliveryTime: "Доставка: 4 дня",
-        },
-        {
-          toCountryImg: SpainFlag,
-          toCountryName: "Испания",
-          fromCountryName: "Россия",
-          countryToId: 95,
-          deliveryTime: "Доставка: 6 дней",
         },
         {
           toCountryImg: FranceFlag,
@@ -416,20 +402,6 @@ export const homePage = {
           fromCountryName: "Russia",
           countryToId: 75,
           deliveryTime: "Delivery: 5 days",
-        },
-        {
-          toCountryImg: ItalianFlag,
-          toCountryName: "Italy",
-          fromCountryName: "Russia",
-          countryToId: 89,
-          deliveryTime: "Delivery: 4 days",
-        },
-        {
-          toCountryImg: SpainFlag,
-          toCountryName: "Spain",
-          fromCountryName: "Russia",
-          countryToId: 95,
-          deliveryTime: "Delivery: 6 days",
         },
         {
           toCountryImg: ItalianFlag,

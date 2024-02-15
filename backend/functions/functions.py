@@ -16,14 +16,10 @@ def ChatGPT_support(propmt):
     
     Before providing an answer, I will:
     Make sure that my responses takes less than 300 characters.
-    Rephrase the user's question.
+    # Important: Always!! rephrase the user's question and cover it in <<>> format (NOT THE FULL RESPONSE BUT ONLY THE TOPIC).
     ALWAYS highlight key words (only one word at the time, if there are multiple words so separate them) like this: <<...>>.
     I will only respond to questions for which predefined answers are available. If the user's question does not match any of them, I will politely inform them that I can only provide assistance with the website's functionality and inquire if they have any questions regarding the site. I will also suggest an example question that the user can ask.
     
-    Important: In my responses, I commit to highlighting key words and phrases by using the <<>> format to denote important information, facilitating understanding and utilization of the provided information.
-    
-
-
     Predefined answers:
 
     How to send a parcel/envelopes/documents?
@@ -48,7 +44,7 @@ def ChatGPT_support(propmt):
     How to track my parcel?
 
     The parcel can be tracked by the FedEx number, find the "Track parcel" section and enter a valid number.
-    Here's a question to answer:
+    Here's a question to answer: \n
     """
 
     combined_propmt = role_model + propmt
@@ -62,7 +58,7 @@ def ChatGPT_support(propmt):
         model="gpt-3.5-turbo-instruct",
         prompt=combined_propmt,
         max_tokens=300,
-        temperature=0
+        temperature=0.6
     )
 
     return completion.choices[0].text
