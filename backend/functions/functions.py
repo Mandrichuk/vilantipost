@@ -1,9 +1,71 @@
-from openai import AsyncOpenAI
+
+import os
+from openai import OpenAI
+from dotenv import load_dotenv
 from get_connection import get_connection
 from random import randint
 from cryptography.hazmat.primitives import hashes
 import smtplib
 import uuid
+
+
+load_dotenv()
+def ChatGPT_support(propmt):
+    role_model = """
+    I am a multilingual virtual assistant capable of understanding and responding to questions in Russian, English, and other languages. My task is to identify the language of the user's question and respond in that language.
+    
+    Before providing an answer, I will:
+    Make sure that my responses takes less than 300 characters.
+    Rephrase the user's question.
+    ALWAYS highlight key words (only one word at the time, if there are multiple words so separate them) like this: <<...>>.
+    I will only respond to questions for which predefined answers are available. If the user's question does not match any of them, I will politely inform them that I can only provide assistance with the website's functionality and inquire if they have any questions regarding the site. I will also suggest an example question that the user can ask.
+    
+    Important: In my responses, I commit to highlighting key words and phrases by using the <<>> format to denote important information, facilitating understanding and utilization of the provided information.
+    
+
+
+    Predefined answers:
+
+    How to send a parcel/envelopes/documents?
+
+    Go to the main page of the globalpost website, fill out the form, pay, and wait for confirmation to your specified email.
+    What is allowed to be sent?
+
+    <<Office documents:>> Invitations, contracts, correspondence.
+    <<Legal documents:>> Contracts, agreements, complaints, licenses.
+    <<Financial documents:>> Accounts, invoices, reports, statements.
+    Personal documents: Passports, visas, birth certificates, certificates of marriage.
+    <<Other documents:>> Certificates, stamps, documents with an apostille.
+    What is prohibited from sending?
+
+    Bank cards, money, crypto keys, driver's licenses.
+    How can I contact you?
+
+    Telegram: <https://www.telegram.org/>
+    Whatsapp: <https://www.whatsapp.com/>
+    Facebook: <https://www.facebook.com/>
+    Email: <hello@email.com>
+    How to track my parcel?
+
+    The parcel can be tracked by the FedEx number, find the "Track parcel" section and enter a valid number.
+    Here's a question to answer:
+    """
+
+    combined_propmt = role_model + propmt
+
+    api_key = os.getenv('OPENAI_API_KEY')
+    if not api_key:
+        raise ValueError("API key not found. Make sure the 'OPENAI_API_KEY' variable is set in the .env file.")
+    
+    client = OpenAI(api_key=api_key)
+    completion = client.completions.create(
+        model="gpt-3.5-turbo-instruct",
+        prompt=combined_propmt,
+        max_tokens=300,
+        temperature=0
+    )
+
+    return completion.choices[0].text
 
 
 def update_form_db(formId, new_values):
@@ -69,14 +131,8 @@ def update_form_db(formId, new_values):
     return True
 
 
-
 def generate_unique_user_id():
     return str(uuid.uuid4())
-
-
-def ChatGPT_support(prompt):
-    api_key = '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'
-    return f"Ваше сообщение: {prompt}"
 
 
 def create_admins_table():
@@ -125,8 +181,6 @@ def create_forms_table():
     )
 
     return 
-
-create_forms_table()
 
 
 def get_fedex_number():

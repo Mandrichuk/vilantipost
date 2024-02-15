@@ -120,7 +120,6 @@ def send_email_route():
 @app.route("/api/chatbot", methods=["POST"])
 def ai_support():
     data = request.get_json()
-    print(data)
     return ChatGPT_support(data["message"])
 
 
@@ -175,4 +174,3 @@ def update_form_in_db():
 
 if __name__ == "__main__":
     app.run(debug=True)
-qq
