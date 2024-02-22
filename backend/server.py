@@ -2,7 +2,6 @@ from flask import Flask, request, make_response, jsonify
 from flask_cors import CORS
 import pymysql as ms
 import logging
-import uuid
 
 from classes.Admin import Admin
 from classes.Form import Form
@@ -20,8 +19,9 @@ logging.basicConfig(level=logging.ERROR,
 app = Flask(__name__)
 CORS(app)
 
-
-
+logger = app.logging.getLogger('werkzeug')
+logger.setLevel(logging.ERROR)
+logging = logger
 
 @app.route("/")
 def index():

@@ -8,8 +8,9 @@ from cryptography.hazmat.primitives import hashes
 import smtplib
 import uuid
 
-
 load_dotenv()
+
+
 def ChatGPT_support(propmt):
     role_model = """
     I am a multilingual virtual assistant capable of understanding and responding to questions in Russian, English, and other languages. My task is to identify the language of the user's question and respond in that language.

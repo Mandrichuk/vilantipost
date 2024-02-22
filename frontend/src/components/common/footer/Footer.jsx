@@ -64,7 +64,7 @@ function Footer() {
       <div className={`wrapper ${styles.cover} min-h-[400px]`}>
         <div
           className={`flex-1 text-white flex flex-col items-center justify-center w-full px-8 max-w-[550px] 
-          ${windowWidth < 950 ? "min-w-[400px]" : "min-w-[550px]"}`}
+          ${windowWidth <= 950 ? "min-w-[400px]" : "min-w-[550px]"}`}
         >
           <div className={`tinyText text-gray-300 mb-2`}>
             {emailUsData.articleText}

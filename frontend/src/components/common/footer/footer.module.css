@@ -6,7 +6,7 @@
   margin-bottom: 0;
 }
 
-@media (min-width: 950px) {
+@media (min-width: 949px) {
   .cover {
     flex-direction: row;
   }
