@@ -132,8 +132,8 @@ export default {
 };
 
 export const domens = {
-  backend: "http://127.0.0.1:5000/",
-  frontend: "http://localhost:3000/",
+  backend: "37.140.192.78/",
+  frontend: "37.140.192.78/",
 };
 
 export const formTitles = [
