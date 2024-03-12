@@ -45,7 +45,7 @@ const HomePage = () => {
       </div>
 
       <Footer />
-      <ContactUsButton />
+      {/* <ContactUsButton /> */}
       <ToastContainer />
     </>
   );

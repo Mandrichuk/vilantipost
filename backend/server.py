@@ -1,7 +1,9 @@
-from flask import Flask, request, make_response, jsonify
+from flask import Flask, request, make_response, jsonify, render_template
 from flask_cors import CORS
 import pymysql as ms
 import logging
+
+from config import server_connection
 
 from classes.Admin import Admin
 from classes.Form import Form
@@ -19,20 +21,32 @@ logging.basicConfig(level=logging.ERROR,
 app = Flask(__name__)
 CORS(app)
 
-logger = app.logging.getLogger('werkzeug')
-logger.setLevel(logging.ERROR)
-logging = logger
+
+
 
 @app.route("/")
 def index():
-    user_id = request.cookies.get('user_id')
-    if not user_id:
-        response = make_response("Setting up user-specific cookie")
-        user_id = generate_unique_user_id()
-        response.set_cookie('user_id', user_id, max_age=60*60*24*365) 
-    else:
-        response = make_response(f"Welcome back, your user ID is {user_id}")
-    return response
+    return render_template("index.html", token="hello im token")
+
+@app.route("/admin/<any>")
+def admin(any):
+    return render_template("index.html", token="hello im token")
+
+@app.route("/track-parcel/<id>")
+def track_parcel(id):
+    return render_template("index.html", token="hello im token")
+
+@app.route("/form")
+def form():
+    return render_template("index.html", token="hello im token")
+
+@app.route("/admin/login")
+def login_admin():
+    return render_template("index.html", token="hello im token")
+
+@app.route("/admin/edit/<id>")
+def admin_edit(id):
+    return render_template("index.html", token="hello im token")
 
 
 @app.route("/api/save-form-to-db", methods=["POST"])
@@ -55,7 +69,7 @@ def get_form_by_fedex(fedExNumber):
         connection = get_connection()
 
         with connection.cursor() as cursor:
-            cursor.execute("USE globalpost")
+            cursor.execute(f"USE {server_connection['DB']}")
             cursor.execute(f"SELECT * FROM forms WHERE parcel_fedExNumber = '{fedex_number}'")
             result = cursor.fetchone()
 
@@ -74,7 +88,7 @@ def admin_login():
     try: 
         data = request.get_json()
         login = data["loginInput"]
-        password = get_hashed_value((data["passwordInput"]))
+        password = get_hashed_value(data["passwordInput"])
         validity = is_valid_login_data(login, password)
 
         return jsonify({"status": validity})
@@ -92,7 +106,7 @@ def get_all_forms():
         connection = get_connection()
 
         with connection.cursor() as cursor:
-            cursor.execute("USE globalpost")
+            cursor.execute(f"USE {server_connection['DB']}")
             cursor.execute("SELECT * FROM forms")
             result = cursor.fetchall()
             return jsonify(result)
@@ -131,7 +145,7 @@ def delete_form_from_db():
         connection = get_connection()
 
         with connection.cursor() as cursor:
-            cursor.execute("USE globalpost")
+            cursor.execute(f"USE {server_connection['DB']}")
             cursor.execute(f"DELETE FROM forms WHERE id = '{fedex_number}'")
             connection.commit()
             return jsonify({"message": "Form deleted successfully"}), 200
@@ -147,7 +161,7 @@ def get_form_by_id(FormId):
         connection = get_connection()
 
         with connection.cursor() as cursor:
-            cursor.execute("USE globalpost")
+            cursor.execute(f"USE {server_connection['DB']}")
             cursor.execute("SELECT * FROM forms WHERE id = %s", (FormId),)
             result = cursor.fetchone()
 

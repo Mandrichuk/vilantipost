@@ -12,8 +12,10 @@ import {
 // Logos
 
 // Graphics
-import mobilePoster from "../assets/graphics/mobilePoster.jpg";
-import pcPoster from "../assets/graphics/pcPoster.jpg";
+import mobileRuPoster from "../assets/graphics/mobRuPoster.jpg";
+import mobileEnPoster from "../assets/graphics/mobEnPoster.jpg";
+import pcRuPoster from "../assets/graphics/pcRuPoster.jpg";
+import pcEnPoster from "../assets/graphics/pcEnPoster.jpg";
 import peopleRating from "../assets/graphics/peopleRatings.jpg";
 import DeliveryToPerson from "../assets/graphics/DeliveryToPerson.png";
 import courierDelivery from "../assets/graphics/courierDelivery.png";
@@ -91,8 +93,10 @@ export const notifyError = () => {
 };
 
 export default {
-  mobilePoster,
-  pcPoster,
+  mobileRuPoster,
+  mobileEnPoster,
+  pcRuPoster,
+  pcEnPoster,
   delivery,
   peopleRating,
   documents,
@@ -444,7 +448,7 @@ export const homePage = {
           fromCountryName: "Russia",
           countryToId: 59,
           deliveryTime: "Delivery: 7 days",
-        }
+        },
       ],
     },
   },
