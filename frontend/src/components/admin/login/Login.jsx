@@ -1,12 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import styles from "./login.module.css";
 import Navbar from "../../common/navbar/Navbar";
 import { adminLoginPage } from "../../../constants";
 import TextInput from "../../common/TextInput";
+import { useDispatch } from "react-redux";
+import { toggleIsAdminLoggined } from "../../../features/isAdminLoggined";
+import { useNavigate } from "react-router-dom";
+import { links } from "../../../constants/index";
 
 function Login() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const isAdminLoggined = useSelector(
+    (state) => state.isAdminLoggined.isAdminLoggined
+  );
   const language = useSelector((state) => state.language.language);
   const loginPageText = adminLoginPage[language];
   const [loginInputs, setLoginInputs] = useState({
@@ -38,11 +47,17 @@ function Login() {
       })
       .then((response) => {
         console.log(response.data);
+        if (response.data) {
+          navigate("/admin");
+          dispatch(toggleIsAdminLoggined({ value: true }));
+        }
       })
       .catch((error) => {
         console.error("Ошибка при отправке данных на сервер:", error);
       });
   }
+
+  console.log(isAdminLoggined);
 
   function loginInputHandleChange(field, value) {
     setLoginInputs((prevLoginInputs) => ({

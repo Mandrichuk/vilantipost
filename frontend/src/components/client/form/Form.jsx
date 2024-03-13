@@ -21,8 +21,12 @@ import { domens } from "../../../constants/index";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { notifySuccess } from "../../../constants/index";
+import { toggleIsFormSuccessed } from "../../../features/isFormSuccessed";
+import { useDispatch } from "react-redux";
 
 function Form() {
+  const isFormSuccessed = useSelector((state) => state.isFormSuccessed.isFormSuccessed);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const formsClientData = useSelector((state) => state.formsClient.formsData);
   const windowWidth = useWindowWidth();
@@ -94,6 +98,7 @@ function Form() {
       })
       .then((response) => {
         console.log(response.data);
+        dispatch(toggleIsFormSuccessed({ isFormSuccessed: true }));
       })
       .catch((error) => {
         console.error("Ошибка при отправке данных на сервер:", error);

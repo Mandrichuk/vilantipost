@@ -91,7 +91,7 @@ def admin_login():
         password = get_hashed_value(data["passwordInput"])
         validity = is_valid_login_data(login, password)
 
-        return jsonify({"status": validity})
+        return jsonify(validity)
     
     
     except Exception as e:

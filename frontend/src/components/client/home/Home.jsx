@@ -14,19 +14,26 @@ import Footer from "../../common/footer/Footer";
 import { usePreviousURL } from "../../../utils/HIstoryContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { notifySuccess } from "../../../constants";
+import { notifySuccess, notifyError } from "../../../constants";
 import ContactUsButton from "../../common/AiSupport/AiSupport";
 import AllowedGoods from "./AllowedGoods";
 
 const HomePage = () => {
-  const { history} = usePreviousURL();
+  const { history } = usePreviousURL();
   const previousURL = history.length > 1 ? history[history.length - 2] : null;
-
+  const isFormSuccessed = useSelector(
+    (state) => state.isFormSuccessed.isFormSuccessed
+  );
   useEffect(() => {
-    if (previousURL === "/form") {
+    if (previousURL === "/form" && isFormSuccessed) {
+      console.log("hell");
       notifySuccess();
+    } else if (previousURL === "/form" && !isFormSuccessed) {
+      notifyError();
+    } else {
+      return;
     }
-  }, [previousURL])
+  }, [previousURL]);
 
   return (
     <>

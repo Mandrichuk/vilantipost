@@ -7,11 +7,14 @@ import Navbar from "../../common/navbar/Navbar";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import {links} from "../../../constants/index";
+import { links } from "../../../constants/index";
 import { formTitles } from "../../../constants/index";
-
+import { useSelector } from "react-redux";
 
 function Home() {
+  const isAdminLoggined = useSelector(
+    (state) => state.isAdminLoggined.isAdminLoggined
+  );
   const [forms, setForms] = useState([]);
   const [increaseTable, setIncreaseTable] = useState(false);
   const [openFilters, setOpenFilters] = useState(false);
@@ -19,10 +22,15 @@ function Home() {
   const [isBlocked, setIsBlocked] = useState(false);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (!isAdminLoggined) {
+      navigate(links.adminLogin);
+    }
+  });
+
   const handleBlock = () => {
     setIsBlocked(true);
   };
-
 
   function openFiltersHandle() {
     setOpenFilters(!openFilters);
@@ -88,7 +96,7 @@ function Home() {
       <div className={`titleText w-full flex items-center justify-center mb-8`}>
         Forms
       </div>
-      <div className={`w-full mb-4 px-5 flex flex-row items-center`}>
+      <div className={`w-full mb-10 px-5 flex flex-row items-center`}>
         <input
           type="checkbox"
           className={`mr-2`}
@@ -98,7 +106,7 @@ function Home() {
         <label htmlFor="increaseTable">Увеличенный размер таблиц</label>
       </div>
 
-      <div className={`w-full mb-2 px-5 flex flex-row items-center`}>
+      {/* <div className={`w-full mb-2 px-5 flex flex-row items-center`}>
         <div
           onClick={openFiltersHandle}
           className={`labelText flex flex-row items-center cursor-pointer`}
@@ -140,7 +148,7 @@ function Home() {
             </div>
           </div>
         )}
-      </div>
+      </div> */}
 
       <div
         className={`flex flex-row ${

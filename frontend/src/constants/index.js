@@ -80,12 +80,12 @@ export const notifySuccess = () => {
 };
 
 export const notifyError = () => {
-  if (!toast.isActive("success")) {
-    toast.success("Thanks for your order!", {
-      toastId: "success",
+  if (!toast.isActive("error")) {
+    toast.error("Upps.. The form was not sent", {
+      toastId: "error",
       position: "top-right",
       autoClose: 2500,
-      hideProgressBar: false,
+      hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: true,
     });
@@ -136,8 +136,8 @@ export default {
 };
 
 export const domens = {
-  backend: "37.140.192.78/",
-  frontend: "37.140.192.78/",
+  backend: "http://localhost:3000/",
+  frontend: "http://localhost:3000/",
 };
 
 export const formTitles = [

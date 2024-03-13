@@ -7,12 +7,16 @@ import { configureStore } from '@reduxjs/toolkit';
 import languageReducer from './features/language';
 import orderBoxReducer from './features/orderBox';
 import formsClientReducer from './features/formsClient';
+import isFormSuccessedRecucer from './features/isFormSuccessed';
+import isAdminLogginedReducer from './features/isAdminLoggined';
 
 const store = configureStore({
   reducer: {
     language: languageReducer,
     orderBox: orderBoxReducer,
     formsClient: formsClientReducer,
+    isFormSuccessed: isFormSuccessedRecucer,
+    isAdminLoggined: isAdminLogginedReducer
   },
 });
 
